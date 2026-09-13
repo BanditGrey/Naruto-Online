@@ -100,16 +100,17 @@ export class TownHUD extends Container {
    * 1. TOP-LEFT: PERFIL DO JOGADOR (DefineSprite_615_Shortcuts_Avatar)
    * ========================================================================= */
   private async buildTopProfileHUD(): Promise<void> {
-    this.topProfileCont.position.set(6, 6);
+    this.topProfileCont.position.set(8, 8);
 
     // 1. Moldura Autêntica Flash (432.png - 305x109)
     try {
       const frameTex = await Assets.load('/assets/ui/avatar_frame.png');
       const frameSprite = new Sprite(frameTex);
+      frameSprite.position.set(0, 20);
       this.topProfileCont.addChild(frameSprite);
     } catch {
       const fallback = new Graphics()
-        .roundRect(0, 0, 305, 109, 8)
+        .roundRect(0, 20, 305, 109, 8)
         .fill({ color: 0x12151d, alpha: 0.9 })
         .stroke({ color: 0xd4af37, width: 2 });
       this.topProfileCont.addChild(fallback);
@@ -124,17 +125,17 @@ export class TownHUD extends Container {
     const portraitFile = portraitMap[this.profile.profession] || 'portrait_325.png';
 
     const avatarCircleCont = new Container();
-    avatarCircleCont.position.set(48, 52);
+    avatarCircleCont.position.set(46, 74);
 
     try {
       const pTex = await Assets.load(`/assets/ui/${portraitFile}`);
       const portraitSprite = new Sprite(pTex);
       portraitSprite.anchor.set(0.5, 0.5);
-      portraitSprite.width = 68;
-      portraitSprite.height = 68;
+      portraitSprite.width = 64;
+      portraitSprite.height = 64;
 
       const circleMask = new Graphics()
-        .circle(0, 0, 33)
+        .circle(0, 0, 32)
         .fill(0xffffff);
 
       portraitSprite.mask = circleMask;
@@ -142,70 +143,70 @@ export class TownHUD extends Container {
       avatarCircleCont.addChild(portraitSprite);
     } catch {
       const fallbackCircle = new Graphics()
-        .circle(0, 0, 33)
+        .circle(0, 0, 32)
         .fill(0x334455);
       avatarCircleCont.addChild(fallbackCircle);
     }
     this.topProfileCont.addChild(avatarCircleCont);
 
-    // 3. Nome do Jogador (no pergaminho superior)
-    const nameTxt = new Text({
-      text: this.profile.name,
-      style: new TextStyle({
-        fontFamily: 'SimSun, "Microsoft YaHei", sans-serif',
-        fontSize: 13,
-        fontWeight: 'bold',
-        fill: '#f0e6d2',
-        stroke: { color: '#1a1006', width: 3 }
-      })
-    });
-    nameTxt.position.set(96, 13);
-    this.topProfileCont.addChild(nameTxt);
-
-    // 4. Emblema de Nível
+    // 3. Emblema de Nível (à esquerda na barra verde)
     const levelTxt = new Text({
       text: `Lv.${this.profile.level}`,
       style: new TextStyle({
         fontFamily: 'SimSun, "Microsoft YaHei", sans-serif',
-        fontSize: 12,
+        fontSize: 11,
         fontWeight: 'bold',
         fill: '#ffd700',
-        stroke: { color: '#331a00', width: 2 }
+        stroke: { color: '#2a1604', width: 2 }
       })
     });
-    levelTxt.position.set(230, 13);
+    levelTxt.position.set(88, 33);
     this.topProfileCont.addChild(levelTxt);
 
-    // 5. Barra de Energia / Vigor Militar (MC_ProgressBarMilitaryOrder)
+    // 4. Nome do Jogador (à direita do nível na barra verde)
+    const nameTxt = new Text({
+      text: this.profile.name,
+      style: new TextStyle({
+        fontFamily: 'SimSun, "Microsoft YaHei", sans-serif',
+        fontSize: 12,
+        fontWeight: 'bold',
+        fill: '#f0e6d2',
+        stroke: { color: '#1a1006', width: 2 }
+      })
+    });
+    nameTxt.position.set(132, 33);
+    this.topProfileCont.addChild(nameTxt);
+
+    // 5. Barra de Vigor / Ordem Militar (MC_ProgressBarMilitaryOrder)
     const hpBg = new Graphics()
-      .roundRect(96, 36, 172, 10, 2)
-      .fill({ color: 0x11161d, alpha: 0.95 });
+      .roundRect(88, 55, 150, 8, 2)
+      .fill({ color: 0x1a0f12, alpha: 0.95 });
     this.topProfileCont.addChild(hpBg);
 
     this.hpFill = new Graphics()
-      .roundRect(96, 36, 172, 10, 2)
-      .fill(0x27ae60);
+      .roundRect(88, 55, 150, 8, 2)
+      .fill(0xd63031);
     this.topProfileCont.addChild(this.hpFill);
 
     this.hpText = new Text({
       text: `${this.profile.curHp} / ${this.profile.maxHp}`,
       style: new TextStyle({
         fontFamily: 'Arial, sans-serif',
-        fontSize: 9,
+        fontSize: 8,
         fontWeight: 'bold',
         fill: '#ffffff',
         stroke: { color: '#000000', width: 2 }
       })
     });
     this.hpText.anchor.set(0.5, 0.5);
-    this.hpText.position.set(96 + 172 / 2, 41);
+    this.hpText.position.set(88 + 150 / 2, 59);
     this.topProfileCont.addChild(this.hpText);
 
-    // 6. Placa de Poder de Luta (bp_plate.png - 188x59)
+    // 6. Placa de Poder de Luta Oficial (bp_plate.png - 188x59)
     try {
       const bpTex = await Assets.load('/assets/ui/bp_plate.png');
       const bpSprite = new Sprite(bpTex);
-      bpSprite.position.set(88, 52);
+      bpSprite.position.set(84, 68);
       this.topProfileCont.addChild(bpSprite);
     } catch {
       // Fallback
@@ -221,14 +222,14 @@ export class TownHUD extends Container {
         stroke: { color: '#3e1a00', width: 3 }
       })
     });
-    bpTxt.position.set(165, 68);
+    bpTxt.position.set(158, 82);
     this.topProfileCont.addChild(bpTxt);
 
     // 7. Selo VIP Oficial (vip_badge.png - 63x70)
     try {
       const vipTex = await Assets.load('/assets/ui/vip_badge.png');
       const vipSprite = new Sprite(vipTex);
-      vipSprite.position.set(262, 48);
+      vipSprite.position.set(244, 60);
       vipSprite.scale.set(0.72);
       vipSprite.eventMode = 'static';
       vipSprite.cursor = 'pointer';
@@ -245,7 +246,7 @@ export class TownHUD extends Container {
    * 2. TOP-LEFT: BARRA DE MOEDAS (currency_bar.png 385x50)
    * ========================================================================= */
   private async buildCurrencyBar(): Promise<void> {
-    this.currencyCont.position.set(315, 8);
+    this.currencyCont.position.set(78, 6);
 
     try {
       const curTex = await Assets.load('/assets/ui/currency_bar.png');
@@ -270,7 +271,7 @@ export class TownHUD extends Container {
         stroke: { color: '#000000', width: 2 }
       })
     });
-    this.silverText.position.set(45, 16);
+    this.silverText.position.set(45, 15);
     this.currencyCont.addChild(this.silverText);
 
     // Cupons
@@ -284,7 +285,7 @@ export class TownHUD extends Container {
         stroke: { color: '#000000', width: 2 }
       })
     });
-    this.couponText.position.set(168, 16);
+    this.couponText.position.set(162, 15);
     this.currencyCont.addChild(this.couponText);
 
     // Lingotes de Ouro
@@ -298,15 +299,15 @@ export class TownHUD extends Container {
         stroke: { color: '#000000', width: 2 }
       })
     });
-    this.goldText.position.set(285, 16);
+    this.goldText.position.set(280, 15);
     this.currencyCont.addChild(this.goldText);
 
     // Botão Recarregar Autêntico (recharge_btn.png)
     try {
       const recTex = await Assets.load('/assets/ui/recharge_btn.png');
       const recSprite = new Sprite(recTex);
-      recSprite.position.set(388, 2);
-      recSprite.scale.set(0.92);
+      recSprite.position.set(380, 2);
+      recSprite.scale.set(0.9);
       recSprite.eventMode = 'static';
       recSprite.cursor = 'pointer';
       recSprite.on('pointertap', () => {
@@ -321,7 +322,7 @@ export class TownHUD extends Container {
     try {
       const chestTex = await Assets.load('/assets/ui/chest_gift.png');
       const chestSprite = new Sprite(chestTex);
-      chestSprite.position.set(445, -2);
+      chestSprite.position.set(436, -2);
       chestSprite.scale.set(0.85);
       chestSprite.eventMode = 'static';
       chestSprite.cursor = 'pointer';
@@ -329,20 +330,35 @@ export class TownHUD extends Container {
         alert('🎁 Pacote de Recompensa de Tempo Online Coletado!');
       });
       this.currencyCont.addChild(chestSprite);
+
+      const chestTimer = new Text({
+        text: '05:00',
+        style: new TextStyle({
+          fontFamily: 'Arial, sans-serif',
+          fontSize: 9,
+          fontWeight: 'bold',
+          fill: '#ffd700',
+          stroke: { color: '#000000', width: 2 }
+        })
+      });
+      chestTimer.anchor.set(0.5, 0);
+      chestTimer.position.set(470, 34);
+      this.currencyCont.addChild(chestTimer);
     } catch {
       // Fallback
     }
   }
 
   /* =========================================================================
-   * 3. TOP-RIGHT: BARRA DE ATIVIDADES DOURADAS
+   * 3. TOP-RIGHT: BARRA DE ATIVIDADES OFICIAIS
    * ========================================================================= */
   private async buildActivityBar(): Promise<void> {
-    this.activityCont.position.set(675, 8);
+    // Posicionada exatamente entre o baú online (x ~ 515) e a placa da vila (x ~ 885)
+    this.activityCont.position.set(515, 8);
 
     const activities = [
       { id: 'sign', file: 'btn_sign.png', label: 'Check-in' },
-      { id: 'recharge', file: 'btn_first_recharge.png', label: '1ª Recarga', customScale: 0.22 },
+      { id: 'recharge', file: 'btn_first_recharge.png', label: '1ª Recarga', customScale: 0.19 },
       { id: '7day', file: 'btn_7day.png', label: '7 Dias' },
       { id: 'online', file: 'btn_online_pack.png', label: 'Online' },
       { id: 'level', file: 'btn_level_gift.png', label: 'Presente' },
@@ -364,17 +380,16 @@ export class TownHUD extends Container {
         const tex = await Assets.load(`/assets/ui/${act.file}`);
         const sp = new Sprite(tex);
         sp.anchor.set(0.5, 0);
-        const s = act.customScale || 0.52;
+        const s = act.customScale || 0.44;
         sp.scale.set(s);
         btn.addChild(sp);
       } catch {
         const fallback = new Graphics()
-          .circle(0, 20, 18)
+          .circle(0, 16, 14)
           .fill(0xd4af37);
         btn.addChild(fallback);
       }
 
-      // Efeito de pulso no hover
       btn.on('pointerenter', () => {
         btn.scale.set(1.08);
       });
@@ -386,7 +401,7 @@ export class TownHUD extends Container {
       });
 
       this.activityCont.addChild(btn);
-      currentX += 45;
+      currentX += 36;
     }
   }
 
@@ -394,11 +409,12 @@ export class TownHUD extends Container {
    * 4. TOP-RIGHT: RADAR & BÚSSOLA CANÔNICA (TWindowMap / DefineSprite_168)
    * ========================================================================= */
   private async buildRadarCompass(): Promise<void> {
-    this.radarCont.position.set(1250 - 215, 2);
+    // Alinhado flush no canto superior direito
+    this.radarCont.position.set(1250 - 216, 0);
 
-    // 1. Placa do Nome da Vila & Coordenadas (map_title_plate.png - 135x62)
+    // 1. Placa de Madeira do Nome da Vila & Coordenadas (map_title_plate.png - 135x62)
     const titleCont = new Container();
-    titleCont.position.set(-135, 4);
+    titleCont.position.set(-148, 8);
 
     try {
       const plateTex = await Assets.load('/assets/ui/map_title_plate.png');
@@ -460,71 +476,45 @@ export class TownHUD extends Container {
       compassCont.addChild(fb);
     }
 
-    compassCont.on('pointerenter', () => { compassCont.scale.set(1.03); });
+    compassCont.on('pointerenter', () => { compassCont.scale.set(1.02); });
     compassCont.on('pointerleave', () => { compassCont.scale.set(1.0); });
     compassCont.on('pointertap', () => {
       alert('🗺 Mapa Mundi Shinobi (#168_Shortcuts_MC_EnterMap)');
     });
     this.radarCont.addChild(compassCont);
 
-    // 3. Botão de Alternância de Som (BGM)
-    const bgmBtn = new Container();
-    bgmBtn.position.set(-135, 72);
-    bgmBtn.eventMode = 'static';
-    bgmBtn.cursor = 'pointer';
+    // Botão de Áudio BGM embutido na bússola (ícone de som oficial)
+    const soundToggleArea = new Container();
+    soundToggleArea.position.set(40, 115);
+    soundToggleArea.eventMode = 'static';
+    soundToggleArea.cursor = 'pointer';
 
-    const bgmBg = new Graphics()
-      .roundRect(0, 0, 64, 22, 4)
-      .fill({ color: 0x1c2128, alpha: 0.9 })
-      .stroke({ color: 0x388bfd, width: 1 });
-    bgmBtn.addChild(bgmBg);
+    const soundBg = new Graphics()
+      .circle(0, 0, 14)
+      .fill({ color: 0x11161f, alpha: 0.85 })
+      .stroke({ color: 0x388bfd, width: 1.5 });
+    soundToggleArea.addChild(soundBg);
 
     this.bgmLabelText = new Text({
-      text: '🔊 BGM',
-      style: new TextStyle({ fontSize: 9, fontWeight: 'bold', fill: '#58a6ff' })
+      text: '🔊',
+      style: new TextStyle({ fontSize: 11 })
     });
     this.bgmLabelText.anchor.set(0.5, 0.5);
-    this.bgmLabelText.position.set(32, 11);
-    bgmBtn.addChild(this.bgmLabelText);
+    soundToggleArea.addChild(this.bgmLabelText);
 
-    bgmBtn.on('pointertap', () => {
+    soundToggleArea.on('pointertap', (e) => {
+      e.stopPropagation();
       if (this.callbacks.onBgmToggle) this.callbacks.onBgmToggle();
     });
-    this.radarCont.addChild(bgmBtn);
-
-    // 4. Botão de Teste PvE
-    const pveBtn = new Container();
-    pveBtn.position.set(-66, 72);
-    pveBtn.eventMode = 'static';
-    pveBtn.cursor = 'pointer';
-
-    const pveBg = new Graphics()
-      .roundRect(0, 0, 64, 22, 4)
-      .fill(0x992d22)
-      .stroke({ color: 0xe74c3c, width: 1 });
-    pveBtn.addChild(pveBg);
-
-    const pveTxt = new Text({
-      text: '⚔ PvE',
-      style: new TextStyle({ fontSize: 9, fontWeight: 'bold', fill: '#ffffff' })
-    });
-    pveTxt.anchor.set(0.5, 0.5);
-    pveTxt.position.set(32, 11);
-    pveBtn.addChild(pveTxt);
-
-    pveBtn.on('pointertap', () => {
-      if (this.callbacks.onBattleTest) this.callbacks.onBattleTest();
-    });
-    this.radarCont.addChild(pveBtn);
+    this.radarCont.addChild(soundToggleArea);
   }
 
   /* =========================================================================
    * 5. BOTTOM-CENTER: BARRA DE ATALHOS & EXP (TWindowFunction / DefineSprite_191)
    * ========================================================================= */
   private async buildBottomShortcutBar(): Promise<void> {
-    const barWidth = 735;
-    const startX = (1250 - barWidth) / 2;
-    this.bottomBarCont.position.set(startX, 568);
+    // Alinhado a partir de x = 445 para dar total folga ao chat (x = 10 a 305)
+    this.bottomBarCont.position.set(445, 570);
 
     // 1. Moldura Curva de Madeira Autêntica Flash (bottom_bar_bg.png - 735x117)
     try {
@@ -533,7 +523,7 @@ export class TownHUD extends Container {
       this.bottomBarCont.addChild(bgSp);
     } catch {
       const fb = new Graphics()
-        .roundRect(0, 0, barWidth, 80, 10)
+        .roundRect(0, 0, 735, 80, 10)
         .fill({ color: 0x1f1917, alpha: 0.95 })
         .stroke({ color: 0x8e44ad, width: 2 });
       this.bottomBarCont.addChild(fb);
@@ -541,17 +531,17 @@ export class TownHUD extends Container {
 
     // 2. Barra de Experiência (exp_bar.png)
     const expCont = new Container();
-    expCont.position.set(65, 62);
+    expCont.position.set(58, 63);
 
     try {
       const expTex = await Assets.load('/assets/ui/exp_bar.png');
       const expSp = new Sprite(expTex);
-      expSp.width = 605;
-      expSp.height = 10;
+      expSp.width = 550;
+      expSp.height = 9;
       expCont.addChild(expSp);
     } catch {
       const fbExp = new Graphics()
-        .rect(0, 0, 605, 10)
+        .rect(0, 0, 550, 9)
         .fill(0xf39c12);
       expCont.addChild(fbExp);
     }
@@ -567,11 +557,11 @@ export class TownHUD extends Container {
       })
     });
     expTxt.anchor.set(0.5, 0.5);
-    expTxt.position.set(302, 5);
+    expTxt.position.set(275, 4);
     expCont.addChild(expTxt);
     this.bottomBarCont.addChild(expCont);
 
-    // 3. Os 10 Botões Oficiais de Atalho
+    // 3. Os 10 Botões Oficiais de Atalho (distribuídos com folga antes do vaso Potency)
     const shortcuts = [
       { id: 'ninja', file: 'btn_ninja.png', label: 'Ninjas', hotkey: 'C', action: () => this.toggleHero() },
       { id: 'bag', file: 'btn_bag.png', label: 'Mochila', hotkey: 'B', action: () => this.toggleBackpack() },
@@ -585,8 +575,8 @@ export class TownHUD extends Container {
       { id: 'practice', file: 'btn_practice.png', label: 'Treino', hotkey: '', action: () => alert('⚡ Campo de Treinamento') }
     ];
 
-    const slotSpacing = 64;
-    const btnStartX = 52;
+    const slotSpacing = 55;
+    const btnStartX = 48;
 
     for (let i = 0; i < shortcuts.length; i++) {
       const s = shortcuts[i];
@@ -599,8 +589,8 @@ export class TownHUD extends Container {
         const iconTex = await Assets.load(`/assets/ui/${s.file}`);
         const iconSp = new Sprite(iconTex);
         iconSp.anchor.set(0.5, 0.5);
-        iconSp.width = 46;
-        iconSp.height = 46;
+        iconSp.width = 44;
+        iconSp.height = 44;
         btnCont.addChild(iconSp);
       } catch {
         const fbIcon = new Graphics()
@@ -611,7 +601,7 @@ export class TownHUD extends Container {
 
       if (s.hotkey) {
         const hkBadge = new Graphics()
-          .roundRect(8, -24, 16, 14, 3)
+          .roundRect(6, -22, 16, 14, 3)
           .fill({ color: 0x000000, alpha: 0.85 })
           .stroke({ color: 0xf1c40f, width: 1 });
         btnCont.addChild(hkBadge);
@@ -621,7 +611,7 @@ export class TownHUD extends Container {
           style: new TextStyle({ fontSize: 9, fontWeight: 'bold', fill: '#f1c40f' })
         });
         hkTxt.anchor.set(0.5, 0.5);
-        hkTxt.position.set(16, -17);
+        hkTxt.position.set(14, -15);
         btnCont.addChild(hkTxt);
       }
 
@@ -643,7 +633,14 @@ export class TownHUD extends Container {
    * 6. RIGHT-SIDE: RASTREADOR DE MISSÕES (TWindowQuestGuide / DefineSprite_67)
    * ========================================================================= */
   private async buildQuestTracker(): Promise<void> {
-    this.questTrackerCont.position.set(1250 - 215, 185);
+    this.questTrackerCont.position.set(1038, 175);
+
+    // Fundo opaco para que NPCs no mapa não apareçam por trás do painel
+    const solidBg = new Graphics()
+      .roundRect(4, 28, 200, 122, 4)
+      .fill({ color: 0x141820, alpha: 0.96 })
+      .stroke({ color: 0x2d333b, width: 1 });
+    this.questTrackerCont.addChild(solidBg);
 
     try {
       const panelTex = await Assets.load('/assets/ui/quest_tracker_box.png');
@@ -667,11 +664,11 @@ export class TownHUD extends Container {
         stroke: { color: '#000000', width: 2 }
       })
     });
-    titleTxt.position.set(18, 38);
+    titleTxt.position.set(16, 36);
     this.questTrackerCont.addChild(titleTxt);
 
     const targetCont = new Container();
-    targetCont.position.set(18, 62);
+    targetCont.position.set(16, 60);
     targetCont.eventMode = 'static';
     targetCont.cursor = 'pointer';
 
@@ -708,7 +705,7 @@ export class TownHUD extends Container {
         fill: '#8b949e'
       })
     });
-    rewardTxt.position.set(18, 108);
+    rewardTxt.position.set(16, 110);
     this.questTrackerCont.addChild(rewardTxt);
   }
 
@@ -716,10 +713,10 @@ export class TownHUD extends Container {
    * 7. BOTTOM-LEFT: CHATBOX AUTÊNTICO COM BARRA DE MADEIRA FLASH (00000001.swf)
    * ========================================================================= */
   private async buildChatBox(): Promise<void> {
-    this.chatBoxCont.position.set(10, 440);
+    this.chatBoxCont.position.set(10, 475);
 
     const chatLogBg = new Graphics()
-      .roundRect(0, 0, 303, 140, 4)
+      .roundRect(0, 0, 295, 126, 4)
       .fill({ color: 0x090d16, alpha: 0.82 })
       .stroke({ color: 0x1f242c, width: 1 });
     this.chatBoxCont.addChild(chatLogBg);
@@ -728,12 +725,12 @@ export class TownHUD extends Container {
     for (let i = 0; i < channels.length; i++) {
       const chName = channels[i];
       const tabCont = new Container();
-      tabCont.position.set(6 + i * 62, 4);
+      tabCont.position.set(4 + i * 58, 4);
       tabCont.eventMode = 'static';
       tabCont.cursor = 'pointer';
 
       const tabBg = new Graphics()
-        .roundRect(0, 0, 56, 18, 3)
+        .roundRect(0, 0, 54, 18, 3)
         .fill(chName === 'Mundo' ? 0x24292e : 0x12161c);
       tabCont.addChild(tabBg);
 
@@ -746,7 +743,7 @@ export class TownHUD extends Container {
         })
       });
       tabTxt.anchor.set(0.5, 0.5);
-      tabTxt.position.set(28, 9);
+      tabTxt.position.set(27, 9);
       tabCont.addChild(tabTxt);
 
       tabCont.on('pointertap', () => {
@@ -756,19 +753,20 @@ export class TownHUD extends Container {
     }
 
     this.chatMessagesCont = new Container();
-    this.chatMessagesCont.position.set(10, 26);
+    this.chatMessagesCont.position.set(8, 26);
     this.chatBoxCont.addChild(this.chatMessagesCont);
 
     const inputBarCont = new Container();
-    inputBarCont.position.set(0, 144);
+    inputBarCont.position.set(0, 130);
 
     try {
       const barTex = await Assets.load('/assets/ui/chat/chat_input_bar.png');
       const barSprite = new Sprite(barTex);
+      barSprite.width = 295;
       inputBarCont.addChild(barSprite);
     } catch {
       const fb = new Graphics()
-        .roundRect(0, 0, 303, 30, 4)
+        .roundRect(0, 0, 295, 30, 4)
         .fill(0x1a1512);
       inputBarCont.addChild(fb);
     }
@@ -785,7 +783,7 @@ export class TownHUD extends Container {
     try {
       const emoTex = await Assets.load('/assets/ui/chat/emote_btn.png');
       const emoSprite = new Sprite(emoTex);
-      emoSprite.position.set(272, 3);
+      emoSprite.position.set(266, 3);
       emoSprite.eventMode = 'static';
       emoSprite.cursor = 'pointer';
       emoSprite.on('pointertap', () => {
@@ -810,9 +808,9 @@ export class TownHUD extends Container {
     input.type = 'text';
     input.placeholder = 'Digite aqui... (Enter)';
     input.style.position = 'absolute';
-    input.style.left = '62px';
-    input.style.bottom = '16px';
-    input.style.width = '218px';
+    input.style.left = '64px';
+    input.style.bottom = '18px';
+    input.style.width = '200px';
     input.style.height = '20px';
     input.style.padding = '0 6px';
     input.style.backgroundColor = 'transparent';
@@ -836,7 +834,8 @@ export class TownHUD extends Container {
       }
     });
 
-    document.body.appendChild(input);
+    const parent = document.getElementById('game-container') || document.body;
+    parent.appendChild(input);
     this.chatInputDom = input;
   }
 
@@ -859,7 +858,7 @@ export class TownHUD extends Container {
         fontWeight: 'bold',
         fill: col,
         wordWrap: true,
-        wordWrapWidth: 280,
+        wordWrapWidth: 275,
         stroke: { color: '#000000', width: 2 }
       })
     });
@@ -869,10 +868,10 @@ export class TownHUD extends Container {
       child.y -= msgHeight;
     }
 
-    line.position.set(0, 95);
+    line.position.set(0, 85);
     this.chatMessagesCont.addChild(line);
 
-    while (this.chatMessagesCont.children.length > 6) {
+    while (this.chatMessagesCont.children.length > 5) {
       const oldest = this.chatMessagesCont.children[0];
       this.chatMessagesCont.removeChild(oldest);
       oldest.destroy();
