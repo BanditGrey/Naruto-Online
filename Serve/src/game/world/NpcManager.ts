@@ -6,7 +6,7 @@ export interface NpcDialogResponse {
   name: string;
   npcTitle: string;
   talk: string;
-  availableAction?: 'quest_accept' | 'quest_finish' | 'tavern' | 'gate' | 'none';
+  availableAction?: 'quest_accept' | 'quest_finish' | 'tavern' | 'gate' | 'gate_to_konoha' | 'gate_to_suburb' | 'none';
   actionData?: any;
 }
 
@@ -31,7 +31,7 @@ export class NpcManager {
     const npc = db.getNpc(npcId);
     if (!npc) return null;
 
-    let action: 'quest_accept' | 'quest_finish' | 'tavern' | 'gate' | 'none' = 'none';
+    let action: 'quest_accept' | 'quest_finish' | 'tavern' | 'gate' | 'gate_to_konoha' | 'gate_to_suburb' | 'none' = 'none';
     let talkText = npc.talk;
 
     // Se for o 3º Hokage (#22100003): Missão Inicial #16100001
@@ -48,12 +48,17 @@ export class NpcManager {
         talkText = task1.talkEnd || npc.talk;
         action = 'quest_finish';
       }
-    } else if (npcId === 22100013) {
-      // Tsunade (#22100013): Taverna de Recrutamento
+    } else if (npcId === 22100013 || npcId === 22200004) {
+      // Tsunade (#22100013 / #22200004): Taverna de Recrutamento
       action = 'tavern';
     } else if (npcId === 22100001) {
-      // City Gate (#22100001): Saída para o Mapa Mundi / Fases
-      action = 'gate';
+      // City Gate dos Subúrbios (#22100001): Viagem para a Vila de Konoha
+      talkText = "Deseja atravessar os limites dos Subúrbios e entrar na Vila Principal de Konoha?";
+      action = 'gate_to_konoha';
+    } else if (npcId === 22200013) {
+      // City Gate de Konoha (#22200013): Retorno para os Subúrbios
+      talkText = "Deseja sair pelos grandes portões de Konoha e retornar aos Subúrbios Novatos?";
+      action = 'gate_to_suburb';
     }
 
     console.log(`[NPC] Jogador "${player.data.name}" interagiu com ${npc.name} (#${npc.id}) — Ação: ${action}`);

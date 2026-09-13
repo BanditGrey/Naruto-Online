@@ -15,6 +15,8 @@ export class NpcDialogModal extends Container {
   private talkLabel: Text;
   private actionBtn: Container;
   private actionBtnText: Text;
+  private currentData: DialogData | null = null;
+  public onActionClick?: (action: string, npcId: number) => void;
 
   constructor() {
     super();
@@ -58,27 +60,30 @@ export class NpcDialogModal extends Container {
     this.talkLabel.position.set(30, 56);
     this.addChild(this.talkLabel);
 
-    // Botão de Ação (ex: Aceitar Missão)
+    // Botão de Ação (ex: Aceitar Missão / Viajar)
     this.actionBtn = new Container();
-    this.actionBtn.position.set(620, 120);
+    this.actionBtn.position.set(580, 120);
     this.actionBtn.eventMode = 'static';
     this.actionBtn.cursor = 'pointer';
 
     const btnBg = new Graphics()
-      .roundRect(0, 0, 150, 36, 6)
+      .roundRect(0, 0, 190, 36, 6)
       .fill(0x238636)
       .stroke({ color: 0x3fb950, width: 1.5 });
     this.actionBtn.addChild(btnBg);
 
     this.actionBtnText = new Text({
       text: 'CONFIRMAR',
-      style: new TextStyle({ fontSize: 13, fontWeight: 'bold', fill: '#fff' })
+      style: new TextStyle({ fontSize: 12, fontWeight: 'bold', fill: '#fff' })
     });
     this.actionBtnText.anchor.set(0.5, 0.5);
-    this.actionBtnText.position.set(75, 18);
+    this.actionBtnText.position.set(95, 18);
     this.actionBtn.addChild(this.actionBtnText);
 
     this.actionBtn.on('pointertap', () => {
+      if (this.currentData && this.onActionClick) {
+        this.onActionClick(this.currentData.action, this.currentData.npcId);
+      }
       this.hide();
     });
     this.addChild(this.actionBtn);
@@ -96,6 +101,7 @@ export class NpcDialogModal extends Container {
   }
 
   public showDialog(data: DialogData): void {
+    this.currentData = data;
     this.nameLabel.text = data.name;
     this.titleLabel.text = data.npcTitle ? `[${data.npcTitle}]` : '';
     this.talkLabel.text = `"${data.talk}"`;
@@ -106,6 +112,10 @@ export class NpcDialogModal extends Container {
       this.actionBtnText.text = 'ENTREGAR MISSÃO';
     } else if (data.action === 'tavern') {
       this.actionBtnText.text = 'ENTRAR NA TAVERNA';
+    } else if (data.action === 'gate_to_konoha') {
+      this.actionBtnText.text = 'ENTRAR EM KONOHA';
+    } else if (data.action === 'gate_to_suburb') {
+      this.actionBtnText.text = 'VOLTAR AOS SUBÚRBIOS';
     } else {
       this.actionBtnText.text = 'CONTINUAR';
     }

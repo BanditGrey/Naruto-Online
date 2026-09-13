@@ -19,5 +19,5 @@ export const ServerConfig = {
 
   // Dimensões Canônicas do Mapa da Vila (TLayerBackGround.as)
   mapDimensions: { width: 2500, height: 650 },
-  walkableYRange: { min: 360, max: 420 }
+  walkableYRange: { min: 360, max: 640 }
 };

@@ -22,6 +22,25 @@ export class TownManager {
     const player = session.player;
     if (!player) return;
 
+    const previousCityId = player.data.currentCityId;
+    if (previousCityId && previousCityId !== cityId) {
+      this.leaveTown(session);
+    }
+
+    // Definir ponto de spawn adequado
+    if (cityId === 23200001) {
+      player.data.x = 250;
+      player.data.y = 390;
+    } else if (cityId === 23100001) {
+      if (previousCityId === 23200001) {
+        player.data.x = 2050;
+        player.data.y = 390;
+      } else {
+        player.data.x = 400;
+        player.data.y = 382;
+      }
+    }
+
     player.data.currentCityId = cityId;
 
     let sessionsInTown = this.townSessions.get(cityId);
