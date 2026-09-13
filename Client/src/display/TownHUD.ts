@@ -97,97 +97,100 @@ export class TownHUD extends Container {
   }
 
   /* =========================================================================
-   * 1. TOP-LEFT: PERFIL DO JOGADOR (DefineSprite_374_HeroAvatar)
+   * 1. TOP-LEFT: PERFIL DO JOGADOR (DefineSprite_615_Shortcuts_Avatar)
    * ========================================================================= */
   private async buildTopProfileHUD(): Promise<void> {
-    this.topProfileCont.position.set(10, 8);
+    this.topProfileCont.position.set(6, 6);
 
-    // 1. Moldura Autêntica do Avatar (257x104)
+    // 1. Moldura Autêntica Flash (432.png - 305x109)
     try {
       const frameTex = await Assets.load('/assets/ui/avatar_frame.png');
       const frameSprite = new Sprite(frameTex);
       this.topProfileCont.addChild(frameSprite);
     } catch {
       const fallback = new Graphics()
-        .roundRect(0, 0, 257, 95, 8)
+        .roundRect(0, 0, 305, 109, 8)
         .fill({ color: 0x12151d, alpha: 0.9 })
         .stroke({ color: 0xd4af37, width: 2 });
       this.topProfileCont.addChild(fallback);
     }
 
-    // 2. Retrato Circular Autêntico do Ninja
+    // 2. Retrato Circular Autêntico do Ninja dentro do disco seigaiha
     const portraitMap: Record<number, string> = {
-      4: this.profile.gender === 1 ? 'portrait_325.png' : 'portrait_327.png', // Taijutsu (Lâmina / Punho)
-      1: this.profile.gender === 1 ? 'portrait_329.png' : 'portrait_331.png', // Ninjutsu (Chamas / Olho)
-      2: this.profile.gender === 1 ? 'portrait_333.png' : 'portrait_335.png'  // Genjutsu (Dançarina / Brisa)
+      4: this.profile.gender === 1 ? 'portrait_325.png' : 'portrait_327.png',
+      1: this.profile.gender === 1 ? 'portrait_329.png' : 'portrait_331.png',
+      2: this.profile.gender === 1 ? 'portrait_333.png' : 'portrait_335.png'
     };
     const portraitFile = portraitMap[this.profile.profession] || 'portrait_325.png';
 
     const avatarCircleCont = new Container();
-    avatarCircleCont.position.set(41, 46);
+    avatarCircleCont.position.set(48, 52);
 
     try {
       const pTex = await Assets.load(`/assets/ui/${portraitFile}`);
       const portraitSprite = new Sprite(pTex);
       portraitSprite.anchor.set(0.5, 0.5);
-      portraitSprite.width = 62;
-      portraitSprite.height = 62;
+      portraitSprite.width = 68;
+      portraitSprite.height = 68;
 
       const circleMask = new Graphics()
-        .circle(0, 0, 30)
+        .circle(0, 0, 33)
         .fill(0xffffff);
 
       portraitSprite.mask = circleMask;
       avatarCircleCont.addChild(circleMask);
       avatarCircleCont.addChild(portraitSprite);
-    } catch (e) {
+    } catch {
       const fallbackCircle = new Graphics()
-        .circle(0, 0, 30)
+        .circle(0, 0, 33)
         .fill(0x334455);
       avatarCircleCont.addChild(fallbackCircle);
     }
     this.topProfileCont.addChild(avatarCircleCont);
 
-    // 3. Nome do Jogador
+    // 3. Nome do Jogador (no pergaminho superior)
     const nameTxt = new Text({
       text: this.profile.name,
       style: new TextStyle({
+        fontFamily: 'SimSun, "Microsoft YaHei", sans-serif',
         fontSize: 13,
         fontWeight: 'bold',
-        fill: '#ffffff',
-        stroke: { color: '#000000', width: 3 }
+        fill: '#f0e6d2',
+        stroke: { color: '#1a1006', width: 3 }
       })
     });
-    nameTxt.position.set(88, 14);
+    nameTxt.position.set(96, 13);
     this.topProfileCont.addChild(nameTxt);
 
     // 4. Emblema de Nível
     const levelTxt = new Text({
       text: `Lv.${this.profile.level}`,
       style: new TextStyle({
-        fontSize: 10,
+        fontFamily: 'SimSun, "Microsoft YaHei", sans-serif',
+        fontSize: 12,
         fontWeight: 'bold',
         fill: '#ffd700',
-        stroke: { color: '#000000', width: 2 }
+        stroke: { color: '#331a00', width: 2 }
       })
     });
-    levelTxt.position.set(195, 15);
+    levelTxt.position.set(230, 13);
     this.topProfileCont.addChild(levelTxt);
 
-    // 5. Barra de Vida (HP) com fundo e preenchimento canônico
+    // 5. Barra de Energia / Vigor Militar (MC_ProgressBarMilitaryOrder)
     const hpBg = new Graphics()
-      .roundRect(86, 35, 148, 12, 3)
+      .roundRect(96, 36, 172, 10, 2)
       .fill({ color: 0x11161d, alpha: 0.95 });
     this.topProfileCont.addChild(hpBg);
 
     this.hpFill = new Graphics()
-      .roundRect(86, 35, 148, 12, 3)
+      .roundRect(96, 36, 172, 10, 2)
       .fill(0x27ae60);
     this.topProfileCont.addChild(this.hpFill);
 
     this.hpText = new Text({
       text: `${this.profile.curHp} / ${this.profile.maxHp}`,
       style: new TextStyle({
+        fontFamily: 'Arial, sans-serif',
         fontSize: 9,
         fontWeight: 'bold',
         fill: '#ffffff',
@@ -195,67 +198,54 @@ export class TownHUD extends Container {
       })
     });
     this.hpText.anchor.set(0.5, 0.5);
-    this.hpText.position.set(86 + 148 / 2, 41);
+    this.hpText.position.set(96 + 172 / 2, 41);
     this.topProfileCont.addChild(this.hpText);
 
-    // 6. Barra de Chakra (MP)
-    const chakraBg = new Graphics()
-      .roundRect(86, 50, 134, 9, 2)
-      .fill({ color: 0x11161d, alpha: 0.95 });
-    this.topProfileCont.addChild(chakraBg);
+    // 6. Placa de Poder de Luta (bp_plate.png - 188x59)
+    try {
+      const bpTex = await Assets.load('/assets/ui/bp_plate.png');
+      const bpSprite = new Sprite(bpTex);
+      bpSprite.position.set(88, 52);
+      this.topProfileCont.addChild(bpSprite);
+    } catch {
+      // Fallback
+    }
 
-    this.chakraFill = new Graphics()
-      .roundRect(86, 50, 134, 9, 2)
-      .fill(0x2980b9);
-    this.topProfileCont.addChild(this.chakraFill);
-
-    this.chakraText = new Text({
-      text: '100 / 100',
+    const bpTxt = new Text({
+      text: '3.420',
       style: new TextStyle({
-        fontSize: 8,
+        fontFamily: 'Impact, Arial Black, sans-serif',
+        fontSize: 16,
         fontWeight: 'bold',
-        fill: '#dff9fb',
-        stroke: { color: '#000000', width: 2 }
+        fill: '#ffd700',
+        stroke: { color: '#3e1a00', width: 3 }
       })
     });
-    this.chakraText.anchor.set(0.5, 0.5);
-    this.chakraText.position.set(86 + 134 / 2, 54);
-    this.topProfileCont.addChild(this.chakraText);
+    bpTxt.position.set(165, 68);
+    this.topProfileCont.addChild(bpTxt);
 
-    // 7. Poder de Combate (战斗力)
-    const powerTxt = new Text({
-      text: '⚔ Poder: 3.420',
-      style: new TextStyle({
-        fontSize: 10,
-        fontWeight: 'bold',
-        fill: '#f39c12',
-        stroke: { color: '#000000', width: 2 }
-      })
-    });
-    powerTxt.position.set(88, 66);
-    this.topProfileCont.addChild(powerTxt);
-
-    // 8. Selo VIP Oficial
-    const vipBadge = new Graphics()
-      .roundRect(190, 65, 42, 14, 3)
-      .fill(0xb8860b)
-      .stroke({ color: 0xffd700, width: 1 });
-    this.topProfileCont.addChild(vipBadge);
-
-    const vipTxt = new Text({
-      text: 'VIP 1',
-      style: new TextStyle({ fontSize: 9, fontWeight: 'bold', fill: '#ffffff' })
-    });
-    vipTxt.anchor.set(0.5, 0.5);
-    vipTxt.position.set(211, 72);
-    this.topProfileCont.addChild(vipTxt);
+    // 7. Selo VIP Oficial (vip_badge.png - 63x70)
+    try {
+      const vipTex = await Assets.load('/assets/ui/vip_badge.png');
+      const vipSprite = new Sprite(vipTex);
+      vipSprite.position.set(262, 48);
+      vipSprite.scale.set(0.72);
+      vipSprite.eventMode = 'static';
+      vipSprite.cursor = 'pointer';
+      vipSprite.on('pointertap', () => {
+        alert('👑 Privilégios VIP Shinobi Ativos');
+      });
+      this.topProfileCont.addChild(vipSprite);
+    } catch {
+      // Fallback
+    }
   }
 
   /* =========================================================================
    * 2. TOP-LEFT: BARRA DE MOEDAS (currency_bar.png 385x50)
    * ========================================================================= */
   private async buildCurrencyBar(): Promise<void> {
-    this.currencyCont.position.set(268, 12);
+    this.currencyCont.position.set(315, 8);
 
     try {
       const curTex = await Assets.load('/assets/ui/currency_bar.png');
@@ -263,71 +253,85 @@ export class TownHUD extends Container {
       this.currencyCont.addChild(curSprite);
     } catch {
       const bg = new Graphics()
-        .roundRect(0, 0, 385, 44, 6)
+        .roundRect(0, 0, 385, 46, 6)
         .fill({ color: 0x161b22, alpha: 0.9 })
         .stroke({ color: 0x30363d, width: 1.5 });
       this.currencyCont.addChild(bg);
     }
 
-    // 1. Ryo / Prata
+    // Ryo / Prata
     this.silverText = new Text({
       text: this.profile.silver.toLocaleString(),
       style: new TextStyle({
+        fontFamily: 'Arial, sans-serif',
         fontSize: 11,
         fontWeight: 'bold',
         fill: '#ecf0f1',
         stroke: { color: '#000000', width: 2 }
       })
     });
-    this.silverText.position.set(45, 15);
+    this.silverText.position.set(45, 16);
     this.currencyCont.addChild(this.silverText);
 
-    // 2. Cupons
+    // Cupons
     this.couponText = new Text({
       text: '350',
       style: new TextStyle({
+        fontFamily: 'Arial, sans-serif',
         fontSize: 11,
         fontWeight: 'bold',
         fill: '#f39c12',
         stroke: { color: '#000000', width: 2 }
       })
     });
-    this.couponText.position.set(168, 15);
+    this.couponText.position.set(168, 16);
     this.currencyCont.addChild(this.couponText);
 
-    // 3. Lingotes de Ouro (Gold)
+    // Lingotes de Ouro
     this.goldText = new Text({
       text: this.profile.gold.toLocaleString(),
       style: new TextStyle({
+        fontFamily: 'Arial, sans-serif',
         fontSize: 11,
         fontWeight: 'bold',
         fill: '#ffd700',
         stroke: { color: '#000000', width: 2 }
       })
     });
-    this.goldText.position.set(285, 15);
+    this.goldText.position.set(285, 16);
     this.currencyCont.addChild(this.goldText);
 
-    // Botão Recarregar (+)
-    const plusBtn = new Graphics()
-      .circle(368, 22, 10)
-      .fill(0xd35400)
-      .stroke({ color: 0xf39c12, width: 1.5 });
-    plusBtn.eventMode = 'static';
-    plusBtn.cursor = 'pointer';
+    // Botão Recarregar Autêntico (recharge_btn.png)
+    try {
+      const recTex = await Assets.load('/assets/ui/recharge_btn.png');
+      const recSprite = new Sprite(recTex);
+      recSprite.position.set(388, 2);
+      recSprite.scale.set(0.92);
+      recSprite.eventMode = 'static';
+      recSprite.cursor = 'pointer';
+      recSprite.on('pointertap', () => {
+        alert('🌟 Portal de Recarga de Lingotes de Ouro');
+      });
+      this.currencyCont.addChild(recSprite);
+    } catch {
+      // Fallback
+    }
 
-    const plusTxt = new Text({
-      text: '+',
-      style: new TextStyle({ fontSize: 13, fontWeight: 'bold', fill: '#ffffff' })
-    });
-    plusTxt.anchor.set(0.5, 0.5);
-    plusTxt.position.set(368, 21);
-    plusBtn.addChild(plusTxt);
-
-    plusBtn.on('pointertap', () => {
-      alert('🌟 Recarga de Lingotes de Ouro (Demonstração do Sistema)');
-    });
-    this.currencyCont.addChild(plusBtn);
+    // Baú de Presente Online (chest_gift.png)
+    try {
+      const chestTex = await Assets.load('/assets/ui/chest_gift.png');
+      const chestSprite = new Sprite(chestTex);
+      chestSprite.position.set(445, -2);
+      chestSprite.scale.set(0.85);
+      chestSprite.eventMode = 'static';
+      chestSprite.cursor = 'pointer';
+      chestSprite.on('pointertap', () => {
+        alert('🎁 Pacote de Recompensa de Tempo Online Coletado!');
+      });
+      this.currencyCont.addChild(chestSprite);
+    } catch {
+      // Fallback
+    }
   }
 
   /* =========================================================================
@@ -387,77 +391,91 @@ export class TownHUD extends Container {
   }
 
   /* =========================================================================
-   * 4. TOP-RIGHT: RADAR, BÚSSOLA, COORDENADAS & SOM
+   * 4. TOP-RIGHT: RADAR & BÚSSOLA CANÔNICA (TWindowMap / DefineSprite_168)
    * ========================================================================= */
   private async buildRadarCompass(): Promise<void> {
-    this.radarCont.position.set(1135, 6);
+    this.radarCont.position.set(1250 - 215, 2);
 
-    // 1. Bússola / Mapa Mundi Autêntico
+    // 1. Placa do Nome da Vila & Coordenadas (map_title_plate.png - 135x62)
+    const titleCont = new Container();
+    titleCont.position.set(-135, 4);
+
+    try {
+      const plateTex = await Assets.load('/assets/ui/map_title_plate.png');
+      const plateSprite = new Sprite(plateTex);
+      titleCont.addChild(plateSprite);
+    } catch {
+      const fb = new Graphics()
+        .roundRect(0, 0, 135, 62, 4)
+        .fill({ color: 0x11161d, alpha: 0.9 })
+        .stroke({ color: 0x30363d, width: 1 });
+      titleCont.addChild(fb);
+    }
+
+    this.cityNameText = new Text({
+      text: 'Vila da Folha',
+      style: new TextStyle({
+        fontFamily: 'SimSun, "Microsoft YaHei", sans-serif',
+        fontSize: 11,
+        fontWeight: 'bold',
+        fill: '#f0e6d2',
+        stroke: { color: '#1a1006', width: 2 }
+      })
+    });
+    this.cityNameText.anchor.set(0.5, 0);
+    this.cityNameText.position.set(67, 7);
+    titleCont.addChild(this.cityNameText);
+
+    this.coordsText = new Text({
+      text: 'X: 450  Y: 480',
+      style: new TextStyle({
+        fontFamily: 'Arial, sans-serif',
+        fontSize: 10,
+        fontWeight: 'bold',
+        fill: '#ffd700',
+        stroke: { color: '#000000', width: 2 }
+      })
+    });
+    this.coordsText.anchor.set(0.5, 0);
+    this.coordsText.position.set(67, 34);
+    titleCont.addChild(this.coordsText);
+
+    this.radarCont.addChild(titleCont);
+
+    // 2. Bússola Completa Oficial de Nuvens e Disco (DefineSprite_168_Shortcuts_MC_EnterMap)
     const compassCont = new Container();
-    compassCont.position.set(65, 34);
+    compassCont.position.set(0, 0);
     compassCont.eventMode = 'static';
     compassCont.cursor = 'pointer';
 
     try {
-      const compTex = await Assets.load('/assets/ui/world_map_compass.png');
-      const compSp = new Sprite(compTex);
-      compSp.anchor.set(0.5, 0.5);
-      compSp.width = 68;
-      compSp.height = 68;
-      compassCont.addChild(compSp);
+      const compTex = await Assets.load('/assets/ui/map_compass_full.png');
+      const compSprite = new Sprite(compTex);
+      compassCont.addChild(compSprite);
     } catch {
       const fb = new Graphics()
-        .circle(0, 0, 32)
+        .circle(100, 70, 40)
         .fill(0x2c3e50)
         .stroke({ color: 0xd4af37, width: 2 });
       compassCont.addChild(fb);
     }
 
-    compassCont.on('pointerenter', () => { compassCont.scale.set(1.06); });
+    compassCont.on('pointerenter', () => { compassCont.scale.set(1.03); });
     compassCont.on('pointerleave', () => { compassCont.scale.set(1.0); });
     compassCont.on('pointertap', () => {
       alert('🗺 Mapa Mundi Shinobi (#168_Shortcuts_MC_EnterMap)');
     });
     this.radarCont.addChild(compassCont);
 
-    // 2. Caixa de Nome da Vila e Coordenadas
-    const locBox = new Graphics()
-      .roundRect(-85, 4, 115, 36, 5)
-      .fill({ color: 0x0f141c, alpha: 0.9 })
-      .stroke({ color: 0x30363d, width: 1.5 });
-    this.radarCont.addChild(locBox);
-
-    this.cityNameText = new Text({
-      text: '📍 Subúrbios',
-      style: new TextStyle({
-        fontSize: 10,
-        fontWeight: 'bold',
-        fill: '#ffd700'
-      })
-    });
-    this.cityNameText.position.set(-80, 7);
-    this.radarCont.addChild(this.cityNameText);
-
-    this.coordsText = new Text({
-      text: 'X: 450  Y: 480',
-      style: new TextStyle({
-        fontSize: 9,
-        fontWeight: 'bold',
-        fill: '#8bc34a'
-      })
-    });
-    this.coordsText.position.set(-80, 22);
-    this.radarCont.addChild(this.coordsText);
-
-    // 3. Botão de Áudio BGM Autêntico
+    // 3. Botão de Alternância de Som (BGM)
     const bgmBtn = new Container();
-    bgmBtn.position.set(-85, 44);
+    bgmBtn.position.set(-135, 72);
     bgmBtn.eventMode = 'static';
     bgmBtn.cursor = 'pointer';
 
     const bgmBg = new Graphics()
-      .roundRect(0, 0, 56, 22, 4)
-      .fill({ color: 0x21262d, alpha: 0.9 })
+      .roundRect(0, 0, 64, 22, 4)
+      .fill({ color: 0x1c2128, alpha: 0.9 })
       .stroke({ color: 0x388bfd, width: 1 });
     bgmBtn.addChild(bgmBg);
 
@@ -466,7 +484,7 @@ export class TownHUD extends Container {
       style: new TextStyle({ fontSize: 9, fontWeight: 'bold', fill: '#58a6ff' })
     });
     this.bgmLabelText.anchor.set(0.5, 0.5);
-    this.bgmLabelText.position.set(28, 11);
+    this.bgmLabelText.position.set(32, 11);
     bgmBtn.addChild(this.bgmLabelText);
 
     bgmBtn.on('pointertap', () => {
@@ -476,14 +494,14 @@ export class TownHUD extends Container {
 
     // 4. Botão de Teste PvE
     const pveBtn = new Container();
-    pveBtn.position.set(-25, 44);
+    pveBtn.position.set(-66, 72);
     pveBtn.eventMode = 'static';
     pveBtn.cursor = 'pointer';
 
     const pveBg = new Graphics()
-      .roundRect(0, 0, 55, 22, 4)
-      .fill(0xda3633)
-      .stroke({ color: 0xf85149, width: 1 });
+      .roundRect(0, 0, 64, 22, 4)
+      .fill(0x992d22)
+      .stroke({ color: 0xe74c3c, width: 1 });
     pveBtn.addChild(pveBg);
 
     const pveTxt = new Text({
@@ -491,7 +509,7 @@ export class TownHUD extends Container {
       style: new TextStyle({ fontSize: 9, fontWeight: 'bold', fill: '#ffffff' })
     });
     pveTxt.anchor.set(0.5, 0.5);
-    pveTxt.position.set(27, 11);
+    pveTxt.position.set(32, 11);
     pveBtn.addChild(pveTxt);
 
     pveBtn.on('pointertap', () => {
@@ -501,75 +519,79 @@ export class TownHUD extends Container {
   }
 
   /* =========================================================================
-   * 5. BOTTOM-CENTER: BARRA DE ATALHOS & EXP (DefineSprite_191)
+   * 5. BOTTOM-CENTER: BARRA DE ATALHOS & EXP (TWindowFunction / DefineSprite_191)
    * ========================================================================= */
   private async buildBottomShortcutBar(): Promise<void> {
-    const barWidth = 710;
+    const barWidth = 735;
     const startX = (1250 - barWidth) / 2;
-    this.bottomBarCont.position.set(startX, 570);
+    this.bottomBarCont.position.set(startX, 568);
 
-    // 1. Fundo Autêntico da Barra de Madeira Curva (735x117)
+    // 1. Moldura Curva de Madeira Autêntica Flash (bottom_bar_bg.png - 735x117)
     try {
       const bgTex = await Assets.load('/assets/ui/bottom_bar_bg.png');
       const bgSp = new Sprite(bgTex);
-      bgSp.width = barWidth;
-      bgSp.height = 78;
       this.bottomBarCont.addChild(bgSp);
     } catch {
       const fb = new Graphics()
-        .roundRect(0, 0, barWidth, 75, 10)
+        .roundRect(0, 0, barWidth, 80, 10)
         .fill({ color: 0x1f1917, alpha: 0.95 })
         .stroke({ color: 0x8e44ad, width: 2 });
       this.bottomBarCont.addChild(fb);
     }
 
-    // 2. Barra de EXP (exp_bar.png 606x20)
+    // 2. Barra de Experiência (exp_bar.png)
     const expCont = new Container();
-    expCont.position.set(52, 63);
+    expCont.position.set(65, 62);
 
     try {
       const expTex = await Assets.load('/assets/ui/exp_bar.png');
       const expSp = new Sprite(expTex);
-      expSp.width = barWidth - 104;
+      expSp.width = 605;
       expSp.height = 10;
       expCont.addChild(expSp);
     } catch {
       const fbExp = new Graphics()
-        .rect(0, 0, barWidth - 104, 8)
+        .rect(0, 0, 605, 10)
         .fill(0xf39c12);
       expCont.addChild(fbExp);
     }
 
     const expTxt = new Text({
       text: 'EXP: 3.450 / 10.000 (34.5%)',
-      style: new TextStyle({ fontSize: 8, fontWeight: 'bold', fill: '#ffffff' })
+      style: new TextStyle({
+        fontFamily: 'Arial, sans-serif',
+        fontSize: 8,
+        fontWeight: 'bold',
+        fill: '#ffffff',
+        stroke: { color: '#000000', width: 2 }
+      })
     });
     expTxt.anchor.set(0.5, 0.5);
-    expTxt.position.set((barWidth - 104) / 2, 5);
+    expTxt.position.set(302, 5);
     expCont.addChild(expTxt);
     this.bottomBarCont.addChild(expCont);
 
-    // 3. Os 10 Botões Autênticos de Função
+    // 3. Os 10 Botões Oficiais de Atalho
     const shortcuts = [
       { id: 'ninja', file: 'btn_ninja.png', label: 'Ninjas', hotkey: 'C', action: () => this.toggleHero() },
       { id: 'bag', file: 'btn_bag.png', label: 'Mochila', hotkey: 'B', action: () => this.toggleBackpack() },
       { id: 'formation', file: 'btn_formation.png', label: 'Formação', hotkey: 'T', action: () => this.toggleFormation() },
-      { id: 'strengthen', file: 'btn_strengthen.png', label: 'Forja', hotkey: 'E', action: () => alert('🔥 Smithy / Fortalecimento de Equipamento') },
-      { id: 'jade', file: 'btn_jade.png', label: 'Magatama', hotkey: '', action: () => alert('💎 Sistema de Magatamas & Engastes') },
-      { id: 'summon', file: 'btn_summon.png', label: 'Invocação', hotkey: '', action: () => alert('🐸 Invocação / Animais de Contrato (TongLing)') },
-      { id: 'guild', file: 'btn_guild.png', label: 'Guilda', hotkey: 'O', action: () => alert('🛡 Organização Shinobi / Guilda') },
-      { id: 'mail', file: 'btn_mail.png', label: 'Correio', hotkey: 'M', action: () => alert('📬 Caixa de Correio Shinobi') },
-      { id: 'achieve', file: 'btn_achieve.png', label: 'Recompensa', hotkey: '', action: () => alert('🏆 Salão de Conquistas & Metas') },
-      { id: 'practice', file: 'btn_practice.png', label: 'Treino', hotkey: '', action: () => alert('⚡ Campo de Prática & Treinamento Shinobi') }
+      { id: 'strengthen', file: 'btn_strengthen.png', label: 'Forja', hotkey: 'E', action: () => alert('🔥 Fortalecimento de Equipamento') },
+      { id: 'jade', file: 'btn_jade.png', label: 'Magatama', hotkey: '', action: () => alert('💎 Sistema de Magatamas') },
+      { id: 'summon', file: 'btn_summon.png', label: 'Invocação', hotkey: '', action: () => alert('🐸 Invocação / Animais de Contrato') },
+      { id: 'guild', file: 'btn_guild.png', label: 'Guilda', hotkey: 'O', action: () => alert('🛡 Organização Shinobi') },
+      { id: 'mail', file: 'btn_mail.png', label: 'Correio', hotkey: 'M', action: () => alert('📬 Correio Shinobi') },
+      { id: 'achieve', file: 'btn_achieve.png', label: 'Metas', hotkey: '', action: () => alert('🏆 Salão de Conquistas') },
+      { id: 'practice', file: 'btn_practice.png', label: 'Treino', hotkey: '', action: () => alert('⚡ Campo de Treinamento') }
     ];
 
     const slotSpacing = 64;
-    const btnStartX = 38;
+    const btnStartX = 52;
 
     for (let i = 0; i < shortcuts.length; i++) {
       const s = shortcuts[i];
       const btnCont = new Container();
-      btnCont.position.set(btnStartX + i * slotSpacing, 28);
+      btnCont.position.set(btnStartX + i * slotSpacing, 30);
       btnCont.eventMode = 'static';
       btnCont.cursor = 'pointer';
 
@@ -587,7 +609,6 @@ export class TownHUD extends Container {
         btnCont.addChild(fbIcon);
       }
 
-      // Hotkey badge (se tiver)
       if (s.hotkey) {
         const hkBadge = new Graphics()
           .roundRect(8, -24, 16, 14, 3)
@@ -604,12 +625,11 @@ export class TownHUD extends Container {
         btnCont.addChild(hkTxt);
       }
 
-      // Efeito de elevação no hover
       btnCont.on('pointerenter', () => {
-        btnCont.y = 24;
+        btnCont.y = 26;
       });
       btnCont.on('pointerleave', () => {
-        btnCont.y = 28;
+        btnCont.y = 30;
       });
       btnCont.on('pointertap', () => {
         s.action();
@@ -620,60 +640,45 @@ export class TownHUD extends Container {
   }
 
   /* =========================================================================
-   * 6. RIGHT-SIDE: RASTREADOR DE MISSÕES (mc_task & mc_taskInfo)
+   * 6. RIGHT-SIDE: RASTREADOR DE MISSÕES (TWindowQuestGuide / DefineSprite_67)
    * ========================================================================= */
   private async buildQuestTracker(): Promise<void> {
-    this.questTrackerCont.position.set(1250 - 215, 175);
+    this.questTrackerCont.position.set(1250 - 215, 185);
 
     try {
-      const panelTex = await Assets.load('/assets/ui/task_tracker_panel.png');
+      const panelTex = await Assets.load('/assets/ui/quest_tracker_box.png');
       const panelSp = new Sprite(panelTex);
-      panelSp.width = 205;
-      panelSp.height = 150;
       this.questTrackerCont.addChild(panelSp);
     } catch {
       const fb = new Graphics()
-        .roundRect(0, 0, 205, 150, 8)
+        .roundRect(0, 0, 208, 155, 6)
         .fill({ color: 0x11161f, alpha: 0.92 })
         .stroke({ color: 0xd4af37, width: 1.5 });
       this.questTrackerCont.addChild(fb);
     }
 
-    // Título da Missão
     const titleTxt = new Text({
-      text: '📜 Missão Principal',
+      text: '📜 [Principal] Rumo à Academia',
       style: new TextStyle({
-        fontSize: 12,
+        fontFamily: 'SimSun, "Microsoft YaHei", sans-serif',
+        fontSize: 11,
         fontWeight: 'bold',
         fill: '#ffd700',
         stroke: { color: '#000000', width: 2 }
       })
     });
-    titleTxt.position.set(15, 12);
+    titleTxt.position.set(18, 38);
     this.questTrackerCont.addChild(titleTxt);
 
-    // Descrição da Missão
-    const descTxt = new Text({
-      text: '🍃 [Capítulo 1]\nRumo à Academia Ninja',
-      style: new TextStyle({
-        fontSize: 11,
-        fontWeight: 'bold',
-        fill: '#ecf0f1',
-        lineHeight: 16
-      })
-    });
-    descTxt.position.set(15, 34);
-    this.questTrackerCont.addChild(descTxt);
-
-    // Objetivo Clicável com Auto-caminho
     const targetCont = new Container();
-    targetCont.position.set(15, 80);
+    targetCont.position.set(18, 62);
     targetCont.eventMode = 'static';
     targetCont.cursor = 'pointer';
 
     const targetTxt = new Text({
-      text: '👉 Fale com Iruka Umino\n    (Clique para ir)',
+      text: '👉 Fale com Iruka Umino\n    (Clique para auto-caminho)',
       style: new TextStyle({
+        fontFamily: 'SimSun, "Microsoft YaHei", sans-serif',
         fontSize: 11,
         fill: '#2ecc71',
         fontWeight: 'bold',
@@ -693,45 +698,55 @@ export class TownHUD extends Container {
         this.callbacks.onQuestClick('Iruka Umino');
       }
     });
-
     this.questTrackerCont.addChild(targetCont);
+
+    const rewardTxt = new Text({
+      text: '🎁 Recompensa: EXP 1.200 | Ryo 500',
+      style: new TextStyle({
+        fontSize: 9,
+        fontWeight: 'bold',
+        fill: '#8b949e'
+      })
+    });
+    rewardTxt.position.set(18, 108);
+    this.questTrackerCont.addChild(rewardTxt);
   }
 
   /* =========================================================================
-   * 7. BOTTOM-LEFT: CHATBOX SHINOBI
+   * 7. BOTTOM-LEFT: CHATBOX AUTÊNTICO COM BARRA DE MADEIRA FLASH (00000001.swf)
    * ========================================================================= */
-  private buildChatBox(): void {
-    const boxW = 250;
-    const boxH = 170;
-    this.chatBoxCont.position.set(12, 465);
+  private async buildChatBox(): Promise<void> {
+    this.chatBoxCont.position.set(10, 440);
 
-    // Fundo semitransparente escuro
-    const chatBg = new Graphics()
-      .roundRect(0, 0, boxW, boxH, 6)
-      .fill({ color: 0x090d16, alpha: 0.88 })
-      .stroke({ color: 0x22272e, width: 1.5 });
-    this.chatBoxCont.addChild(chatBg);
+    const chatLogBg = new Graphics()
+      .roundRect(0, 0, 303, 140, 4)
+      .fill({ color: 0x090d16, alpha: 0.82 })
+      .stroke({ color: 0x1f242c, width: 1 });
+    this.chatBoxCont.addChild(chatLogBg);
 
-    // Abas de Canais: [Todos] [Mundo] [Guilda] [Sistema]
     const channels = ['Todos', 'Mundo', 'Guilda', 'Sistema'];
     for (let i = 0; i < channels.length; i++) {
       const chName = channels[i];
       const tabCont = new Container();
-      tabCont.position.set(8 + i * 58, 6);
+      tabCont.position.set(6 + i * 62, 4);
       tabCont.eventMode = 'static';
       tabCont.cursor = 'pointer';
 
       const tabBg = new Graphics()
-        .roundRect(0, 0, 52, 18, 3)
-        .fill(chName === 'Mundo' ? 0x21262d : 0x161b22);
+        .roundRect(0, 0, 56, 18, 3)
+        .fill(chName === 'Mundo' ? 0x24292e : 0x12161c);
       tabCont.addChild(tabBg);
 
       const tabTxt = new Text({
         text: chName,
-        style: new TextStyle({ fontSize: 9, fontWeight: 'bold', fill: chName === 'Mundo' ? '#58a6ff' : '#8b949e' })
+        style: new TextStyle({
+          fontSize: 10,
+          fontWeight: 'bold',
+          fill: chName === 'Mundo' ? '#58a6ff' : '#8b949e'
+        })
       });
       tabTxt.anchor.set(0.5, 0.5);
-      tabTxt.position.set(26, 9);
+      tabTxt.position.set(28, 9);
       tabCont.addChild(tabTxt);
 
       tabCont.on('pointertap', () => {
@@ -740,36 +755,72 @@ export class TownHUD extends Container {
       this.chatBoxCont.addChild(tabCont);
     }
 
-    // Feed de Mensagens
     this.chatMessagesCont = new Container();
-    this.chatMessagesCont.position.set(10, 30);
+    this.chatMessagesCont.position.set(10, 26);
     this.chatBoxCont.addChild(this.chatMessagesCont);
 
-    // Mensagens Iniciais Canônicas
+    const inputBarCont = new Container();
+    inputBarCont.position.set(0, 144);
+
+    try {
+      const barTex = await Assets.load('/assets/ui/chat/chat_input_bar.png');
+      const barSprite = new Sprite(barTex);
+      inputBarCont.addChild(barSprite);
+    } catch {
+      const fb = new Graphics()
+        .roundRect(0, 0, 303, 30, 4)
+        .fill(0x1a1512);
+      inputBarCont.addChild(fb);
+    }
+
+    try {
+      const selTex = await Assets.load('/assets/ui/chat/channel_select_btn.png');
+      const selSprite = new Sprite(selTex);
+      selSprite.position.set(4, 3);
+      inputBarCont.addChild(selSprite);
+    } catch {
+      // Fallback
+    }
+
+    try {
+      const emoTex = await Assets.load('/assets/ui/chat/emote_btn.png');
+      const emoSprite = new Sprite(emoTex);
+      emoSprite.position.set(272, 3);
+      emoSprite.eventMode = 'static';
+      emoSprite.cursor = 'pointer';
+      emoSprite.on('pointertap', () => {
+        alert('😄 Menu de Emojis Shinobi');
+      });
+      inputBarCont.addChild(emoSprite);
+    } catch {
+      // Fallback
+    }
+
+    this.chatBoxCont.addChild(inputBarCont);
+
     this.addChatMessage('Sistema', '', '🍃 Bem-vindo a Naruto Online! Pressione [B] para a Mochila.');
-    this.addChatMessage('Sistema', '', '💡 Use o clique do mouse para andar livremente pela aldeia.');
+    this.addChatMessage('Sistema', '', '💡 Clique no mapa ou no NPC da missão para andar livremente.');
     this.addChatMessage('Mundo', 'Naruto', 'Dattebayo! Eu serei o próximo Hokage!');
 
-    // Campo de Digitação HTML sobreposto ao canvas
     this.createDomChatInput();
   }
 
   private createDomChatInput(): void {
     const input = document.createElement('input');
     input.type = 'text';
-    input.placeholder = 'Digite uma mensagem... (Enter)';
+    input.placeholder = 'Digite aqui... (Enter)';
     input.style.position = 'absolute';
-    input.style.left = '22px';
-    input.style.bottom = '18px';
-    input.style.width = '230px';
-    input.style.height = '24px';
-    input.style.padding = '0 8px';
-    input.style.backgroundColor = 'rgba(13, 17, 23, 0.9)';
-    input.style.border = '1px solid #30363d';
-    input.style.borderRadius = '4px';
-    input.style.color = '#f0f6fc';
-    input.style.fontSize = '11px';
+    input.style.left = '62px';
+    input.style.bottom = '16px';
+    input.style.width = '218px';
+    input.style.height = '20px';
+    input.style.padding = '0 6px';
+    input.style.backgroundColor = 'transparent';
+    input.style.border = 'none';
     input.style.outline = 'none';
+    input.style.color = '#ffffff';
+    input.style.fontFamily = 'SimSun, "Microsoft YaHei", sans-serif';
+    input.style.fontSize = '11px';
     input.style.zIndex = '1000';
 
     input.addEventListener('keydown', (e) => {
@@ -803,26 +854,25 @@ export class TownHUD extends Container {
     const line = new Text({
       text: fullMsg,
       style: new TextStyle({
+        fontFamily: 'SimSun, "Microsoft YaHei", sans-serif',
         fontSize: 10,
         fontWeight: 'bold',
         fill: col,
         wordWrap: true,
-        wordWrapWidth: 230,
+        wordWrapWidth: 280,
         stroke: { color: '#000000', width: 2 }
       })
     });
 
-    // Deslocar mensagens antigas para cima
     const msgHeight = 16;
     for (const child of this.chatMessagesCont.children) {
       child.y -= msgHeight;
     }
 
-    line.position.set(0, 100);
+    line.position.set(0, 95);
     this.chatMessagesCont.addChild(line);
 
-    // Manter no máximo 7 mensagens na tela
-    while (this.chatMessagesCont.children.length > 7) {
+    while (this.chatMessagesCont.children.length > 6) {
       const oldest = this.chatMessagesCont.children[0];
       this.chatMessagesCont.removeChild(oldest);
       oldest.destroy();
