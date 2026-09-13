@@ -1,4 +1,4 @@
-import { Container, Graphics, Text, TextStyle, Sprite, Assets } from 'pixi.js';
+import { Container, Text, TextStyle, Sprite, Assets } from 'pixi.js';
 
 export interface DialogData {
   npcId: number;
@@ -9,7 +9,12 @@ export interface DialogData {
 }
 
 export class NpcDialogModal extends Container {
-  private boxBg: Graphics;
+  private bgSprite!: Sprite;
+  private ribbonSprite!: Sprite;
+  private actionBtnSprite!: Sprite;
+  private btnNormalTex: any = null;
+  private btnHoverTex: any = null;
+
   private nameLabel: Text;
   private titleLabel: Text;
   private talkLabel: Text;
@@ -21,65 +26,111 @@ export class NpcDialogModal extends Container {
   constructor() {
     super();
     this.visible = false;
-    this.position.set(225, 420); // Centralizado na parte inferior (largura 800)
+    // Centralizado horizontalmente no canvas 1250x650 (723x267 canônico)
+    this.position.set(Math.floor((1250 - 723) / 2), 650 - 267 - 12);
 
-    // Fundo da caixa de diálogo
-    this.boxBg = new Graphics()
-      .roundRect(0, 0, 800, 180, 10)
-      .fill({ color: 0x090d16, alpha: 0.95 })
-      .stroke({ color: 0xd4af37, width: 2 });
-    this.addChild(this.boxBg);
+    this.actionBtn = new Container();
+    this.actionBtnText = new Text({ text: '' });
+    this.nameLabel = new Text({ text: '' });
+    this.titleLabel = new Text({ text: '' });
+    this.talkLabel = new Text({ text: '' });
 
-    // Nome do NPC
+    this.initCanonicalAssets();
+  }
+
+  private async initCanonicalAssets(): Promise<void> {
+    try {
+      // 1. Pergaminho Original do Diálogo (12000001 / 16.jpg - 723x267)
+      const bgTex = await Assets.load('/assets/ui/dialog/npc_dialog_bg.jpg');
+      this.bgSprite = new Sprite(bgTex);
+      this.addChildAt(this.bgSprite, 0);
+
+      // 2. Fita Vertical Canônica do Nome do NPC (12000001 / 36.png - 43x164)
+      const ribbonTex = await Assets.load('/assets/ui/dialog/npc_name_ribbon.png');
+      this.ribbonSprite = new Sprite(ribbonTex);
+      this.ribbonSprite.position.set(28, 26);
+      this.addChild(this.ribbonSprite);
+
+      // 3. Botão Canônico de Ação (12000001 / 48.png & 45.png - 87x35)
+      this.btnNormalTex = await Assets.load('/assets/ui/dialog/btn_confirm.png');
+      this.btnHoverTex = await Assets.load('/assets/ui/dialog/btn_confirm_hover.png');
+      this.actionBtnSprite = new Sprite(this.btnNormalTex);
+      this.actionBtn.addChildAt(this.actionBtnSprite, 0);
+    } catch (e) {
+      console.warn('[DIALOG] Falha ao carregar assets canônicos de diálogo:', e);
+    }
+
+    // Nome do NPC na fita vertical
     this.nameLabel = new Text({
       text: '',
-      style: new TextStyle({ fontSize: 18, fontWeight: 'bold', fill: '#ffd700' })
+      style: new TextStyle({
+        fontFamily: 'SimSun, "Microsoft YaHei", sans-serif',
+        fontSize: 12,
+        fontWeight: 'bold',
+        fill: '#4a2608',
+        align: 'center',
+        wordWrap: true,
+        wordWrapWidth: 32
+      })
     });
-    this.nameLabel.position.set(30, 20);
+    this.nameLabel.anchor.set(0.5, 0);
+    this.nameLabel.position.set(49, 74);
     this.addChild(this.nameLabel);
 
-    // Título / Papel do NPC
+    // Título / Ocupação do NPC
     this.titleLabel = new Text({
       text: '',
-      style: new TextStyle({ fontSize: 13, fill: '#8b949e', fontStyle: 'italic' })
+      style: new TextStyle({
+        fontFamily: 'SimSun, "Microsoft YaHei", sans-serif',
+        fontSize: 11,
+        fontWeight: 'bold',
+        fill: '#8c531b'
+      })
     });
-    this.titleLabel.position.set(220, 24);
+    this.titleLabel.position.set(92, 30);
     this.addChild(this.titleLabel);
 
-    // Texto de Fala
+    // Texto de Fala (Fonte canônica sobre o pergaminho claro)
     this.talkLabel = new Text({
       text: '',
       style: new TextStyle({
-        fontSize: 15,
-        fill: '#f0f6fc',
+        fontFamily: 'SimSun, "Microsoft YaHei", sans-serif',
+        fontSize: 13.5,
+        fontWeight: 'bold',
+        fill: '#2c1808',
         wordWrap: true,
-        wordWrapWidth: 740,
+        wordWrapWidth: 590,
         lineHeight: 22
       })
     });
-    this.talkLabel.position.set(30, 56);
+    this.talkLabel.position.set(92, 58);
     this.addChild(this.talkLabel);
 
-    // Botão de Ação (ex: Aceitar Missão / Viajar)
-    this.actionBtn = new Container();
-    this.actionBtn.position.set(580, 120);
+    // Configuração do Botão Canônico de Ação (posicionado no canto inferior direito)
+    this.actionBtn.position.set(585, 204);
     this.actionBtn.eventMode = 'static';
     this.actionBtn.cursor = 'pointer';
 
-    const btnBg = new Graphics()
-      .roundRect(0, 0, 190, 36, 6)
-      .fill(0x238636)
-      .stroke({ color: 0x3fb950, width: 1.5 });
-    this.actionBtn.addChild(btnBg);
-
     this.actionBtnText = new Text({
-      text: 'CONFIRMAR',
-      style: new TextStyle({ fontSize: 12, fontWeight: 'bold', fill: '#fff' })
+      text: 'Confirmar',
+      style: new TextStyle({
+        fontFamily: 'SimSun, "Microsoft YaHei", sans-serif',
+        fontSize: 11,
+        fontWeight: 'bold',
+        fill: '#ffffff',
+        stroke: { color: '#4a1500', width: 2 }
+      })
     });
     this.actionBtnText.anchor.set(0.5, 0.5);
-    this.actionBtnText.position.set(95, 18);
+    this.actionBtnText.position.set(43, 17);
     this.actionBtn.addChild(this.actionBtnText);
 
+    this.actionBtn.on('pointerenter', () => {
+      if (this.btnHoverTex && this.actionBtnSprite) this.actionBtnSprite.texture = this.btnHoverTex;
+    });
+    this.actionBtn.on('pointerleave', () => {
+      if (this.btnNormalTex && this.actionBtnSprite) this.actionBtnSprite.texture = this.btnNormalTex;
+    });
     this.actionBtn.on('pointertap', () => {
       if (this.currentData && this.onActionClick) {
         this.onActionClick(this.currentData.action, this.currentData.npcId);
@@ -88,12 +139,16 @@ export class NpcDialogModal extends Container {
     });
     this.addChild(this.actionBtn);
 
-    // Botão Fechar (X)
+    // Botão Fechar Canônico (✕) no canto superior direito do pergaminho
     const closeBtn = new Text({
       text: '✕',
-      style: new TextStyle({ fontSize: 16, fill: '#8b949e', fontWeight: 'bold' })
+      style: new TextStyle({
+        fontSize: 14,
+        fill: '#6e4720',
+        fontWeight: 'bold'
+      })
     });
-    closeBtn.position.set(765, 15);
+    closeBtn.position.set(696, 12);
     closeBtn.eventMode = 'static';
     closeBtn.cursor = 'pointer';
     closeBtn.on('pointertap', () => this.hide());
@@ -107,17 +162,17 @@ export class NpcDialogModal extends Container {
     this.talkLabel.text = `"${data.talk}"`;
 
     if (data.action === 'quest_accept') {
-      this.actionBtnText.text = 'ACEITAR MISSÃO';
+      this.actionBtnText.text = 'Aceitar';
     } else if (data.action === 'quest_finish') {
-      this.actionBtnText.text = 'ENTREGAR MISSÃO';
+      this.actionBtnText.text = 'Entregar';
     } else if (data.action === 'tavern') {
-      this.actionBtnText.text = 'ENTRAR NA TAVERNA';
+      this.actionBtnText.text = 'Taverna';
     } else if (data.action === 'gate_to_konoha') {
-      this.actionBtnText.text = 'ENTRAR EM KONOHA';
+      this.actionBtnText.text = 'Entrar';
     } else if (data.action === 'gate_to_suburb') {
-      this.actionBtnText.text = 'VOLTAR AOS SUBÚRBIOS';
+      this.actionBtnText.text = 'Voltar';
     } else {
-      this.actionBtnText.text = 'CONTINUAR';
+      this.actionBtnText.text = 'Continuar';
     }
 
     this.visible = true;

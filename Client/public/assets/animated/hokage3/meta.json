@@ -4,17 +4,17 @@
     "idle": {
       "frameCount": 11,
       "frames": [
-        "/assets/animated/hokage3/idle_0.png",
-        "/assets/animated/hokage3/idle_1.png",
-        "/assets/animated/hokage3/idle_2.png",
-        "/assets/animated/hokage3/idle_3.png",
-        "/assets/animated/hokage3/idle_4.png",
-        "/assets/animated/hokage3/idle_5.png",
-        "/assets/animated/hokage3/idle_6.png",
-        "/assets/animated/hokage3/idle_7.png",
-        "/assets/animated/hokage3/idle_8.png",
-        "/assets/animated/hokage3/idle_9.png",
-        "/assets/animated/hokage3/idle_10.png"
+        "/assets/animated/npcs/hokage3/idle_0.png",
+        "/assets/animated/npcs/hokage3/idle_1.png",
+        "/assets/animated/npcs/hokage3/idle_2.png",
+        "/assets/animated/npcs/hokage3/idle_3.png",
+        "/assets/animated/npcs/hokage3/idle_4.png",
+        "/assets/animated/npcs/hokage3/idle_5.png",
+        "/assets/animated/npcs/hokage3/idle_6.png",
+        "/assets/animated/npcs/hokage3/idle_7.png",
+        "/assets/animated/npcs/hokage3/idle_8.png",
+        "/assets/animated/npcs/hokage3/idle_9.png",
+        "/assets/animated/npcs/hokage3/idle_10.png"
       ]
     }
   }

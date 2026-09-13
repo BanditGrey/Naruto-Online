@@ -4,11 +4,11 @@
     "idle": {
       "frameCount": 5,
       "frames": [
-        "/assets/animated/sasuke/idle_0.png",
-        "/assets/animated/sasuke/idle_1.png",
-        "/assets/animated/sasuke/idle_2.png",
-        "/assets/animated/sasuke/idle_3.png",
-        "/assets/animated/sasuke/idle_4.png"
+        "/assets/animated/npcs/sasuke/idle_0.png",
+        "/assets/animated/npcs/sasuke/idle_1.png",
+        "/assets/animated/npcs/sasuke/idle_2.png",
+        "/assets/animated/npcs/sasuke/idle_3.png",
+        "/assets/animated/npcs/sasuke/idle_4.png"
       ]
     }
   }

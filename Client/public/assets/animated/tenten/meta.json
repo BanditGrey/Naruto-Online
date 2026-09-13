@@ -1,0 +1,17 @@
+{
+  "id": 11110003,
+  "name": "tenten",
+  "animations": {
+    "idle": {
+      "frameCount": 6,
+      "frames": [
+        "/assets/animated/npcs/tenten/idle_0.png",
+        "/assets/animated/npcs/tenten/idle_1.png",
+        "/assets/animated/npcs/tenten/idle_2.png",
+        "/assets/animated/npcs/tenten/idle_3.png",
+        "/assets/animated/npcs/tenten/idle_4.png",
+        "/assets/animated/npcs/tenten/idle_5.png"
+      ]
+    }
+  }
+}

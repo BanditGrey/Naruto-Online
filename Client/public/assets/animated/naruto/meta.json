@@ -4,16 +4,16 @@
     "idle": {
       "frameCount": 10,
       "frames": [
-        "/assets/animated/naruto/idle_0.png",
-        "/assets/animated/naruto/idle_1.png",
-        "/assets/animated/naruto/idle_2.png",
-        "/assets/animated/naruto/idle_3.png",
-        "/assets/animated/naruto/idle_4.png",
-        "/assets/animated/naruto/idle_5.png",
-        "/assets/animated/naruto/idle_6.png",
-        "/assets/animated/naruto/idle_7.png",
-        "/assets/animated/naruto/idle_8.png",
-        "/assets/animated/naruto/idle_9.png"
+        "/assets/animated/npcs/naruto/idle_0.png",
+        "/assets/animated/npcs/naruto/idle_1.png",
+        "/assets/animated/npcs/naruto/idle_2.png",
+        "/assets/animated/npcs/naruto/idle_3.png",
+        "/assets/animated/npcs/naruto/idle_4.png",
+        "/assets/animated/npcs/naruto/idle_5.png",
+        "/assets/animated/npcs/naruto/idle_6.png",
+        "/assets/animated/npcs/naruto/idle_7.png",
+        "/assets/animated/npcs/naruto/idle_8.png",
+        "/assets/animated/npcs/naruto/idle_9.png"
       ]
     }
   }

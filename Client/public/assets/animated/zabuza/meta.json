@@ -1,0 +1,17 @@
+{
+  "id": 11200002,
+  "name": "zabuza",
+  "animations": {
+    "idle": {
+      "frameCount": 6,
+      "frames": [
+        "/assets/animated/npcs/zabuza/idle_0.png",
+        "/assets/animated/npcs/zabuza/idle_1.png",
+        "/assets/animated/npcs/zabuza/idle_2.png",
+        "/assets/animated/npcs/zabuza/idle_3.png",
+        "/assets/animated/npcs/zabuza/idle_4.png",
+        "/assets/animated/npcs/zabuza/idle_5.png"
+      ]
+    }
+  }
+}

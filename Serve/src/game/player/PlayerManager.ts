@@ -26,6 +26,15 @@ export class PlayerManager {
     return this.playersByCharId.get(charId);
   }
 
+  public getPlayerByName(name: string): Player | undefined {
+    for (const player of this.playersByCharId.values()) {
+      if (player.data.name.toLowerCase() === name.toLowerCase()) {
+        return player;
+      }
+    }
+    return undefined;
+  }
+
   /**
    * Criação canônica: 3 classes (Taijutsu, Ninjutsu, Genjutsu) x 2 gêneros (Male: 1, Female: 0)
    */

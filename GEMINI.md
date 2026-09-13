@@ -1,0 +1,13 @@
+# Regras do Projeto — Naruto Online
+
+## Fidelidade Canônica Estrita e Proibição de Geração Sintética
+1. **PROIBIDO INVENTAR OU GERAR IMAGENS / SPRITES VIA IA OU PLACEHOLDERS.**
+2. Todos os assets gráficos (sprites de personagens, animações de idle/run, retratos, ícones, fundos de mapa, banners, efeitos e interface) devem vir **EXCLUSIVAMENTE** dos arquivos originais do jogo obtidos por engenharia reversa e descompilação (`descompilacao/01_VN_OFFICIAL_SOURCE`, `descompilacao/02_LEGACY_ARCHIVE`, `.TexClient`, `.swf`, `.bin`).
+3. Manter paridade visual 1:1 absoluta com o cliente original de Naruto Online (Namco Bandai / Tencent / Joyfun).
+4. Em hipótese alguma usar sprites de NPCs como substitutos para personagens jogáveis (como ocorreu anteriormente ao colocar Iruka, Kiba ou Orochimaru nos heróis).
+5. **Localização e Idioma:** Todos os textos de interface, labels de botões, nomes de sistemas, avisos de tela, abas e diálogos devem dar preferência estrita ao **Português (ou Inglês)**, nunca exibindo textos brutos em vietnamita ou chinês originados das fontes descompiladas.
+6. **Proibição de Janelas / Modais Sintéticos (Feitos por IA):** NENHUMA tela, janela, modal, popup ou diálogo deve ser desenhado do zero usando retângulos ou formas procedurais (`new Graphics()`). Todas as janelas devem utilizar **EXCLUSIVAMENTE** as molduras, texturas e botões originais descompilados dos SWFs (`12000001`, `00000000`, `15000000`, etc.).
+7. **Autovalidação Visual Obrigatória:** O assistente é estritamente proibido de solicitar validação visual de layout para o usuário ou declarar uma tela como pronta sem antes executar o validador autônomo de captura de tela (`npm run audit` em `Client/`), inspecionar as imagens em `tools/inspection/` com `view_file` e verificar visualmente a paridade 1:1 contra a referência canônica.
+8. **Diagnóstico do Estado Atual:** Até o momento, a **ÚNICA** tela 100% original e canônica é a **Criação de Personagem** (com os 6 protagonistas e animações autênticas extraídas de TexClient/SWFs). **TODO O RESTANTE ESTÁ PENDENTE** (Formação/Equipe, Batalha, HUD da Vila, Mochila, Ninjas, Talentos, Diálogos) e deve ser refeito em paridade visual 1:1 com o jogo oficial.
+9. **Referências Canônicas Obrigatórias:** As imagens canônicas do jogo oficial estão armazenadas em `Client/tools/official_references/` (com destaque para `CANONICAL_FORMATION_MY_TEAM.jpg` e `CANONICAL_BATTLE_OFFICIAL.jpg`). O cliente oficial em vietnamita (`D:\Naruto-568Play\naruto.exe`) é a fonte primária de verdade.
+10. **Documentação Mestre:** Antes de qualquer alteração, consulte obrigatoriamente `DOCUMENTACAO_PROJETO_E_STATUS.md` na raiz.

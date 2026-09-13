@@ -1,0 +1,17 @@
+{
+  "id": 11210009,
+  "name": "itachi",
+  "animations": {
+    "idle": {
+      "frameCount": 6,
+      "frames": [
+        "/assets/animated/npcs/itachi/idle_0.png",
+        "/assets/animated/npcs/itachi/idle_1.png",
+        "/assets/animated/npcs/itachi/idle_2.png",
+        "/assets/animated/npcs/itachi/idle_3.png",
+        "/assets/animated/npcs/itachi/idle_4.png",
+        "/assets/animated/npcs/itachi/idle_5.png"
+      ]
+    }
+  }
+}

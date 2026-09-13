@@ -1,15 +1,11 @@
 {
-  "id": 22100008,
+  "id": 11110010,
+  "name": "sakura",
   "animations": {
     "idle": {
-      "frameCount": 6,
+      "frameCount": 1,
       "frames": [
-        "/assets/animated/sakura/idle_0.png",
-        "/assets/animated/sakura/idle_1.png",
-        "/assets/animated/sakura/idle_2.png",
-        "/assets/animated/sakura/idle_3.png",
-        "/assets/animated/sakura/idle_4.png",
-        "/assets/animated/sakura/idle_5.png"
+        "/assets/animated/npcs/sakura/idle_0.png"
       ]
     }
   }

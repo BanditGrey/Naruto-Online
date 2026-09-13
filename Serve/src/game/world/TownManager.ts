@@ -6,6 +6,8 @@ import { NpcManager } from './NpcManager.js';
 export class TownManager {
   private static instance: TownManager;
 
+  // Sessões globais ativas conectadas ao servidor
+  private allSessions: Set<Session> = new Set();
   // Mapa de cidade -> Conjunto de sessões conectadas
   private townSessions: Map<number, Set<Session>> = new Map();
 
@@ -16,6 +18,20 @@ export class TownManager {
       TownManager.instance = new TownManager();
     }
     return TownManager.instance;
+  }
+
+  public registerSession(session: Session): void {
+    this.allSessions.add(session);
+  }
+
+  public unregisterSession(session: Session): void {
+    this.allSessions.delete(session);
+  }
+
+  public broadcastGlobal(writer: PacketWriter): void {
+    for (const s of this.allSessions) {
+      s.send(writer);
+    }
   }
 
   public enterTown(session: Session, cityId: number): void {
@@ -145,5 +161,24 @@ export class TownManager {
         s.send(removePkt);
       }
     }
+  }
+
+  public broadcastPacket(writer: PacketWriter): void {
+    for (const sessions of this.townSessions.values()) {
+      for (const s of sessions) {
+        s.send(writer);
+      }
+    }
+  }
+
+  public getSessionByPlayerId(charId: number): Session | undefined {
+    for (const sessions of this.townSessions.values()) {
+      for (const s of sessions) {
+        if (s.player && s.player.data.charId === charId) {
+          return s;
+        }
+      }
+    }
+    return undefined;
   }
 }

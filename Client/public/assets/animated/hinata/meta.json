@@ -1,14 +1,11 @@
 {
-  "id": 22100014,
+  "id": 11210014,
+  "name": "hinata",
   "animations": {
     "idle": {
-      "frameCount": 5,
+      "frameCount": 1,
       "frames": [
-        "/assets/animated/hinata/idle_0.png",
-        "/assets/animated/hinata/idle_1.png",
-        "/assets/animated/hinata/idle_2.png",
-        "/assets/animated/hinata/idle_3.png",
-        "/assets/animated/hinata/idle_4.png"
+        "/assets/animated/npcs/hinata/idle_0.png"
       ]
     }
   }

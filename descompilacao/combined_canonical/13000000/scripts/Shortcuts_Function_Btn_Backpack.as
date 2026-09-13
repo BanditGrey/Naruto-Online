@@ -1,0 +1,15 @@
+package
+{
+   import flash.display.MovieClip;
+   
+   [Embed(source="/_assets/assets.swf", symbol="symbol350")]
+   public dynamic class Shortcuts_Function_Btn_Backpack extends MovieClip
+   {
+      
+      public function Shortcuts_Function_Btn_Backpack()
+      {
+         super();
+      }
+   }
+}
+

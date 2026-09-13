@@ -20,8 +20,8 @@ export const CharacterConstants = {
     { id: 11100002, school: 'Taijutsu', gender: 'Female', genderId: 0, profession: 4, name: 'Taijutsu Female' },
     { id: 11100003, school: 'Ninjutsu', gender: 'Male', genderId: 1, profession: 1, name: 'Ninjutsu Male' },
     { id: 11100004, school: 'Ninjutsu', gender: 'Female', genderId: 0, profession: 1, name: 'Ninjutsu Female' },
-    { id: 11100005, school: 'Genjutsu', gender: 'Male', genderId: 1, profession: 2, name: 'Genjutsu Male' },
-    { id: 11100006, school: 'Genjutsu', gender: 'Female', genderId: 0, profession: 2, name: 'Genjutsu Female' }
+    { id: 11100005, school: 'Genjutsu', gender: 'Male', genderId: 1, profession: 3, name: 'Genjutsu Male' },
+    { id: 11100006, school: 'Genjutsu', gender: 'Female', genderId: 0, profession: 3, name: 'Genjutsu Female' }
   ]
 } as const;
 

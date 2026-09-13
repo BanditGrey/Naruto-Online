@@ -1,0 +1,17 @@
+{
+  "id": 11210008,
+  "name": "jiraiya",
+  "animations": {
+    "idle": {
+      "frameCount": 6,
+      "frames": [
+        "/assets/animated/npcs/jiraiya/idle_0.png",
+        "/assets/animated/npcs/jiraiya/idle_1.png",
+        "/assets/animated/npcs/jiraiya/idle_2.png",
+        "/assets/animated/npcs/jiraiya/idle_3.png",
+        "/assets/animated/npcs/jiraiya/idle_4.png",
+        "/assets/animated/npcs/jiraiya/idle_5.png"
+      ]
+    }
+  }
+}

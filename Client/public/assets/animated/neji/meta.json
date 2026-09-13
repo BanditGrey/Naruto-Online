@@ -1,16 +1,16 @@
 {
-  "id": 22100010,
+  "id": 11200001,
+  "name": "neji",
   "animations": {
     "idle": {
-      "frameCount": 7,
+      "frameCount": 6,
       "frames": [
-        "/assets/animated/neji/idle_0.png",
-        "/assets/animated/neji/idle_1.png",
-        "/assets/animated/neji/idle_2.png",
-        "/assets/animated/neji/idle_3.png",
-        "/assets/animated/neji/idle_4.png",
-        "/assets/animated/neji/idle_5.png",
-        "/assets/animated/neji/idle_6.png"
+        "/assets/animated/npcs/neji/idle_0.png",
+        "/assets/animated/npcs/neji/idle_1.png",
+        "/assets/animated/npcs/neji/idle_2.png",
+        "/assets/animated/npcs/neji/idle_3.png",
+        "/assets/animated/npcs/neji/idle_4.png",
+        "/assets/animated/npcs/neji/idle_5.png"
       ]
     }
   }

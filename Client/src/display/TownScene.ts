@@ -5,6 +5,7 @@ import { PacketReader } from '../network/PacketReader.js';
 import { Opcodes } from '../protocol/opcodes.js';
 import { NpcDialogModal } from './NpcDialogModal.js';
 import { TownHUD } from './TownHUD.js';
+import { ClientPackets } from '../network/Packets.js';
 
 export interface PlayerProfile {
   charId: number;
@@ -155,6 +156,7 @@ export class TownScene extends Container {
 
   // Loop Ticker
   private animTick: number = 0;
+  private pendingNpcTalkId: number | null = null;
 
   constructor(profile: PlayerProfile) {
     super();
@@ -331,6 +333,23 @@ export class TownScene extends Container {
         console.log('[CLIENT] Atravessando o Portão para os Subúrbios Novatos (#23100001)...');
         const pkt = new PacketWriter(Opcodes.CS_LOBBY_Enter_Town).writeUInt32BE(23100001);
         NetworkClient.getInstance().send(pkt);
+      } else if (action === 'quest_accept') {
+        console.log('[CLIENT] Aceitando Missão Inicial #16100001 com 3º Hokage...');
+        NetworkClient.getInstance().send(ClientPackets.buildQuestActionReq(1, 16100001));
+        if (this.townHud) {
+          this.townHud.updateQuestTracker('[Principal] O Livro Roubado (1/1)', 'Entregar para:\nKonohamaru (Subúrbios)', 'Konohamaru');
+        }
+      } else if (action === 'quest_finish') {
+        console.log('[CLIENT] Concluindo Missão Inicial #16100001 com Konohamaru...');
+        NetworkClient.getInstance().send(ClientPackets.buildQuestActionReq(2, 16100001));
+        if (this.townHud) {
+          this.townHud.updateQuestTracker('Missão Concluída!', 'Fale com o 3º Hokage', 'Hokage');
+        }
+      } else if (action === 'tavern') {
+        console.log('[CLIENT] Abrindo Taverna Shinobi...');
+        if (this.townHud) {
+          this.townHud.toggleTavern();
+        }
       }
     };
   }
@@ -703,7 +722,12 @@ export class TownScene extends Container {
     const textures: Texture[] = [];
     for (let i = 0; i < count; i++) {
       try {
-        const tex = await Assets.load(`/assets/animated/${folder}/${prefix}_${i}.png`);
+        let tex: Texture;
+        try {
+          tex = await Assets.load(`/assets/animated/npcs/${folder}/${prefix}_${i}.png`);
+        } catch {
+          tex = await Assets.load(`/assets/animated/${folder}/${prefix}_${i}.png`);
+        }
         textures.push(tex);
       } catch (e) {
         console.warn(`Frame não encontrado: ${folder}/${prefix}_${i}.png`);
@@ -912,6 +936,12 @@ export class TownScene extends Container {
         }
         this.localPlayer.idleAnim.visible = true;
         this.localPlayer.idleAnim.play();
+
+        if (this.pendingNpcTalkId) {
+          const talkPkt = new PacketWriter(Opcodes.CS_LOBBY_Town_TalkNpc).writeUInt32BE(this.pendingNpcTalkId);
+          NetworkClient.getInstance().send(talkPkt);
+          this.pendingNpcTalkId = null;
+        }
       } else {
         this.localPlayer.container.x += (dx / dist) * this.localPlayer.speed;
         this.localPlayer.container.y += (dy / dist) * this.localPlayer.speed;
@@ -1205,23 +1235,17 @@ export class TownScene extends Container {
     net.on(Opcodes.SC_LOBBY_Town_NpcDialog, (reader: PacketReader) => {
       const npcId = reader.readUInt32BE();
       const npcName = reader.readFlushUTF();
+      const npcTitle = reader.readFlushUTF();
       const dialogText = reader.readFlushUTF();
-      const optionsCount = reader.readInt16BE();
-      const options: Array<{ label: string; action: string }> = [];
+      const action = reader.readFlushUTF();
 
-      for (let i = 0; i < optionsCount; i++) {
-        const label = reader.readFlushUTF();
-        const action = reader.readFlushUTF();
-        options.push({ label, action });
-      }
-
-      console.log(`[CLIENT] Abrindo diálogo com ${npcName}: "${dialogText}" (${options.length} opções)`);
+      console.log(`[CLIENT] Abrindo diálogo com ${npcName} [${npcTitle}]: "${dialogText}" (Ação: ${action})`);
       this.npcDialogModal.showDialog({
         npcId,
         name: npcName,
-        npcTitle: '',
+        npcTitle,
         talk: dialogText,
-        action: options.length > 0 ? options[0].action : ''
+        action
       });
     });
 
@@ -1328,6 +1352,192 @@ export class TownScene extends Container {
         this.otherPlayers.delete(charId);
       }
     });
+
+    // SC_Chat_ChatInfoRet (0x01180400)
+    net.on(Opcodes.SC_Chat_ChatInfoRet, (reader: PacketReader) => {
+      const res = ClientPackets.readChatInfoRet(reader);
+      const channelNames: Record<number, string> = {
+        0: 'Sussurro',
+        1: 'Mundo',
+        2: 'Vila',
+        3: 'Guilda'
+      };
+      const chName = channelNames[res.channel] || 'Mundo';
+      if (this.townHud) {
+        this.townHud.addChatMessage(chName, res.senderName, res.content);
+      }
+    });
+
+    // SC_Chat_WhisperEchoplex (0x01180402)
+    net.on(Opcodes.SC_Chat_WhisperEchoplex, (reader: PacketReader) => {
+      reader.readUInt32BE(); // guidHigh
+      reader.readUInt32BE(); // guidLow
+      const targetName = reader.readFlushUTF();
+      const content = reader.readFlushUTF();
+      if (this.townHud) {
+        this.townHud.addChatMessage('Sussurro', `Para ${targetName}`, content);
+      }
+    });
+
+    // SC_Chat_ChatNotReach (0x01180401)
+    net.on(Opcodes.SC_Chat_ChatNotReach, (reader: PacketReader) => {
+      reader.readUInt32BE(); // errorCode
+      const targetName = reader.readFlushUTF();
+      if (this.townHud) {
+        this.townHud.addChatMessage('Sistema', '', `Jogador "${targetName}" não encontrado ou offline.`);
+      }
+    });
+
+    // SC_Account_CharBaseInfoUpdate (0x01180105)
+    net.on(Opcodes.SC_Account_CharBaseInfoUpdate, (reader: PacketReader) => {
+      const mask = reader.readUInt32BE();
+      if (mask & (1 << 0)) this.playerProfile.curHp = reader.readFloatBE();
+      if (mask & (1 << 1)) this.playerProfile.maxHp = reader.readFloatBE();
+      if (mask & (1 << 2)) this.playerProfile.silver = reader.readUInt32BE();
+      if (mask & (1 << 3)) this.playerProfile.gold = reader.readUInt32BE();
+      if (mask & (1 << 4)) this.playerProfile.level = reader.readUInt16BE();
+      if (mask & (1 << 5)) reader.readUInt32BE(); // exp
+
+      if (this.townHud) {
+        this.townHud.updateCurrencies(this.playerProfile.silver, this.playerProfile.gold);
+        this.townHud.updateHp(this.playerProfile.curHp, this.playerProfile.maxHp);
+      }
+    });
+
+    // SC_Backpack_LoadBagResult (0x01180F00)
+    net.on(Opcodes.SC_Backpack_LoadBagResult, (reader: PacketReader) => {
+      const res = ClientPackets.readLoadBagResult(reader);
+      if (this.townHud) {
+        this.townHud.updateBackpackItems(res.items);
+      }
+    });
+
+    // SC_Backpack_UseAppliance (0x01180F04)
+    net.on(Opcodes.SC_Backpack_UseAppliance, (reader: PacketReader) => {
+      const res = ClientPackets.readUseApplianceRet(reader);
+      if (res.errorCode === 0 && this.townHud) {
+        this.townHud.addChatMessage('Sistema', '', '🍃 Item consumido com sucesso!');
+      }
+    });
+
+    // SC_Backpack_MergeBagItem_Ret (0x01180F08)
+    net.on(Opcodes.SC_Backpack_MergeBagItem_Ret, (reader: PacketReader) => {
+      const res = ClientPackets.readMergeBagItemRet(reader);
+      if (res.errorCode === 0 && this.townHud) {
+        this.townHud.addChatMessage('Sistema', '', '🎒 Mochila organizada com sucesso!');
+      }
+    });
+
+    // SC_Task_QuestActionRet (0x01181201)
+    net.on(Opcodes.SC_Task_QuestActionRet, (reader: PacketReader) => {
+      const res = ClientPackets.readQuestActionRet(reader);
+      if (this.townHud) {
+        this.townHud.addChatMessage('Sistema', '', `Missão #${res.taskId} atualizada (Status: ${res.status}).`);
+      }
+    });
+
+    // SC_TacticalDeploymentChangePositonRet (0x01180900)
+    net.on(Opcodes.SC_TacticalDeploymentChangePositonRet, (reader: PacketReader) => {
+      const res = ClientPackets.readChangePositionRet(reader);
+      if (res.resultCode === 0 && this.townHud) {
+        this.townHud.addChatMessage('Sistema', '', `🥋 Formação atualizada! Ninja posicionado no Tatami ${res.newPos > 0 ? res.newPos : 'Banco'}.`);
+      }
+    });
+
+    // SC_Mail_InitDataRep (0x01181600)
+    net.on(Opcodes.SC_Mail_InitDataRep, (reader: PacketReader) => {
+      const res = ClientPackets.readMailInitDataRep(reader);
+      if (this.townHud) {
+        this.townHud.updateMails(res.mails);
+      }
+    });
+
+    // SC_Mail_GetAttachmentRep (0x01181603)
+    net.on(Opcodes.SC_Mail_GetAttachmentRep, (reader: PacketReader) => {
+      const res = ClientPackets.readMailGetAttachmentRep(reader);
+      if (res.errorCode === 0 && this.townHud) {
+        this.townHud.addChatMessage('Sistema', '', `📬 Anexos resgatados! +${res.silver.toLocaleString()} Ryo, +${res.gold.toLocaleString()} Ouro.`);
+        NetworkClient.getInstance().send(ClientPackets.buildMailInitDataReq());
+      }
+    });
+
+    // SC_TavernMoraRet (0x01180C00)
+    net.on(Opcodes.SC_TavernMoraRet, (reader: PacketReader) => {
+      const res = ClientPackets.readTavernMoraRet(reader);
+      if (this.townHud) {
+        this.townHud.updateTavernResult(res.isWin, res.serverHand, res.awardSoulType, res.awardSoulValue);
+        const resultMsg = res.isWin ? `Vitória no Jokenpô! +${res.awardSoulValue} Almas!` : 'Derrota no Jokenpô contra Tsunade!';
+        this.townHud.addChatMessage('Sistema', '', `🍶 [Taverna] ${resultMsg}`);
+      }
+    });
+
+    // SC_TavernRecruitRet (0x01180C01)
+    net.on(Opcodes.SC_TavernRecruitRet, (reader: PacketReader) => {
+      const res = ClientPackets.readTavernRecruitRet(reader);
+      if (res.errorCode === 0 && this.townHud) {
+        this.townHud.addChatMessage('Sistema', '', `🥷 Shinobi #${res.recruitedHeroId} recrutado para a equipe!`);
+      }
+    });
+
+    // SC_Guild_InitRet (0x01181300)
+    net.on(Opcodes.SC_Guild_InitRet, (reader: PacketReader) => {
+      const res = ClientPackets.readGuildInitRet(reader);
+      if (this.townHud) {
+        this.townHud.addChatMessage('Guilda', 'Sistema', `🏰 Conectado à Guilda [${res.guildName}] Nv. ${res.level}! Líder: ${res.leaderName}`);
+      }
+    });
+
+    // SC_Guild_DonateRet (0x01181301)
+    net.on(Opcodes.SC_Guild_DonateRet, (reader: PacketReader) => {
+      const res = ClientPackets.readGuildDonateRet(reader);
+      if (res.errorCode === 0 && this.townHud) {
+        this.playerProfile.silver = res.newSilver;
+        this.townHud.updateGuildDonateResult(res.newContribution, res.newSilver);
+      }
+    });
+
+    // SC_Gift_RedeemCodeRet (0x01181400)
+    net.on(Opcodes.SC_Gift_RedeemCodeRet, (reader: PacketReader) => {
+      const res = ClientPackets.readRedeemCodeRet(reader);
+      if (this.townHud) {
+        this.townHud.updateCdkResult(res.code, res.silverAward, res.couponsAward, res.errorCode);
+      }
+    });
+
+    // SC_Account_CharUpgradeNtf (0x01180103)
+    net.on(Opcodes.SC_Account_CharUpgradeNtf, (reader: PacketReader) => {
+      const res = ClientPackets.readCharUpgradeNtf(reader);
+      if (this.townHud) {
+        this.townHud.updateCombatPower(res.combatPower);
+      }
+    });
+
+    // SC_Account_UserFightVauleRet (0x01180108)
+    net.on(Opcodes.SC_Account_UserFightVauleRet, (reader: PacketReader) => {
+      const power = reader.readUInt32BE();
+      if (this.townHud) {
+        this.townHud.updateCombatPower(power);
+      }
+    });
+
+    // SC_Battle_StartReportDataReq (0x01458000)
+    net.on(Opcodes.SC_Battle_StartReportDataReq, (reader: PacketReader) => {
+      const res = ClientPackets.readBattleStartReport(reader);
+      console.log(`[CLIENT] Relatório de combate em turnos recebido: ${res.battleId}`);
+      if (this.townHud) {
+        this.townHud.addChatMessage('Sistema', '', '⚔️ Combate Tático iniciado contra forças rebeldes!');
+      }
+    });
+
+    // SC_SingleBattleResult (0x01458001)
+    net.on(Opcodes.SC_SingleBattleResult, (reader: PacketReader) => {
+      const res = ClientPackets.readSingleBattleResult(reader);
+      this.playerProfile.silver += res.rewardSilver;
+      if (this.townHud) {
+        this.townHud.updateCurrencies(this.playerProfile.silver, this.playerProfile.gold);
+        this.townHud.showBattleVictoryModal(res.rewardExp, res.rewardSilver);
+      }
+    });
   }
 
   private createHUD(): void {
@@ -1335,9 +1545,23 @@ export class TownScene extends Container {
       onQuestClick: (npcName: string) => {
         console.log(`[CLIENT] Auto-caminho para missão: ${npcName}`);
         for (const npc of this.npcs.values()) {
-          if (npc.entry.name.toLowerCase().includes(npcName.toLowerCase())) {
-            this.moveLocalPlayerTo(npc.container.x - 50, npc.container.y);
-            this.spawnClickMarker(npc.container.x - 50, npc.container.y);
+          const n = npc.entry.name.toLowerCase();
+          const target = npcName.toLowerCase();
+          if (n.includes(target) ||
+              (target.includes('hokage') && npc.entry.id === 22100003) ||
+              (target.includes('konohamaru') && npc.entry.id === 22100014)) {
+            const targetX = npc.container.x - 50;
+            const targetY = npc.container.y;
+            this.moveLocalPlayerTo(targetX, targetY);
+            this.spawnClickMarker(targetX, targetY);
+
+            const dist = this.localPlayer ? Math.hypot(this.localPlayer.container.x - targetX, this.localPlayer.container.y - targetY) : 999;
+            if (dist < 75) {
+              const talkPkt = new PacketWriter(Opcodes.CS_LOBBY_Town_TalkNpc).writeUInt32BE(npc.entry.id);
+              NetworkClient.getInstance().send(talkPkt);
+            } else {
+              this.pendingNpcTalkId = npc.entry.id;
+            }
             break;
           }
         }
@@ -1352,11 +1576,58 @@ export class TownScene extends Container {
         NetworkClient.getInstance().send(battlePkt);
       },
       onChatSend: (channel: string, message: string) => {
-        console.log(`[CLIENT] Mensagem no chat [${channel}]: ${message}`);
+        let channelId = 1; // Mundo
+        if (channel === 'Guilda') channelId = 3;
+        else if (channel === 'Vila') channelId = 2;
+        else if (channel === 'Sussurro') channelId = 0;
+
+        const chatPkt = ClientPackets.buildChatInfo(channelId, 0, 0, '', message);
+        NetworkClient.getInstance().send(chatPkt);
+      },
+      onBackpackOpen: () => {
+        NetworkClient.getInstance().send(ClientPackets.buildLoadBag());
+      },
+      onBackpackMerge: () => {
+        NetworkClient.getInstance().send(ClientPackets.buildMergeBagItemReq());
+      },
+      onBackpackUseItem: (guidHigh: number, guidLow: number) => {
+        NetworkClient.getInstance().send(ClientPackets.buildUseAppliance(guidHigh, guidLow, 1));
+      },
+      onFormationChange: (heroId: number, newPos: number) => {
+        console.log(`[CLIENT] Alterando formação: Herói ${heroId} -> Tatami ${newPos}`);
+        NetworkClient.getInstance().send(ClientPackets.buildChangePositionReq(heroId, newPos));
+      },
+      onMailOpen: () => {
+        NetworkClient.getInstance().send(ClientPackets.buildMailInitDataReq());
+      },
+      onMailGetAttachment: (mailId: number) => {
+        NetworkClient.getInstance().send(ClientPackets.buildMailGetAttachmentReq(mailId));
+      },
+      onTavernMora: (moraHand: number, npcId: number) => {
+        NetworkClient.getInstance().send(ClientPackets.buildTavernMoraReq(moraHand, npcId));
+      },
+      onTavernRecruit: (heroId: number) => {
+        NetworkClient.getInstance().send(ClientPackets.buildTavernRecruitReq(heroId));
+      },
+      onGuildOpen: () => {
+        NetworkClient.getInstance().send(ClientPackets.buildGuildInitReq());
+      },
+      onGuildDonate: (amount: number) => {
+        NetworkClient.getInstance().send(ClientPackets.buildGuildDonateReq(amount));
+      },
+      onRedeemCdk: (code: string) => {
+        NetworkClient.getInstance().send(ClientPackets.buildRedeemCodeReq(code));
+      },
+      onHeroUpgrade: () => {
+        NetworkClient.getInstance().send(ClientPackets.buildCharUpgradeReq());
       }
     });
 
+
     this.hudContainer.addChild(this.townHud);
+
+    // Carrega o inventário inicial do jogador
+    NetworkClient.getInstance().send(ClientPackets.buildLoadBag());
   }
 
   public override destroy(options?: any): void {

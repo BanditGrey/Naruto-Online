@@ -1,0 +1,17 @@
+{
+  "id": 11110019,
+  "name": "haku",
+  "animations": {
+    "idle": {
+      "frameCount": 6,
+      "frames": [
+        "/assets/animated/npcs/haku/idle_0.png",
+        "/assets/animated/npcs/haku/idle_1.png",
+        "/assets/animated/npcs/haku/idle_2.png",
+        "/assets/animated/npcs/haku/idle_3.png",
+        "/assets/animated/npcs/haku/idle_4.png",
+        "/assets/animated/npcs/haku/idle_5.png"
+      ]
+    }
+  }
+}
