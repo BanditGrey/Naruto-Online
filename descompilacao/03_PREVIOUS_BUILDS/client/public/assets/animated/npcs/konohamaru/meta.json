@@ -1,0 +1,15 @@
+{
+  "id": 22100014,
+  "animations": {
+    "idle": {
+      "frameCount": 5,
+      "frames": [
+        "/assets/animated/npcs/konohamaru/idle_0.png",
+        "/assets/animated/npcs/konohamaru/idle_1.png",
+        "/assets/animated/npcs/konohamaru/idle_2.png",
+        "/assets/animated/npcs/konohamaru/idle_3.png",
+        "/assets/animated/npcs/konohamaru/idle_4.png"
+      ]
+    }
+  }
+}

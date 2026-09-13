@@ -1,0 +1,12 @@
+{
+  "id": 11110010,
+  "name": "sakura",
+  "animations": {
+    "idle": {
+      "frameCount": 1,
+      "frames": [
+        "/assets/animated/npcs/sakura/idle_0.png"
+      ]
+    }
+  }
+}

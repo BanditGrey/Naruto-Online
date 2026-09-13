@@ -1,0 +1,34 @@
+# Dependências
+node_modules/
+dist/
+build/
+.cache/
+
+# Banco de dados de testes locais
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+
+# Arquivos de log e IDE
+logs/
+*.log
+npm-debug.log*
+.vscode/
+.idea/
+
+# Arquivos temporários e de SO
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Binários pesados brutos não versionados na raiz
+*.swc
+*.dump
+*.exe
+# Arquivos com nomes reservados do Windows (DOS device names) e pastas temporárias
+**/app_extracted/
+**/app_temp/
+**/aux.*
+**/con.*
+**/prn.*
+**/lpt*.*

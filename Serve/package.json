@@ -1,0 +1,30 @@
+{
+  "name": "naruto-online-serve",
+  "version": "1.0.0",
+  "description": "Naruto Online Official Protocol Emulation Server",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "test:client": "tsx tests/mock_client.ts"
+  },
+  "keywords": [
+    "naruto-online",
+    "server",
+    "emulator",
+    "websocket"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/ws": "^8.5.10",
+    "tsx": "^4.19.0",
+    "typescript": "^5.4.5"
+  }
+}

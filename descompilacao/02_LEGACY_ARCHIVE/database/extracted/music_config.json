@@ -1,0 +1,158 @@
+[
+  {
+    "id": 23200001,
+    "fighting": 0,
+    "background": 100001,
+    "istab": 0
+  },
+  {
+    "id": 23100001,
+    "fighting": 0,
+    "background": 100001,
+    "istab": 0
+  },
+  {
+    "id": 15101000,
+    "fighting": 100003,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 15102000,
+    "fighting": 100003,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 15103000,
+    "fighting": 100003,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 15104000,
+    "fighting": 100003,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 15105000,
+    "fighting": 100003,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 15106000,
+    "fighting": 100003,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 15107000,
+    "fighting": 100003,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 15108000,
+    "fighting": 100003,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 15200001,
+    "fighting": 100003,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 15200002,
+    "fighting": 100003,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 15200003,
+    "fighting": 100003,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 15200004,
+    "fighting": 100003,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 15200005,
+    "fighting": 100003,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 15200006,
+    "fighting": 100003,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 15200007,
+    "fighting": 100003,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 15200008,
+    "fighting": 100003,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 15301000,
+    "fighting": 100034,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 15302000,
+    "fighting": 100034,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 15303000,
+    "fighting": 100034,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 15304000,
+    "fighting": 100034,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 21000001,
+    "fighting": 100033,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 22000001,
+    "fighting": 100034,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 23000001,
+    "fighting": 100034,
+    "background": 100003,
+    "istab": 1
+  },
+  {
+    "id": 24000001,
+    "fighting": 100034,
+    "background": 100003,
+    "istab": 1
+  }
+]

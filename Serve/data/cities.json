@@ -1,0 +1,362 @@
+[
+  {
+    "id": 15100001,
+    "type": 1,
+    "start": 15101001,
+    "last": 15101011,
+    "name": "Naruto Bridge",
+    "icon": 15100001
+  },
+  {
+    "id": 15100002,
+    "type": 1,
+    "start": 15102001,
+    "last": 15102011,
+    "name": "Death Forest",
+    "icon": 15100002
+  },
+  {
+    "id": 15100003,
+    "type": 1,
+    "start": 15103001,
+    "last": 15103012,
+    "name": "Final Exam Arena",
+    "icon": 15100003
+  },
+  {
+    "id": 15100004,
+    "type": 1,
+    "start": 15104001,
+    "last": 15104018,
+    "name": "Eastern Forest",
+    "icon": 15100004
+  },
+  {
+    "id": 15100005,
+    "type": 1,
+    "start": 15105001,
+    "last": 15105022,
+    "name": "Valley of The End",
+    "icon": 15100005
+  },
+  {
+    "id": 15100006,
+    "type": 1,
+    "start": 15106001,
+    "last": 15106020,
+    "name": "Sand Country",
+    "icon": 15100006
+  },
+  {
+    "id": 15100007,
+    "type": 1,
+    "start": 15107001,
+    "last": 15107016,
+    "name": "Tenchi Bridge",
+    "icon": 15100007
+  },
+  {
+    "id": 15100008,
+    "type": 1,
+    "start": 15108001,
+    "last": 15108024,
+    "name": "Deer Lair",
+    "icon": 15100008
+  },
+  {
+    "id": 15100009,
+    "type": 1,
+    "start": 15109001,
+    "last": 15109020,
+    "name": "Thunder Gorge",
+    "icon": 15100009
+  },
+  {
+    "id": 15100010,
+    "type": 1,
+    "start": 15110001,
+    "last": 15110020,
+    "name": "Top of the World",
+    "icon": 15100010
+  },
+  {
+    "id": 15100011,
+    "type": 1,
+    "start": 15111001,
+    "last": 15111020,
+    "name": "Kage Summit",
+    "icon": 15100011
+  },
+  {
+    "id": 15100012,
+    "type": 1,
+    "start": 15112001,
+    "last": 15112020,
+    "name": "Mystical Land",
+    "icon": 15100012
+  },
+  {
+    "id": 15100013,
+    "type": 1,
+    "start": 15113001,
+    "last": 15113020,
+    "name": "Duskland",
+    "icon": 15100013
+  },
+  {
+    "id": 15100014,
+    "type": 1,
+    "start": 15114001,
+    "last": 15114020,
+    "name": "Impure World Wards",
+    "icon": 15100014
+  },
+  {
+    "id": 15100015,
+    "type": 1,
+    "start": 15115001,
+    "last": 15115020,
+    "name": "Plain of Crusade",
+    "icon": 15100015
+  },
+  {
+    "id": 23200001,
+    "type": 0,
+    "start": 0,
+    "last": 0,
+    "name": "Konoha Village",
+    "icon": 23100001
+  },
+  {
+    "id": 23100001,
+    "type": 0,
+    "start": 0,
+    "last": 0,
+    "name": "Novice Suburb",
+    "icon": 23200001
+  },
+  {
+    "id": 15110001,
+    "type": 2,
+    "start": 15200001,
+    "last": 15200002,
+    "name": "Genin's Trial",
+    "icon": 15200001
+  },
+  {
+    "id": 15110002,
+    "type": 2,
+    "start": 15200003,
+    "last": 15200004,
+    "name": "Akatsuki's Trial",
+    "icon": 15200003
+  },
+  {
+    "id": 15110003,
+    "type": 2,
+    "start": 15200005,
+    "last": 15200006,
+    "name": "Kage's Trial",
+    "icon": 15200005
+  },
+  {
+    "id": 15110004,
+    "type": 2,
+    "start": 15200007,
+    "last": 15200008,
+    "name": "Warlord's Trial",
+    "icon": 15200007
+  },
+  {
+    "id": 15110005,
+    "type": 2,
+    "start": 15200009,
+    "last": 15200010,
+    "name": "God's Trial",
+    "icon": 15200009
+  },
+  {
+    "id": 15110006,
+    "type": 2,
+    "start": 15200011,
+    "last": 15200012,
+    "name": "Samsara Trial",
+    "icon": 15200011
+  },
+  {
+    "id": 15110007,
+    "type": 2,
+    "start": 15200013,
+    "last": 15200014,
+    "name": "Mentor's Trial",
+    "icon": 15200013
+  },
+  {
+    "id": 15110008,
+    "type": 2,
+    "start": 15200015,
+    "last": 15200016,
+    "name": "Reanimation Trial",
+    "icon": 15200015
+  },
+  {
+    "id": 15110009,
+    "type": 2,
+    "start": 15200017,
+    "last": 15200018,
+    "name": "Trial of the Nine Tails",
+    "icon": 15110009
+  },
+  {
+    "id": 15120001,
+    "type": 3,
+    "start": 15301001,
+    "last": 15301005,
+    "name": "Purplewind Realm",
+    "icon": 10200
+  },
+  {
+    "id": 15120002,
+    "type": 3,
+    "start": 15302001,
+    "last": 15302005,
+    "name": "Time Realm",
+    "icon": 10201
+  },
+  {
+    "id": 15120003,
+    "type": 3,
+    "start": 15303001,
+    "last": 15303005,
+    "name": "Frost Realm",
+    "icon": 10202
+  },
+  {
+    "id": 15120004,
+    "type": 3,
+    "start": 15304001,
+    "last": 15304005,
+    "name": "Magicwind Realm",
+    "icon": 10203
+  },
+  {
+    "id": 15120005,
+    "type": 3,
+    "start": 15305001,
+    "last": 15305005,
+    "name": "Greenspring Realm",
+    "icon": 10204
+  },
+  {
+    "id": 15120006,
+    "type": 3,
+    "start": 15306001,
+    "last": 15306005,
+    "name": "Water Realm",
+    "icon": 10205
+  },
+  {
+    "id": 15120007,
+    "type": 3,
+    "start": 15307001,
+    "last": 15307005,
+    "name": "Lotus Realm",
+    "icon": 10208
+  },
+  {
+    "id": 15120008,
+    "type": 3,
+    "start": 15308001,
+    "last": 15308005,
+    "name": "Aqua Realm",
+    "icon": 10209
+  },
+  {
+    "id": 15120009,
+    "type": 3,
+    "start": 20309001,
+    "last": 20309005,
+    "name": "Unreal path",
+    "icon": 10209
+  },
+  {
+    "id": 15120010,
+    "type": 3,
+    "start": 20310001,
+    "last": 20310005,
+    "name": "Inception",
+    "icon": 10209
+  },
+  {
+    "id": 15120011,
+    "type": 3,
+    "start": 20311001,
+    "last": 20311005,
+    "name": "Causality six paths",
+    "icon": 10209
+  },
+  {
+    "id": 15120012,
+    "type": 3,
+    "start": 20312001,
+    "last": 20312005,
+    "name": "Curse path",
+    "icon": 10209
+  },
+  {
+    "id": 15120013,
+    "type": 3,
+    "start": 20313001,
+    "last": 20313005,
+    "name": "Guest From Sky",
+    "icon": 10209
+  },
+  {
+    "id": 15120014,
+    "type": 3,
+    "start": 20314001,
+    "last": 20314005,
+    "name": "Temple of fire",
+    "icon": 10209
+  },
+  {
+    "id": 15120015,
+    "type": 3,
+    "start": 20315001,
+    "last": 20315005,
+    "name": "Void Lord",
+    "icon": 10209
+  },
+  {
+    "id": 15120016,
+    "type": 3,
+    "start": 20316001,
+    "last": 20316005,
+    "name": "Natural bridge",
+    "icon": 10209
+  },
+  {
+    "id": 15120017,
+    "type": 3,
+    "start": 20317001,
+    "last": 20317005,
+    "name": "Canyon Crashers",
+    "icon": 10209
+  },
+  {
+    "id": 15120018,
+    "type": 3,
+    "start": 20318001,
+    "last": 20318005,
+    "name": "Ninja World War",
+    "icon": 10209
+  },
+  {
+    "id": 15120019,
+    "type": 3,
+    "start": 20319001,
+    "last": 20319005,
+    "name": "Death of Sage",
+    "icon": 10209
+  }
+]

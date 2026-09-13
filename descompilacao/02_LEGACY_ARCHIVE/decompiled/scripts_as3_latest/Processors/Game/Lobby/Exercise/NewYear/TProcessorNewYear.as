@@ -1,0 +1,700 @@
+package Processors.Game.Lobby.Exercise.NewYear
+{
+   import Foundation.Network.TPacket;
+   import Foundation.Resources.Bins.TBins;
+   import Foundation.Resources.SResourcesCore;
+   import Foundation.Timing.STimingCore;
+   import Foundation.UI.TUIComponent;
+   import Foundation.Utilities.TGameUtil;
+   import Foundation.Utilities.TUtilityDate;
+   import Foundation.Utilities.TUtilityString;
+   import Logics.DatebaseVO.VO.TBaseHero;
+   import Logics.DatebaseVO.VO.TRoleModel;
+   import Logics.Exercise.NewYear.TNewYear;
+   import Logics.Exercise.TBaseActivity;
+   import Logics.Exercise.TBaseBox;
+   import Logics.Inventories.TInventories;
+   import Logics.Inventories.TInventory;
+   import Logics.SLogicsCore;
+   import Logics.Streamization.Exercise.TUnstreamizerNewYear;
+   import Processors.Game.Battle.Character.TActive;
+   import Processors.Game.Lobby.Common.TLobbyParameters;
+   import Processors.Game.Lobby.Exercise.BaseActivity.Compoents.TUIBaseBox;
+   import Processors.Game.Lobby.Exercise.BaseActivity.TProcessorBaseActivity;
+   import Processors.Game.Lobby.Tavern.TProcessorWindowRecruit;
+   import Rendering.Overlayers.NationalDay.TOverlayerSimpleNinjia;
+   import Resources.Constants.CONST_COMMON;
+   import Resources.Constants.CONST_DATEBASEVO;
+   import Resources.Constants.CONST_MODULES;
+   import Resources.Strings.STRING_BASEACTIVITY;
+   import Utilities.UI.Overlayers.TUtilityUIOverlayer;
+   import flash.display.Bitmap;
+   import flash.display.MovieClip;
+   import flash.events.MouseEvent;
+   import flash.text.TextFormat;
+   import flash.utils.ByteArray;
+   
+   public class TProcessorNewYear extends TProcessorBaseActivity
+   {
+      
+      public static const HERO_COUNT:int = 8;
+      
+      public static const BOX_COUNT:int = 8;
+      
+      public static const HERO_TYPE_ALL:int = 1;
+      
+      public static const HERO_TYPE_HEAD:int = 0;
+      
+      public static const TYPE_GET_FREE_GIFT:int = 1;
+      
+      public static const TYPE_EXCHANGE_HERO:int = 2;
+      
+      public static const TYPE_EXCHANGE_ITEM:int = 3;
+      
+      protected static const COLOR_ContextOddsAward:uint = 4294967295;
+      
+      protected static const COLOR_ContextRobbed:uint = 4284900966;
+      
+      protected static const QUALITYCOLOR_None:uint = 4294967295;
+      
+      protected static const QUALITYCOLOR_White:uint = 4294967295;
+      
+      protected static const QUALITYCOLOR_Green:uint = 4285071106;
+      
+      protected static const QUALITYCOLOR_Blue:uint = 4278228735;
+      
+      protected static const QUALITYCOLOR_Purple:uint = 4288217295;
+      
+      protected static const QUALITYCOLOR_Yellow:uint = 4294967040;
+      
+      protected static const QUALITYCOLOR_Red:uint = 4294836224;
+      
+      protected static const QUALITYCOLOR_Orange:uint = 4294901888;
+      
+      public static const QUALITYCOLOR_INDEX:Vector.<uint> = Vector.<uint>([QUALITYCOLOR_None,QUALITYCOLOR_White,QUALITYCOLOR_Green,QUALITYCOLOR_Blue,QUALITYCOLOR_Purple,QUALITYCOLOR_Yellow,QUALITYCOLOR_Red,QUALITYCOLOR_Orange]);
+      
+      protected var FHeroList:Vector.<MovieClip>;
+      
+      protected var FHeroActive:Vector.<TActive>;
+      
+      protected var FHeroRoleModel:Vector.<TRoleModel>;
+      
+      protected var FUIBoxVect:Vector.<TUIBaseBox>;
+      
+      protected var FNewYear:TNewYear;
+      
+      protected var FBeClicked:Boolean;
+      
+      protected var FUnstreamizerNewYear:TUnstreamizerNewYear;
+      
+      protected var FProcessorWindowRecruit:TProcessorWindowRecruit;
+      
+      protected var FCost:int;
+      
+      protected var FCostVouchers:int;
+      
+      protected var FCostGold:int;
+      
+      protected var FOverlayerSimpleNinjia:TOverlayerSimpleNinjia;
+      
+      protected var FRoleModel:TBins;
+      
+      protected var FTextFormat:TextFormat;
+      
+      protected var FConfirmType:int;
+      
+      public function TProcessorNewYear(param1:TUIComponent, param2:TLobbyParameters, param3:uint)
+      {
+         super(param1,param2,param3);
+         FActivityID = param3;
+         this.FNewYear = SLogicsCore.NewYear;
+         this.FUnstreamizerNewYear = new TUnstreamizerNewYear();
+         this.FHeroList = new Vector.<MovieClip>(HERO_COUNT);
+         this.FHeroActive = new Vector.<TActive>(HERO_COUNT);
+         this.FHeroRoleModel = new Vector.<TRoleModel>(HERO_COUNT);
+         this.FUIBoxVect = new Vector.<TUIBaseBox>(BOX_COUNT);
+         this.FProcessorWindowRecruit = new TProcessorWindowRecruit(this.Parent);
+         this.FProcessorWindowRecruit.Visible = false;
+         this.FProcessorWindowRecruit.OnEffectText = FOnEffectText;
+         this.FProcessorWindowRecruit.HintOnOver = ProcessorTipOnOver;
+         this.FProcessorWindowRecruit.HintOnOut = ProcessorTipOnOut;
+         this.FProcessorWindowRecruit.x = (CONST_COMMON.STAGE_Width - 390) / 2;
+         this.FProcessorWindowRecruit.y = (CONST_COMMON.STAGE_Height - 358) / 2;
+         this.FOverlayerSimpleNinjia = new TOverlayerSimpleNinjia(this.Parent);
+         this.FOverlayerSimpleNinjia.Visible = false;
+         this.FTextFormat = new TextFormat();
+         SetUIModuleID(CONST_MODULES.ACTIVE_NewYear);
+      }
+      
+      override protected function ResourcesPerform_UIDispatch() : void
+      {
+         var _loc1_:int = 0;
+         var _loc2_:int = 0;
+         var _loc3_:MovieClip = null;
+         var _loc4_:MovieClip = null;
+         var _loc5_:Bitmap = null;
+         var _loc6_:TUIBaseBox = null;
+         super.ResourcesPerform_UIDispatch();
+         _loc1_ = 0;
+         while(_loc1_ < HERO_COUNT)
+         {
+            _loc4_ = FMC_Scene["MC_Hero" + _loc1_];
+            _loc5_ = new Bitmap();
+            _loc4_.MC_Hero["heroHead"] = _loc5_;
+            _loc4_.MC_Hero.addChild(_loc5_);
+            _loc4_.MC_Tip.addEventListener(MouseEvent.MOUSE_MOVE,this.ProcessorOnHeroOver);
+            _loc4_.MC_Tip.addEventListener(MouseEvent.ROLL_OUT,this.ProcessorOnHeroOut);
+            TGameUtil.setButtonMode(_loc4_.BTN_Recruit,true);
+            _loc4_.BTN_Recruit.addEventListener(MouseEvent.CLICK,this.ProcessorOnGetHeroUp);
+            TGameUtil.setButtonMode(_loc4_.BTN_ShowDesc,true);
+            _loc4_.BTN_ShowDesc.addEventListener(MouseEvent.CLICK,this.ProcessorOnShowRecruit);
+            this.FHeroList[_loc1_] = _loc4_;
+            _loc1_++;
+         }
+         _loc1_ = 0;
+         while(_loc1_ < BOX_COUNT)
+         {
+            _loc6_ = new TUIBaseBox(this,1);
+            _loc6_.Perform_UIDispatch(FMC_Scene["MC_Box" + _loc1_]);
+            _loc6_.OnOverlay = UIComponentsHintOnOver;
+            _loc6_.OnOut = UIComponentsHintOnOut;
+            _loc6_.OnGetBox = this.ProcessorOnItemUp;
+            this.FUIBoxVect[_loc1_] = _loc6_;
+            _loc1_++;
+         }
+         TUtilityUIOverlayer.ResourcesDispatch(this.FOverlayerSimpleNinjia);
+         this.FRoleModel = SResourcesCore.ResourceBin.GetBinsByResourceID(CONST_DATEBASEVO.RESOURCEID_RoleModel);
+      }
+      
+      override protected function ResourcesPerform_UILocations() : void
+      {
+         var _loc1_:int = 0;
+         var _loc2_:int = 0;
+         super.ResourcesPerform_UILocations();
+         FMC_Scene.MC_Gift.buttonMode = true;
+         FMC_Scene.MC_Gift.addEventListener(MouseEvent.CLICK,this.ProcessorOnGiftUp);
+         FMC_Scene.MC_Gift.addEventListener(MouseEvent.MOUSE_MOVE,this.ProcessorOnGiftOver);
+         FMC_Scene.MC_Gift.addEventListener(MouseEvent.ROLL_OUT,this.ProcessorOnGiftOut);
+      }
+      
+      override protected function LogicsPerform() : void
+      {
+         var _loc1_:int = 0;
+         var _loc2_:int = 0;
+         var _loc3_:int = 0;
+         var _loc4_:MovieClip = null;
+         super.LogicsPerform();
+         if(FInitialized)
+         {
+            if(Boolean(FMC_Scene) && FMC_Scene.visible)
+            {
+               if(this.FProcessorWindowRecruit != null && this.FProcessorWindowRecruit.Visible == true)
+               {
+                  this.FProcessorWindowRecruit.UpdataBitmap();
+               }
+               _loc1_ = 0;
+               while(_loc1_ < HERO_COUNT)
+               {
+                  if(this.FHeroActive[_loc1_])
+                  {
+                     this.FHeroActive[_loc1_].UpdateActive();
+                  }
+                  if(this.FHeroRoleModel[_loc1_] != null)
+                  {
+                     TGameUtil.ShowImageByID(TGameUtil.Type_HeadIcon,this.FHeroList[_loc1_].MC_Hero["heroHead"],CONST_MODULES.ACTIVE_Test,this.FHeroRoleModel[_loc1_].RoleHead);
+                  }
+                  _loc1_++;
+               }
+               _loc1_ = 0;
+               while(_loc1_ < BOX_COUNT)
+               {
+                  if(this.FUIBoxVect[_loc1_])
+                  {
+                     this.FUIBoxVect[_loc1_].LogicsPerform();
+                  }
+                  _loc1_++;
+               }
+            }
+         }
+      }
+      
+      override protected function UpdateUI() : void
+      {
+         this.UpdateText();
+         this.UpdateBox();
+         this.UpdateHero();
+         this.UpdateGift();
+      }
+      
+      protected function UpdateText() : void
+      {
+         var _loc1_:int = 0;
+         var _loc2_:MovieClip = null;
+         FTF_Date.text = TUtilityString.Format(STRING_BASEACTIVITY.FormatString_ActivityTimeStartToEnd,TUtilityDate.FormatDateChineseNew(new Date(STimingCore.GetClientShowTime(this.FNewYear.BeginTime) * 1000)),TUtilityDate.FormatDateChineseNew(new Date(STimingCore.GetClientShowTime(this.FNewYear.EndTime - 1) * 1000)));
+         FTF_Desc.text = this.FNewYear.ActivityDesc;
+         FMC_Scene.TF_Desc1.text = this.FNewYear.ActivityName;
+         FMC_Scene.TF_Desc2.text = this.FNewYear.ActivityTabName;
+         FMC_Scene.TF_Count.text = this.FNewYear.Score.toString();
+         FMC_Scene.TF_Money.text = this.FNewYear.Money.toString();
+      }
+      
+      protected function UpdateBox() : void
+      {
+         var _loc1_:int = 0;
+         var _loc2_:int = 0;
+         var _loc3_:MovieClip = null;
+         var _loc4_:TBaseBox = null;
+         var _loc5_:String = null;
+         _loc1_ = 0;
+         while(_loc1_ < BOX_COUNT)
+         {
+            if(_loc1_ < this.FNewYear.BoxList.length)
+            {
+               _loc4_ = this.FNewYear.BoxList[_loc1_];
+               this.FUIBoxVect[_loc1_].UpdateUI(_loc4_.Inventories);
+               _loc5_ = TUtilityString.Format(STRING_BASEACTIVITY.FORMAT_LIMIT_COUNT,_loc4_.Count.toString());
+               this.FUIBoxVect[_loc1_].SetLimitText(_loc5_);
+               _loc5_ = _loc4_.Price.toString();
+               this.FUIBoxVect[_loc1_].SetPriceText(_loc5_);
+               _loc5_ = TUtilityString.Format(STRING_BASEACTIVITY.FORMAT_DISCOUNT,_loc4_.Discount);
+               this.FUIBoxVect[_loc1_].SetBuff(true,_loc5_);
+               if(_loc4_.BuyCount >= _loc4_.Count)
+               {
+                  this.FUIBoxVect[_loc1_].SetBtnMode(false);
+                  this.FUIBoxVect[_loc1_].IsBoxGot(true);
+               }
+               else
+               {
+                  this.FUIBoxVect[_loc1_].SetBtnMode(true);
+                  this.FUIBoxVect[_loc1_].IsBoxGot(false);
+               }
+            }
+            _loc1_++;
+         }
+      }
+      
+      protected function UpdateHero() : void
+      {
+         var _loc1_:int = 0;
+         var _loc2_:int = 0;
+         var _loc3_:int = 0;
+         var _loc4_:MovieClip = null;
+         var _loc5_:TBaseHero = null;
+         var _loc6_:TActive = null;
+         var _loc7_:TBaseBox = null;
+         var _loc8_:TRoleModel = null;
+         _loc1_ = 0;
+         while(_loc1_ < HERO_COUNT)
+         {
+            _loc4_ = this.FHeroList[_loc1_];
+            if(_loc1_ < this.FNewYear.HeroList.length)
+            {
+               _loc7_ = this.FNewYear.HeroList[_loc1_];
+               _loc5_ = SResourcesCore.ResourceBin.GetDatebase(CONST_DATEBASEVO.RESOURCEID_BaseHero,_loc7_.Identify) as TBaseHero;
+               if(_loc7_.Type == HERO_TYPE_ALL)
+               {
+                  _loc6_ = this.FHeroActive[_loc1_];
+                  _loc4_.TF_Name.text = _loc5_.Name;
+                  this.FTextFormat.color = QUALITYCOLOR_INDEX[_loc5_.Quality];
+                  _loc4_.TF_Name.setTextFormat(this.FTextFormat);
+                  _loc4_.TF_Cost.text = _loc7_.Price;
+                  if(_loc6_ == null)
+                  {
+                     _loc6_ = new TActive(this.Parent,this.FNewYear.HeroList[_loc1_].Identify,CONST_MODULES.ACTIVE_NewYear,false,false);
+                     _loc4_.MC_Hero.addChild(_loc6_);
+                     this.FHeroActive[_loc1_] = _loc6_;
+                  }
+               }
+               else
+               {
+                  _loc8_ = this.FHeroRoleModel[_loc1_];
+                  _loc4_.TF_Cost.text = _loc7_.Price;
+                  if(_loc8_ == null)
+                  {
+                     _loc8_ = this.FRoleModel.GetDatebaseByIdentifier(_loc7_.Identify) as TRoleModel;
+                     this.FHeroRoleModel[_loc1_] = _loc8_;
+                  }
+                  TGameUtil.ShowImageByID(TGameUtil.Type_HeadIcon,_loc4_.MC_Hero["heroHead"],CONST_MODULES.ACTIVE_Test,_loc8_.RoleHead);
+               }
+               if(this.FNewYear.HeroList[_loc1_].Status == TNewYear.STATUS_ISGOT)
+               {
+                  _loc4_.MC_Got2.visible = true;
+                  _loc4_.MC_Got.visible = false;
+                  _loc4_.BTN_Recruit.visible = false;
+               }
+               else if(this.FNewYear.HeroList[_loc1_].Status == TBaseActivity.STATUS_GETED)
+               {
+                  _loc4_.MC_Got2.visible = false;
+                  _loc4_.MC_Got.visible = true;
+                  _loc4_.BTN_Recruit.visible = false;
+               }
+               else
+               {
+                  _loc4_.MC_Got2.visible = false;
+                  _loc4_.MC_Got.visible = false;
+                  _loc4_.BTN_Recruit.visible = true;
+                  TGameUtil.setButtonMode(_loc4_.BTN_Recruit,true);
+               }
+            }
+            _loc1_++;
+         }
+      }
+      
+      protected function UpdateGift() : void
+      {
+         if(this.FNewYear.Status == TBaseActivity.STATUS_GETED)
+         {
+            FMC_Scene.MC_Gift.visible = false;
+         }
+         else
+         {
+            FMC_Scene.MC_Gift.visible = true;
+            FMC_Scene.MC_Gift.MC_Box.gotoAndPlay(1);
+            FMC_Scene.MC_Gift.MC_GetBox.gotoAndPlay(1);
+         }
+      }
+      
+      override protected function PerformPacket_CS_LoadInfoReq() : void
+      {
+         var _loc1_:TPacket = null;
+         var _loc2_:int = 0;
+         super.PerformPacket_CS_LoadInfoReq();
+      }
+      
+      protected function ProcessorOnHeroOver(param1:MouseEvent) : void
+      {
+         var _loc2_:int = 0;
+         _loc2_ = int(String(param1.currentTarget.parent.name).slice(7));
+         if(_loc2_ < this.FNewYear.HeroList.length)
+         {
+            this.FOverlayerSimpleNinjia.Context = this.FNewYear.HeroList[_loc2_];
+            this.FOverlayerSimpleNinjia.Render(FUICore.MouseCoordinate);
+            this.FOverlayerSimpleNinjia.Show();
+         }
+      }
+      
+      protected function ProcessorOnHeroOut(param1:MouseEvent) : void
+      {
+         this.FOverlayerSimpleNinjia.Hide();
+      }
+      
+      protected function ProcessorOnShowRecruit(param1:MouseEvent) : void
+      {
+         var _loc2_:int = 0;
+         _loc2_ = int(String(param1.currentTarget.parent.name).slice(7));
+         if(_loc2_ >= this.FNewYear.HeroList.length)
+         {
+            return;
+         }
+         this.FProcessorWindowRecruit.SetHeroData(uint(this.FNewYear.HeroList[_loc2_].Identify));
+      }
+      
+      protected function ProcessorOnGetHeroUp(param1:MouseEvent) : void
+      {
+         var _loc2_:TPacket = null;
+         var _loc3_:int = 0;
+         var _loc4_:int = 0;
+         if(!param1.currentTarget.buttonMode)
+         {
+            return;
+         }
+         if(this.FBeClicked)
+         {
+            return;
+         }
+         this.FConfirmType = TYPE_EXCHANGE_HERO;
+         FIndex = int(String(param1.currentTarget.parent.name).slice(7));
+         if(!FUIWindowConfirmation.IsSelected)
+         {
+            this.FCost = this.FNewYear.HeroList[FIndex].Price;
+            if(this.FNewYear.Score >= this.FCost)
+            {
+               this.FCostVouchers = this.FCost;
+               FUIWindowConfirmation.Text = TUtilityString.Format(STRING_BASEACTIVITY.FORMAT_ConfirmVouchers,this.FCostVouchers);
+            }
+            else if(this.FNewYear.Score == 0)
+            {
+               this.FCostGold = this.FCost;
+               FUIWindowConfirmation.Text = TUtilityString.Format(STRING_BASEACTIVITY.FORMAT_ConfirmGold,this.FCostGold);
+            }
+            else
+            {
+               this.FCostVouchers = this.FNewYear.Score;
+               this.FCostGold = this.FCost - this.FCostVouchers;
+               FUIWindowConfirmation.Text = TUtilityString.Format(STRING_BASEACTIVITY.FORMAT_ConfirmVouchersAndGold,this.FCostVouchers,this.FCostGold);
+            }
+            FUIWindowConfirmation.SetCheckBox(false);
+            FUIWindowConfirmation.Visible = true;
+         }
+         else
+         {
+            this.WindowConfirmationOnOK();
+         }
+      }
+      
+      override protected function WindowConfirmationOnOK(param1:Object = null) : void
+      {
+         var _loc2_:Vector.<int> = null;
+         if(this.FNewYear.IsMoneyEnough(this.FCost))
+         {
+            this.FBeClicked = true;
+            _loc2_ = new Vector.<int>();
+            _loc2_.push(FIndex + 1);
+            switch(this.FConfirmType)
+            {
+               case TYPE_EXCHANGE_HERO:
+                  PerformPacket_CS_AllReq(TYPE_EXCHANGE_HERO,_loc2_);
+                  break;
+               case TYPE_EXCHANGE_ITEM:
+                  PerformPacket_CS_AllReq(TYPE_EXCHANGE_ITEM,_loc2_);
+            }
+         }
+         else
+         {
+            FUIWindowRecharge.Visible = true;
+         }
+      }
+      
+      protected function ProcessorOnItemUp(param1:MouseEvent) : void
+      {
+         var _loc2_:TPacket = null;
+         var _loc3_:int = 0;
+         var _loc4_:int = 0;
+         if(this.FBeClicked)
+         {
+            return;
+         }
+         this.FConfirmType = TYPE_EXCHANGE_ITEM;
+         FIndex = int(String(param1.currentTarget.parent.name).slice(6));
+         if(!FUIWindowConfirmation.IsSelected)
+         {
+            this.FCost = this.FNewYear.BoxList[FIndex].Price;
+            if(this.FNewYear.Score >= this.FCost)
+            {
+               this.FCostVouchers = this.FCost;
+               FUIWindowConfirmation.Text = TUtilityString.Format(STRING_BASEACTIVITY.FORMAT_ConfirmVouchers,this.FCostVouchers);
+            }
+            else if(this.FNewYear.Score == 0)
+            {
+               this.FCostGold = this.FCost;
+               FUIWindowConfirmation.Text = TUtilityString.Format(STRING_BASEACTIVITY.FORMAT_ConfirmGold,this.FCostGold);
+            }
+            else
+            {
+               this.FCostVouchers = this.FNewYear.Score;
+               this.FCostGold = this.FCost - this.FCostVouchers;
+               FUIWindowConfirmation.Text = TUtilityString.Format(STRING_BASEACTIVITY.FORMAT_ConfirmVouchersAndGold,this.FCostVouchers,this.FCostGold);
+            }
+            FUIWindowConfirmation.SetCheckBox(false);
+            FUIWindowConfirmation.Visible = true;
+         }
+         else
+         {
+            this.WindowConfirmationOnOK();
+         }
+      }
+      
+      protected function ProcessorOnGiftUp(param1:MouseEvent) : void
+      {
+         var _loc2_:TPacket = null;
+         var _loc3_:int = 0;
+         var _loc4_:Vector.<int> = null;
+         if(this.FBeClicked)
+         {
+            return;
+         }
+         this.FBeClicked = true;
+         _loc4_ = new Vector.<int>();
+         PerformPacket_CS_AllReq(TYPE_GET_FREE_GIFT,_loc4_);
+      }
+      
+      protected function ProcessorOnGiftOver(param1:MouseEvent) : void
+      {
+         var _loc2_:TInventory = null;
+         if(this.FNewYear.Inventories.Count > 0)
+         {
+            _loc2_ = this.FNewYear.Inventories.GetInventoryByIndex(0);
+            UIComponentsHintOnOver(this,_loc2_);
+         }
+      }
+      
+      protected function ProcessorOnGiftOut(param1:MouseEvent) : void
+      {
+         var _loc2_:TInventory = null;
+         if(this.FNewYear.Inventories.Count > 0)
+         {
+            _loc2_ = this.FNewYear.Inventories.GetInventoryByIndex(0);
+            UIComponentsHintOnOut(this,_loc2_);
+         }
+      }
+      
+      override public function Mount(param1:ByteArray = null) : void
+      {
+         super.Mount(param1);
+         if(!FIsResourcesLoadCompleted)
+         {
+            this.FProcessorWindowRecruit.Load();
+            return;
+         }
+         this.visible = true;
+         this.alpha = 1;
+         if(FMC_EffectLeft)
+         {
+            FMC_EffectLeft.play();
+         }
+         if(FMC_EffectRight)
+         {
+            FMC_EffectRight.play();
+         }
+         this.PerformPacket_CS_LoadInfoReq();
+         SetInterval();
+      }
+      
+      override public function Unmount() : void
+      {
+         super.Unmount();
+      }
+      
+      override public function ProcessorOnLoadInfoRet(param1:TPacket = null) : void
+      {
+         var _loc2_:ByteArray = null;
+         var _loc3_:int = 0;
+         super.ProcessorOnLoadInfoRet();
+         _loc2_ = param1.Data;
+         _loc3_ = _loc2_.readInt();
+         if(_loc3_ != 0)
+         {
+            EffectGenerateTextByErrorCode(_loc3_);
+            OnClose(this);
+            return;
+         }
+         this.FUnstreamizerNewYear.Unstreamize(_loc2_,this.FNewYear,null);
+         if(FIsResourcesLoadCompleted && this.visible)
+         {
+            this.UpdateUI();
+         }
+      }
+      
+      override public function ProcessorAllRet(param1:TPacket = null) : void
+      {
+         var _loc2_:ByteArray = null;
+         var _loc3_:int = 0;
+         var _loc4_:String = null;
+         var _loc5_:int = 0;
+         var _loc6_:int = 0;
+         var _loc7_:int = 0;
+         var _loc8_:TInventories = null;
+         var _loc9_:TInventory = null;
+         var _loc10_:uint = 0;
+         var _loc11_:uint = 0;
+         var _loc12_:uint = 0;
+         var _loc13_:Vector.<uint> = null;
+         var _loc14_:uint = 0;
+         var _loc15_:TBaseBox = null;
+         this.FBeClicked = false;
+         _loc2_ = param1.Data;
+         _loc3_ = _loc2_.readInt();
+         if(_loc3_ != 0)
+         {
+            EffectGenerateTextByErrorCode(_loc3_);
+            return;
+         }
+         _loc7_ = int(_loc2_.readUnsignedInt());
+         switch(_loc7_)
+         {
+            case TYPE_GET_FREE_GIFT:
+               this.FNewYear.Status = TBaseActivity.STATUS_GETED;
+               _loc8_ = this.FNewYear.Inventories;
+               _loc4_ = STRING_BASEACTIVITY.FORMAT_GET_SUCCESSED;
+               _loc5_ = 0;
+               while(_loc5_ < _loc8_.Count)
+               {
+                  _loc9_ = _loc8_.GetInventoryByIndex(_loc5_);
+                  _loc4_ += _loc9_.Name + "*" + _loc9_.Quantity + "\n";
+                  _loc5_++;
+               }
+               ProcessorEffectText(_loc4_);
+               ProcessorCheckEffect(FActivityID,this.FNewYear.CheckStatus());
+               this.UpdateUI();
+               break;
+            case TYPE_EXCHANGE_HERO:
+               _loc2_.readShort();
+               _loc5_ = _loc2_.readUnsignedInt() - 1;
+               this.FNewYear.Score = _loc2_.readUnsignedInt();
+               this.FNewYear.Money = _loc2_.readUnsignedInt();
+               this.FNewYear.HeroList[_loc5_].Status = TBaseActivity.STATUS_GETED;
+               _loc4_ = STRING_BASEACTIVITY.FORMAT_EXCHANGE;
+               ProcessorEffectText(_loc4_);
+               this.UpdateUI();
+               break;
+            case TYPE_EXCHANGE_ITEM:
+               _loc2_.readShort();
+               _loc5_ = _loc2_.readUnsignedInt() - 1;
+               this.FNewYear.Score = _loc2_.readUnsignedInt();
+               this.FNewYear.Money = _loc2_.readUnsignedInt();
+               _loc8_ = this.FNewYear.BoxList[_loc5_].Inventories;
+               ++this.FNewYear.BoxList[_loc5_].BuyCount;
+               _loc4_ = STRING_BASEACTIVITY.FORMAT_GET_SUCCESSED;
+               _loc5_ = 0;
+               while(_loc5_ < _loc8_.Count)
+               {
+                  _loc9_ = _loc8_.GetInventoryByIndex(_loc5_);
+                  _loc4_ += _loc9_.Name + "*" + _loc9_.Quantity + "\n";
+                  _loc5_++;
+               }
+               ProcessorEffectText(_loc4_);
+               this.UpdateUI();
+         }
+      }
+      
+      public function TestInit0() : ByteArray
+      {
+         var _loc1_:int = 0;
+         var _loc2_:int = 0;
+         var _loc3_:ByteArray = new ByteArray();
+         var _loc4_:Vector.<int> = Vector.<int>([0,0,0,1,1,1,1,1]);
+         _loc3_.writeUnsignedInt(0);
+         _loc3_.writeUnsignedInt(1371571200);
+         _loc3_.writeUnsignedInt(1401571200);
+         TUtilityString.FlushUTF(_loc3_,"活动1");
+         TUtilityString.FlushUTF(_loc3_,"活动2");
+         TUtilityString.FlushUTF(_loc3_,"活动3");
+         _loc3_.writeInt(1);
+         _loc3_.writeInt(14100001);
+         _loc3_.writeShort(8);
+         _loc1_ = 0;
+         while(_loc1_ < 8)
+         {
+            _loc3_.writeInt(_loc4_[_loc1_]);
+            _loc3_.writeUnsignedInt(11110001 + _loc1_);
+            _loc3_.writeUnsignedInt(_loc1_ + 1);
+            _loc3_.writeInt(0);
+            _loc3_.writeInt(10);
+            TUtilityString.FlushUTF(_loc3_,"aaa");
+            TUtilityString.FlushUTF(_loc3_,"bbb");
+            TUtilityString.FlushUTF(_loc3_,"ccc");
+            _loc1_++;
+         }
+         _loc3_.position = 0;
+         return _loc3_;
+      }
+      
+      public function TestInit1() : ByteArray
+      {
+         var _loc1_:int = 0;
+         var _loc2_:int = 0;
+         var _loc3_:ByteArray = new ByteArray();
+         _loc3_.writeShort(2);
+         _loc1_ = 0;
+         while(_loc1_ < 2)
+         {
+            _loc3_.writeUnsignedInt(20);
+            _loc3_.writeUnsignedInt(1);
+            _loc1_++;
+         }
+         _loc3_.position = 0;
+         return _loc3_;
+      }
+   }
+}
+

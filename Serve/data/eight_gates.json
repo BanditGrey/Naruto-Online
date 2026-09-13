@@ -1,0 +1,1922 @@
+[
+  {
+    "id": 10000001,
+    "majorType": 20000001,
+    "sequence": 1,
+    "consumption": 40,
+    "name": "Gate of Opening 1-1",
+    "addAttr": "[[4,1000]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000002,
+    "majorType": 20000001,
+    "sequence": 2,
+    "consumption": 80,
+    "name": "Gate of Opening 1-2",
+    "addAttr": "[[13,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000003,
+    "majorType": 20000001,
+    "sequence": 3,
+    "consumption": 120,
+    "name": "Gate of Opening 1-3",
+    "addAttr": "[[1,150]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000004,
+    "majorType": 20000001,
+    "sequence": 4,
+    "consumption": 160,
+    "name": "Gate of Opening 1-4",
+    "addAttr": "[[14,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000005,
+    "majorType": 20000001,
+    "sequence": 5,
+    "consumption": 200,
+    "name": "Gate of Opening 1-5",
+    "addAttr": "[[2,150]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000006,
+    "majorType": 20000001,
+    "sequence": 6,
+    "consumption": 240,
+    "name": "Gate of Opening 1-6",
+    "addAttr": "[[15,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000007,
+    "majorType": 20000001,
+    "sequence": 7,
+    "consumption": 280,
+    "name": "Gate of Opening 1-7",
+    "addAttr": "[[3,150]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000008,
+    "majorType": 20000001,
+    "sequence": 8,
+    "consumption": 320,
+    "name": "Gate of Opening 1-8",
+    "addAttr": "[[12,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000009,
+    "majorType": 20000001,
+    "sequence": 9,
+    "consumption": 360,
+    "name": "Gate of Opening 1-9",
+    "addAttr": "[[4,2000]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000010,
+    "majorType": 20000001,
+    "sequence": 10,
+    "consumption": 400,
+    "name": "Gate of Opening 1-10",
+    "addAttr": "[[13,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000011,
+    "majorType": 20000001,
+    "sequence": 11,
+    "consumption": 440,
+    "name": "Gate of Opening 2-1",
+    "addAttr": "[[1,300]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000012,
+    "majorType": 20000001,
+    "sequence": 12,
+    "consumption": 480,
+    "name": "Gate of Opening 2-2",
+    "addAttr": "[[14,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000013,
+    "majorType": 20000001,
+    "sequence": 13,
+    "consumption": 520,
+    "name": "Gate of Opening 2-3",
+    "addAttr": "[[2,300]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000014,
+    "majorType": 20000001,
+    "sequence": 14,
+    "consumption": 560,
+    "name": "Gate of Opening 2-4",
+    "addAttr": "[[15,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000015,
+    "majorType": 20000001,
+    "sequence": 15,
+    "consumption": 600,
+    "name": "Gate of Opening 2-5",
+    "addAttr": "[[3,300]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000016,
+    "majorType": 20000001,
+    "sequence": 16,
+    "consumption": 640,
+    "name": "Gate of Opening 2-6",
+    "addAttr": "[[12,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000017,
+    "majorType": 20000001,
+    "sequence": 17,
+    "consumption": 680,
+    "name": "Gate of Opening 2-7",
+    "addAttr": "[[4,4000]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000018,
+    "majorType": 20000001,
+    "sequence": 18,
+    "consumption": 720,
+    "name": "Gate of Opening 2-8",
+    "addAttr": "[[13,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000019,
+    "majorType": 20000001,
+    "sequence": 19,
+    "consumption": 760,
+    "name": "Gate of Opening 2-9",
+    "addAttr": "[[1,600]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000020,
+    "majorType": 20000001,
+    "sequence": 20,
+    "consumption": 800,
+    "name": "Gate of Opening 2-10",
+    "addAttr": "[[14,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000021,
+    "majorType": 20000001,
+    "sequence": 21,
+    "consumption": 840,
+    "name": "Gate of Opening 3-1",
+    "addAttr": "[[2,600]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000022,
+    "majorType": 20000001,
+    "sequence": 22,
+    "consumption": 880,
+    "name": "Gate of Opening 3-2",
+    "addAttr": "[[15,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000023,
+    "majorType": 20000001,
+    "sequence": 23,
+    "consumption": 920,
+    "name": "Gate of Opening 3-3",
+    "addAttr": "[[3,600]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000024,
+    "majorType": 20000001,
+    "sequence": 24,
+    "consumption": 960,
+    "name": "Gate of Opening 3-Ultimate",
+    "addAttr": "[[12,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000025,
+    "majorType": 20000002,
+    "sequence": 1,
+    "consumption": 80,
+    "name": "Gate of Healing 1-1",
+    "addAttr": "[[4,2000]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000026,
+    "majorType": 20000002,
+    "sequence": 2,
+    "consumption": 160,
+    "name": "Gate of Healing 1-2",
+    "addAttr": "[[13,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000027,
+    "majorType": 20000002,
+    "sequence": 3,
+    "consumption": 240,
+    "name": "Gate of Healing 1-3",
+    "addAttr": "[[1,300]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000028,
+    "majorType": 20000002,
+    "sequence": 4,
+    "consumption": 320,
+    "name": "Gate of Healing 1-4",
+    "addAttr": "[[14,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000029,
+    "majorType": 20000002,
+    "sequence": 5,
+    "consumption": 400,
+    "name": "Gate of Healing 1-5",
+    "addAttr": "[[2,300]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000030,
+    "majorType": 20000002,
+    "sequence": 6,
+    "consumption": 480,
+    "name": "Gate of Healing 1-6",
+    "addAttr": "[[15,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000031,
+    "majorType": 20000002,
+    "sequence": 7,
+    "consumption": 560,
+    "name": "Gate of Healing 1-7",
+    "addAttr": "[[3,300]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000032,
+    "majorType": 20000002,
+    "sequence": 8,
+    "consumption": 640,
+    "name": "Gate of Healing 1-8",
+    "addAttr": "[[12,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000033,
+    "majorType": 20000002,
+    "sequence": 9,
+    "consumption": 720,
+    "name": "Gate of Healing 1-9",
+    "addAttr": "[[4,4000]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000034,
+    "majorType": 20000002,
+    "sequence": 10,
+    "consumption": 800,
+    "name": "Gate of Healing 1-10",
+    "addAttr": "[[13,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000035,
+    "majorType": 20000002,
+    "sequence": 11,
+    "consumption": 880,
+    "name": "Gate of Healing 2-1",
+    "addAttr": "[[1,600]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000036,
+    "majorType": 20000002,
+    "sequence": 12,
+    "consumption": 960,
+    "name": "Gate of Healing 2-2",
+    "addAttr": "[[14,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000037,
+    "majorType": 20000002,
+    "sequence": 13,
+    "consumption": 1040,
+    "name": "Gate of Healing 2-3",
+    "addAttr": "[[2,600]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000038,
+    "majorType": 20000002,
+    "sequence": 14,
+    "consumption": 1120,
+    "name": "Gate of Healing 2-4",
+    "addAttr": "[[15,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000039,
+    "majorType": 20000002,
+    "sequence": 15,
+    "consumption": 1200,
+    "name": "Gate of Healing 2-5",
+    "addAttr": "[[3,600]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000040,
+    "majorType": 20000002,
+    "sequence": 16,
+    "consumption": 1280,
+    "name": "Gate of Healing 2-6",
+    "addAttr": "[[12,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000041,
+    "majorType": 20000002,
+    "sequence": 17,
+    "consumption": 1360,
+    "name": "Gate of Healing 2-7",
+    "addAttr": "[[4,8000]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000042,
+    "majorType": 20000002,
+    "sequence": 18,
+    "consumption": 1440,
+    "name": "Gate of Healing 2-8",
+    "addAttr": "[[13,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000043,
+    "majorType": 20000002,
+    "sequence": 19,
+    "consumption": 1520,
+    "name": "Gate of Healing 2-9",
+    "addAttr": "[[1,1200]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000044,
+    "majorType": 20000002,
+    "sequence": 20,
+    "consumption": 1600,
+    "name": "Gate of Healing 2-10",
+    "addAttr": "[[14,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000045,
+    "majorType": 20000002,
+    "sequence": 21,
+    "consumption": 1680,
+    "name": "Gate of Healing 3-1",
+    "addAttr": "[[2,1200]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000046,
+    "majorType": 20000002,
+    "sequence": 22,
+    "consumption": 1760,
+    "name": "Gate of Healing 3-2",
+    "addAttr": "[[15,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000047,
+    "majorType": 20000002,
+    "sequence": 23,
+    "consumption": 1840,
+    "name": "Gate of Healing 3-3",
+    "addAttr": "[[3,1200]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000048,
+    "majorType": 20000002,
+    "sequence": 24,
+    "consumption": 1920,
+    "name": "Gate of Healing 3-Ultimate",
+    "addAttr": "[[12,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000049,
+    "majorType": 20000003,
+    "sequence": 1,
+    "consumption": 120,
+    "name": "Gate of Life 1-1",
+    "addAttr": "[[4,3000]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000050,
+    "majorType": 20000003,
+    "sequence": 2,
+    "consumption": 240,
+    "name": "Gate of Life 1-2",
+    "addAttr": "[[13,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000051,
+    "majorType": 20000003,
+    "sequence": 3,
+    "consumption": 360,
+    "name": "Gate of Life 1-3",
+    "addAttr": "[[1,450]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000052,
+    "majorType": 20000003,
+    "sequence": 4,
+    "consumption": 480,
+    "name": "Gate of Life 1-4",
+    "addAttr": "[[14,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000053,
+    "majorType": 20000003,
+    "sequence": 5,
+    "consumption": 600,
+    "name": "Gate of Life 1-5",
+    "addAttr": "[[2,450]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000054,
+    "majorType": 20000003,
+    "sequence": 6,
+    "consumption": 720,
+    "name": "Gate of Life 1-6",
+    "addAttr": "[[15,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000055,
+    "majorType": 20000003,
+    "sequence": 7,
+    "consumption": 840,
+    "name": "Gate of Life 1-7",
+    "addAttr": "[[3,450]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000056,
+    "majorType": 20000003,
+    "sequence": 8,
+    "consumption": 960,
+    "name": "Gate of Life 1-8",
+    "addAttr": "[[12,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000057,
+    "majorType": 20000003,
+    "sequence": 9,
+    "consumption": 1080,
+    "name": "Gate of Life 1-9",
+    "addAttr": "[[4,6000]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000058,
+    "majorType": 20000003,
+    "sequence": 10,
+    "consumption": 1200,
+    "name": "Gate of Life 1-10",
+    "addAttr": "[[13,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000059,
+    "majorType": 20000003,
+    "sequence": 11,
+    "consumption": 1320,
+    "name": "Gate of Life 2-1",
+    "addAttr": "[[1,900]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000060,
+    "majorType": 20000003,
+    "sequence": 12,
+    "consumption": 1440,
+    "name": "Gate of Life 2-2",
+    "addAttr": "[[14,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000061,
+    "majorType": 20000003,
+    "sequence": 13,
+    "consumption": 1560,
+    "name": "Gate of Life 2-3",
+    "addAttr": "[[2,900]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000062,
+    "majorType": 20000003,
+    "sequence": 14,
+    "consumption": 1680,
+    "name": "Gate of Life 2-4",
+    "addAttr": "[[15,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000063,
+    "majorType": 20000003,
+    "sequence": 15,
+    "consumption": 1800,
+    "name": "Gate of Life 2-5",
+    "addAttr": "[[3,900]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000064,
+    "majorType": 20000003,
+    "sequence": 16,
+    "consumption": 1920,
+    "name": "Gate of Life 2-6",
+    "addAttr": "[[12,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000065,
+    "majorType": 20000003,
+    "sequence": 17,
+    "consumption": 2040,
+    "name": "Gate of Life 2-7",
+    "addAttr": "[[4,12000]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000066,
+    "majorType": 20000003,
+    "sequence": 18,
+    "consumption": 2160,
+    "name": "Gate of Life 2-8",
+    "addAttr": "[[13,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000067,
+    "majorType": 20000003,
+    "sequence": 19,
+    "consumption": 2280,
+    "name": "Gate of Life 2-9",
+    "addAttr": "[[1,1800]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000068,
+    "majorType": 20000003,
+    "sequence": 20,
+    "consumption": 2400,
+    "name": "Gate of Life 2-10",
+    "addAttr": "[[14,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000069,
+    "majorType": 20000003,
+    "sequence": 21,
+    "consumption": 2520,
+    "name": "Gate of Life 3-1",
+    "addAttr": "[[2,1800]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000070,
+    "majorType": 20000003,
+    "sequence": 22,
+    "consumption": 2640,
+    "name": "Gate of Life 3-2",
+    "addAttr": "[[15,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000071,
+    "majorType": 20000003,
+    "sequence": 23,
+    "consumption": 2760,
+    "name": "Gate of Life 3-3",
+    "addAttr": "[[3,1800]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000072,
+    "majorType": 20000003,
+    "sequence": 24,
+    "consumption": 2880,
+    "name": "Gate of Life 3-Ultimate",
+    "addAttr": "[[12,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000073,
+    "majorType": 20000004,
+    "sequence": 1,
+    "consumption": 160,
+    "name": "Gate of Pain 1-1",
+    "addAttr": "[[4,4000]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000074,
+    "majorType": 20000004,
+    "sequence": 2,
+    "consumption": 320,
+    "name": "Gate of Pain 1-2",
+    "addAttr": "[[13,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000075,
+    "majorType": 20000004,
+    "sequence": 3,
+    "consumption": 480,
+    "name": "Gate of Pain 1-3",
+    "addAttr": "[[1,600]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000076,
+    "majorType": 20000004,
+    "sequence": 4,
+    "consumption": 640,
+    "name": "Gate of Pain 1-4",
+    "addAttr": "[[14,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000077,
+    "majorType": 20000004,
+    "sequence": 5,
+    "consumption": 800,
+    "name": "Gate of Pain 1-5",
+    "addAttr": "[[2,600]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000078,
+    "majorType": 20000004,
+    "sequence": 6,
+    "consumption": 960,
+    "name": "Gate of Pain 1-6",
+    "addAttr": "[[15,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000079,
+    "majorType": 20000004,
+    "sequence": 7,
+    "consumption": 1120,
+    "name": "Gate of Pain 1-7",
+    "addAttr": "[[3,600]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000080,
+    "majorType": 20000004,
+    "sequence": 8,
+    "consumption": 1280,
+    "name": "Gate of Pain 1-8",
+    "addAttr": "[[12,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000081,
+    "majorType": 20000004,
+    "sequence": 9,
+    "consumption": 1440,
+    "name": "Gate of Pain 1-9",
+    "addAttr": "[[4,8000]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000082,
+    "majorType": 20000004,
+    "sequence": 10,
+    "consumption": 1600,
+    "name": "Gate of Pain 1-10",
+    "addAttr": "[[13,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000083,
+    "majorType": 20000004,
+    "sequence": 11,
+    "consumption": 1760,
+    "name": "Gate of Pain 2-1",
+    "addAttr": "[[1,1200]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000084,
+    "majorType": 20000004,
+    "sequence": 12,
+    "consumption": 1920,
+    "name": "Gate of Pain 2-2",
+    "addAttr": "[[14,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000085,
+    "majorType": 20000004,
+    "sequence": 13,
+    "consumption": 2080,
+    "name": "Gate of Pain 2-3",
+    "addAttr": "[[2,1200]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000086,
+    "majorType": 20000004,
+    "sequence": 14,
+    "consumption": 2240,
+    "name": "Gate of Pain 2-4",
+    "addAttr": "[[15,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000087,
+    "majorType": 20000004,
+    "sequence": 15,
+    "consumption": 2400,
+    "name": "Gate of Pain 2-5",
+    "addAttr": "[[3,1200]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000088,
+    "majorType": 20000004,
+    "sequence": 16,
+    "consumption": 2560,
+    "name": "Gate of Pain 2-6",
+    "addAttr": "[[12,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000089,
+    "majorType": 20000004,
+    "sequence": 17,
+    "consumption": 2720,
+    "name": "Gate of Pain 2-7",
+    "addAttr": "[[4,16000]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000090,
+    "majorType": 20000004,
+    "sequence": 18,
+    "consumption": 2880,
+    "name": "Gate of Pain 2-8",
+    "addAttr": "[[13,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000091,
+    "majorType": 20000004,
+    "sequence": 19,
+    "consumption": 3040,
+    "name": "Gate of Pain 2-9",
+    "addAttr": "[[1,2400]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000092,
+    "majorType": 20000004,
+    "sequence": 20,
+    "consumption": 3200,
+    "name": "Gate of Pain 2-10",
+    "addAttr": "[[14,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000093,
+    "majorType": 20000004,
+    "sequence": 21,
+    "consumption": 3360,
+    "name": "Gate of Pain 3-1",
+    "addAttr": "[[2,2400]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000094,
+    "majorType": 20000004,
+    "sequence": 22,
+    "consumption": 3520,
+    "name": "Gate of Pain 3-2",
+    "addAttr": "[[15,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000095,
+    "majorType": 20000004,
+    "sequence": 23,
+    "consumption": 3680,
+    "name": "Gate of Pain 3-3",
+    "addAttr": "[[3,2400]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000096,
+    "majorType": 20000004,
+    "sequence": 24,
+    "consumption": 3840,
+    "name": "Gate of Pain 3-Ultimate",
+    "addAttr": "[[12,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000097,
+    "majorType": 20000005,
+    "sequence": 1,
+    "consumption": 200,
+    "name": "Gate of Limit 1-1",
+    "addAttr": "[[4,5000]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000098,
+    "majorType": 20000005,
+    "sequence": 2,
+    "consumption": 400,
+    "name": "Gate of Limit 1-2",
+    "addAttr": "[[13,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000099,
+    "majorType": 20000005,
+    "sequence": 3,
+    "consumption": 600,
+    "name": "Gate of Limit 1-3",
+    "addAttr": "[[1,750]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000100,
+    "majorType": 20000005,
+    "sequence": 4,
+    "consumption": 800,
+    "name": "Gate of Limit 1-4",
+    "addAttr": "[[14,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000101,
+    "majorType": 20000005,
+    "sequence": 5,
+    "consumption": 1000,
+    "name": "Gate of Limit 1-5",
+    "addAttr": "[[2,750]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000102,
+    "majorType": 20000005,
+    "sequence": 6,
+    "consumption": 1200,
+    "name": "Gate of Limit 1-6",
+    "addAttr": "[[15,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000103,
+    "majorType": 20000005,
+    "sequence": 7,
+    "consumption": 1400,
+    "name": "Gate of Limit 1-7",
+    "addAttr": "[[3,750]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000104,
+    "majorType": 20000005,
+    "sequence": 8,
+    "consumption": 1600,
+    "name": "Gate of Limit 1-8",
+    "addAttr": "[[12,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000105,
+    "majorType": 20000005,
+    "sequence": 9,
+    "consumption": 1800,
+    "name": "Gate of Limit 1-9",
+    "addAttr": "[[4,10000]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000106,
+    "majorType": 20000005,
+    "sequence": 10,
+    "consumption": 2000,
+    "name": "Gate of Limit 1-10",
+    "addAttr": "[[13,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000107,
+    "majorType": 20000005,
+    "sequence": 11,
+    "consumption": 2200,
+    "name": "Gate of Limit 2-1",
+    "addAttr": "[[1,1500]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000108,
+    "majorType": 20000005,
+    "sequence": 12,
+    "consumption": 2400,
+    "name": "Gate of Limit 2-2",
+    "addAttr": "[[14,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000109,
+    "majorType": 20000005,
+    "sequence": 13,
+    "consumption": 2600,
+    "name": "Gate of Limit 2-3",
+    "addAttr": "[[2,1500]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000110,
+    "majorType": 20000005,
+    "sequence": 14,
+    "consumption": 2800,
+    "name": "Gate of Limit 2-4",
+    "addAttr": "[[15,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000111,
+    "majorType": 20000005,
+    "sequence": 15,
+    "consumption": 3000,
+    "name": "Gate of Limit 2-5",
+    "addAttr": "[[3,1500]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000112,
+    "majorType": 20000005,
+    "sequence": 16,
+    "consumption": 3200,
+    "name": "Gate of Limit 2-6",
+    "addAttr": "[[12,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000113,
+    "majorType": 20000005,
+    "sequence": 17,
+    "consumption": 3400,
+    "name": "Gate of Limit 2-7",
+    "addAttr": "[[4,20000]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000114,
+    "majorType": 20000005,
+    "sequence": 18,
+    "consumption": 3600,
+    "name": "Gate of Limit 2-8",
+    "addAttr": "[[13,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000115,
+    "majorType": 20000005,
+    "sequence": 19,
+    "consumption": 3800,
+    "name": "Gate of Limit 2-9",
+    "addAttr": "[[1,3000]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000116,
+    "majorType": 20000005,
+    "sequence": 20,
+    "consumption": 4000,
+    "name": "Gate of Limit 2-10",
+    "addAttr": "[[14,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000117,
+    "majorType": 20000005,
+    "sequence": 21,
+    "consumption": 4200,
+    "name": "Gate of Limit 3-1",
+    "addAttr": "[[2,3000]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000118,
+    "majorType": 20000005,
+    "sequence": 22,
+    "consumption": 4400,
+    "name": "Gate of Limit 3-2",
+    "addAttr": "[[15,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000119,
+    "majorType": 20000005,
+    "sequence": 23,
+    "consumption": 4600,
+    "name": "Gate of Limit 3-3",
+    "addAttr": "[[3,3000]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000120,
+    "majorType": 20000005,
+    "sequence": 24,
+    "consumption": 4800,
+    "name": "Gate of Limit 3-Ultimate",
+    "addAttr": "[[12,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000121,
+    "majorType": 20000006,
+    "sequence": 1,
+    "consumption": 240,
+    "name": "Gate of View 1-1",
+    "addAttr": "[[4,6000]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000122,
+    "majorType": 20000006,
+    "sequence": 2,
+    "consumption": 480,
+    "name": "Gate of View 1-2",
+    "addAttr": "[[13,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000123,
+    "majorType": 20000006,
+    "sequence": 3,
+    "consumption": 720,
+    "name": "Gate of View 1-3",
+    "addAttr": "[[1,900]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000124,
+    "majorType": 20000006,
+    "sequence": 4,
+    "consumption": 960,
+    "name": "Gate of View 1-4",
+    "addAttr": "[[14,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000125,
+    "majorType": 20000006,
+    "sequence": 5,
+    "consumption": 1200,
+    "name": "Gate of View 1-5",
+    "addAttr": "[[2,900]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000126,
+    "majorType": 20000006,
+    "sequence": 6,
+    "consumption": 1440,
+    "name": "Gate of View 1-6",
+    "addAttr": "[[15,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000127,
+    "majorType": 20000006,
+    "sequence": 7,
+    "consumption": 1680,
+    "name": "Gate of View 1-7",
+    "addAttr": "[[3,900]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000128,
+    "majorType": 20000006,
+    "sequence": 8,
+    "consumption": 1920,
+    "name": "Gate of View 1-8",
+    "addAttr": "[[12,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000129,
+    "majorType": 20000006,
+    "sequence": 9,
+    "consumption": 2160,
+    "name": "Gate of View 1-9",
+    "addAttr": "[[4,12000]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000130,
+    "majorType": 20000006,
+    "sequence": 10,
+    "consumption": 2400,
+    "name": "Gate of View 1-10",
+    "addAttr": "[[13,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000131,
+    "majorType": 20000006,
+    "sequence": 11,
+    "consumption": 2640,
+    "name": "Gate of View 2-1",
+    "addAttr": "[[1,1800]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000132,
+    "majorType": 20000006,
+    "sequence": 12,
+    "consumption": 2880,
+    "name": "Gate of View 2-2",
+    "addAttr": "[[14,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000133,
+    "majorType": 20000006,
+    "sequence": 13,
+    "consumption": 3120,
+    "name": "Gate of View 2-3",
+    "addAttr": "[[2,1800]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000134,
+    "majorType": 20000006,
+    "sequence": 14,
+    "consumption": 3360,
+    "name": "Gate of View 2-4",
+    "addAttr": "[[15,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000135,
+    "majorType": 20000006,
+    "sequence": 15,
+    "consumption": 3600,
+    "name": "Gate of View 2-5",
+    "addAttr": "[[3,1800]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000136,
+    "majorType": 20000006,
+    "sequence": 16,
+    "consumption": 3840,
+    "name": "Gate of View 2-6",
+    "addAttr": "[[12,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000137,
+    "majorType": 20000006,
+    "sequence": 17,
+    "consumption": 4080,
+    "name": "Gate of View 2-7",
+    "addAttr": "[[4,24000]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000138,
+    "majorType": 20000006,
+    "sequence": 18,
+    "consumption": 4320,
+    "name": "Gate of View 2-8",
+    "addAttr": "[[13,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000139,
+    "majorType": 20000006,
+    "sequence": 19,
+    "consumption": 4560,
+    "name": "Gate of View 2-9",
+    "addAttr": "[[1,3600]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000140,
+    "majorType": 20000006,
+    "sequence": 20,
+    "consumption": 4800,
+    "name": "Gate of View 2-10",
+    "addAttr": "[[14,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000141,
+    "majorType": 20000006,
+    "sequence": 21,
+    "consumption": 5040,
+    "name": "Gate of View 3-1",
+    "addAttr": "[[2,3600]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000142,
+    "majorType": 20000006,
+    "sequence": 22,
+    "consumption": 5280,
+    "name": "Gate of View 3-2",
+    "addAttr": "[[15,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000143,
+    "majorType": 20000006,
+    "sequence": 23,
+    "consumption": 5520,
+    "name": "Gate of View 3-3",
+    "addAttr": "[[3,3600]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000144,
+    "majorType": 20000006,
+    "sequence": 24,
+    "consumption": 5760,
+    "name": "Gate of View 3-Ultimate",
+    "addAttr": "[[12,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000145,
+    "majorType": 20000007,
+    "sequence": 1,
+    "consumption": 280,
+    "name": "Gate of Wonder  1-1",
+    "addAttr": "[[4,7000]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000146,
+    "majorType": 20000007,
+    "sequence": 2,
+    "consumption": 560,
+    "name": "Gate of Wonder  1-2",
+    "addAttr": "[[13,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000147,
+    "majorType": 20000007,
+    "sequence": 3,
+    "consumption": 840,
+    "name": "Gate of Wonder  1-3",
+    "addAttr": "[[1,1050]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000148,
+    "majorType": 20000007,
+    "sequence": 4,
+    "consumption": 1120,
+    "name": "Gate of Wonder  1-4",
+    "addAttr": "[[14,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000149,
+    "majorType": 20000007,
+    "sequence": 5,
+    "consumption": 1400,
+    "name": "Gate of Wonder  1-5",
+    "addAttr": "[[2,1050]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000150,
+    "majorType": 20000007,
+    "sequence": 6,
+    "consumption": 1680,
+    "name": "Gate of Wonder  1-6",
+    "addAttr": "[[15,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000151,
+    "majorType": 20000007,
+    "sequence": 7,
+    "consumption": 1960,
+    "name": "Gate of Wonder  1-7",
+    "addAttr": "[[3,1050]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000152,
+    "majorType": 20000007,
+    "sequence": 8,
+    "consumption": 2240,
+    "name": "Gate of Wonder  1-8",
+    "addAttr": "[[12,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000153,
+    "majorType": 20000007,
+    "sequence": 9,
+    "consumption": 2520,
+    "name": "Gate of Wonder  1-9",
+    "addAttr": "[[4,14000]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000154,
+    "majorType": 20000007,
+    "sequence": 10,
+    "consumption": 2800,
+    "name": "Gate of Wonder  1-10",
+    "addAttr": "[[13,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000155,
+    "majorType": 20000007,
+    "sequence": 11,
+    "consumption": 3080,
+    "name": "Gate of Wonder 2-1",
+    "addAttr": "[[1,2100]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000156,
+    "majorType": 20000007,
+    "sequence": 12,
+    "consumption": 3360,
+    "name": "Gate of Wonder 2-2",
+    "addAttr": "[[14,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000157,
+    "majorType": 20000007,
+    "sequence": 13,
+    "consumption": 3640,
+    "name": "Gate of Wonder 2-3",
+    "addAttr": "[[2,2100]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000158,
+    "majorType": 20000007,
+    "sequence": 14,
+    "consumption": 3920,
+    "name": "Gate of Wonder 2-4",
+    "addAttr": "[[15,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000159,
+    "majorType": 20000007,
+    "sequence": 15,
+    "consumption": 4200,
+    "name": "Gate of Wonder 2-5",
+    "addAttr": "[[3,2100]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000160,
+    "majorType": 20000007,
+    "sequence": 16,
+    "consumption": 4480,
+    "name": "Gate of Wonder 2-6",
+    "addAttr": "[[12,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000161,
+    "majorType": 20000007,
+    "sequence": 17,
+    "consumption": 4760,
+    "name": "Gate of Wonder 2-7",
+    "addAttr": "[[4,28000]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000162,
+    "majorType": 20000007,
+    "sequence": 18,
+    "consumption": 5040,
+    "name": "Gate of Wonder 2-8",
+    "addAttr": "[[13,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000163,
+    "majorType": 20000007,
+    "sequence": 19,
+    "consumption": 5320,
+    "name": "Gate of Wonder 2-9",
+    "addAttr": "[[1,4200]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000164,
+    "majorType": 20000007,
+    "sequence": 20,
+    "consumption": 5600,
+    "name": "Gate of Wonder 2-10",
+    "addAttr": "[[14,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000165,
+    "majorType": 20000007,
+    "sequence": 21,
+    "consumption": 5880,
+    "name": "Gate of Wonder 3-1",
+    "addAttr": "[[2,4200]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000166,
+    "majorType": 20000007,
+    "sequence": 22,
+    "consumption": 6160,
+    "name": "Gate of Wonder 3-2",
+    "addAttr": "[[15,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000167,
+    "majorType": 20000007,
+    "sequence": 23,
+    "consumption": 6440,
+    "name": "Gate of Wonder 3-3",
+    "addAttr": "[[3,4200]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000168,
+    "majorType": 20000007,
+    "sequence": 24,
+    "consumption": 6720,
+    "name": "Gate of Wonder 3-Ultimate",
+    "addAttr": "[[12,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000169,
+    "majorType": 20000008,
+    "sequence": 1,
+    "consumption": 320,
+    "name": "Gate of Death 1-1",
+    "addAttr": "[[4,8000]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000170,
+    "majorType": 20000008,
+    "sequence": 2,
+    "consumption": 640,
+    "name": "Gate of Death 1-2",
+    "addAttr": "[[13,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000171,
+    "majorType": 20000008,
+    "sequence": 3,
+    "consumption": 960,
+    "name": "Gate of Death 1-3",
+    "addAttr": "[[1,1200]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000172,
+    "majorType": 20000008,
+    "sequence": 4,
+    "consumption": 1280,
+    "name": "Gate of Death 1-4",
+    "addAttr": "[[14,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000173,
+    "majorType": 20000008,
+    "sequence": 5,
+    "consumption": 1600,
+    "name": "Gate of Death 1-5",
+    "addAttr": "[[2,1200]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000174,
+    "majorType": 20000008,
+    "sequence": 6,
+    "consumption": 1920,
+    "name": "Gate of Death 1-6",
+    "addAttr": "[[15,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000175,
+    "majorType": 20000008,
+    "sequence": 7,
+    "consumption": 2240,
+    "name": "Gate of Death 1-7",
+    "addAttr": "[[3,1200]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000176,
+    "majorType": 20000008,
+    "sequence": 8,
+    "consumption": 2560,
+    "name": "Gate of Death 1-8",
+    "addAttr": "[[12,0.2]]",
+    "background": 1,
+    "label": 1
+  },
+  {
+    "id": 10000177,
+    "majorType": 20000008,
+    "sequence": 9,
+    "consumption": 2880,
+    "name": "Gate of Death 1-9",
+    "addAttr": "[[4,16000]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000178,
+    "majorType": 20000008,
+    "sequence": 10,
+    "consumption": 3200,
+    "name": "Gate of Death 1-10",
+    "addAttr": "[[13,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000179,
+    "majorType": 20000008,
+    "sequence": 11,
+    "consumption": 3520,
+    "name": "Gate of Death 2-1",
+    "addAttr": "[[1,2400]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000180,
+    "majorType": 20000008,
+    "sequence": 12,
+    "consumption": 3840,
+    "name": "Gate of Death 2-2",
+    "addAttr": "[[14,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000181,
+    "majorType": 20000008,
+    "sequence": 13,
+    "consumption": 4160,
+    "name": "Gate of Death 2-3",
+    "addAttr": "[[2,2400]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000182,
+    "majorType": 20000008,
+    "sequence": 14,
+    "consumption": 4480,
+    "name": "Gate of Death 2-4",
+    "addAttr": "[[15,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000183,
+    "majorType": 20000008,
+    "sequence": 15,
+    "consumption": 4800,
+    "name": "Gate of Death 2-5",
+    "addAttr": "[[3,2400]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000184,
+    "majorType": 20000008,
+    "sequence": 16,
+    "consumption": 5120,
+    "name": "Gate of Death 2-6",
+    "addAttr": "[[12,0.4]]",
+    "background": 2,
+    "label": 2
+  },
+  {
+    "id": 10000185,
+    "majorType": 20000008,
+    "sequence": 17,
+    "consumption": 5440,
+    "name": "Gate of Death 2-7",
+    "addAttr": "[[4,32000]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000186,
+    "majorType": 20000008,
+    "sequence": 18,
+    "consumption": 5760,
+    "name": "Gate of Death 2-8",
+    "addAttr": "[[13,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000187,
+    "majorType": 20000008,
+    "sequence": 19,
+    "consumption": 6080,
+    "name": "Gate of Death 2-9",
+    "addAttr": "[[1,4800]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000188,
+    "majorType": 20000008,
+    "sequence": 20,
+    "consumption": 6400,
+    "name": "Gate of Death 2-10",
+    "addAttr": "[[14,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000189,
+    "majorType": 20000008,
+    "sequence": 21,
+    "consumption": 6720,
+    "name": "Gate of Death 3-1",
+    "addAttr": "[[2,4800]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000190,
+    "majorType": 20000008,
+    "sequence": 22,
+    "consumption": 7040,
+    "name": "Gate of Death 3-2",
+    "addAttr": "[[15,0.8]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000191,
+    "majorType": 20000008,
+    "sequence": 23,
+    "consumption": 7360,
+    "name": "Gate of Death 3-3",
+    "addAttr": "[[3,4800]]",
+    "background": 1,
+    "label": 3
+  },
+  {
+    "id": 10000192,
+    "majorType": 20000008,
+    "sequence": 24,
+    "consumption": 7680,
+    "name": "Gate of Death 3-Ultimate",
+    "addAttr": "[[12,0.8]]",
+    "background": 1,
+    "label": 3
+  }
+]

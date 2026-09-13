@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Naruto Online — Konohagakure S1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+    body {
+      background: #05070a;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+    }
+    #game-container {
+      position: relative;
+      width: 1250px;
+      height: 650px;
+      box-shadow: 0 0 35px rgba(0, 0, 0, 0.9), 0 0 1px #d4af37;
+      background: #000;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    #status-bar {
+      position: absolute;
+      bottom: 8px;
+      left: 12px;
+      font-size: 11px;
+      color: #768390;
+      pointer-events: none;
+      z-index: 100;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <div id="status-bar">● Naruto Online Emulation Core // Resolução: 1250x650 // Status: Conectando...</div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

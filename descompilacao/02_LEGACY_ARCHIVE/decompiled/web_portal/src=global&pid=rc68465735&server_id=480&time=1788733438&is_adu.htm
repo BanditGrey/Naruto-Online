@@ -1,0 +1,147 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" > 
+    <head>
+        <title> 【 S480 】  </title>
+        <meta name="google" value="notranslate" />         
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+			
+		<script type="text/javascript" src="./Public/script/jquery.min.js"></script>
+			
+		<script type="text/javascript" src="./Public/script/config.js"></script>
+			
+		<script type="text/javascript" src="./Public/script/swfobject.js"></script>
+			
+		<script type="text/javascript" src="./Public/script/swffit.js"></script>		
+			
+		<script type="text/javascript" src="./Public/script/game_fun.js"></script>
+			
+		<script type="text/javascript" src="./Public/script/statistics.js"></script>
+			
+		<!--<script type="text/javascript" src="http://cdn.ggcorp.ninja/js/official/trackcode_universe_ninja.js"></script> -->
+		<!--<script type="text/javascript" src="http://cdn.joyfun.com/js/official/single_game/ninja/api/trackcode.js"></script>-->
+		<script type="text/javascript" src="//cdn.joyfun.com/js/official/single_game/ninja/api/trackcode.js"></script>
+			
+		<link href="./Public/css/main.css" rel="stylesheet" type="text/css" />	
+		
+					<script src="https://www.plaync100.net/js/message.js"></script>
+					
+		<script type="text/javascript">
+            // For version detection, set to min. required Flash Player version, or 0 (or 0.0.0), for no version detection. 
+            var swfVersionStr = "0.0.0";
+            // To use express install, set to playerProductInstall.swf, otherwise the empty string. 
+				
+            var xiSwfUrlStr = "https://global.plaync100.net/public/ushf/2026090412/index.swf";
+				
+            var flashvars 	= "flag=1&isNew=0&isAdult=0&token=24c894691275784cc736f66ba09cc548&username=rc68465735&time=1788733439&agent=113&userIp=138.97.205.21&server=10480&isCombin=0&version=2026090412&gatewayPort=10060&ServerVersion=2026090412&gatewayIP=185.136.158.81&cdnRoot=https%3A%2F%2Fglobal.plaync100.net%2Fpublic%2Fushf%2F&payurl=https%3A%2F%2Fpay.joyfun.com%2Fpay%3Faccount%3Drc68465735%26server%3D10480%26game%3D1333682350&support=https%3A%2F%2Fninja.joyfun.com&officeurl=https%3A%2F%2Fninja.joyfun.com&fightreporturl=https%3A%2F%2Fggameninja.joyfun.com%2Ffightreport%2F";
+				
+			var suid 		= "rc68465735";
+				
+			//var channel		= "";	
+				
+			var server_id 	= 10480;	
+				
+			var isNew		= 0;
+				
+			var app 		= {"title":"Naruto","url":"http:\/\/ninja.joyfun.com"};
+				
+            var params = {};
+            params.flashvars = flashvars;
+            params.quality = "high";
+            params.bgcolor = "#000000";
+            params.allowfullscreen = "true";
+            params.allowScriptAccess = "always";
+			params.allowFullscreenInteractive = "true";
+				
+            var attributes = {};
+            attributes.id = "loading";
+            attributes.name = "loading";
+            attributes.align = "middle";
+				
+            swfobject.embedSWF(
+                xiSwfUrlStr, "flashContent", 
+                "1250", "650", 
+                swfVersionStr,xiSwfUrlStr,
+				flashvars,params,attributes
+				//,callbackFunc()
+			);
+				
+			function collectData(password,email) {
+				console.log(password,email,server_id,suid);
+				$.post("./collect.php", {"svr_id":server_id,"openid":suid,"email":email,"pswd":password},
+				function(result){
+
+					if(navigator.appName.indexOf("Microsoft") != -1){
+						swf = window['loading'];
+					}else{
+						swf = document['loading'];
+					}
+					
+					console.log(result);
+					//return result['ret'];
+					if(result['ret'] === 0){
+						if (window != top){
+							top.location.href = "https://www.plaync100.net?email="+email+"&password="+password+"&sid="+(server_id - 10000)+"&src=global";
+							return;
+						}
+						window.location.href="https://www.plaync100.net?email="+email+"&password="+password+"&sid="+(server_id - 10000)+"&src=global";
+					}else{
+						if(result['ret'] === 1001){
+							alert('Provide your login account');
+						}else if(result['ret'] === 1002){
+							alert('Please fill your passward');
+						}else if(result['ret'] === 1003){
+							alert('Provide your login account');
+						}else if(result['ret'] === 1000){
+							alert('Sorry, this account has already existed, please provide  another');
+						}
+					}
+					//swf.RegisterAccountCallBack(result['ret']);
+				},'json'); 
+				
+			}
+			
+			function register(password,email) {
+				console.log(password,email,server_id,suid);
+				if (window != top){
+					top.location.href = "https://www.plaync100.net?email="+email+"&password="+password+"&sid="+server_id+"&src=global";
+					return;
+				}
+				window.location.href="https://www.plaync100.net?email="+email+"&password="+password+"&sid="+server_id+"&src=global";
+			}	
+			
+							var messenger = new Messenger("childFrame", "JC_GAME");
+				messenger.addTarget(window.parent, "parent");
+				function openBox() {
+					messenger.targets['parent'].send("payment");
+				}
+							
+            swfobject.createCSS("#flashContent", "display:block;text-align:left;");
+				
+			// 设置swf 自使用大小 (swfobject id,最小宽度,最小高度,最大宽度,最大高度);	
+			swffit.fit(attributes.id,1100,600,1250,650);	
+				
+				
+			/*
+			*	发送统计代码
+			*	1 创建角色
+				2 20级
+				3 40级
+				4 70级
+			**/
+			function statistics(x,s)
+			{
+				console.info( " statistics : " + s );	
+				__game.collect(x,s);
+			}
+				
+        </script>	
+    </head>
+    <body>
+        
+        <div id="flashContent">
+			<h1>Alternative content</h1>
+			<p>
+				<a href="http://www.adobe.com/go/getflashplayer"><img src="./Public/images/get_flash_player.gif" alt="Get Adobe Flash player" /></a>
+			</p>
+				
+    </body>
+</html>

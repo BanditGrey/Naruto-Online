@@ -1,0 +1,103 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" > 
+    <head>
+        <title> 【 S592 】  </title>
+        <meta name="google" value="notranslate" />         
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+			
+		<script type="text/javascript" src="./Public/script/jquery.min.js"></script>
+			
+		<script type="text/javascript" src="./Public/script/config.js"></script>	
+			
+		<script type="text/javascript" src="./Public/script/swfobject.js"></script>	
+			
+		<script type="text/javascript" src="./Public/script/game_fun.js"></script>
+			
+		<script type="text/javascript" src="./Public/script/statistics.js"></script>
+			
+		<script type="text/javascript" src="http://cdn.soargames.com/js/official/single_game/ninja_soargames/api/trackcode.js"></script>			
+		<link href="./Public/css/main.css" rel="stylesheet" type="text/css" />	
+			
+		<script type="text/javascript">
+			try{
+					
+				document.domain='soargames.com';
+					
+			}catch(e){}
+				
+            // For version detection, set to min. required Flash Player version, or 0 (or 0.0.0), for no version detection. 
+            var swfVersionStr = "0.0.0";
+            // To use express install, set to playerProductInstall.swf, otherwise the empty string. 
+				
+            var xiSwfUrlStr = "https://narutosp.plaync100.net/public/2026090413/index.swf";
+				
+            var flashvars 	= "flag=1&isNew=1&isAdult=0&token=d38dc2857cd2e275f18c0896293584a8&username=rc68465735&time=1788727260&agent=108&userIp=138.97.205.21&server=592&isCombin=0&version=2026090413&gatewayPort=10072&ServerVersion=2026090413&gatewayIP=85.195.83.149&cdnRoot=https%3A%2F%2Fnarutosp.plaync100.net%2Fpublic%2F&payurl=http%3A%2F%2Fpay.soargames.com%2Fpay%3Faccount%3Drc68465735%26server%3D592%26game%3D1333682350&support=http%3A%2F%2Fforums.soargames.com%2Fforum.php%3Fgid%3D1&officeurl=https%3A%2F%2Fwww.plaync100.net&fightreporturl=http%3A%2F%2Fnarutosp.plaync100.net%2Ffightreport%2F";
+				
+			var suid 		= "rc68465735";
+				
+			var channel		= 108;
+				
+			var server_id 	= 592;	
+				
+			var isNew		= 1;
+				
+			var app 		= {"title":"Furia Ninja-Juego","url":"https:\/\/www.plaync100.net"};
+				
+				
+            var params = {};
+            params.flashvars = flashvars;
+            params.quality = "high";
+            params.bgcolor = "#000000";
+            params.allowfullscreen = "true";
+            params.allowscriptaccess = "always";
+			params.allowFullscreenInteractive = "true";
+			params.wmode = "transparent";
+				
+            var attributes = {};
+            attributes.id = "loading";
+            attributes.name = "loading";
+            attributes.align = "middle";
+				
+            swfobject.embedSWF(
+                xiSwfUrlStr, "flashContent", 
+                "100%", "100%", 
+                swfVersionStr,xiSwfUrlStr,
+				flashvars,params,attributes
+				//,callbackFunc()
+			);
+            swfobject.createCSS("#flashContent", "display:block;text-align:left;");
+				
+			// 设置swf 自使用大小 (swfobject id,最小宽度,最小高度,最大宽度,最大高度);	
+				
+			/*
+			*	发送统计代码
+			*	1 创建角色
+				2 20级
+				3 40级
+				4 70级
+			**/
+			function statistics(x,s)
+			{
+				//console.log(" x= " + x + " ; s=" + s);
+				__game.collect(x,s);
+			}
+				
+			// recharge
+			function openBox() {
+				//console.log("点击openBox框");
+				__game.pay();
+			}
+				
+        </script>	
+    </head>
+    <body onload="changeHeight()" >
+        
+        <div id="flashContent">
+			<h1>Alternative content</h1>
+			<p>
+				<a href="http://www.adobe.com/go/getflashplayer"><img src="./Public/images/get_flash_player.gif" alt="Get Adobe Flash player" /></a>
+			</p>
+				
+        </div>
+			
+    </body>
+</html>

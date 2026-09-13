@@ -1,0 +1,29 @@
+{
+  "id": 11100005,
+  "animations": {
+    "idle": {
+      "frameCount": 6,
+      "frames": [
+        "/assets/animated/hero_genjutsu_m/idle_0.png",
+        "/assets/animated/hero_genjutsu_m/idle_1.png",
+        "/assets/animated/hero_genjutsu_m/idle_2.png",
+        "/assets/animated/hero_genjutsu_m/idle_3.png",
+        "/assets/animated/hero_genjutsu_m/idle_4.png",
+        "/assets/animated/hero_genjutsu_m/idle_5.png"
+      ]
+    },
+    "run": {
+      "frameCount": 8,
+      "frames": [
+        "/assets/animated/hero_genjutsu_m/run_0.png",
+        "/assets/animated/hero_genjutsu_m/run_1.png",
+        "/assets/animated/hero_genjutsu_m/run_2.png",
+        "/assets/animated/hero_genjutsu_m/run_3.png",
+        "/assets/animated/hero_genjutsu_m/run_4.png",
+        "/assets/animated/hero_genjutsu_m/run_5.png",
+        "/assets/animated/hero_genjutsu_m/run_6.png",
+        "/assets/animated/hero_genjutsu_m/run_7.png"
+      ]
+    }
+  }
+}

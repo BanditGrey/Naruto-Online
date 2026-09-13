@@ -1,0 +1,12 @@
+
+
+*	{font-family:微软雅黑,Tahoma;font-size: 12px;color: #FFF; line-height:22px;}
+a	{color:#FFF;text-decoration:none}
+a:hover	{color:#FFF; text-decoration:underline}
+html, body  { height:100%; }
+body { margin:0; padding:0; overflow:auto; /* text-align:center */; 
+background-color: #000000; }   
+object:focus { outline:none; }
+#flashContent { display:none; }
+#foot { margin:0; padding:0; overflow:auto; /* text-align:center;  */}
+

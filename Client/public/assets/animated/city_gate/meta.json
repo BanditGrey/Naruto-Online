@@ -1,0 +1,20 @@
+{
+  "id": 22100001,
+  "animations": {
+    "idle": {
+      "frameCount": 10,
+      "frames": [
+        "/assets/animated/city_gate/idle_0.png",
+        "/assets/animated/city_gate/idle_1.png",
+        "/assets/animated/city_gate/idle_2.png",
+        "/assets/animated/city_gate/idle_3.png",
+        "/assets/animated/city_gate/idle_4.png",
+        "/assets/animated/city_gate/idle_5.png",
+        "/assets/animated/city_gate/idle_6.png",
+        "/assets/animated/city_gate/idle_7.png",
+        "/assets/animated/city_gate/idle_8.png",
+        "/assets/animated/city_gate/idle_9.png"
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "id": 11100004,
+  "animations": {
+    "idle": {
+      "frameCount": 6,
+      "frames": [
+        "/assets/animated/hero_ninjutsu_f/idle_0.png",
+        "/assets/animated/hero_ninjutsu_f/idle_1.png",
+        "/assets/animated/hero_ninjutsu_f/idle_2.png",
+        "/assets/animated/hero_ninjutsu_f/idle_3.png",
+        "/assets/animated/hero_ninjutsu_f/idle_4.png",
+        "/assets/animated/hero_ninjutsu_f/idle_5.png"
+      ]
+    },
+    "run": {
+      "frameCount": 8,
+      "frames": [
+        "/assets/animated/hero_ninjutsu_f/run_0.png",
+        "/assets/animated/hero_ninjutsu_f/run_1.png",
+        "/assets/animated/hero_ninjutsu_f/run_2.png",
+        "/assets/animated/hero_ninjutsu_f/run_3.png",
+        "/assets/animated/hero_ninjutsu_f/run_4.png",
+        "/assets/animated/hero_ninjutsu_f/run_5.png",
+        "/assets/animated/hero_ninjutsu_f/run_6.png",
+        "/assets/animated/hero_ninjutsu_f/run_7.png"
+      ]
+    }
+  }
+}

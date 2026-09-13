@@ -1,0 +1,2482 @@
+[
+  {
+    "id": 1000000,
+    "name": "Hijutsu·Fuego",
+    "occultEffectLv": 0,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 100,
+    "consumeExtra": "[]",
+    "propsname": "",
+    "desc": "Aumentar el propio ataque después de los ataques del ninja principal."
+  },
+  {
+    "id": 1000001,
+    "name": "Hijutsu·Fuego Nvl.1",
+    "occultEffectLv": 1,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 1000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 2% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000002,
+    "name": "Hijutsu·Fuego Nvl.2",
+    "occultEffectLv": 2,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 1000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 4% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000003,
+    "name": "Hijutsu·Fuego Nvl.3",
+    "occultEffectLv": 3,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 2000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 6% después de los ataques del ninja principal. Dura 3 rondas."
+  },
+  {
+    "id": 1000004,
+    "name": "Hijutsu·Fuego Nvl.4",
+    "occultEffectLv": 4,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 4000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 8% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000005,
+    "name": "Hijutsu·Fuego Nvl.5",
+    "occultEffectLv": 5,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 6000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 10% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000006,
+    "name": "Hijutsu·Fuego Nvl.6",
+    "occultEffectLv": 6,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 8000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 12% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000007,
+    "name": "Hijutsu·Fuego Nvl.7",
+    "occultEffectLv": 7,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 10000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 14% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000008,
+    "name": "Hijutsu·Fuego Nvl.8",
+    "occultEffectLv": 8,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 12000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 16% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000009,
+    "name": "Hijutsu·Fuego Nvl.9",
+    "occultEffectLv": 9,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 14000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 18% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000010,
+    "name": "Hijutsu·Fuego Nvl.10",
+    "occultEffectLv": 10,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 16000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 20% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000011,
+    "name": "Hijutsu·Fuego Nvl.11",
+    "occultEffectLv": 11,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 18000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 22% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000012,
+    "name": "Hijutsu·Fuego Nvl.12",
+    "occultEffectLv": 12,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 20000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 24% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000013,
+    "name": "Hijutsu·Fuego Nvl.13",
+    "occultEffectLv": 13,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 22000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 26% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000014,
+    "name": "Hijutsu·Fuego Nvl.14",
+    "occultEffectLv": 14,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 24000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 28% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000015,
+    "name": "Hijutsu·Fuego Nvl.15",
+    "occultEffectLv": 15,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 26000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 30% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000016,
+    "name": "Hijutsu·Fuego Nvl.16",
+    "occultEffectLv": 16,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 28000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 32% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000017,
+    "name": "Hijutsu·Fuego Nvl.17",
+    "occultEffectLv": 17,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 30000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 34% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000018,
+    "name": "Hijutsu·Fuego Nvl.18",
+    "occultEffectLv": 18,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 32000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 36% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000019,
+    "name": "Hijutsu·Fuego Nvl.19",
+    "occultEffectLv": 19,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 34000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 38% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000020,
+    "name": "Hijutsu·Fuego Nvl.20",
+    "occultEffectLv": 20,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 40% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000021,
+    "name": "Hijutsu·Fuego Nvl.21",
+    "occultEffectLv": 21,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 42% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000022,
+    "name": "Hijutsu·Fuego Nvl.22",
+    "occultEffectLv": 22,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 44% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000023,
+    "name": "Hijutsu·Fuego Nvl.23",
+    "occultEffectLv": 23,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 46% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000024,
+    "name": "Hijutsu·Fuego Nvl.24",
+    "occultEffectLv": 24,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 48% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000025,
+    "name": "Hijutsu·Fuego Nvl.25",
+    "occultEffectLv": 25,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 50% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000026,
+    "name": "Hijutsu·Fuego Nvl.26",
+    "occultEffectLv": 26,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 52% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000027,
+    "name": "Hijutsu·Fuego Nvl.27",
+    "occultEffectLv": 27,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 54% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000028,
+    "name": "Hijutsu·Fuego Nvl.28",
+    "occultEffectLv": 28,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 56% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000029,
+    "name": "Hijutsu·Fuego Nvl.29",
+    "occultEffectLv": 29,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 58% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 1000030,
+    "name": "Hijutsu·Fuego Nvl.30",
+    "occultEffectLv": 30,
+    "occultEffectKey": 0,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del fuego",
+    "desc": "Aumentar el propio ataque de un 60% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000000,
+    "name": "Hijutsu·Viento",
+    "occultEffectLv": 0,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 100,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad después de los ataques del ninja principal."
+  },
+  {
+    "id": 2000001,
+    "name": "Hijutsu·Viento Nvl.1",
+    "occultEffectLv": 1,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 1000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 2% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000002,
+    "name": "Hijutsu·Viento Nvl.2",
+    "occultEffectLv": 2,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 1000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 4% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000003,
+    "name": "Hijutsu·Viento Nvl.3",
+    "occultEffectLv": 3,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 2000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 6% después de los ataques del ninja principal. Dura 3 rondas."
+  },
+  {
+    "id": 2000004,
+    "name": "Hijutsu·Viento Nvl.4",
+    "occultEffectLv": 4,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 4000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 8% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000005,
+    "name": "Hijutsu·Viento Nvl.5",
+    "occultEffectLv": 5,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 6000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 10% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000006,
+    "name": "Hijutsu·Viento Nvl.6",
+    "occultEffectLv": 6,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 8000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 12% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000007,
+    "name": "Hijutsu·Viento Nvl.7",
+    "occultEffectLv": 7,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 10000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 14% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000008,
+    "name": "Hijutsu·Viento Nvl.8",
+    "occultEffectLv": 8,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 12000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 16% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000009,
+    "name": "Hijutsu·Viento Nvl.9",
+    "occultEffectLv": 9,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 14000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 18% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000010,
+    "name": "Hijutsu·Viento Nvl.10",
+    "occultEffectLv": 10,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 16000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 20% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000011,
+    "name": "Hijutsu·Viento Nvl.11",
+    "occultEffectLv": 11,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 18000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 22% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000012,
+    "name": "Hijutsu·Viento Nvl.12",
+    "occultEffectLv": 12,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 20000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 24% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000013,
+    "name": "Hijutsu·Viento Nvl.13",
+    "occultEffectLv": 13,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 22000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 26% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000014,
+    "name": "Hijutsu·Viento Nvl.14",
+    "occultEffectLv": 14,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 24000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 28% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000015,
+    "name": "Hijutsu·Viento Nvl.15",
+    "occultEffectLv": 15,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 26000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 30% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000016,
+    "name": "Hijutsu·Viento Nvl.16",
+    "occultEffectLv": 16,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 28000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 32% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000017,
+    "name": "Hijutsu·Viento Nvl.17",
+    "occultEffectLv": 17,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 30000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 34% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000018,
+    "name": "Hijutsu·Viento Nvl.18",
+    "occultEffectLv": 18,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 32000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 36% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000019,
+    "name": "Hijutsu·Viento Nvl.19",
+    "occultEffectLv": 19,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 34000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 38% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000020,
+    "name": "Hijutsu·Viento Nvl.20",
+    "occultEffectLv": 20,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 40% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000021,
+    "name": "Hijutsu·Viento Nvl.21",
+    "occultEffectLv": 21,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 42% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000022,
+    "name": "Hijutsu·Viento Nvl.22",
+    "occultEffectLv": 22,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 44% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000023,
+    "name": "Hijutsu·Viento Nvl.23",
+    "occultEffectLv": 23,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 46% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000024,
+    "name": "Hijutsu·Viento Nvl.24",
+    "occultEffectLv": 24,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 48% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000025,
+    "name": "Hijutsu·Viento Nvl.25",
+    "occultEffectLv": 25,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 50% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000026,
+    "name": "Hijutsu·Viento Nvl.26",
+    "occultEffectLv": 26,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 52% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000027,
+    "name": "Hijutsu·Viento Nvl.27",
+    "occultEffectLv": 27,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 54% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000028,
+    "name": "Hijutsu·Viento Nvl.28",
+    "occultEffectLv": 28,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 56% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000029,
+    "name": "Hijutsu·Viento Nvl.29",
+    "occultEffectLv": 29,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 58% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 2000030,
+    "name": "Hijutsu·Viento Nvl.30",
+    "occultEffectLv": 30,
+    "occultEffectKey": 1,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del viento",
+    "desc": "Aumentar la propia velocidad de un 60% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000000,
+    "name": "Hijutsu·Agua",
+    "occultEffectLv": 0,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 100,
+    "consumeExtra": "[]",
+    "propsname": "",
+    "desc": "Reducir la defensa del enemigo después de los ataques del ninja principal."
+  },
+  {
+    "id": 3000001,
+    "name": "Hijutsu·Agua Nvl.1",
+    "occultEffectLv": 1,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 1000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 1% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000002,
+    "name": "Hijutsu·Agua Nvl.2",
+    "occultEffectLv": 2,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 1000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 2% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000003,
+    "name": "Hijutsu·Agua Nvl.3",
+    "occultEffectLv": 3,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 2000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 3% después de los ataques del ninja principal. Dura 3 rondas."
+  },
+  {
+    "id": 3000004,
+    "name": "Hijutsu·Agua Nvl.4",
+    "occultEffectLv": 4,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 4000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 4% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000005,
+    "name": "Hijutsu·Agua Nvl.5",
+    "occultEffectLv": 5,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 6000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 5% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000006,
+    "name": "Hijutsu·Agua Nvl.6",
+    "occultEffectLv": 6,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 8000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 6% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000007,
+    "name": "Hijutsu·Agua Nvl.7",
+    "occultEffectLv": 7,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 10000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 7% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000008,
+    "name": "Hijutsu·Agua Nvl.8",
+    "occultEffectLv": 8,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 12000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 8% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000009,
+    "name": "Hijutsu·Agua Nvl.9",
+    "occultEffectLv": 9,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 14000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 9% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000010,
+    "name": "Hijutsu·Agua Nvl.10",
+    "occultEffectLv": 10,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 16000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 10% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000011,
+    "name": "Hijutsu·Agua Nvl.11",
+    "occultEffectLv": 11,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 18000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 11% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000012,
+    "name": "Hijutsu·Agua Nvl.12",
+    "occultEffectLv": 12,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 20000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 12% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000013,
+    "name": "Hijutsu·Agua Nvl.13",
+    "occultEffectLv": 13,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 22000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 13% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000014,
+    "name": "Hijutsu·Agua Nvl.14",
+    "occultEffectLv": 14,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 24000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 14% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000015,
+    "name": "Hijutsu·Agua Nvl.15",
+    "occultEffectLv": 15,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 26000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 15% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000016,
+    "name": "Hijutsu·Agua Nvl.16",
+    "occultEffectLv": 16,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 28000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 16% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000017,
+    "name": "Hijutsu·Agua Nvl.17",
+    "occultEffectLv": 17,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 30000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 17% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000018,
+    "name": "Hijutsu·Agua Nvl.18",
+    "occultEffectLv": 18,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 32000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 18% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000019,
+    "name": "Hijutsu·Agua Nvl.19",
+    "occultEffectLv": 19,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 34000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 19% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000020,
+    "name": "Hijutsu·Agua Nvl.20",
+    "occultEffectLv": 20,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 20% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000021,
+    "name": "Hijutsu·Agua Nvl.21",
+    "occultEffectLv": 21,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 21% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000022,
+    "name": "Hijutsu·Agua Nvl.22",
+    "occultEffectLv": 22,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 22% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000023,
+    "name": "Hijutsu·Agua Nvl.23",
+    "occultEffectLv": 23,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 23% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000024,
+    "name": "Hijutsu·Agua Nvl.24",
+    "occultEffectLv": 24,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 24% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000025,
+    "name": "Hijutsu·Agua Nvl.25",
+    "occultEffectLv": 25,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 25% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000026,
+    "name": "Hijutsu·Agua Nvl.26",
+    "occultEffectLv": 26,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 26% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000027,
+    "name": "Hijutsu·Agua Nvl.27",
+    "occultEffectLv": 27,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 27% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000028,
+    "name": "Hijutsu·Agua Nvl.28",
+    "occultEffectLv": 28,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 28% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000029,
+    "name": "Hijutsu·Agua Nvl.29",
+    "occultEffectLv": 29,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 29% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 3000030,
+    "name": "Hijutsu·Agua Nvl.30",
+    "occultEffectLv": 30,
+    "occultEffectKey": 2,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del agua",
+    "desc": "Reducir la defensa del enemigo de un 30% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000000,
+    "name": "Hijutsu·Oro",
+    "occultEffectLv": 0,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 100,
+    "consumeExtra": "[]",
+    "propsname": "",
+    "desc": "Reducir la excención de herida del enemigo después de los ataques del ninja principal."
+  },
+  {
+    "id": 4000001,
+    "name": "Hijutsu·Oro Nvl.1",
+    "occultEffectLv": 1,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 1000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 1% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000002,
+    "name": "Hijutsu·Oro Nvl.2",
+    "occultEffectLv": 2,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 1000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 2% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000003,
+    "name": "Hijutsu·Oro Nvl.3",
+    "occultEffectLv": 3,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 2000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 3% después de los ataques del ninja principal. Dura 3 rondas."
+  },
+  {
+    "id": 4000004,
+    "name": "Hijutsu·Oro Nvl.4",
+    "occultEffectLv": 4,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 4000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 4% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000005,
+    "name": "Hijutsu·Oro Nvl.5",
+    "occultEffectLv": 5,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 6000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 5% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000006,
+    "name": "Hijutsu·Oro Nvl.6",
+    "occultEffectLv": 6,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 8000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 6% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000007,
+    "name": "Hijutsu·Oro Nvl.7",
+    "occultEffectLv": 7,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 10000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 7% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000008,
+    "name": "Hijutsu·Oro Nvl.8",
+    "occultEffectLv": 8,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 12000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 8% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000009,
+    "name": "Hijutsu·Oro Nvl.9",
+    "occultEffectLv": 9,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 14000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 9% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000010,
+    "name": "Hijutsu·Oro Nvl.10",
+    "occultEffectLv": 10,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 16000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 10% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000011,
+    "name": "Hijutsu·Oro Nvl.11",
+    "occultEffectLv": 11,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 18000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 11% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000012,
+    "name": "Hijutsu·Oro Nvl.12",
+    "occultEffectLv": 12,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 20000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 12% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000013,
+    "name": "Hijutsu·Oro Nvl.13",
+    "occultEffectLv": 13,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 22000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 13% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000014,
+    "name": "Hijutsu·Oro Nvl.14",
+    "occultEffectLv": 14,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 24000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 14% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000015,
+    "name": "Hijutsu·Oro Nvl.15",
+    "occultEffectLv": 15,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 26000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 15% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000016,
+    "name": "Hijutsu·Oro Nvl.16",
+    "occultEffectLv": 16,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 28000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 16% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000017,
+    "name": "Hijutsu·Oro Nvl.17",
+    "occultEffectLv": 17,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 30000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 17% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000018,
+    "name": "Hijutsu·Oro Nvl.18",
+    "occultEffectLv": 18,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 32000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 18% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000019,
+    "name": "Hijutsu·Oro Nvl.19",
+    "occultEffectLv": 19,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 34000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 19% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000020,
+    "name": "Hijutsu·Oro Nvl.20",
+    "occultEffectLv": 20,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 20% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000021,
+    "name": "Hijutsu·Oro Nvl.21",
+    "occultEffectLv": 21,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 21% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000022,
+    "name": "Hijutsu·Oro Nvl.22",
+    "occultEffectLv": 22,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 22% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000023,
+    "name": "Hijutsu·Oro Nvl.23",
+    "occultEffectLv": 23,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 23% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000024,
+    "name": "Hijutsu·Oro Nvl.24",
+    "occultEffectLv": 24,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 24% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000025,
+    "name": "Hijutsu·Oro Nvl.25",
+    "occultEffectLv": 25,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 25% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000026,
+    "name": "Hijutsu·Oro Nvl.26",
+    "occultEffectLv": 26,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 26% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000027,
+    "name": "Hijutsu·Oro Nvl.27",
+    "occultEffectLv": 27,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 27% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000028,
+    "name": "Hijutsu·Oro Nvl.28",
+    "occultEffectLv": 28,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 28% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000029,
+    "name": "Hijutsu·Oro Nvl.29",
+    "occultEffectLv": 29,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 29% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 4000030,
+    "name": "Hijutsu·Oro Nvl.30",
+    "occultEffectLv": 30,
+    "occultEffectKey": 3,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu del oro",
+    "desc": "Reducir la excención de herida del enemigo de un 30% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 5000000,
+    "name": "Hijutsu·Sombra",
+    "occultEffectLv": 0,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 100,
+    "consumeExtra": "[]",
+    "propsname": "",
+    "desc": "Reducir la furia del enemigo después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000001,
+    "name": "Hijutsu·Sombra Nvl.1",
+    "occultEffectLv": 1,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 1000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 2 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000002,
+    "name": "Hijutsu·Sombra Nvl.2",
+    "occultEffectLv": 2,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 1000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 4 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000003,
+    "name": "Hijutsu·Sombra Nvl.3",
+    "occultEffectLv": 3,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 2000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 6 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000004,
+    "name": "Hijutsu·Sombra Nvl.4",
+    "occultEffectLv": 4,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 4000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 8 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000005,
+    "name": "Hijutsu·Sombra Nvl.5",
+    "occultEffectLv": 5,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 6000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 10 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000006,
+    "name": "Hijutsu·Sombra Nvl.6",
+    "occultEffectLv": 6,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 8000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 12 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000007,
+    "name": "Hijutsu·Sombra Nvl.7",
+    "occultEffectLv": 7,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 10000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 14 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000008,
+    "name": "Hijutsu·Sombra Nvl.8",
+    "occultEffectLv": 8,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 12000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 16 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000009,
+    "name": "Hijutsu·Sombra Nvl.9",
+    "occultEffectLv": 9,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 14000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 18 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000010,
+    "name": "Hijutsu·Sombra Nvl.10",
+    "occultEffectLv": 10,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 16000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 20 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000011,
+    "name": "Hijutsu·Sombra Nvl.11",
+    "occultEffectLv": 11,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 18000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 22 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000012,
+    "name": "Hijutsu·Sombra Nvl.12",
+    "occultEffectLv": 12,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 20000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 24 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000013,
+    "name": "Hijutsu·Sombra Nvl.13",
+    "occultEffectLv": 13,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 22000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 26 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000014,
+    "name": "Hijutsu·Sombra Nvl.14",
+    "occultEffectLv": 14,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 24000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 28 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000015,
+    "name": "Hijutsu·Sombra Nvl.15",
+    "occultEffectLv": 15,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 26000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 30 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000016,
+    "name": "Hijutsu·Sombra Nvl.16",
+    "occultEffectLv": 16,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 28000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 32 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000017,
+    "name": "Hijutsu·Sombra Nvl.17",
+    "occultEffectLv": 17,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 30000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 34 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000018,
+    "name": "Hijutsu·Sombra Nvl.18",
+    "occultEffectLv": 18,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 32000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 36 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000019,
+    "name": "Hijutsu·Sombra Nvl.19",
+    "occultEffectLv": 19,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 34000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 38 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000020,
+    "name": "Hijutsu·Sombra Nvl.20",
+    "occultEffectLv": 20,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 40 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000021,
+    "name": "Hijutsu·Sombra Nvl.21",
+    "occultEffectLv": 21,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 42 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000022,
+    "name": "Hijutsu·Sombra Nvl.22",
+    "occultEffectLv": 22,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 44 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000023,
+    "name": "Hijutsu·Sombra Nvl.23",
+    "occultEffectLv": 23,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 46 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000024,
+    "name": "Hijutsu·Sombra Nvl.24",
+    "occultEffectLv": 24,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 48 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000025,
+    "name": "Hijutsu·Sombra Nvl.25",
+    "occultEffectLv": 25,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 50 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000026,
+    "name": "Hijutsu·Sombra Nvl.26",
+    "occultEffectLv": 26,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 52 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000027,
+    "name": "Hijutsu·Sombra Nvl.27",
+    "occultEffectLv": 27,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 54 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000028,
+    "name": "Hijutsu·Sombra Nvl.28",
+    "occultEffectLv": 28,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 56 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000029,
+    "name": "Hijutsu·Sombra Nvl.29",
+    "occultEffectLv": 29,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 58 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 5000030,
+    "name": "Hijutsu·Sombra Nvl.30",
+    "occultEffectLv": 30,
+    "occultEffectKey": 4,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de sombra",
+    "desc": "Reducir la furia del enemigo 60 puntos después de los ataques del ninja principal."
+  },
+  {
+    "id": 6000000,
+    "name": "Hijutsu·Tierra",
+    "occultEffectLv": 0,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 100,
+    "consumeExtra": "[]",
+    "propsname": "",
+    "desc": "Aumentar la propia excención de herida después de los ataques del ninja principal."
+  },
+  {
+    "id": 6000001,
+    "name": "Hijutsu·Tierra Nvl.1",
+    "occultEffectLv": 1,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 1000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 0.5% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000002,
+    "name": "Hijutsu·Tierra Nvl.2",
+    "occultEffectLv": 2,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 1000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 1% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000003,
+    "name": "Hijutsu·Tierra Nvl.3",
+    "occultEffectLv": 3,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 2000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 1.5% después de los ataques del ninja principal. Dura 3 rondas."
+  },
+  {
+    "id": 6000004,
+    "name": "Hijutsu·Tierra Nvl.4",
+    "occultEffectLv": 4,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 4000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 2% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000005,
+    "name": "Hijutsu·Tierra Nvl.5",
+    "occultEffectLv": 5,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 6000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 2.5% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000006,
+    "name": "Hijutsu·Tierra Nvl.6",
+    "occultEffectLv": 6,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 8000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 3% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000007,
+    "name": "Hijutsu·Tierra Nvl.7",
+    "occultEffectLv": 7,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 10000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 3.5% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000008,
+    "name": "Hijutsu·Tierra Nvl.8",
+    "occultEffectLv": 8,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 12000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 4% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000009,
+    "name": "Hijutsu·Tierra Nvl.9",
+    "occultEffectLv": 9,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 14000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 4.5% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000010,
+    "name": "Hijutsu·Tierra Nvl.10",
+    "occultEffectLv": 10,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 16000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 5% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000011,
+    "name": "Hijutsu·Tierra Nvl.11",
+    "occultEffectLv": 11,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 18000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 5.5% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000012,
+    "name": "Hijutsu·Tierra Nvl.12",
+    "occultEffectLv": 12,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 20000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 6% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000013,
+    "name": "Hijutsu·Tierra Nvl.13",
+    "occultEffectLv": 13,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 22000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 6.5% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000014,
+    "name": "Hijutsu·Tierra Nvl.14",
+    "occultEffectLv": 14,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 24000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 7% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000015,
+    "name": "Hijutsu·Tierra Nvl.15",
+    "occultEffectLv": 15,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 26000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 7.5% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000016,
+    "name": "Hijutsu·Tierra Nvl.16",
+    "occultEffectLv": 16,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 28000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 8% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000017,
+    "name": "Hijutsu·Tierra Nvl.17",
+    "occultEffectLv": 17,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 30000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 8.5% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000018,
+    "name": "Hijutsu·Tierra Nvl.18",
+    "occultEffectLv": 18,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 32000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 9% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000019,
+    "name": "Hijutsu·Tierra Nvl.19",
+    "occultEffectLv": 19,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 34000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 9.5% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000020,
+    "name": "Hijutsu·Tierra Nvl.20",
+    "occultEffectLv": 20,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 10% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000021,
+    "name": "Hijutsu·Tierra Nvl.21",
+    "occultEffectLv": 21,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 11% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000022,
+    "name": "Hijutsu·Tierra Nvl.22",
+    "occultEffectLv": 22,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 12% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000023,
+    "name": "Hijutsu·Tierra Nvl.23",
+    "occultEffectLv": 23,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 13% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000024,
+    "name": "Hijutsu·Tierra Nvl.24",
+    "occultEffectLv": 24,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 14% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000025,
+    "name": "Hijutsu·Tierra Nvl.25",
+    "occultEffectLv": 25,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 15% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000026,
+    "name": "Hijutsu·Tierra Nvl.26",
+    "occultEffectLv": 26,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 16% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000027,
+    "name": "Hijutsu·Tierra Nvl.27",
+    "occultEffectLv": 27,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 17% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000028,
+    "name": "Hijutsu·Tierra Nvl.28",
+    "occultEffectLv": 28,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 18% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000029,
+    "name": "Hijutsu·Tierra Nvl.29",
+    "occultEffectLv": 29,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 19% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 6000030,
+    "name": "Hijutsu·Tierra Nvl.30",
+    "occultEffectLv": 30,
+    "occultEffectKey": 5,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de tierra",
+    "desc": "Aumentar la propia excención de herida de un 20% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000000,
+    "name": "Hijutsu·Rayo",
+    "occultEffectLv": 0,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 100,
+    "consumeExtra": "[]",
+    "propsname": "",
+    "desc": "Aumentar la propia tasa de daño después de los ataques del ninja principal."
+  },
+  {
+    "id": 7000001,
+    "name": "Hijutsu·Rayo Nvl.1",
+    "occultEffectLv": 1,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 1000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 3% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000002,
+    "name": "Hijutsu·Rayo Nvl.2",
+    "occultEffectLv": 2,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 1000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 6% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000003,
+    "name": "Hijutsu·Rayo Nvl.3",
+    "occultEffectLv": 3,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 2000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 9% después de los ataques del ninja principal. Dura 3 rondas."
+  },
+  {
+    "id": 7000004,
+    "name": "Hijutsu·Rayo Nvl.4",
+    "occultEffectLv": 4,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 4000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 12% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000005,
+    "name": "Hijutsu·Rayo Nvl.5",
+    "occultEffectLv": 5,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 6000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 15% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000006,
+    "name": "Hijutsu·Rayo Nvl.6",
+    "occultEffectLv": 6,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 8000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 18% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000007,
+    "name": "Hijutsu·Rayo Nvl.7",
+    "occultEffectLv": 7,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 10000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 21% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000008,
+    "name": "Hijutsu·Rayo Nvl.8",
+    "occultEffectLv": 8,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 12000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 24% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000009,
+    "name": "Hijutsu·Rayo Nvl.9",
+    "occultEffectLv": 9,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 14000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 27% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000010,
+    "name": "Hijutsu·Rayo Nvl.10",
+    "occultEffectLv": 10,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 16000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 30% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000011,
+    "name": "Hijutsu·Rayo Nvl.11",
+    "occultEffectLv": 11,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 18000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 33% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000012,
+    "name": "Hijutsu·Rayo Nvl.12",
+    "occultEffectLv": 12,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 20000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 36% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000013,
+    "name": "Hijutsu·Rayo Nvl.13",
+    "occultEffectLv": 13,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 22000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 39% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000014,
+    "name": "Hijutsu·Rayo Nvl.14",
+    "occultEffectLv": 14,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 24000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 42% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000015,
+    "name": "Hijutsu·Rayo Nvl.15",
+    "occultEffectLv": 15,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 26000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 45% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000016,
+    "name": "Hijutsu·Rayo Nvl.16",
+    "occultEffectLv": 16,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 28000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 48% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000017,
+    "name": "Hijutsu·Rayo Nvl.17",
+    "occultEffectLv": 17,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 30000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 51% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000018,
+    "name": "Hijutsu·Rayo Nvl.18",
+    "occultEffectLv": 18,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 32000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 54% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000019,
+    "name": "Hijutsu·Rayo Nvl.19",
+    "occultEffectLv": 19,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 34000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 57% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000020,
+    "name": "Hijutsu·Rayo Nvl.20",
+    "occultEffectLv": 20,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 60% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000021,
+    "name": "Hijutsu·Rayo Nvl.21",
+    "occultEffectLv": 21,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 63% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000022,
+    "name": "Hijutsu·Rayo Nvl.22",
+    "occultEffectLv": 22,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 66% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000023,
+    "name": "Hijutsu·Rayo Nvl.23",
+    "occultEffectLv": 23,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 69% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000024,
+    "name": "Hijutsu·Rayo Nvl.24",
+    "occultEffectLv": 24,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 72% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000025,
+    "name": "Hijutsu·Rayo Nvl.25",
+    "occultEffectLv": 25,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 75% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000026,
+    "name": "Hijutsu·Rayo Nvl.26",
+    "occultEffectLv": 26,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 78% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000027,
+    "name": "Hijutsu·Rayo Nvl.27",
+    "occultEffectLv": 27,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 81% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000028,
+    "name": "Hijutsu·Rayo Nvl.28",
+    "occultEffectLv": 28,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 84% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000029,
+    "name": "Hijutsu·Rayo Nvl.29",
+    "occultEffectLv": 29,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 87% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 7000030,
+    "name": "Hijutsu·Rayo Nvl.30",
+    "occultEffectLv": 30,
+    "occultEffectKey": 6,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de rayo",
+    "desc": "Aumentar la propia tasa de daño de un 90% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000000,
+    "name": "Hijutsu·Madera",
+    "occultEffectLv": 0,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 100,
+    "consumeExtra": "[]",
+    "propsname": "",
+    "desc": "Aumentar la propia defensa después de los ataques del ninja principal."
+  },
+  {
+    "id": 8000001,
+    "name": "Hijutsu·Madera Nvl.1",
+    "occultEffectLv": 1,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 1000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 2% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000002,
+    "name": "Hijutsu·Madera Nvl.2",
+    "occultEffectLv": 2,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 1000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 4% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000003,
+    "name": "Hijutsu·Madera Nvl.3",
+    "occultEffectLv": 3,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 2000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 6% después de los ataques del ninja principal. Dura 3 rondas."
+  },
+  {
+    "id": 8000004,
+    "name": "Hijutsu·Madera Nvl.4",
+    "occultEffectLv": 4,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 4000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 8% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000005,
+    "name": "Hijutsu·Madera Nvl.5",
+    "occultEffectLv": 5,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 6000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 10% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000006,
+    "name": "Hijutsu·Madera Nvl.6",
+    "occultEffectLv": 6,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 8000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 12% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000007,
+    "name": "Hijutsu·Madera Nvl.7",
+    "occultEffectLv": 7,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 10000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 14% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000008,
+    "name": "Hijutsu·Madera Nvl.8",
+    "occultEffectLv": 8,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 12000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 16% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000009,
+    "name": "Hijutsu·Madera Nvl.9",
+    "occultEffectLv": 9,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 14000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 18% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000010,
+    "name": "Hijutsu·Madera Nvl.10",
+    "occultEffectLv": 10,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 16000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 20% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000011,
+    "name": "Hijutsu·Madera Nvl.11",
+    "occultEffectLv": 11,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 18000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 22% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000012,
+    "name": "Hijutsu·Madera Nvl.12",
+    "occultEffectLv": 12,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 20000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 24% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000013,
+    "name": "Hijutsu·Madera Nvl.13",
+    "occultEffectLv": 13,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 22000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 26% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000014,
+    "name": "Hijutsu·Madera Nvl.14",
+    "occultEffectLv": 14,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 24000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 28% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000015,
+    "name": "Hijutsu·Madera Nvl.15",
+    "occultEffectLv": 15,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 26000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 30% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000016,
+    "name": "Hijutsu·Madera Nvl.16",
+    "occultEffectLv": 16,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 28000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 32% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000017,
+    "name": "Hijutsu·Madera Nvl.17",
+    "occultEffectLv": 17,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 30000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 34% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000018,
+    "name": "Hijutsu·Madera Nvl.18",
+    "occultEffectLv": 18,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 32000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 36% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000019,
+    "name": "Hijutsu·Madera Nvl.19",
+    "occultEffectLv": 19,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 34000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 38% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000020,
+    "name": "Hijutsu·Madera Nvl.20",
+    "occultEffectLv": 20,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 40% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000021,
+    "name": "Hijutsu·Madera Nvl.21",
+    "occultEffectLv": 21,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 42% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000022,
+    "name": "Hijutsu·Madera Nvl.22",
+    "occultEffectLv": 22,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 44% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000023,
+    "name": "Hijutsu·Madera Nvl.23",
+    "occultEffectLv": 23,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 46% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000024,
+    "name": "Hijutsu·Madera Nvl.24",
+    "occultEffectLv": 24,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 48% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000025,
+    "name": "Hijutsu·Madera Nvl.25",
+    "occultEffectLv": 25,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 50% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000026,
+    "name": "Hijutsu·Madera Nvl.26",
+    "occultEffectLv": 26,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 52% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000027,
+    "name": "Hijutsu·Madera Nvl.27",
+    "occultEffectLv": 27,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 54% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000028,
+    "name": "Hijutsu·Madera Nvl.28",
+    "occultEffectLv": 28,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 56% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000029,
+    "name": "Hijutsu·Madera Nvl.29",
+    "occultEffectLv": 29,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 58% después de los ataques del ninja principal. Dura 2 rondas."
+  },
+  {
+    "id": 8000030,
+    "name": "Hijutsu·Madera Nvl.30",
+    "occultEffectLv": 30,
+    "occultEffectKey": 7,
+    "consumeOccultPoint": 36000,
+    "consumeExtra": "[]",
+    "propsname": "Espíritu de madera",
+    "desc": "Aumentar la propia defensa de un 60% después de los ataques del ninja principal. Dura 2 rondas."
+  }
+]

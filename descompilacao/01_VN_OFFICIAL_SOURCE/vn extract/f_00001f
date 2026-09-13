@@ -1,0 +1,328 @@
+/*
+ * MD5
+ * https://github.com/blueimp/JavaScript-MD5
+ */
+!function(n){"use strict";function t(n,t){var r=(65535&n)+(65535&t),e=(n>>16)+(t>>16)+(r>>16);return e<<16|65535&r}function r(n,t){return n<<t|n>>>32-t}function e(n,e,o,u,c,f){return t(r(t(t(e,n),t(u,f)),c),o)}function o(n,t,r,o,u,c,f){return e(t&r|~t&o,n,t,u,c,f)}function u(n,t,r,o,u,c,f){return e(t&o|r&~o,n,t,u,c,f)}function c(n,t,r,o,u,c,f){return e(t^r^o,n,t,u,c,f)}function f(n,t,r,o,u,c,f){return e(r^(t|~o),n,t,u,c,f)}function i(n,r){n[r>>5]|=128<<r%32,n[(r+64>>>9<<4)+14]=r;var e,i,a,h,d,l=1732584193,g=-271733879,v=-1732584194,m=271733878;for(e=0;e<n.length;e+=16)i=l,a=g,h=v,d=m,l=o(l,g,v,m,n[e],7,-680876936),m=o(m,l,g,v,n[e+1],12,-389564586),v=o(v,m,l,g,n[e+2],17,606105819),g=o(g,v,m,l,n[e+3],22,-1044525330),l=o(l,g,v,m,n[e+4],7,-176418897),m=o(m,l,g,v,n[e+5],12,1200080426),v=o(v,m,l,g,n[e+6],17,-1473231341),g=o(g,v,m,l,n[e+7],22,-45705983),l=o(l,g,v,m,n[e+8],7,1770035416),m=o(m,l,g,v,n[e+9],12,-1958414417),v=o(v,m,l,g,n[e+10],17,-42063),g=o(g,v,m,l,n[e+11],22,-1990404162),l=o(l,g,v,m,n[e+12],7,1804603682),m=o(m,l,g,v,n[e+13],12,-40341101),v=o(v,m,l,g,n[e+14],17,-1502002290),g=o(g,v,m,l,n[e+15],22,1236535329),l=u(l,g,v,m,n[e+1],5,-165796510),m=u(m,l,g,v,n[e+6],9,-1069501632),v=u(v,m,l,g,n[e+11],14,643717713),g=u(g,v,m,l,n[e],20,-373897302),l=u(l,g,v,m,n[e+5],5,-701558691),m=u(m,l,g,v,n[e+10],9,38016083),v=u(v,m,l,g,n[e+15],14,-660478335),g=u(g,v,m,l,n[e+4],20,-405537848),l=u(l,g,v,m,n[e+9],5,568446438),m=u(m,l,g,v,n[e+14],9,-1019803690),v=u(v,m,l,g,n[e+3],14,-187363961),g=u(g,v,m,l,n[e+8],20,1163531501),l=u(l,g,v,m,n[e+13],5,-1444681467),m=u(m,l,g,v,n[e+2],9,-51403784),v=u(v,m,l,g,n[e+7],14,1735328473),g=u(g,v,m,l,n[e+12],20,-1926607734),l=c(l,g,v,m,n[e+5],4,-378558),m=c(m,l,g,v,n[e+8],11,-2022574463),v=c(v,m,l,g,n[e+11],16,1839030562),g=c(g,v,m,l,n[e+14],23,-35309556),l=c(l,g,v,m,n[e+1],4,-1530992060),m=c(m,l,g,v,n[e+4],11,1272893353),v=c(v,m,l,g,n[e+7],16,-155497632),g=c(g,v,m,l,n[e+10],23,-1094730640),l=c(l,g,v,m,n[e+13],4,681279174),m=c(m,l,g,v,n[e],11,-358537222),v=c(v,m,l,g,n[e+3],16,-722521979),g=c(g,v,m,l,n[e+6],23,76029189),l=c(l,g,v,m,n[e+9],4,-640364487),m=c(m,l,g,v,n[e+12],11,-421815835),v=c(v,m,l,g,n[e+15],16,530742520),g=c(g,v,m,l,n[e+2],23,-995338651),l=f(l,g,v,m,n[e],6,-198630844),m=f(m,l,g,v,n[e+7],10,1126891415),v=f(v,m,l,g,n[e+14],15,-1416354905),g=f(g,v,m,l,n[e+5],21,-57434055),l=f(l,g,v,m,n[e+12],6,1700485571),m=f(m,l,g,v,n[e+3],10,-1894986606),v=f(v,m,l,g,n[e+10],15,-1051523),g=f(g,v,m,l,n[e+1],21,-2054922799),l=f(l,g,v,m,n[e+8],6,1873313359),m=f(m,l,g,v,n[e+15],10,-30611744),v=f(v,m,l,g,n[e+6],15,-1560198380),g=f(g,v,m,l,n[e+13],21,1309151649),l=f(l,g,v,m,n[e+4],6,-145523070),m=f(m,l,g,v,n[e+11],10,-1120210379),v=f(v,m,l,g,n[e+2],15,718787259),g=f(g,v,m,l,n[e+9],21,-343485551),l=t(l,i),g=t(g,a),v=t(v,h),m=t(m,d);return[l,g,v,m]}function a(n){var t,r="",e=32*n.length;for(t=0;t<e;t+=8)r+=String.fromCharCode(n[t>>5]>>>t%32&255);return r}function h(n){var t,r=[];for(r[(n.length>>2)-1]=void 0,t=0;t<r.length;t+=1)r[t]=0;var e=8*n.length;for(t=0;t<e;t+=8)r[t>>5]|=(255&n.charCodeAt(t/8))<<t%32;return r}function d(n){return a(i(h(n),8*n.length))}function l(n,t){var r,e,o=h(n),u=[],c=[];for(u[15]=c[15]=void 0,o.length>16&&(o=i(o,8*n.length)),r=0;r<16;r+=1)u[r]=909522486^o[r],c[r]=1549556828^o[r];return e=i(u.concat(h(t)),512+8*t.length),a(i(c.concat(e),640))}function g(n){var t,r,e="0123456789abcdef",o="";for(r=0;r<n.length;r+=1)t=n.charCodeAt(r),o+=e.charAt(t>>>4&15)+e.charAt(15&t);return o}function v(n){return unescape(encodeURIComponent(n))}function m(n){return d(v(n))}function p(n){return g(m(n))}function s(n,t){return l(v(n),v(t))}function C(n,t){return g(s(n,t))}function A(n,t,r){return t?r?s(t,n):C(t,n):r?m(n):p(n)}"function"==typeof define&&define.amd?define(function(){return A}):"object"==typeof module&&module.exports?module.exports=A:n.md5=A}(this);
+
+function _ATE_GET_OS() { var userAgent = window.navigator.userAgent, platform = window.navigator.platform, macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'], windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'], iosPlatforms = ['iPhone', 'iPad', 'iPod'], os = "Unknown"; if (macosPlatforms.indexOf(platform) !== -1) { os = 'mac'; } else if (iosPlatforms.indexOf(platform) !== -1) { os = 'ios'; } else if (windowsPlatforms.indexOf(platform) !== -1) { os = 'windows'; } else if (/Android/.test(userAgent)) { os = 'android'; } else if (!os && /Linux/.test(platform)) { os = 'linux'; } return os; }
+
+if(_ATE_['clientId'] == 'haitac'){
+
+    /* var downloadLink      = '//st-haitac.568play.vn/dl-client';  */
+    var downloadFile      = 'VuaHaiTac';
+    var versionPath       = '/v35';
+    var downloadLink      = '//haitac-download.568play.vn/miniclient' + versionPath;
+    var trackingSourceMap = {
+            "default"    : "c21f969b5f03d33d43e04f8f136e7682",
+            "fbads"      : "011a04639b919a7ef99bdc38f65d2ee8",
+            "ggads"      : "27e9549628eb6ff8b839ecb5ecd64476",
+            "ccads"      : "ba09f18fb9e722648c1d334940b5cc66",
+            "viral"      : "183240acb98b2d8fd7ae085215e55c5e",
+            "fanpage"    : "4cd700fe42a32f7d6dca9d88278ea9da",
+            "haitac-fb6" : "28bc12d5654c341e80abd8e97fa572ea",
+            "haitac-fb7" : "009279f030e20c7fcd5d37270ecea5dd",
+            "haitac-fb8" : "e1543cfaa666bd5ff451e71096b1eac0",
+            "haitac-fb9" : "828e8994879aaca502b012bcd742431b",
+            "haitac-fb10": "fdd041c0c134c4f3ded39c6fa31e0b4e",
+            "gdn1"       : "1f3ce50006cd933082bba0f152f1face",
+            "gdn2"       : "f04e1d55f1d26f6ff891854c639e9b92",
+            "gdn3"       : "08ebe821e960f93dc650d30240dbcace",
+            "gdn4"       : "b902218274d20cc1021062e367803394",
+            "gdn5"       : "60c840a3a38e34c185dac7dec17e9c5c",
+            "fanpage01"  : "4e3bb44e29f92f7c46348122e6a66d90",
+            "vr1"        : "1c6d983ab9307240a78618a0f6654076",
+            "vr2"        : "d5bdd035f22a192f00109c8823a3c83c",
+            "gg1"        : "06fc07ae833868882f2751f12834b78e",
+            "gg2"        : "7d7f7e971ca8152804ad89b891fba0b4",
+            "gg3"        : "57bcc4f29adfe3c1f09d7e29e7128bdb",
+            "cc1"        : "d68005ccf362b82d084551b6291792a3",
+            "cc2"        : "a964065211872fb76f876c6c3e952ea3",
+            "cc3"        : "9f585adaba6eebfbe272f44e6ba74172",
+            "ic1"        : "c0d6f2feb307a57c0e5ad4afb154a986",
+            "ic2"        : "b9f026951984ca17d8fe8dc610924253",
+            "ic3"        : "c9f530fd25a44bcd9896506d8977404c",
+            "mas1"       : "ba0a735f2b2e307c2b52783dcac4350e",
+            "mas2"       : "a6360c18373013218444abc80aed7587",
+            "bn1"        : "7efa21e6ccc5f0b3d70ce2ab58f2ebaa",
+            "bn2"        : "a4ead84414e088d0b8e795e5d1fc3235",
+
+        };
+
+    // android / mac
+    var downloadLinkOther      = '//haitac-download.568play.vn/miniclient' + versionPath;
+    var trackingSourceMapOther = {
+            "default"    : "c21f969b5f03d33d43e04f8f136e7682",
+            "fbads"      : "011a04639b919a7ef99bdc38f65d2ee8",
+            "ggads"      : "27e9549628eb6ff8b839ecb5ecd64476",
+            "ccads"      : "ba09f18fb9e722648c1d334940b5cc66",
+            "viral"      : "183240acb98b2d8fd7ae085215e55c5e",
+            "fanpage"    : "4cd700fe42a32f7d6dca9d88278ea9da",
+            "haitac-fb6" : "28bc12d5654c341e80abd8e97fa572ea",
+            "haitac-fb7" : "009279f030e20c7fcd5d37270ecea5dd",
+            "haitac-fb8" : "e1543cfaa666bd5ff451e71096b1eac0",
+            "haitac-fb9" : "828e8994879aaca502b012bcd742431b",
+            "haitac-fb10": "fdd041c0c134c4f3ded39c6fa31e0b4e",
+            "gdn1"       : "1f3ce50006cd933082bba0f152f1face",
+            "gdn2"       : "f04e1d55f1d26f6ff891854c639e9b92",
+            "gdn3"       : "08ebe821e960f93dc650d30240dbcace",
+            "gdn4"       : "b902218274d20cc1021062e367803394",
+            "gdn5"       : "60c840a3a38e34c185dac7dec17e9c5c",
+
+        };
+}else if(_ATE_['clientId'] == 'naruto'){
+    // var downloadLink      = '//568play.vn/st-ms-naruto/dl-client';
+    var downloadLink      = '//dl-naruto.568play.vn/miniclient/v6';
+    var downloadFile      = 'Naruto';
+    var trackingSourceMap = {
+            "default"    : "c21f969b5f03d33d43e04f8f136e7682",
+            "fbads"      : "011a04639b919a7ef99bdc38f65d2ee8",
+            "ggads"      : "27e9549628eb6ff8b839ecb5ecd64476",
+            "ccads"      : "ba09f18fb9e722648c1d334940b5cc66",
+            "viral"      : "183240acb98b2d8fd7ae085215e55c5e",
+            "fanpage"    : "4cd700fe42a32f7d6dca9d88278ea9da",
+            "naruto-fb6" : "28bc12d5654c341e80abd8e97fa572ea",
+            "naruto-fb7" : "009279f030e20c7fcd5d37270ecea5dd",
+            "naruto-fb8" : "e1543cfaa666bd5ff451e71096b1eac0",
+            "naruto-fb9" : "828e8994879aaca502b012bcd742431b",
+            "naruto-fb10": "fdd041c0c134c4f3ded39c6fa31e0b4e",
+            "gdn1"       : "1f3ce50006cd933082bba0f152f1face",
+            "gdn2"       : "f04e1d55f1d26f6ff891854c639e9b92",
+            "gdn3"       : "08ebe821e960f93dc650d30240dbcace",
+            "gdn4"       : "b902218274d20cc1021062e367803394",
+            "gdn5"       : "60c840a3a38e34c185dac7dec17e9c5c",
+        };
+}else{
+    var trackingSourceMap = {
+            "default"    : "c21f969b5f03d33d43e04f8f136e7682",
+        };
+}
+
+function _ATE_GET_UTM_SOURCE(){
+    return _ATE_GET_COOKIE('ATE_'+_ATE_['clientId']+'_utm_source');
+}
+
+function _ATE_GET_HASH_DOWNLOAD(sourceList, source){
+    if(source != '' && typeof sourceList[source] != 'undefined'){
+        return sourceList[source].toLowerCase();
+    }
+    return sourceList['default'];
+}
+
+function _ATE_GET_SOURCE_DOWNLOAD(hashKey){
+    for (const [key, value] of Object.entries(trackingSourceMap)) {
+        if( value == hashKey){
+            return key;
+        }
+    }
+    return 'default';
+}
+
+function _ATE_DOWNLOAD(){
+    var scriptUrl = ('https:' == document.location.protocol ? 'https://' : 'http://') + _ATE_DOMAIN + "/?c=1&ATE_action=dl&ATE_clientId=" + _ATE_['clientId'];
+    scriptUrl += '&ATE_key=' + encodeURIComponent(_ATE_GET_HASH_DOWNLOAD(trackingSourceMap, _ATE_GET_UTM_SOURCE()));
+
+    _ATE_SEND(scriptUrl);
+}
+
+function _ATE_GEN_LINK_DOWNLOAD(link, className, fileName, os = ''){
+    if(!os){
+    	os = _ATE_GET_OS();
+    }
+
+    switch(os) {
+        case 'android':
+            fileName += '.apk';
+            break;
+        case 'mac':
+            if( _ATE_['clientId'] == 'haitac' ){
+                fileName += '.dmg';
+            }else if( _ATE_['clientId'] == 'naruto' ){
+                fileName += '.mac.zip';
+            }
+            break;
+        case 'windows':
+            fileName += '.exe';
+
+            break;
+        default:
+            fileName += '.exe';
+            break;
+    }
+
+    if(os == 'mac'){
+        var file = link+'/c21f969b5f03d33d43e04f8f136e7682/'+fileName+'?v=35.3';
+    }else if(os == 'android' && typeof trackingSourceMapOther != 'undefined'){
+        var file = link+'/'+_ATE_GET_HASH_DOWNLOAD(trackingSourceMapOther, _ATE_GET_UTM_SOURCE())+'/'+fileName+'?v=35.3';
+    }else{
+        var file = link+'/'+_ATE_GET_HASH_DOWNLOAD(trackingSourceMap, _ATE_GET_UTM_SOURCE())+'/'+fileName+'?v=35.3';
+    }
+
+
+
+    var list, index;
+    list = document.getElementsByClassName(className);
+    for (index = 0; index < list.length; ++index) {
+        list[index].setAttribute("href", file);
+    }
+
+    var listA = document.getElementsByClassName(className);
+    for (i = 0; i < listA.length; i++) {
+        listA[i].addEventListener("click", _ATE_DOWNLOAD);
+    }
+
+    return file;
+}
+function _ATE_SEND(url){
+    var img = new Image;
+    img.width = 0;
+    img.height = 0;
+    img.src = url;
+}
+function _ATE_PARSE_URL(url){
+    var re = /(?:\?|&(?:amp;)?)([^=&#]+)(?:=?([^&#]*))/g,
+        match, params ={},
+        decode = function(s){
+            return decodeURIComponent(s.replace(/\+/g, " "));
+        };
+    if(typeof url == "undefined") url = document.location.href;
+    while (match = re.exec(url)){
+        params[decode(match[1])] = decode(match[2]);
+    }
+    return params;
+}
+function _ATE_SET_COOKIE(cname, cvalue, exdays){
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires + "; path=/; domain="+_ATE_CDOMAIN+";";
+}
+function _ATE_GET_COOKIE(cname){
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++){
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if(c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
+}
+function _ATE_DEL_COOKIE(cname, cvalue, exdays, domain){
+    var d = new Date();
+    d.setTime(d.getTime() - (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires + "; path=/; domain="+domain+";";
+}
+function _ATE_SET_COOKIE_DONT_REPLACE(cname, cvalue, exdays){
+    var cookieCheck=_ATE_GET_COOKIE(cname);
+    if(cookieCheck==""){
+        setCookie(cname, cvalue, exdays);
+    }
+}
+
+
+function _ATE_EXECUTE(){
+    if(_ATE_['action'] == 'cwac'){
+        var pregUrl = _ATE_PARSE_URL(document.URL);
+
+        if(pregUrl.hasOwnProperty('mac') && pregUrl.hasOwnProperty('key') && pregUrl.hasOwnProperty('time') && pregUrl.hasOwnProperty('sign')){
+
+            var scriptUrl2 = ('https:' == document.location.protocol ? 'https://' : 'http://') + _ATE_DOMAIN + "/?api=1&ATE_action=cwac&ATE_clientId=" + _ATE_['clientId'];
+            scriptUrl2 += '&ATE_mac=' + pregUrl['mac'];
+            scriptUrl2 += '&ATE_key=' + pregUrl['key'];
+            scriptUrl2 += '&ATE_time=' + pregUrl['time'];
+            scriptUrl2 += '&ATE_signature=' + pregUrl['sign'];
+
+            _ATE_SEND(scriptUrl2);
+
+        }
+    }else if(_ATE_['action'] == 'scc'){
+        var pregUrl = _ATE_PARSE_URL(document.URL);
+        var checkCookie = _ATE_GET_COOKIE('ATE_'+_ATE_['clientId']+'_origin');
+        if( !pregUrl.hasOwnProperty('utm_source') && !pregUrl.hasOwnProperty('source') && checkCookie && (_ATE_['origin'] == 'portal' || _ATE_['origin'] == 'id' || _ATE_['origin'] == 'pay' || _ATE_['origin'] == 'mainsite' || _ATE_['origin'] == 'forum' || _ATE_['origin'] == 'direct') ){
+            return;
+        }
+        _ATE_SET_COOKIE('ATE_'+_ATE_['clientId']+'_origin',encodeURIComponent(_ATE_['origin']), 7);
+        _ATE_SET_COOKIE('ATE_'+_ATE_['clientId']+'_url',encodeURIComponent(document.location.href), 7);
+        if(document.referrer != ''){
+            _ATE_SET_COOKIE('ATE_'+_ATE_['clientId']+'_referer',encodeURIComponent(document.referrer), 7);
+        }
+        for (key in pregUrl){
+            if(pregUrl.hasOwnProperty(key)){
+                _ATE_SET_COOKIE('ATE_'+_ATE_['clientId']+'_'+key,encodeURIComponent(pregUrl[key]), 7);
+            }
+        }
+
+        var checkCookieKey = _ATE_GET_COOKIE('ATE_'+_ATE_['clientId']+'_key');
+        if(checkCookieKey){
+            var checkCookieSign = _ATE_GET_COOKIE('ATE_'+_ATE_['clientId']+'_signature');
+            var scriptUrl = ('https:' == document.location.protocol ? 'https://' : 'http://') + _ATE_DOMAIN + "/?w=1&ATE_action=cac&ATE_clientId=" + _ATE_['clientId'];
+            if(checkCookieKey != '') scriptUrl += '&ATE_key=' + encodeURIComponent(checkCookieKey);
+            if(checkCookieSign != '') scriptUrl += '&ATE_signature=' + encodeURIComponent(checkCookieSign);
+
+            _ATE_SEND(scriptUrl);
+        }
+
+    } else if(_ATE_['action'] == 'wl'){
+        var scriptUrl = ('https:' == document.location.protocol ? 'https://' : 'http://') + _ATE_DOMAIN + "/?w=1&ATE_action=writeLog&ATE_clientId=" + _ATE_['clientId'];
+        if(typeof _ATE_['username'] != 'undefined') scriptUrl += '&ATE_username=' + encodeURIComponent(_ATE_['username']);
+        if(typeof _ATE_['userId'] != 'undefined') scriptUrl += '&ATE_userId=' + encodeURIComponent(_ATE_['userId']);
+        if(typeof _ATE_['remoteAddr'] != 'undefined') scriptUrl += '&ATE_remoteAddr=' + encodeURIComponent(_ATE_['remoteAddr']);
+        if(typeof _ATE_['serverId'] != 'undefined') scriptUrl += '&ATE_serverId=' + encodeURIComponent(_ATE_['serverId']);
+        if(typeof _ATE_['isRegister'] != 'undefined') scriptUrl += '&ATE_isRegister=' + encodeURIComponent(_ATE_['isRegister']);
+        if(typeof _ATE_['socialAccount'] != 'undefined') scriptUrl += '&ATE_socialAccount=' + encodeURIComponent(_ATE_['socialAccount']);
+        if(typeof _ATE_['signature'] != 'undefined') scriptUrl += '&ATE_signature=' + encodeURIComponent(_ATE_['signature']);
+
+        _ATE_SEND(scriptUrl);
+    } else if(_ATE_['action'] == 'wlc'){
+        var scriptUrl = ('https:' == document.location.protocol ? 'https://' : 'http://') + _ATE_DOMAIN + "/?w=1&ATE_action=writeLogPlayInClient&ATE_clientId=" + _ATE_['clientId'];
+        if(typeof _ATE_['username'] != 'undefined') scriptUrl += '&ATE_username=' + encodeURIComponent(_ATE_['username']);
+        if(typeof _ATE_['userId'] != 'undefined') scriptUrl += '&ATE_userId=' + encodeURIComponent(_ATE_['userId']);
+        if(typeof _ATE_['remoteAddr'] != 'undefined') scriptUrl += '&ATE_remoteAddr=' + encodeURIComponent(_ATE_['remoteAddr']);
+        if(typeof _ATE_['serverId'] != 'undefined') scriptUrl += '&ATE_serverId=' + encodeURIComponent(_ATE_['serverId']);
+        if(typeof _ATE_['isRegister'] != 'undefined') scriptUrl += '&ATE_isRegister=' + encodeURIComponent(_ATE_['isRegister']);
+        if(typeof _ATE_['socialAccount'] != 'undefined') scriptUrl += '&ATE_socialAccount=' + encodeURIComponent(_ATE_['socialAccount']);
+        if(typeof _ATE_['signature'] != 'undefined') scriptUrl += '&ATE_signature=' + encodeURIComponent(_ATE_['signature']);
+
+        _ATE_SEND(scriptUrl);
+    } else if(_ATE_['action'] == 'cdl'){
+        var scriptUrl = ('https:' == document.location.protocol ? 'https://' : 'http://') + _ATE_DOMAIN + "/?c=1&ATE_action=cdl&ATE_clientId=" + _ATE_['clientId'];
+        if(typeof _ATE_['key'] != 'undefined') scriptUrl += '&ATE_key=' + encodeURIComponent(_ATE_['key']);
+        if(typeof _ATE_['remoteAddr'] != 'undefined') scriptUrl += '&ATE_remoteAddr=' + encodeURIComponent(_ATE_['remoteAddr']);
+        if(typeof _ATE_['signature'] != 'undefined') scriptUrl += '&ATE_signature=' + encodeURIComponent(_ATE_['signature']);
+
+        _ATE_SEND(scriptUrl);
+    } else if(_ATE_['action'] == 'cac'){
+        var pregUrl = _ATE_PARSE_URL(document.URL);
+
+        var keySource = '';
+        if(pregUrl.hasOwnProperty('code')){
+            var keySource = _ATE_GET_SOURCE_DOWNLOAD(pregUrl.code);
+
+            // webview
+            // var code = parseInt(pregUrl.code) - 1;
+            // if(arrSource[code]){
+            //     var keySource = arrSource[code];
+            // }
+        }
+
+        var scriptUrl = ('https:' == document.location.protocol ? 'https://' : 'http://') + _ATE_DOMAIN + "/?c=1&ATE_action=cac&ATE_clientId=" + _ATE_['clientId'];
+        scriptUrl += '&ATE_key=' + keySource;
+        scriptUrl += '&ATE_mac=' + encodeURIComponent(pregUrl.mac);
+        scriptUrl += '&ATE_signature=' + encodeURIComponent(pregUrl.sign);
+
+        _ATE_SEND(scriptUrl);
+    } else if(_ATE_['action'] == 'crw'){
+        var scriptUrl = ('https:' == document.location.protocol ? 'https://' : 'http://') + _ATE_DOMAIN + "/?c=1&ATE_action=crw&ATE_clientId=" + _ATE_['clientId'];
+        if(typeof _ATE_['username'] != 'undefined') scriptUrl += '&ATE_username=' + encodeURIComponent(_ATE_['username']);
+        if(typeof _ATE_['userId'] != 'undefined') scriptUrl += '&ATE_userId=' + encodeURIComponent(_ATE_['userId']);
+        if(typeof _ATE_['refSource'] != 'undefined') scriptUrl += '&ATE_refSource=' + encodeURIComponent(_ATE_['refSource']);
+        if(typeof _ATE_['remoteAddr'] != 'undefined') scriptUrl += '&ATE_remoteAddr=' + encodeURIComponent(_ATE_['remoteAddr']);
+        if(typeof _ATE_['signature'] != 'undefined') scriptUrl += '&ATE_signature=' + encodeURIComponent(_ATE_['signature']);
+
+        _ATE_SEND(scriptUrl);
+    }
+}
+_ATE_EXECUTE();
+_ATE_GEN_LINK_DOWNLOAD(downloadLink, 'link-download-client', downloadFile, os = 'windows');
+_ATE_GEN_LINK_DOWNLOAD(downloadLinkOther, 'link-download-apk', downloadFile, os = 'android');
+_ATE_GEN_LINK_DOWNLOAD(downloadLinkOther, 'link-download-mac', downloadFile, os = 'mac');

@@ -1,0 +1,16 @@
+{
+  "id": 22100008,
+  "animations": {
+    "idle": {
+      "frameCount": 6,
+      "frames": [
+        "/assets/animated/npcs/ibiki/idle_0.png",
+        "/assets/animated/npcs/ibiki/idle_1.png",
+        "/assets/animated/npcs/ibiki/idle_2.png",
+        "/assets/animated/npcs/ibiki/idle_3.png",
+        "/assets/animated/npcs/ibiki/idle_4.png",
+        "/assets/animated/npcs/ibiki/idle_5.png"
+      ]
+    }
+  }
+}

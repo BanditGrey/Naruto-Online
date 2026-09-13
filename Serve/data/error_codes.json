@@ -1,0 +1,3972 @@
+[
+  {
+    "id": 0,
+    "desc": "Victoria",
+    "type": 0
+  },
+  {
+    "id": 1,
+    "desc": "Derrota",
+    "type": 0
+  },
+  {
+    "id": 2,
+    "desc": "Ya ha llegado número máximo de ninja",
+    "type": 1
+  },
+  {
+    "id": 3,
+    "desc": "Posición de arma incorrecta",
+    "type": 1
+  },
+  {
+    "id": 4,
+    "desc": "No existe este accesorio",
+    "type": 1
+  },
+  {
+    "id": 5,
+    "desc": "No se puede borrar este accesorio",
+    "type": 1
+  },
+  {
+    "id": 6,
+    "desc": "Mochila llena",
+    "type": 1
+  },
+  {
+    "id": 7,
+    "desc": "Este accesorio no se puede equipar",
+    "type": 1
+  },
+  {
+    "id": 8,
+    "desc": "No coinciden entre el equipamiento y el ninja",
+    "type": 1
+  },
+  {
+    "id": 9,
+    "desc": "El accesorio no puede ser igual",
+    "type": 1
+  },
+  {
+    "id": 10,
+    "desc": "Dato estático del Servidor incorrecto",
+    "type": 2
+  },
+  {
+    "id": 11,
+    "desc": "Los agujeros de equipamientos no coniciden",
+    "type": 1
+  },
+  {
+    "id": 12,
+    "desc": "La calidad del equipamiento insuficiente",
+    "type": 1
+  },
+  {
+    "id": 13,
+    "desc": "Plata insuficiente",
+    "type": 1
+  },
+  {
+    "id": 14,
+    "desc": "Nivel del jugador insuficiente",
+    "type": 1
+  },
+  {
+    "id": 15,
+    "desc": "Recuperando el tiempo",
+    "type": 1
+  },
+  {
+    "id": 16,
+    "desc": "Oro o cupón insuficiente",
+    "type": 1
+  },
+  {
+    "id": 17,
+    "desc": "No hay resultado",
+    "type": 1
+  },
+  {
+    "id": 18,
+    "desc": "Material insuficiente",
+    "type": 1
+  },
+  {
+    "id": 19,
+    "desc": "Nivel del equipamiento insuficiente",
+    "type": 1
+  },
+  {
+    "id": 20,
+    "desc": "Plata ha alcanzado el máximo no se puede aumentar",
+    "type": 2
+  },
+  {
+    "id": 21,
+    "desc": "Accesorio insuficiente",
+    "type": 1
+  },
+  {
+    "id": 22,
+    "desc": "La mochila alcanza el límite máximo",
+    "type": 1
+  },
+  {
+    "id": 23,
+    "desc": "Anomalías de datos",
+    "type": 1
+  },
+  {
+    "id": 24,
+    "desc": "Ya está en la batalla",
+    "type": 1
+  },
+  {
+    "id": 25,
+    "desc": "No puede añadir a tí mismo a tu lista de amistad o lista negra",
+    "type": 1
+  },
+  {
+    "id": 26,
+    "desc": "La lista de amistad está llena",
+    "type": 1
+  },
+  {
+    "id": 27,
+    "desc": "La lista de amistad está llena",
+    "type": 1
+  },
+  {
+    "id": 28,
+    "desc": "Ya ha añadido a tu lista de amistad",
+    "type": 1
+  },
+  {
+    "id": 29,
+    "desc": "El jugador no está en la lista",
+    "type": 1
+  },
+  {
+    "id": 30,
+    "desc": "GM formato incorrecto",
+    "type": 1
+  },
+  {
+    "id": 31,
+    "desc": "Demasiado accesorio",
+    "type": 1
+  },
+  {
+    "id": 32,
+    "desc": "No se puede borrar el personaje principal",
+    "type": 1
+  },
+  {
+    "id": 33,
+    "desc": "El ninja lleva equipamientos, desequipa primero",
+    "type": 1
+  },
+  {
+    "id": 34,
+    "desc": "El nivel de misión insuficiente",
+    "type": 1
+  },
+  {
+    "id": 35,
+    "desc": "No ha completado la misión anterior",
+    "type": 1
+  },
+  {
+    "id": 36,
+    "desc": "Ya ha completado la misión",
+    "type": 1
+  },
+  {
+    "id": 37,
+    "desc": "Ya ha recibido la misión",
+    "type": 1
+  },
+  {
+    "id": 38,
+    "desc": "El jugador no encuentra",
+    "type": 1
+  },
+  {
+    "id": 39,
+    "desc": "Su bozón esta lleno",
+    "type": 1
+  },
+  {
+    "id": 40,
+    "desc": "No ha recibido la misión",
+    "type": 1
+  },
+  {
+    "id": 41,
+    "desc": "No ha completado la misión",
+    "type": 1
+  },
+  {
+    "id": 42,
+    "desc": "El tiempo de recuperaciñon es 0",
+    "type": 1
+  },
+  {
+    "id": 43,
+    "desc": "Alma ninja insuficiente",
+    "type": 1
+  },
+  {
+    "id": 44,
+    "desc": "El requisito del reclutamiento insuficinete",
+    "type": 1
+  },
+  {
+    "id": 45,
+    "desc": "Ya ha reclutado el ninja",
+    "type": 1
+  },
+  {
+    "id": 46,
+    "desc": "Ya alcanza número máximo de reclutamiento",
+    "type": 1
+  },
+  {
+    "id": 47,
+    "desc": "Reclutamiento de Estado de error",
+    "type": 1
+  },
+  {
+    "id": 48,
+    "desc": "No está dentro de la página normal",
+    "type": 1
+  },
+  {
+    "id": 49,
+    "desc": "El estado de bar no es normal",
+    "type": 1
+  },
+  {
+    "id": 50,
+    "desc": "Primera página",
+    "type": 1
+  },
+  {
+    "id": 51,
+    "desc": "Última página",
+    "type": 1
+  },
+  {
+    "id": 52,
+    "desc": "No puede pasar a la siguiente página",
+    "type": 1
+  },
+  {
+    "id": 53,
+    "desc": "Esta cuenta no se ha registrado",
+    "type": 1
+  },
+  {
+    "id": 54,
+    "desc": "El nombre ya existe",
+    "type": 1
+  },
+  {
+    "id": 55,
+    "desc": "Firma fracasada",
+    "type": 1
+  },
+  {
+    "id": 56,
+    "desc": "Oro insuficiente",
+    "type": 1
+  },
+  {
+    "id": 57,
+    "desc": "Firma insuficiente",
+    "type": 1
+  },
+  {
+    "id": 58,
+    "desc": "Punto insuficiente",
+    "type": 1
+  },
+  {
+    "id": 59,
+    "desc": "Punto no firmado",
+    "type": 1
+  },
+  {
+    "id": 60,
+    "desc": "Ya tiene este bar",
+    "type": 1
+  },
+  {
+    "id": 61,
+    "desc": "Error de tipo de Piedra, papel o tijera",
+    "type": 1
+  },
+  {
+    "id": 62,
+    "desc": "Error de gesto de Piedra, papel o tijera",
+    "type": 1
+  },
+  {
+    "id": 63,
+    "desc": "Terminado",
+    "type": 1
+  },
+  {
+    "id": 64,
+    "desc": "Carácter ilegal",
+    "type": 1
+  },
+  {
+    "id": 65,
+    "desc": "vip insuficiente",
+    "type": 1
+  },
+  {
+    "id": 66,
+    "desc": "Contador supera el máximo",
+    "type": 1
+  },
+  {
+    "id": 67,
+    "desc": "Error de tipo de contador",
+    "type": 1
+  },
+  {
+    "id": 68,
+    "desc": "No ha encontrado la tarjeta de transformación",
+    "type": 1
+  },
+  {
+    "id": 69,
+    "desc": "Transformación insuficiente",
+    "type": 1
+  },
+  {
+    "id": 71,
+    "desc": "Nivel insuficiente, no se activa",
+    "type": 1
+  },
+  {
+    "id": 72,
+    "desc": "Cada vez solo puede recibir una vez la misión diaria",
+    "type": 1
+  },
+  {
+    "id": 73,
+    "desc": "Ya ha llegado número máximo de misión diaria",
+    "type": 1
+  },
+  {
+    "id": 74,
+    "desc": "Misión no existe",
+    "type": 1
+  },
+  {
+    "id": 75,
+    "desc": "No ha recibido esta misión",
+    "type": 1
+  },
+  {
+    "id": 76,
+    "desc": "Oro insuficiente，No puede completar esta misión",
+    "type": 1
+  },
+  {
+    "id": 77,
+    "desc": "Misión fracasada",
+    "type": 1
+  },
+  {
+    "id": 78,
+    "desc": "Este bonus no existe",
+    "type": 1
+  },
+  {
+    "id": 79,
+    "desc": "Nivel insuficiente，No puede recibir este bonus",
+    "type": 1
+  },
+  {
+    "id": 80,
+    "desc": "Punto insuficiente，No puede recibir este bonus",
+    "type": 1
+  },
+  {
+    "id": 82,
+    "desc": "Ya ha recibido este bonus",
+    "type": 1
+  },
+  {
+    "id": 81,
+    "desc": "No ha utilizado la tarjeta de transformación，no se puede comprar",
+    "type": 1
+  },
+  {
+    "id": 86,
+    "desc": "Orden militar insuficiente",
+    "type": 1
+  },
+  {
+    "id": 83,
+    "desc": "Nivel insuficiente",
+    "type": 1
+  },
+  {
+    "id": 84,
+    "desc": "No ha superado la prueba anterior",
+    "type": 1
+  },
+  {
+    "id": 85,
+    "desc": "Error de establecimiento de dato de la batalla",
+    "type": 1
+  },
+  {
+    "id": 87,
+    "desc": "Superado",
+    "type": 1
+  },
+  {
+    "id": 88,
+    "desc": "El nivel no conicide",
+    "type": 1
+  },
+  {
+    "id": 89,
+    "desc": "No está disponible el evento",
+    "type": 1
+  },
+  {
+    "id": 90,
+    "desc": "Bonus no encontrado",
+    "type": 1
+  },
+  {
+    "id": 91,
+    "desc": "Número de canje de ramen insuficiente",
+    "type": 1
+  },
+  {
+    "id": 92,
+    "desc": "Recuperando el tiempo",
+    "type": 1
+  },
+  {
+    "id": 93,
+    "desc": "Tiempo en linea insuficiente",
+    "type": 1
+  },
+  {
+    "id": 94,
+    "desc": "Aún no ha alcanzado la etapa",
+    "type": 1
+  },
+  {
+    "id": 95,
+    "desc": "Excede el máximo",
+    "type": 1
+  },
+  {
+    "id": 96,
+    "desc": "Ha recibido el paquete de regalo",
+    "type": 1
+  },
+  {
+    "id": 97,
+    "desc": "Ha recibido el paquete regalo del primer día",
+    "type": 1
+  },
+  {
+    "id": 98,
+    "desc": "Paquete de 7 días bloqueado",
+    "type": 1
+  },
+  {
+    "id": 99,
+    "desc": "Los fragmentos no son suficientes",
+    "type": 1
+  },
+  {
+    "id": 100,
+    "desc": "El evento no está activado",
+    "type": 1
+  },
+  {
+    "id": 101,
+    "desc": "El jade ya alcanza el nivel máximo",
+    "type": 1
+  },
+  {
+    "id": 102,
+    "desc": "No cumple con las condiciones del evento",
+    "type": 1
+  },
+  {
+    "id": 103,
+    "desc": "El correo lleva archivo",
+    "type": 1
+  },
+  {
+    "id": 104,
+    "desc": "Tesoro recibido",
+    "type": 1
+  },
+  {
+    "id": 105,
+    "desc": "Ogi insuficiente",
+    "type": 1
+  },
+  {
+    "id": 106,
+    "desc": "Error de la actualización de atributo",
+    "type": 1
+  },
+  {
+    "id": 107,
+    "desc": "Error de parámetro",
+    "type": 1
+  },
+  {
+    "id": 108,
+    "desc": "cdk inválido",
+    "type": 1
+  },
+  {
+    "id": 109,
+    "desc": "CDK vinculado con el usuario",
+    "type": 1
+  },
+  {
+    "id": 110,
+    "desc": "Ya ha recibido ese tipo de bonus",
+    "type": 1
+  },
+  {
+    "id": 111,
+    "desc": "Error desconocido",
+    "type": 1
+  },
+  {
+    "id": 112,
+    "desc": "No esta en el tiempo de registro",
+    "type": 1
+  },
+  {
+    "id": 113,
+    "desc": "Registrado",
+    "type": 1
+  },
+  {
+    "id": 114,
+    "desc": "Carácter ilegal",
+    "type": 1
+  },
+  {
+    "id": 115,
+    "desc": "Este nombre de clan ya está en uso",
+    "type": 1
+  },
+  {
+    "id": 116,
+    "desc": "No abierto o ya terminado",
+    "type": 1
+  },
+  {
+    "id": 117,
+    "desc": "Error de selección",
+    "type": 1
+  },
+  {
+    "id": 118,
+    "desc": "Ha muerto, espere",
+    "type": 1
+  },
+  {
+    "id": 119,
+    "desc": "Está en el CD de castigo, y no puede atacar",
+    "type": 1
+  },
+  {
+    "id": 120,
+    "desc": "Animación agutada",
+    "type": 1
+  },
+  {
+    "id": 121,
+    "desc": "La actividad de este clan ya ha terminado",
+    "type": 1
+  },
+  {
+    "id": 122,
+    "desc": "Estado de la resurrección",
+    "type": 1
+  },
+  {
+    "id": 123,
+    "desc": "Oro o cupón insuficiente",
+    "type": 1
+  },
+  {
+    "id": 124,
+    "desc": "Recuperando el tiempo",
+    "type": 1
+  },
+  {
+    "id": 125,
+    "desc": "Ya ha unido a este gremio",
+    "type": 1
+  },
+  {
+    "id": 126,
+    "desc": "No ha unido a este gremio",
+    "type": 1
+  },
+  {
+    "id": 127,
+    "desc": "La operación del gremio sin autoridad",
+    "type": 1
+  },
+  {
+    "id": 128,
+    "desc": "Ya ha solicitado",
+    "type": 1
+  },
+  {
+    "id": 129,
+    "desc": "Gremio no existe",
+    "type": 1
+  },
+  {
+    "id": 131,
+    "desc": "No está en tiempo",
+    "type": 1
+  },
+  {
+    "id": 132,
+    "desc": "Tiempo de recuperación",
+    "type": 1
+  },
+  {
+    "id": 133,
+    "desc": "La animación alcanza número máximo",
+    "type": 1
+  },
+  {
+    "id": 134,
+    "desc": "Nuevo Usuario",
+    "type": 1
+  },
+  {
+    "id": 135,
+    "desc": "Defensa Konoha no está abierto",
+    "type": 1
+  },
+  {
+    "id": 130,
+    "desc": "No ha solicitado",
+    "type": 1
+  },
+  {
+    "id": 136,
+    "desc": "Usuario desconocido",
+    "type": 1
+  },
+  {
+    "id": 137,
+    "desc": "No permiso",
+    "type": 1
+  },
+  {
+    "id": 138,
+    "desc": "Error de datos",
+    "type": 1
+  },
+  {
+    "id": 139,
+    "desc": "Objetivo perdido",
+    "type": 1
+  },
+  {
+    "id": 140,
+    "desc": "Jugador está listo",
+    "type": 1
+  },
+  {
+    "id": 141,
+    "desc": "La tecnología del gremio ha alcanzado el límite",
+    "type": 1
+  },
+  {
+    "id": 142,
+    "desc": "Tecnología de identificación incorrecta",
+    "type": 1
+  },
+  {
+    "id": 143,
+    "desc": "Contribución del gremio insuficiente",
+    "type": 1
+  },
+  {
+    "id": 144,
+    "desc": "Fallo de borrar el tiempo de recuperación",
+    "type": 1
+  },
+  {
+    "id": 145,
+    "desc": "Error de subir gremio de tipo campamento",
+    "type": 1
+  },
+  {
+    "id": 146,
+    "desc": "Ha alcanzado el límite máximo del nivel de campamento",
+    "type": 1
+  },
+  {
+    "id": 147,
+    "desc": "Dinero insuficiente",
+    "type": 1
+  },
+  {
+    "id": 148,
+    "desc": "líder del gremio no puede dejar",
+    "type": 1
+  },
+  {
+    "id": 149,
+    "desc": "Donación ha alcanzado al límite",
+    "type": 1
+  },
+  {
+    "id": 150,
+    "desc": "Usted debe derrotar a las bestias de este clan primero",
+    "type": 1
+  },
+  {
+    "id": 151,
+    "desc": "Tarea del camino a la Hokage no disponible todavia",
+    "type": 1
+  },
+  {
+    "id": 152,
+    "desc": "En curso",
+    "type": 1
+  },
+  {
+    "id": 153,
+    "desc": "Recompensa recibida",
+    "type": 1
+  },
+  {
+    "id": 154,
+    "desc": "Ha alcanzado límite de recibido",
+    "type": 1
+  },
+  {
+    "id": 155,
+    "desc": "No te has unido ningún clan",
+    "type": 1
+  },
+  {
+    "id": 156,
+    "desc": "No se puede dejar o despedir a un gremio cuando este en la actividad",
+    "type": 1
+  },
+  {
+    "id": 157,
+    "desc": "Error del equipo",
+    "type": 1
+  },
+  {
+    "id": 158,
+    "desc": "Anuncio demasiado largo",
+    "type": 1
+  },
+  {
+    "id": 160,
+    "desc": "Nombre del gremio demasiado largo",
+    "type": 1
+  },
+  {
+    "id": 161,
+    "desc": "Gremio está llena",
+    "type": 1
+  },
+  {
+    "id": 162,
+    "desc": "progreso de suerte insuficiente",
+    "type": 1
+  },
+  {
+    "id": 163,
+    "desc": "Progreso de oro insuficiente",
+    "type": 1
+  },
+  {
+    "id": 164,
+    "desc": "Tiempo insuficiente",
+    "type": 1
+  },
+  {
+    "id": 165,
+    "desc": "Elemento no encontrado",
+    "type": 1
+  },
+  {
+    "id": 166,
+    "desc": "Ha alcanzado límite máximo",
+    "type": 1
+  },
+  {
+    "id": 167,
+    "desc": "Punto insuficiente",
+    "type": 1
+  },
+  {
+    "id": 168,
+    "desc": "No empezado o ya terminado",
+    "type": 1
+  },
+  {
+    "id": 169,
+    "desc": "Terminado",
+    "type": 1
+  },
+  {
+    "id": 170,
+    "desc": "Estado de muerto",
+    "type": 1
+  },
+  {
+    "id": 171,
+    "desc": "Gastigo CD",
+    "type": 1
+  },
+  {
+    "id": 172,
+    "desc": "Tiempo de recuperación",
+    "type": 1
+  },
+  {
+    "id": 173,
+    "desc": "Oro o cupón insuficiente",
+    "type": 1
+  },
+  {
+    "id": 174,
+    "desc": "En CD de ataque",
+    "type": 1
+  },
+  {
+    "id": 175,
+    "desc": "Límite de nivel",
+    "type": 1
+  },
+  {
+    "id": 176,
+    "desc": "Límite de clan",
+    "type": 1
+  },
+  {
+    "id": 177,
+    "desc": "Error de información",
+    "type": 1
+  },
+  {
+    "id": 178,
+    "desc": "Ha cambiado tu identidad",
+    "type": 1
+  },
+  {
+    "id": 179,
+    "desc": "Ha alcanzado número máximo",
+    "type": 1
+  },
+  {
+    "id": 181,
+    "desc": "Diferencia de nivel es demasiado grande",
+    "type": 1
+  },
+  {
+    "id": 182,
+    "desc": "Bajo periodo de protección, no pueden ser capturado",
+    "type": 1
+  },
+  {
+    "id": 183,
+    "desc": "El jugador está en la interacción de CD",
+    "type": 1
+  },
+  {
+    "id": 184,
+    "desc": "Derrotado",
+    "type": 1
+  },
+  {
+    "id": 185,
+    "desc": "Ya te ha salvado hoy",
+    "type": 1
+  },
+  {
+    "id": 186,
+    "desc": "El objetivo no es su esclavo",
+    "type": 1
+  },
+  {
+    "id": 187,
+    "desc": "Monstruos en CD",
+    "type": 1
+  },
+  {
+    "id": 188,
+    "desc": "Esclavo EXP CD",
+    "type": 1
+  },
+  {
+    "id": 189,
+    "desc": "El objetivo es su esclavo, no operación",
+    "type": 1
+  },
+  {
+    "id": 190,
+    "desc": "Esclavo se ha agotado",
+    "type": 1
+  },
+  {
+    "id": 191,
+    "desc": "Oro insuficiente",
+    "type": 1
+  },
+  {
+    "id": 192,
+    "desc": "Resistencia fracasada",
+    "type": 1
+  },
+  {
+    "id": 193,
+    "desc": "Es mi maestro",
+    "type": 1
+  },
+  {
+    "id": 194,
+    "desc": "Sin permiso para recatar",
+    "type": 1
+  },
+  {
+    "id": 195,
+    "desc": "Evento no ha abierto",
+    "type": 1
+  },
+  {
+    "id": 196,
+    "desc": "En tiempo de recarga",
+    "type": 1
+  },
+  {
+    "id": 197,
+    "desc": "Recibido",
+    "type": 1
+  },
+  {
+    "id": 198,
+    "desc": "No recibir",
+    "type": 1
+  },
+  {
+    "id": 199,
+    "desc": "Ha alcanzado número máximo",
+    "type": 1
+  },
+  {
+    "id": 200,
+    "desc": "ID es usted mismo",
+    "type": 1
+  },
+  {
+    "id": 201,
+    "desc": "El objetivo no es un esclavo",
+    "type": 1
+  },
+  {
+    "id": 202,
+    "desc": "Su gremio no ha participado la Guerra Konoha o no",
+    "type": 1
+  },
+  {
+    "id": 203,
+    "desc": "EXP conseguido ha alcanzado límite máximo",
+    "type": 1
+  },
+  {
+    "id": 204,
+    "desc": "Ya se unió al clan",
+    "type": 1
+  },
+  {
+    "id": 205,
+    "desc": "Desafío de hoy ha alcanzado número máximo",
+    "type": 1
+  },
+  {
+    "id": 206,
+    "desc": "Nivel insuficiente",
+    "type": 1
+  },
+  {
+    "id": 207,
+    "desc": "No existe este ninja",
+    "type": 1
+  },
+  {
+    "id": 208,
+    "desc": "Error del lógico de la lucha",
+    "type": 1
+  },
+  {
+    "id": 209,
+    "desc": "Error del lógico de la información",
+    "type": 1
+  },
+  {
+    "id": 210,
+    "desc": "Error de configuración",
+    "type": 1
+  },
+  {
+    "id": 211,
+    "desc": "Error de ArmyID",
+    "type": 1
+  },
+  {
+    "id": 212,
+    "desc": "Ninja no existe",
+    "type": 1
+  },
+  {
+    "id": 213,
+    "desc": "Por favor derrota ninjas de atributos correspondientes",
+    "type": 1
+  },
+  {
+    "id": 214,
+    "desc": "Error de configuración",
+    "type": 1
+  },
+  {
+    "id": 215,
+    "desc": "No ha inluminado las estrellas enteriores",
+    "type": 1
+  },
+  {
+    "id": 216,
+    "desc": "Alma de Kages insuficiente",
+    "type": 1
+  },
+  {
+    "id": 217,
+    "desc": "Ninja de la izquierda no existe",
+    "type": 1
+  },
+  {
+    "id": 218,
+    "desc": "Ninja a la derecha no existe",
+    "type": 1
+  },
+  {
+    "id": 219,
+    "desc": "Tipo kage incorrecto",
+    "type": 1
+  },
+  {
+    "id": 220,
+    "desc": "Progreso incorrecto",
+    "type": 1
+  },
+  {
+    "id": 221,
+    "desc": "Error de configuración",
+    "type": 1
+  },
+  {
+    "id": 222,
+    "desc": "Destino incorrecto",
+    "type": 1
+  },
+  {
+    "id": 224,
+    "desc": "No hay más intentos hoy",
+    "type": 1
+  },
+  {
+    "id": 223,
+    "desc": "Ninja de este tipo no derrotado todavía",
+    "type": 1
+  },
+  {
+    "id": 225,
+    "desc": "Oro o cupón insuficiente",
+    "type": 1
+  },
+  {
+    "id": 226,
+    "desc": "Recompensa aún no recibido, no puede entrenar",
+    "type": 2
+  },
+  {
+    "id": 227,
+    "desc": "Recompensa aún no reclamado，no puede adivinar",
+    "type": 1
+  },
+  {
+    "id": 228,
+    "desc": "//Ha alcanzado el número máximo de ranuras de ninja",
+    "type": 1
+  },
+  {
+    "id": 229,
+    "desc": "Tipo de ataque automático incorrecto",
+    "type": 1
+  },
+  {
+    "id": 230,
+    "desc": "No se puede enviar o cancelar batalla en este momento",
+    "type": 1
+  },
+  {
+    "id": 231,
+    "desc": "Este gremio ya existe",
+    "type": 1
+  },
+  {
+    "id": 232,
+    "desc": "En CD del combate",
+    "type": 1
+  },
+  {
+    "id": 233,
+    "desc": "Equipamiento con incrustaciones de jade",
+    "type": 1
+  },
+  {
+    "id": 234,
+    "desc": "En modo automático",
+    "type": 1
+  },
+  {
+    "id": 235,
+    "desc": "Jugador que ha permitido ataque automático no puede entrar",
+    "type": 1
+  },
+  {
+    "id": 236,
+    "desc": "Vip insuficiente,no puede entrar automáticamente",
+    "type": 1
+  },
+  {
+    "id": 237,
+    "desc": "Error de datos VIP",
+    "type": 1
+  },
+  {
+    "id": 238,
+    "desc": "Oro o cupón insuficiente",
+    "type": 1
+  },
+  {
+    "id": 239,
+    "desc": "Error del efecto de Set",
+    "type": 1
+  },
+  {
+    "id": 240,
+    "desc": "Tiempo de compra ha agotado",
+    "type": 1
+  },
+  {
+    "id": 241,
+    "desc": "Ha alcanzado número máximo de ranuras",
+    "type": 1
+  },
+  {
+    "id": 242,
+    "desc": "Piedra insuficiente",
+    "type": 1
+  },
+  {
+    "id": 243,
+    "desc": "Nivel del fortalecimiento ha alcanzado máximo",
+    "type": 1
+  },
+  {
+    "id": 244,
+    "desc": "El registro todavía no ha abierto",
+    "type": 1
+  },
+  {
+    "id": 245,
+    "desc": "No se puede registrar repetidamente",
+    "type": 1
+  },
+  {
+    "id": 246,
+    "desc": "Fallo de la presentación de datos",
+    "type": 1
+  },
+  {
+    "id": 247,
+    "desc": "Tipo desafío incorrecto",
+    "type": 1
+  },
+  {
+    "id": 248,
+    "desc": "Usted no se registra para el partido de élite",
+    "type": 1
+  },
+  {
+    "id": 249,
+    "desc": "Esta cerrado el partido de cruz-servicio",
+    "type": 1
+  },
+  {
+    "id": 250,
+    "desc": "Elite Partido aún no comenzó",
+    "type": 1
+  },
+  {
+    "id": 251,
+    "desc": "Objetivo incorrecto para desafiar",
+    "type": 1
+  },
+  {
+    "id": 252,
+    "desc": "Esperando",
+    "type": 1
+  },
+  {
+    "id": 253,
+    "desc": "Dato solicitado incorrecto",
+    "type": 1
+  },
+  {
+    "id": 254,
+    "desc": "Error de Creación de GameClient",
+    "type": 1
+  },
+  {
+    "id": 255,
+    "desc": "Error de la batalla",
+    "type": 1
+  },
+  {
+    "id": 256,
+    "desc": "Error de informe",
+    "type": 1
+  },
+  {
+    "id": 257,
+    "desc": "No ha encontrado datos de jugador",
+    "type": 1
+  },
+  {
+    "id": 258,
+    "desc": "Tipo de brindis incorrecto",
+    "type": 1
+  },
+  {
+    "id": 259,
+    "desc": "Solo se puede brindar una vez al día",
+    "type": 1
+  },
+  {
+    "id": 260,
+    "desc": "Nivel insuficiente",
+    "type": 1
+  },
+  {
+    "id": 261,
+    "desc": "Ya ha vencido este jugador, no puede atacar de nuevo",
+    "type": 1
+  },
+  {
+    "id": 262,
+    "desc": "El objetivo no puede ser si mismo",
+    "type": 1
+  },
+  {
+    "id": 263,
+    "desc": "Tipo de brindis incorrecto",
+    "type": 1
+  },
+  {
+    "id": 264,
+    "desc": "Error de configuración",
+    "type": 1
+  },
+  {
+    "id": 266,
+    "desc": "Plata u Oro insuficiente",
+    "type": 1
+  },
+  {
+    "id": 267,
+    "desc": "error de configuración de ID",
+    "type": 1
+  },
+  {
+    "id": 268,
+    "desc": "vip insuficiente",
+    "type": 1
+  },
+  {
+    "id": 269,
+    "desc": "Tarjeta de desafío insuficiente",
+    "type": 1
+  },
+  {
+    "id": 270,
+    "desc": "Piedra Kage insuficiente",
+    "type": 1
+  },
+  {
+    "id": 271,
+    "desc": "Fallo de añadir Héroes",
+    "type": 1
+  },
+  {
+    "id": 272,
+    "desc": "Ya tiene este título",
+    "type": 1
+  },
+  {
+    "id": 273,
+    "desc": "Ya ha equipado este título",
+    "type": 1
+  },
+  {
+    "id": 274,
+    "desc": "El jugador no tiene este título",
+    "type": 1
+  },
+  {
+    "id": 275,
+    "desc": "Ya está activado",
+    "type": 1
+  },
+  {
+    "id": 276,
+    "desc": "Ya ha comprado",
+    "type": 2
+  },
+  {
+    "id": 277,
+    "desc": "Ya ha registrado",
+    "type": 2
+  },
+  {
+    "id": 278,
+    "desc": "Ya está activado",
+    "type": 1
+  },
+  {
+    "id": 279,
+    "desc": "Número de sesafío insuficiente",
+    "type": 1
+  },
+  {
+    "id": 280,
+    "desc": "No se puede comprar más hoy",
+    "type": 1
+  },
+  {
+    "id": 281,
+    "desc": "Oro insuficiente",
+    "type": 1
+  },
+  {
+    "id": 282,
+    "desc": "CD de desafío",
+    "type": 1
+  },
+  {
+    "id": 283,
+    "desc": "Estado de la temporada",
+    "type": 1
+  },
+  {
+    "id": 284,
+    "desc": "Nivel insuficiente",
+    "type": 1
+  },
+  {
+    "id": 285,
+    "desc": "Tipo de Senjutsu incorrecto",
+    "type": 1
+  },
+  {
+    "id": 286,
+    "desc": "Tipo de entrenamiento incorrecto",
+    "type": 1
+  },
+  {
+    "id": 287,
+    "desc": "Nivel ha alcanzado más alto",
+    "type": 1
+  },
+  {
+    "id": 288,
+    "desc": "Error de ID",
+    "type": 1
+  },
+  {
+    "id": 289,
+    "desc": "No más entrenamiento",
+    "type": 1
+  },
+  {
+    "id": 290,
+    "desc": "Plata insuficiente",
+    "type": 1
+  },
+  {
+    "id": 291,
+    "desc": "Oro o cupón insuficiente",
+    "type": 1
+  },
+  {
+    "id": 292,
+    "desc": "Por favor, complete el nivel Monte Myōboku primero",
+    "type": 1
+  },
+  {
+    "id": 293,
+    "desc": "Este tipo de Senjutsu no activado aún",
+    "type": 1
+  },
+  {
+    "id": 294,
+    "desc": "Nivel insuficiente",
+    "type": 1
+  },
+  {
+    "id": 295,
+    "desc": "CD de desafío",
+    "type": 1
+  },
+  {
+    "id": 296,
+    "desc": "No se puede desafiar más",
+    "type": 1
+  },
+  {
+    "id": 297,
+    "desc": "Error de ID",
+    "type": 1
+  },
+  {
+    "id": 298,
+    "desc": "Aprobado",
+    "type": 1
+  },
+  {
+    "id": 299,
+    "desc": "No hay hadas",
+    "type": 1
+  },
+  {
+    "id": 300,
+    "desc": "Hada insuficiente",
+    "type": 1
+  },
+  {
+    "id": 301,
+    "desc": "Advertencia, operación ilegal! !",
+    "type": 1
+  },
+  {
+    "id": 302,
+    "desc": "No hay suficientes exploraciones",
+    "type": 1
+  },
+  {
+    "id": 303,
+    "desc": "Ya ha luchado con este enemigo",
+    "type": 1
+  },
+  {
+    "id": 304,
+    "desc": "Energía insuficiente",
+    "type": 1
+  },
+  {
+    "id": 305,
+    "desc": "Compra de vida insuficiente",
+    "type": 1
+  },
+  {
+    "id": 306,
+    "desc": "La vida ha alcanzado el límite máximo",
+    "type": 1
+  },
+  {
+    "id": 307,
+    "desc": "Nivel más alto alcanzado",
+    "type": 1
+  },
+  {
+    "id": 308,
+    "desc": "El registro se cierra el último día del partido",
+    "type": 1
+  },
+  {
+    "id": 309,
+    "desc": "Por favor espere a la próxima temporada",
+    "type": 1
+  },
+  {
+    "id": 310,
+    "desc": "Nivel Máximo de encanto alcanzado",
+    "type": 1
+  },
+  {
+    "id": 311,
+    "desc": "Usted ha recibido el beneficio diario",
+    "type": 1
+  },
+  {
+    "id": 312,
+    "desc": "título es demasiado largo",
+    "type": 1
+  },
+  {
+    "id": 313,
+    "desc": "Correo es demasiado largo",
+    "type": 1
+  },
+  {
+    "id": 314,
+    "desc": "hoy la batalla de Dragón Santuario no se abre",
+    "type": 1
+  },
+  {
+    "id": 315,
+    "desc": "La batalla de cruz-servidor no está abierta.",
+    "type": 1
+  },
+  {
+    "id": 316,
+    "desc": "Esperando para entrar",
+    "type": 1
+  },
+  {
+    "id": 317,
+    "desc": "Datos del jugador incorrecta",
+    "type": 1
+  },
+  {
+    "id": 318,
+    "desc": "Usted no está calificado para la batalla de Dragón Santuario",
+    "type": 1
+  },
+  {
+    "id": 319,
+    "desc": "Compras de hoy alcanzan el máximo",
+    "type": 1
+  },
+  {
+    "id": 320,
+    "desc": "Compra de Oro o cupón insuficiente",
+    "type": 1
+  },
+  {
+    "id": 321,
+    "desc": "No en CD, no se puede borrar",
+    "type": 1
+  },
+  {
+    "id": 322,
+    "desc": "No empezado o ya terminado",
+    "type": 1
+  },
+  {
+    "id": 323,
+    "desc": "Operación maliciosamente ilegal",
+    "type": 1
+  },
+  {
+    "id": 324,
+    "desc": "El objetivo de jugador no existe",
+    "type": 1
+  },
+  {
+    "id": 325,
+    "desc": "Los servidores están cerrados",
+    "type": 1
+  },
+  {
+    "id": 326,
+    "desc": "El iniciador Gs No ha registrado Fs",
+    "type": 1
+  },
+  {
+    "id": 327,
+    "desc": "Los datos de jugadores no se muestran",
+    "type": 1
+  },
+  {
+    "id": 328,
+    "desc": "Número de desafío ha agotado",
+    "type": 1
+  },
+  {
+    "id": 329,
+    "desc": "Iniciar CD de desafío",
+    "type": 1
+  },
+  {
+    "id": 330,
+    "desc": "CD de desafío",
+    "type": 1
+  },
+  {
+    "id": 331,
+    "desc": "No se puede desafiar a esta posición",
+    "type": 1
+  },
+  {
+    "id": 332,
+    "desc": "Por favor, espere un rato para desafiar",
+    "type": 1
+  },
+  {
+    "id": 333,
+    "desc": "Fallo de la creación del objetivo",
+    "type": 1
+  },
+  {
+    "id": 334,
+    "desc": "Fallo de batalla",
+    "type": 1
+  },
+  {
+    "id": 335,
+    "desc": "Fallos de informe",
+    "type": 1
+  },
+  {
+    "id": 336,
+    "desc": "No se puede desafiar a si mismo",
+    "type": 1
+  },
+  {
+    "id": 337,
+    "desc": "No puede ver a si mismo",
+    "type": 1
+  },
+  {
+    "id": 338,
+    "desc": "Esperando",
+    "type": 1
+  },
+  {
+    "id": 339,
+    "desc": "Usted está siendo desafiado, por favor espere",
+    "type": 1
+  },
+  {
+    "id": 340,
+    "desc": "El oponente está luchando, por favor espere",
+    "type": 1
+  },
+  {
+    "id": 341,
+    "desc": "en CD para ver",
+    "type": 1
+  },
+  {
+    "id": 342,
+    "desc": "en CD para ver",
+    "type": 1
+  },
+  {
+    "id": 343,
+    "desc": "Error del estado",
+    "type": 1
+  },
+  {
+    "id": 344,
+    "desc": "Error del estado",
+    "type": 1
+  },
+  {
+    "id": 345,
+    "desc": "Error del estado",
+    "type": 1
+  },
+  {
+    "id": 346,
+    "desc": "Reserva del templo de dragon",
+    "type": 1
+  },
+  {
+    "id": 347,
+    "desc": "Reserva del templo de dragon",
+    "type": 1
+  },
+  {
+    "id": 348,
+    "desc": "Reserva del templo de dragon",
+    "type": 1
+  },
+  {
+    "id": 349,
+    "desc": "Reserva del templo de dragon",
+    "type": 1
+  },
+  {
+    "id": 350,
+    "desc": "Reserva del templo de dragon",
+    "type": 1
+  },
+  {
+    "id": 351,
+    "desc": "Reserva del templo de dragon",
+    "type": 1
+  },
+  {
+    "id": 352,
+    "desc": "Reserva del templo de dragon",
+    "type": 1
+  },
+  {
+    "id": 353,
+    "desc": "Reserva del templo de dragon",
+    "type": 1
+  },
+  {
+    "id": 354,
+    "desc": "Reserva del templo de dragon",
+    "type": 1
+  },
+  {
+    "id": 355,
+    "desc": "Reserva del templo de dragon",
+    "type": 1
+  },
+  {
+    "id": 356,
+    "desc": "Error de tipo herencia",
+    "type": 1
+  },
+  {
+    "id": 357,
+    "desc": "Nivel de heredero es 0",
+    "type": 1
+  },
+  {
+    "id": 358,
+    "desc": "paquetes de regalo ya han inviado todos, no se puede recibir",
+    "type": 1
+  },
+  {
+    "id": 359,
+    "desc": "El evento ya ha terminado,espere la recompensa",
+    "type": 1
+  },
+  {
+    "id": 360,
+    "desc": "Nivel de avance de la potencia ha alcanzado límite máximo",
+    "type": 1
+  },
+  {
+    "id": 361,
+    "desc": "Parámetros incorrectos",
+    "type": 1
+  },
+  {
+    "id": 362,
+    "desc": "Por favor, suba el nivel para comprar regalos",
+    "type": 1
+  },
+  {
+    "id": 363,
+    "desc": "La misión de camino de Hokage no ha terminado",
+    "type": 1
+  },
+  {
+    "id": 364,
+    "desc": "Ya ha recibido el bonus del camino de Hokage",
+    "type": 1
+  },
+  {
+    "id": 365,
+    "desc": "La misión de camino de Hokage ya ha terminado",
+    "type": 1
+  },
+  {
+    "id": 414,
+    "desc": "Bestia invocada tienda Esta bestia no tiene precio",
+    "type": 1
+  },
+  {
+    "id": 415,
+    "desc": "Bestia invocada tienda Punto insuficiente",
+    "type": 1
+  },
+  {
+    "id": 416,
+    "desc": "Mochila de bestia insuficiente",
+    "type": 1
+  },
+  {
+    "id": 417,
+    "desc": "Bestia invocada formación desbloqueado",
+    "type": 1
+  },
+  {
+    "id": 418,
+    "desc": "Bestia invocada formación fallo de tipo de configuración",
+    "type": 1
+  },
+  {
+    "id": 419,
+    "desc": "Bestia invocada en la formación",
+    "type": 1
+  },
+  {
+    "id": 420,
+    "desc": "Bestia invocada formación posición  cerrado",
+    "type": 1
+  },
+  {
+    "id": 421,
+    "desc": "Bestia invocada formación no está en la formación",
+    "type": 1
+  },
+  {
+    "id": 422,
+    "desc": "Bestia invocada Evolucionar  Nivel insuficiente",
+    "type": 1
+  },
+  {
+    "id": 423,
+    "desc": "Bestia espiritual ya te está persiguiendo",
+    "type": 1
+  },
+  {
+    "id": 424,
+    "desc": "Bestia invocada hay otra Bestia invocada perseguida",
+    "type": 1
+  },
+  {
+    "id": 426,
+    "desc": "Nivel máximo de la bestia invocada",
+    "type": 1
+  },
+  {
+    "id": 403,
+    "desc": "La posición de la bestia invocada insuficiente",
+    "type": 1
+  },
+  {
+    "id": 409,
+    "desc": "Bestia invoca daBestia invocada Evolucionar",
+    "type": 1
+  },
+  {
+    "id": 402,
+    "desc": "Bestia invocada está formando",
+    "type": 1
+  },
+  {
+    "id": 423,
+    "desc": "Bestia invocada ya te está persiguiendo",
+    "type": 1
+  },
+  {
+    "id": 409,
+    "desc": "Bestia invocadaBestia invocadaEvolucionar",
+    "type": 1
+  },
+  {
+    "id": 427,
+    "desc": "Bestia invocada está persiguiente no puede tirar!",
+    "type": 1
+  },
+  {
+    "id": 428,
+    "desc": "Bestia invocada está en la formación,no puede tirar!",
+    "type": 1
+  },
+  {
+    "id": 429,
+    "desc": "Bestia invocada está formando,no puede Evolucionar",
+    "type": 1
+  },
+  {
+    "id": 265,
+    "desc": "Plata insuficiente",
+    "type": 1
+  },
+  {
+    "id": 601,
+    "desc": "Permiso insuficiente",
+    "type": 1
+  },
+  {
+    "id": 602,
+    "desc": "No en el gremio",
+    "type": 1
+  },
+  {
+    "id": 603,
+    "desc": "Nivel de Gremio demasiado baja",
+    "type": 1
+  },
+  {
+    "id": 604,
+    "desc": "Número de persona insuficiente",
+    "type": 1
+  },
+  {
+    "id": 605,
+    "desc": "El lunes 00:00 al miercoles 17:30 puede registrar",
+    "type": 1
+  },
+  {
+    "id": 606,
+    "desc": "Se ha registrado",
+    "type": 1
+  },
+  {
+    "id": 607,
+    "desc": "Algunos solicitante no es el miembro del gremio",
+    "type": 1
+  },
+  {
+    "id": 608,
+    "desc": "El Nivel de miembro registrado no ha llegado Nvl.45",
+    "type": 1
+  },
+  {
+    "id": 609,
+    "desc": "Algunos solicitante no ha conectado durante mucho tiempo",
+    "type": 1
+  },
+  {
+    "id": 610,
+    "desc": "No esta en el momento de batalla",
+    "type": 1
+  },
+  {
+    "id": 611,
+    "desc": "Usted no se ha inscrito",
+    "type": 1
+  },
+  {
+    "id": 612,
+    "desc": "Ya ha enviado los datos de batalla",
+    "type": 1
+  },
+  {
+    "id": 613,
+    "desc": "No han podido extraer los datos de algunos solicitante",
+    "type": 1
+  },
+  {
+    "id": 614,
+    "desc": "La batalla no ha terminado",
+    "type": 1
+  },
+  {
+    "id": 515,
+    "desc": "En la batalla automática",
+    "type": 1
+  },
+  {
+    "id": 615,
+    "desc": "Lista de registro se ha repetido",
+    "type": 1
+  },
+  {
+    "id": 430,
+    "desc": "No ha encontrado el campo de batalla",
+    "type": 1
+  },
+  {
+    "id": 431,
+    "desc": "Batalla de Boss ya esta abierto",
+    "type": 1
+  },
+  {
+    "id": 432,
+    "desc": "No hay gremio",
+    "type": 1
+  },
+  {
+    "id": 433,
+    "desc": "No empezado o ya terminado",
+    "type": 1
+  },
+  {
+    "id": 434,
+    "desc": "Persona que registra insufuciente",
+    "type": 1
+  },
+  {
+    "id": 435,
+    "desc": "Error al crear escenas de batalla",
+    "type": 1
+  },
+  {
+    "id": 436,
+    "desc": "Oro insuficiente",
+    "type": 1
+  },
+  {
+    "id": 437,
+    "desc": "Npc muerto",
+    "type": 1
+  },
+  {
+    "id": 438,
+    "desc": "Error de la batalla",
+    "type": 1
+  },
+  {
+    "id": 439,
+    "desc": "Error del informe",
+    "type": 1
+  },
+  {
+    "id": 440,
+    "desc": "Gremio ID no coincide",
+    "type": 1
+  },
+  {
+    "id": 441,
+    "desc": "datos de los jugadores ilegales",
+    "type": 1
+  },
+  {
+    "id": 442,
+    "desc": "Ha muerto",
+    "type": 1
+  },
+  {
+    "id": 443,
+    "desc": "Número de animación",
+    "type": 1
+  },
+  {
+    "id": 444,
+    "desc": "No ha muerto",
+    "type": 1
+  },
+  {
+    "id": 445,
+    "desc": "Castigando",
+    "type": 1
+  },
+  {
+    "id": 446,
+    "desc": "No en tiempo",
+    "type": 1
+  },
+  {
+    "id": 447,
+    "desc": "Número de invocación",
+    "type": 1
+  },
+  {
+    "id": 448,
+    "desc": "Parámetro incorrecta",
+    "type": 1
+  },
+  {
+    "id": 449,
+    "desc": "El objetivo no puede ser a si mismo",
+    "type": 1
+  },
+  {
+    "id": 450,
+    "desc": "Ya está en el escenario, no puede entrar en varias ocasiones",
+    "type": 1
+  },
+  {
+    "id": 451,
+    "desc": "No se puede despedir durante la lucha de BOSS",
+    "type": 1
+  },
+  {
+    "id": 452,
+    "desc": "Nivel de gremio insuficiente",
+    "type": 1
+  },
+  {
+    "id": 453,
+    "desc": "Ha alcanzado número máximo de desafío hoy",
+    "type": 1
+  },
+  {
+    "id": 454,
+    "desc": "El jugador ha enviado ingredientes hoy",
+    "type": 1
+  },
+  {
+    "id": 367,
+    "desc": "Ha agotado el número de pesca",
+    "type": 1
+  },
+  {
+    "id": 701,
+    "desc": "El jugador no existe",
+    "type": 1
+  },
+  {
+    "id": 702,
+    "desc": "El jugador ya está en la habitación",
+    "type": 1
+  },
+  {
+    "id": 703,
+    "desc": "No ha abierto el desafío",
+    "type": 1
+  },
+  {
+    "id": 704,
+    "desc": "Creación fracasada",
+    "type": 1
+  },
+  {
+    "id": 706,
+    "desc": "Jugador insuficiente",
+    "type": 1
+  },
+  {
+    "id": 705,
+    "desc": "Error al entrar en la sala",
+    "type": 1
+  },
+  {
+    "id": 707,
+    "desc": "No es dueño",
+    "type": 1
+  },
+  {
+    "id": 708,
+    "desc": "El habitación está llena",
+    "type": 1
+  },
+  {
+    "id": 709,
+    "desc": "El estado de la habitación no coicide",
+    "type": 1
+  },
+  {
+    "id": 710,
+    "desc": "Contraseña incorrecta",
+    "type": 1
+  },
+  {
+    "id": 711,
+    "desc": "Todos los jugadores deben estar preparados",
+    "type": 1
+  },
+  {
+    "id": 712,
+    "desc": "El dueño esta ocupado",
+    "type": 1
+  },
+  {
+    "id": 713,
+    "desc": "No en habitación",
+    "type": 1
+  },
+  {
+    "id": 714,
+    "desc": "No autorizado para invitar al clon de sombra del jugador",
+    "type": 1
+  },
+  {
+    "id": 715,
+    "desc": "El objetivo del clan de sombra no existe",
+    "type": 1
+  },
+  {
+    "id": 716,
+    "desc": "Número de la invitación insuficiente",
+    "type": 1
+  },
+  {
+    "id": 717,
+    "desc": "El jugador ya está en la habitación",
+    "type": 1
+  },
+  {
+    "id": 718,
+    "desc": "objetivo clon de sombra incorrecto",
+    "type": 1
+  },
+  {
+    "id": 719,
+    "desc": "No es su amigo",
+    "type": 1
+  },
+  {
+    "id": 720,
+    "desc": "operación ilegal",
+    "type": 1
+  },
+  {
+    "id": 722,
+    "desc": "Invitando",
+    "type": 1
+  },
+  {
+    "id": 721,
+    "desc": "Algunos miembros de equipo no pueden jugar esta etapa",
+    "type": 1
+  },
+  {
+    "id": 616,
+    "desc": "GVG2 No tiene permiso para registrar",
+    "type": 1
+  },
+  {
+    "id": 723,
+    "desc": "El jugador no se encuentra en la sala de batalla",
+    "type": 1
+  },
+  {
+    "id": 724,
+    "desc": "clon de sombra no puede convertirse en el dueño",
+    "type": 1
+  },
+  {
+    "id": 725,
+    "desc": "Intento insuficiente",
+    "type": 1
+  },
+  {
+    "id": 726,
+    "desc": "Error de parámetro",
+    "type": 1
+  },
+  {
+    "id": 727,
+    "desc": "Error de lógico",
+    "type": 1
+  },
+  {
+    "id": 617,
+    "desc": "Tiempo de registro incorrecto",
+    "type": 1
+  },
+  {
+    "id": 728,
+    "desc": "Usted está en la lista negra del jugador, no se puede enviar el correo",
+    "type": 1
+  },
+  {
+    "id": 368,
+    "desc": "Requisito insuficiente. Por favor, compruebe si existe la mascota anterior",
+    "type": 1
+  },
+  {
+    "id": 457,
+    "desc": "Equipamiento S no exixte",
+    "type": 2
+  },
+  {
+    "id": 456,
+    "desc": "Límite de compra del equipamiento S",
+    "type": 2
+  },
+  {
+    "id": 369,
+    "desc": "La mascota está formando，canjea después de cancelar la formación",
+    "type": 1
+  },
+  {
+    "id": 729,
+    "desc": "El objetivo no es protagonista",
+    "type": 1
+  },
+  {
+    "id": 730,
+    "desc": "NPC ha sido heredado",
+    "type": 1
+  },
+  {
+    "id": 732,
+    "desc": "jugador no está en línea",
+    "type": 1
+  },
+  {
+    "id": 366,
+    "desc": "Usted ya tiene este ninja, no puede comprar de nuevo.",
+    "type": 1
+  },
+  {
+    "id": 733,
+    "desc": "No hay Héroes principales",
+    "type": 1
+  },
+  {
+    "id": 734,
+    "desc": "Error de tipo de recibir recompensa del ayer",
+    "type": 1
+  },
+  {
+    "id": 735,
+    "desc": "No cumple con el requisito",
+    "type": 1
+  },
+  {
+    "id": 736,
+    "desc": "Recibido hoy",
+    "type": 1
+  },
+  {
+    "id": 737,
+    "desc": "Recuperar error de configuración ayer",
+    "type": 1
+  },
+  {
+    "id": 738,
+    "desc": "Nivel insuficiente",
+    "type": 1
+  },
+  {
+    "id": 739,
+    "desc": "Oro o cupón insuficiente",
+    "type": 1
+  },
+  {
+    "id": 740,
+    "desc": "No se puede recuperar ganancias de ayer del gremio dentro de 24 horas cuando se une a un gremio",
+    "type": 1
+  },
+  {
+    "id": 741,
+    "desc": "Nivel insuficiente",
+    "type": 1
+  },
+  {
+    "id": 742,
+    "desc": "Tipo de sangre incorrecto",
+    "type": 1
+  },
+  {
+    "id": 743,
+    "desc": "Tipo de formación incorrecta",
+    "type": 1
+  },
+  {
+    "id": 744,
+    "desc": "El nivel más alto alcanzado",
+    "type": 1
+  },
+  {
+    "id": 745,
+    "desc": "Error de ID",
+    "type": 1
+  },
+  {
+    "id": 746,
+    "desc": "Entrenamiento agotado",
+    "type": 1
+  },
+  {
+    "id": 747,
+    "desc": "Plata insuficiente",
+    "type": 1
+  },
+  {
+    "id": 748,
+    "desc": "Oro o cupón insuficiente",
+    "type": 1
+  },
+  {
+    "id": 749,
+    "desc": "Debe superar la prueba de sangre",
+    "type": 1
+  },
+  {
+    "id": 750,
+    "desc": "No abierto",
+    "type": 1
+  },
+  {
+    "id": 751,
+    "desc": "Nivel insuficiente",
+    "type": 1
+  },
+  {
+    "id": 753,
+    "desc": "Desafío agotado",
+    "type": 1
+  },
+  {
+    "id": 752,
+    "desc": "CD de desafío",
+    "type": 1
+  },
+  {
+    "id": 754,
+    "desc": "Error de ID",
+    "type": 1
+  },
+  {
+    "id": 755,
+    "desc": "Superado",
+    "type": 1
+  },
+  {
+    "id": 756,
+    "desc": "No tiene ningún objeto de Myōboku",
+    "type": 1
+  },
+  {
+    "id": 757,
+    "desc": "Accesorio insuficiente",
+    "type": 1
+  },
+  {
+    "id": 758,
+    "desc": "Operación ilegal!",
+    "type": 1
+  },
+  {
+    "id": 759,
+    "desc": "Puede recibir una vez al día",
+    "type": 1
+  },
+  {
+    "id": 761,
+    "desc": "PurgatoryEnergy error de configuración",
+    "type": 1
+  },
+  {
+    "id": 762,
+    "desc": "Error de configuración",
+    "type": 1
+  },
+  {
+    "id": 763,
+    "desc": "No ha superado ningún etapa,no se puede recibir recompensa",
+    "type": 1
+  },
+  {
+    "id": 370,
+    "desc": "Por favor,reciba el bonus de batalla",
+    "type": 1
+  },
+  {
+    "id": 371,
+    "desc": "Actualizar mapa para entrar en la siguiente batalla",
+    "type": 1
+  },
+  {
+    "id": 764,
+    "desc": "Identificación incorrectaID",
+    "type": 1
+  },
+  {
+    "id": 765,
+    "desc": "Nombre del jugador es demasiado largo",
+    "type": 1
+  },
+  {
+    "id": 766,
+    "desc": "Nivel insuficiente",
+    "type": 1
+  },
+  {
+    "id": 767,
+    "desc": "Desafío CD",
+    "type": 1
+  },
+  {
+    "id": 768,
+    "desc": "Intentos agotado",
+    "type": 1
+  },
+  {
+    "id": 769,
+    "desc": "Superado",
+    "type": 1
+  },
+  {
+    "id": 770,
+    "desc": "Nivel insuficiente",
+    "type": 1
+  },
+  {
+    "id": 771,
+    "desc": "Operación Ilegal",
+    "type": 1
+  },
+  {
+    "id": 772,
+    "desc": "Entrenamiento agotado",
+    "type": 1
+  },
+  {
+    "id": 773,
+    "desc": "Plata insuficiente",
+    "type": 1
+  },
+  {
+    "id": 774,
+    "desc": "Etapa ID incorrecta",
+    "type": 1
+  },
+  {
+    "id": 775,
+    "desc": "Puede ser recibido sólo una vez al día",
+    "type": 1
+  },
+  {
+    "id": 776,
+    "desc": "No han activado esta etapa, no puede recibir",
+    "type": 1
+  },
+  {
+    "id": 777,
+    "desc": "Error de configuración",
+    "type": 1
+  },
+  {
+    "id": 778,
+    "desc": "Tipo de formación incorrecta",
+    "type": 1
+  },
+  {
+    "id": 779,
+    "desc": "No activado",
+    "type": 1
+  },
+  {
+    "id": 780,
+    "desc": "No activado",
+    "type": 1
+  },
+  {
+    "id": 781,
+    "desc": "El nivel ha alcanzado máximo",
+    "type": 1
+  },
+  {
+    "id": 782,
+    "desc": "Oro o cupón insuficiente",
+    "type": 1
+  },
+  {
+    "id": 783,
+    "desc": "Necesita avanzar para seguir subiendo el nivel",
+    "type": 1
+  },
+  {
+    "id": 784,
+    "desc": "Necesita subir hasta máximo nivel para avenzar",
+    "type": 1
+  },
+  {
+    "id": 785,
+    "desc": "Accesorio insuficiente",
+    "type": 1
+  },
+  {
+    "id": 880,
+    "desc": "No se puede utilizar esta función en el mismo día",
+    "type": 1
+  },
+  {
+    "id": 881,
+    "desc": "Cada jugador puede recoger sólo 10 frutos personales al día",
+    "type": 1
+  },
+  {
+    "id": 882,
+    "desc": "Error de parámetro",
+    "type": 1
+  },
+  {
+    "id": 883,
+    "desc": "Fruta inmadura",
+    "type": 1
+  },
+  {
+    "id": 884,
+    "desc": "Fruta está madura",
+    "type": 1
+  },
+  {
+    "id": 885,
+    "desc": "Fruta Personal ha evolucionado",
+    "type": 1
+  },
+  {
+    "id": 886,
+    "desc": "Utiliza para sí mismo",
+    "type": 1
+  },
+  {
+    "id": 887,
+    "desc": "El objetivo no esta en el gremio",
+    "type": 1
+  },
+  {
+    "id": 888,
+    "desc": "CD aún no ha terminado",
+    "type": 1
+  },
+  {
+    "id": 889,
+    "desc": "Ya regado el fruto místico",
+    "type": 1
+  },
+  {
+    "id": 890,
+    "desc": "Fruta ha sido regadas demasiadas veces",
+    "type": 1
+  },
+  {
+    "id": 891,
+    "desc": "Fruta está madura",
+    "type": 1
+  },
+  {
+    "id": 892,
+    "desc": "Fruta se ha recogido",
+    "type": 1
+  },
+  {
+    "id": 893,
+    "desc": "No se puede regar hoy",
+    "type": 1
+  },
+  {
+    "id": 786,
+    "desc": "No ha completado la misión de prueba",
+    "type": 1
+  },
+  {
+    "id": 894,
+    "desc": "Se ha alcanzado el límite de la infusión de hoy",
+    "type": 1
+  },
+  {
+    "id": 895,
+    "desc": "Nivel máximo del árbol",
+    "type": 1
+  },
+  {
+    "id": 896,
+    "desc": "Número de compra limitado hoy",
+    "type": 1
+  },
+  {
+    "id": 897,
+    "desc": "Error de tabla de configuración",
+    "type": 1
+  },
+  {
+    "id": 898,
+    "desc": "El límite de infusión diaria ha alcanzado",
+    "type": 1
+  },
+  {
+    "id": 899,
+    "desc": "Recuperando el tiempo de la infusión de chakra",
+    "type": 1
+  },
+  {
+    "id": 900,
+    "desc": "El tiempo de la infusión de chakra ha recuperado",
+    "type": 1
+  },
+  {
+    "id": 901,
+    "desc": "No configuración de recompensa",
+    "type": 1
+  },
+  {
+    "id": 902,
+    "desc": "fruto de este jugador no necesita ser regada",
+    "type": 1
+  },
+  {
+    "id": 372,
+    "desc": "Recuperando del tiempo",
+    "type": 1
+  },
+  {
+    "id": 787,
+    "desc": "Ha alcanzado número máximo de desafío hoy",
+    "type": 1
+  },
+  {
+    "id": 788,
+    "desc": "Intentos en rureta",
+    "type": 1
+  },
+  {
+    "id": 903,
+    "desc": "Fruta se ha recogido",
+    "type": 1
+  },
+  {
+    "id": 904,
+    "desc": "Cada fruta mística puede recogerse una vez al día por jugador",
+    "type": 1
+  },
+  {
+    "id": 789,
+    "desc": "Samsara de seis camino ha alcanzado nivel máximo",
+    "type": 1
+  },
+  {
+    "id": 940,
+    "desc": "Desafío de hoy ha agotado",
+    "type": 1
+  },
+  {
+    "id": 941,
+    "desc": "En otra habitación",
+    "type": 1
+  },
+  {
+    "id": 942,
+    "desc": "La habitación está llena,no se puede crear",
+    "type": 1
+  },
+  {
+    "id": 943,
+    "desc": "CD de crear habitación",
+    "type": 1
+  },
+  {
+    "id": 944,
+    "desc": "ID no existe",
+    "type": 1
+  },
+  {
+    "id": 945,
+    "desc": "No se puede entrar",
+    "type": 1
+  },
+  {
+    "id": 946,
+    "desc": "CD de entrada",
+    "type": 1
+  },
+  {
+    "id": 947,
+    "desc": "No está en la habitación",
+    "type": 1
+  },
+  {
+    "id": 948,
+    "desc": "No es el líder del equipo",
+    "type": 1
+  },
+  {
+    "id": 949,
+    "desc": "No se ha podido cambiar la posición",
+    "type": 1
+  },
+  {
+    "id": 950,
+    "desc": "No está listo",
+    "type": 1
+  },
+  {
+    "id": 951,
+    "desc": "Coincidiendo",
+    "type": 1
+  },
+  {
+    "id": 952,
+    "desc": "No está Coincidiendo",
+    "type": 1
+  },
+  {
+    "id": 940,
+    "desc": "Desafío de hoy ha agotado",
+    "type": 1
+  },
+  {
+    "id": 941,
+    "desc": "Ya está en otra habitación",
+    "type": 1
+  },
+  {
+    "id": 942,
+    "desc": "La habitación está llena,no se puede crear",
+    "type": 1
+  },
+  {
+    "id": 943,
+    "desc": "CD de creación de habitación",
+    "type": 1
+  },
+  {
+    "id": 944,
+    "desc": "ID no existe",
+    "type": 1
+  },
+  {
+    "id": 945,
+    "desc": "No se puede entrar",
+    "type": 1
+  },
+  {
+    "id": 946,
+    "desc": "CD de entrada",
+    "type": 1
+  },
+  {
+    "id": 947,
+    "desc": "No está en la habitación",
+    "type": 1
+  },
+  {
+    "id": 948,
+    "desc": "No es el líder del equipo",
+    "type": 1
+  },
+  {
+    "id": 949,
+    "desc": "No se ha podido cambiar la posición",
+    "type": 1
+  },
+  {
+    "id": 950,
+    "desc": "No está listo",
+    "type": 1
+  },
+  {
+    "id": 951,
+    "desc": "Coincidiendo",
+    "type": 1
+  },
+  {
+    "id": 952,
+    "desc": "No está coincidiendo",
+    "type": 1
+  },
+  {
+    "id": 801,
+    "desc": "Error de EffectID",
+    "type": 1
+  },
+  {
+    "id": 802,
+    "desc": "Nivel máximo",
+    "type": 1
+  },
+  {
+    "id": 803,
+    "desc": "Error de configuración occultEffectKey",
+    "type": 1
+  },
+  {
+    "id": 804,
+    "desc": "Punto insuficiente",
+    "type": 1
+  },
+  {
+    "id": 790,
+    "desc": "Error de actualización",
+    "type": 1
+  },
+  {
+    "id": 791,
+    "desc": "Operación Ilegal! Tipo de formación incorrecta",
+    "type": 1
+  },
+  {
+    "id": 792,
+    "desc": "No activado",
+    "type": 1
+  },
+  {
+    "id": 793,
+    "desc": "Algunas o todas las rejillas están vacías",
+    "type": 1
+  },
+  {
+    "id": 794,
+    "desc": "Operación Ilegal! Por favor restablecer después de recoger el espíritu",
+    "type": 1
+  },
+  {
+    "id": 795,
+    "desc": "Operación Ilegal! No hay espíritus para recoger",
+    "type": 1
+  },
+  {
+    "id": 796,
+    "desc": "Oro o cupón insuficiente",
+    "type": 1
+  },
+  {
+    "id": 797,
+    "desc": "Plata insuficiente",
+    "type": 1
+  },
+  {
+    "id": 798,
+    "desc": "Configuración incorrecta",
+    "type": 1
+  },
+  {
+    "id": 799,
+    "desc": "Error de configuración OccultEffect",
+    "type": 1
+  },
+  {
+    "id": 800,
+    "desc": "Nivel insuficiente",
+    "type": 1
+  },
+  {
+    "id": 953,
+    "desc": "PVP puntos insuficientes",
+    "type": 1
+  },
+  {
+    "id": 960,
+    "desc": "longitud de Contraseña demasiada larga",
+    "type": 1
+  },
+  {
+    "id": 961,
+    "desc": "Ya es líder de grupo",
+    "type": 1
+  },
+  {
+    "id": 962,
+    "desc": "No es miembro de grupo",
+    "type": 1
+  },
+  {
+    "id": 963,
+    "desc": "Contraseña incorrecta",
+    "type": 1
+  },
+  {
+    "id": 964,
+    "desc": "El tiempo de invitación PVP Link ha agotado",
+    "type": 1
+  },
+  {
+    "id": 965,
+    "desc": "PVP Invitación rápido CD",
+    "type": 1
+  },
+  {
+    "id": 966,
+    "desc": "PVP Invitación Mundial CD",
+    "type": 1
+  },
+  {
+    "id": 967,
+    "desc": "No haber cumplido la condición PVP",
+    "type": 1
+  },
+  {
+    "id": 805,
+    "desc": "Intento alcanza el límite",
+    "type": 1
+  },
+  {
+    "id": 1100,
+    "desc": "Nivel insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1101,
+    "desc": "Nivel de potencia insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1102,
+    "desc": "No se puede superar la reencarnación del personaje principal",
+    "type": 1
+  },
+  {
+    "id": 1103,
+    "desc": "Plata insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1104,
+    "desc": "Accesorio insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1105,
+    "desc": "Ha llegado límite máximo de la reencarnación",
+    "type": 1
+  },
+  {
+    "id": 1106,
+    "desc": "Desequipa todos los equipamientos para la reencarnación",
+    "type": 1
+  },
+  {
+    "id": 1107,
+    "desc": "Debe avanzar el ninja antes de la reencarnación",
+    "type": 1
+  },
+  {
+    "id": 1108,
+    "desc": "No esiste este éore",
+    "type": 1
+  },
+  {
+    "id": 1109,
+    "desc": "No reencarnado, no puede hacer esta operación",
+    "type": 1
+  },
+  {
+    "id": 1110,
+    "desc": "No ha refinado, no se puede sustituir",
+    "type": 1
+  },
+  {
+    "id": 980,
+    "desc": "Nivel es demasiado baja para responder a esta pregunta",
+    "type": 1
+  },
+  {
+    "id": 981,
+    "desc": "Esta pregunta ha sido contestada",
+    "type": 1
+  },
+  {
+    "id": 1111,
+    "desc": "Los jugadores pueden seguir entrenando después de la reencarnación del personaje principal",
+    "type": 1
+  },
+  {
+    "id": 1112,
+    "desc": "El personaje principal puede seguir subiendo nivel después de la reencarnación",
+    "type": 1
+  },
+  {
+    "id": 1113,
+    "desc": "Nivel máximo alcanzado",
+    "type": 1
+  },
+  {
+    "id": 1114,
+    "desc": "Los jugadores pueden transformar después de la reencarnación del personaje principal",
+    "type": 1
+  },
+  {
+    "id": 1115,
+    "desc": "El personaje principal puede transmogrificar después de hacer la segunda reencarnación",
+    "type": 1
+  },
+  {
+    "id": 990,
+    "desc": "No hay información de vip",
+    "type": 1
+  },
+  {
+    "id": 991,
+    "desc": "Recibido",
+    "type": 1
+  },
+  {
+    "id": 373,
+    "desc": "BOSS ha sido asesinado por otros jugadores",
+    "type": 1
+  },
+  {
+    "id": 374,
+    "desc": "Puntos de exploración insuficientes",
+    "type": 1
+  },
+  {
+    "id": 375,
+    "desc": "insuficiente de puntos de fuerza",
+    "type": 1
+  },
+  {
+    "id": 992,
+    "desc": "Error de configuración",
+    "type": 1
+  },
+  {
+    "id": 990,
+    "desc": "No hay información de vip",
+    "type": 1
+  },
+  {
+    "id": 991,
+    "desc": "Recibido",
+    "type": 1
+  },
+  {
+    "id": 1000,
+    "desc": "Equipo",
+    "type": 1
+  },
+  {
+    "id": 1001,
+    "desc": "Héroe",
+    "type": 1
+  },
+  {
+    "id": 1002,
+    "desc": "El grado de amistad ha alcanzado nivel máximo",
+    "type": 1
+  },
+  {
+    "id": 1003,
+    "desc": "Nivel de personaje principal insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1004,
+    "desc": "Alma de ninjas insuficiente",
+    "type": 1
+  },
+  {
+    "id": 654,
+    "desc": "El tiempo no coincide",
+    "type": 1
+  },
+  {
+    "id": 653,
+    "desc": "PK entre dos gremios actuales no existe",
+    "type": 1
+  },
+  {
+    "id": 1102,
+    "desc": "Canje de ala insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1100,
+    "desc": "Oro insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1101,
+    "desc": "Oro insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1300,
+    "desc": "Contenido demasiado largo",
+    "type": 1
+  },
+  {
+    "id": 1301,
+    "desc": "Nombre demasiado largo",
+    "type": 1
+  },
+  {
+    "id": 1302,
+    "desc": "Habla demasiado rápido,espere un momento",
+    "type": 1
+  },
+  {
+    "id": 376,
+    "desc": "Lo sentimos,error de su código de invitación",
+    "type": 1
+  },
+  {
+    "id": 377,
+    "desc": "Tu código de invitación ha alcanzado el número máximo",
+    "type": 1
+  },
+  {
+    "id": 378,
+    "desc": "Su código de invitación ya está en uso",
+    "type": 1
+  },
+  {
+    "id": 1303,
+    "desc": "Fragmento insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1304,
+    "desc": "Mochila de jugador está lleno",
+    "type": 1
+  },
+  {
+    "id": 1305,
+    "desc": "Mochila de héroe está lleno",
+    "type": 1
+  },
+  {
+    "id": 1306,
+    "desc": "Nivel de Barrera Sanguínea insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1307,
+    "desc": "Conflictos de la barrera sanguínea",
+    "type": 1
+  },
+  {
+    "id": 1308,
+    "desc": "No encuentra el código de la barrera sanguínea",
+    "type": 1
+  },
+  {
+    "id": 1309,
+    "desc": "Mochila temporal está llena",
+    "type": 1
+  },
+  {
+    "id": 1310,
+    "desc": "Número de invocación insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1312,
+    "desc": "Este bola de sangre no se puede equipar",
+    "type": 1
+  },
+  {
+    "id": 1311,
+    "desc": "Ningún héroe coordinar la identificación",
+    "type": 1
+  },
+  {
+    "id": 1313,
+    "desc": "Espacio ha sido ocupado",
+    "type": 1
+  },
+  {
+    "id": 1314,
+    "desc": "Error de identificación",
+    "type": 1
+  },
+  {
+    "id": 1315,
+    "desc": "no se encuentra el héroe",
+    "type": 1
+  },
+  {
+    "id": 379,
+    "desc": "Operación con mucha frecuencia, por favor intente de nuevo",
+    "type": 1
+  },
+  {
+    "id": 1316,
+    "desc": "Espacio de hotel insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1317,
+    "desc": "Función de SG de la plataforma no está activada",
+    "type": 1
+  },
+  {
+    "id": 1318,
+    "desc": "SG no activado",
+    "type": 1
+  },
+  {
+    "id": 1319,
+    "desc": "Plataforma SG prohibe recibir dos veces",
+    "type": 1
+  },
+  {
+    "id": 1121,
+    "desc": "Error de parámetro del servidor",
+    "type": 1
+  },
+  {
+    "id": 1120,
+    "desc": "Oro insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1122,
+    "desc": "Error de la deducción de oro",
+    "type": 1
+  },
+  {
+    "id": 1123,
+    "desc": "Han agotado",
+    "type": 2
+  },
+  {
+    "id": 1299,
+    "desc": "La mochila de sangre ya alcanza máximo espacio",
+    "type": 1
+  },
+  {
+    "id": 1320,
+    "desc": "No hay suficiente espacio de equipamiento",
+    "type": 1
+  },
+  {
+    "id": 1321,
+    "desc": "No se puede canjear esta sangre",
+    "type": 1
+  },
+  {
+    "id": 1322,
+    "desc": "Nivel máximo alcanzado",
+    "type": 1
+  },
+  {
+    "id": 1323,
+    "desc": "Este tipo no puede meter en la mochila",
+    "type": 1
+  },
+  {
+    "id": 1124,
+    "desc": "Compra de VIP en el centro comercial insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1125,
+    "desc": "La fuerza de Kaguya no activa",
+    "type": 1
+  },
+  {
+    "id": 1126,
+    "desc": "La compra de tienda insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1324,
+    "desc": "El ninja lleva Barrera Sanguínea，desequipa para seguir la operación por favor",
+    "type": 1
+  },
+  {
+    "id": 1325,
+    "desc": "Este talismán es irreductible",
+    "type": 1
+  },
+  {
+    "id": 1127,
+    "desc": "La fuerza de Kaguya insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1129,
+    "desc": "El tiempo de la compra ha alcanzado límite máximo",
+    "type": 1
+  },
+  {
+    "id": 1326,
+    "desc": "El tiempo insuficiente para expandir la mochila",
+    "type": 1
+  },
+  {
+    "id": 1327,
+    "desc": "Los puntos para el restablecimiento no es suficiente",
+    "type": 1
+  },
+  {
+    "id": 1328,
+    "desc": "La restablecimiento insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1329,
+    "desc": "Record de nivel, no podrá hacer ataque automático",
+    "type": 1
+  },
+  {
+    "id": 1330,
+    "desc": "El evento no ha abierto",
+    "type": 1
+  },
+  {
+    "id": 1331,
+    "desc": "Esta habilidad ya tiene nivel máximo",
+    "type": 1
+  },
+  {
+    "id": 1332,
+    "desc": "No hay esta habilidad en la mochila",
+    "type": 1
+  },
+  {
+    "id": 1333,
+    "desc": "El objeto ha alcanzado número máximo",
+    "type": 1
+  },
+  {
+    "id": 1334,
+    "desc": "Accesorio necesario insifuciente",
+    "type": 1
+  },
+  {
+    "id": 1335,
+    "desc": "Estado de desafiío",
+    "type": 1
+  },
+  {
+    "id": 380,
+    "desc": "Agotado,intente la próxima vez",
+    "type": 1
+  },
+  {
+    "id": 1336,
+    "desc": "El atributo no ha cambiado, no podrá heredar",
+    "type": 1
+  },
+  {
+    "id": 1128,
+    "desc": "La fuerza de Kaguya ha caducado",
+    "type": 1
+  },
+  {
+    "id": 1130,
+    "desc": "La fuerza de Kaguya no ha abierto",
+    "type": 1
+  },
+  {
+    "id": 1337,
+    "desc": "Número insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1338,
+    "desc": "La compra ha alcanzado número máximo",
+    "type": 1
+  },
+  {
+    "id": 1340,
+    "desc": "No puede regalar más",
+    "type": 1
+  },
+  {
+    "id": 1339,
+    "desc": "No puede recibir más",
+    "type": 1
+  },
+  {
+    "id": 1341,
+    "desc": "No tiene amigos",
+    "type": 1
+  },
+  {
+    "id": 381,
+    "desc": "Lo siento, no puede comprar 15 minutos antes de enviar la recompensa por favor, ser más rápido la próxima vez",
+    "type": 1
+  },
+  {
+    "id": 382,
+    "desc": "Tiempo de cuenta atrás acaba, se calculará el envío de recompensa",
+    "type": 1
+  },
+  {
+    "id": 1342,
+    "desc": "Paquete de regalo ya ha recibido",
+    "type": 1
+  },
+  {
+    "id": 1343,
+    "desc": "Nivel de árbol mundial insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1344,
+    "desc": "Compra de vitaliddad ha alcanzado el límite máximo",
+    "type": 1
+  },
+  {
+    "id": 1345,
+    "desc": "La vitalidad ha alcanzado el límite máximo, no podrá seguir recibiendo",
+    "type": 1
+  },
+  {
+    "id": 1353,
+    "desc": "Los frutos ya están regados.",
+    "type": 1
+  },
+  {
+    "id": 963,
+    "desc": "Error de Contraseña",
+    "type": 1
+  },
+  {
+    "id": 1005,
+    "desc": "Esta cuenta se ha bloqueado, por favor haga la operación después de desbloquearlo.",
+    "type": 1
+  },
+  {
+    "id": 1116,
+    "desc": "Debes desinstalar las habilidades despertadas.",
+    "type": 1
+  },
+  {
+    "id": 1354,
+    "desc": "Punto de acción insuficiente.",
+    "type": 1
+  },
+  {
+    "id": 383,
+    "desc": "Paquete de actualización disponible.",
+    "type": 1
+  },
+  {
+    "id": 1360,
+    "desc": "El nivel del personaje principal es inferior a 2 Reencarnación nivel 1, no se puede actualizar estrella a Nvl.6.",
+    "type": 1
+  },
+  {
+    "id": 1350,
+    "desc": "Puedes ocupar una sola posición",
+    "type": 1
+  },
+  {
+    "id": 1364,
+    "desc": "No hay suficiente EXP de Personaje，no se puede canjear.",
+    "type": 1
+  },
+  {
+    "id": 1365,
+    "desc": "No coincide con el límite de transporte de Barrera de sangre，No puede cambiar automáticamente.",
+    "type": 1
+  },
+  {
+    "id": 1366,
+    "desc": "Después de dejar el Gremio, los jugadores pueden usar la tarjeta de cambio de nombre.",
+    "type": 1
+  },
+  {
+    "id": 1367,
+    "desc": "改名成功！请刷新页面后重新进入游戏",
+    "type": 1
+  },
+  {
+    "id": 1368,
+    "desc": "El jugador ya esta comprometido o casado",
+    "type": 1
+  },
+  {
+    "id": 1369,
+    "desc": "El jugador ya esta comprometido o casado",
+    "type": 1
+  },
+  {
+    "id": 1370,
+    "desc": "No se pudo encontrar ninguna informacion de ti o de otros",
+    "type": 1
+  },
+  {
+    "id": 1371,
+    "desc": "Tiempo o registro incorrecto por otros.",
+    "type": 1
+  },
+  {
+    "id": 1372,
+    "desc": "El jugador no se encuentra en la zona actual",
+    "type": 1
+  },
+  {
+    "id": 1373,
+    "desc": "El monstruo actual esta muerto o no existe",
+    "type": 1
+  },
+  {
+    "id": 1374,
+    "desc": "Tus posibilidades para reclamar llegaron al maximo",
+    "type": 1
+  },
+  {
+    "id": 1375,
+    "desc": "Esta tierra ya ha sido reclamada",
+    "type": 1
+  },
+  {
+    "id": 1376,
+    "desc": "La rosa no esta lista",
+    "type": 1
+  },
+  {
+    "id": 1377,
+    "desc": "Insuficientes oportunidades de compra de tierras",
+    "type": 1
+  },
+  {
+    "id": 1378,
+    "desc": "Mismos sexos, no pueden casarse",
+    "type": 1
+  },
+  {
+    "id": 1379,
+    "desc": "Solo el Principal puede cambiar de sexo",
+    "type": 1
+  },
+  {
+    "id": 1380,
+    "desc": "Insuficiente nivel de matrimonio",
+    "type": 1
+  },
+  {
+    "id": 1381,
+    "desc": "Los premios del día de hoy ya han sido reclamados",
+    "type": 1
+  },
+  {
+    "id": 1382,
+    "desc": "Propuesta exitosa, esperando respuesta",
+    "type": 1
+  },
+  {
+    "id": 1383,
+    "desc": "Oportunidades totales de escoger ha alcazado su limite",
+    "type": 1
+  },
+  {
+    "id": 1384,
+    "desc": "No se pueden usar Rosas",
+    "type": 1
+  },
+  {
+    "id": 1385,
+    "desc": "Ha llegado al descuento máximo.",
+    "type": 1
+  },
+  {
+    "id": 1386,
+    "desc": "Canjear con éxito",
+    "type": 1
+  },
+  {
+    "id": 1387,
+    "desc": "Actualizar con éxito",
+    "type": 1
+  },
+  {
+    "id": 1388,
+    "desc": "No Rosas utilizables",
+    "type": 1
+  },
+  {
+    "id": 1389,
+    "desc": "Por favor activalo primero para el siguiente Rango",
+    "type": 1
+  },
+  {
+    "id": 1390,
+    "desc": "Ya has alcanzado el Maximo Nivel",
+    "type": 1
+  },
+  {
+    "id": 1391,
+    "desc": "InEXPd, no se puede mejorar",
+    "type": 1
+  },
+  {
+    "id": 1392,
+    "desc": "No hay suficientes Recargas, no se puede comprar",
+    "type": 1
+  },
+  {
+    "id": 1393,
+    "desc": "邮箱格式不对，请重新输入",
+    "type": 1
+  },
+  {
+    "id": 1394,
+    "desc": "Please take off  Bloodline Limit, otherwise can not Transsexual or Reincarnated.",
+    "type": 1
+  },
+  {
+    "id": 1395,
+    "desc": "Despertar Habilidad de Ninja",
+    "type": 1
+  },
+  {
+    "id": 1396,
+    "desc": "El personaje principal puede ser despertado por el momento, así que estad atentos",
+    "type": 1
+  },
+  {
+    "id": 1397,
+    "desc": "No tienes suficientes Almas Ninja",
+    "type": 1
+  },
+  {
+    "id": 1398,
+    "desc": "No tienes suficientes Certificados de Reclutamiento",
+    "type": 1
+  },
+  {
+    "id": 1399,
+    "desc": "No has activado la función de Recuperación Suprema, por favor actívala primero.",
+    "type": 1
+  },
+  {
+    "id": 1400,
+    "desc": "La Recuperación Suprema ya está activada, no se puede comprar.",
+    "type": 1
+  },
+  {
+    "id": 1401,
+    "desc": "Points not enough",
+    "type": 1
+  },
+  {
+    "id": 1402,
+    "desc": "No hay rosas actualmente",
+    "type": 1
+  },
+  {
+    "id": 1403,
+    "desc": "Ninja agregado a la formación con éxito",
+    "type": 1
+  },
+  {
+    "id": 1404,
+    "desc": "Ninja no se pudo agregar a la formación",
+    "type": 1
+  },
+  {
+    "id": 1405,
+    "desc": "Equipo / Joyas equipado con éxito",
+    "type": 1
+  },
+  {
+    "id": 1406,
+    "desc": "El equipo / Joyas no se pudo equipar",
+    "type": 1
+  },
+  {
+    "id": 1407,
+    "desc": "Jade equipado con éxito",
+    "type": 1
+  },
+  {
+    "id": 1408,
+    "desc": "Fallo al equipar jade",
+    "type": 1
+  },
+  {
+    "id": 1409,
+    "desc": "Intercambiado con éxito",
+    "type": 1
+  },
+  {
+    "id": 1410,
+    "desc": "No es la hora del registro",
+    "type": 1
+  },
+  {
+    "id": 1411,
+    "desc": "Ya te has registrado",
+    "type": 1
+  },
+  {
+    "id": 1412,
+    "desc": "No tienes nivel suficiente",
+    "type": 1
+  },
+  {
+    "id": 1413,
+    "desc": "No se pudo cambiar de formación, no se registro",
+    "type": 1
+  },
+  {
+    "id": 1414,
+    "desc": "No se pudo cambiar de formación, no hay suficientes oportunidades",
+    "type": 1
+  },
+  {
+    "id": 1415,
+    "desc": "Aún no hay resultados, intentalo más tarde",
+    "type": 1
+  },
+  {
+    "id": 1416,
+    "desc": "Límite de apuesta alcanzado",
+    "type": 1
+  },
+  {
+    "id": 1417,
+    "desc": "No hay plata suficiente",
+    "type": 1
+  },
+  {
+    "id": 1418,
+    "desc": "Cupones insuficientes",
+    "type": 1
+  },
+  {
+    "id": 1419,
+    "desc": "No es la hora de apostar",
+    "type": 1
+  },
+  {
+    "id": 1420,
+    "desc": "No puedes apostar en él",
+    "type": 1
+  },
+  {
+    "id": 1361,
+    "desc": "The current VIP level is higher than the VIP card, so it cannot be used",
+    "type": 1
+  },
+  {
+    "id": 1362,
+    "desc": "The current VIP level is higher than the VIP card, so it cannot be used",
+    "type": 1
+  },
+  {
+    "id": 1421,
+    "desc": "Ya usaste el código de invitación",
+    "type": 1
+  },
+  {
+    "id": 1422,
+    "desc": "Úselo dentro de los 7 días posteriores al inicio del servidor",
+    "type": 1
+  },
+  {
+    "id": 1423,
+    "desc": "No puedes usar tu propio código de invitación",
+    "type": 1
+  },
+  {
+    "id": 1424,
+    "desc": "Código de invitación no válido, no se pudo usar",
+    "type": 1
+  },
+  {
+    "id": 1425,
+    "desc": "Cdk no disponible",
+    "type": 1
+  },
+  {
+    "id": 1426,
+    "desc": "Cdk utilizado",
+    "type": 1
+  },
+  {
+    "id": 1427,
+    "desc": "Ya usaste el código de invitación",
+    "type": 1
+  },
+  {
+    "id": 1428,
+    "desc": "Ya se ha registrado",
+    "type": 1
+  },
+  {
+    "id": 1429,
+    "desc": "Ya pasó el tiempo de registro, por favor asista la próxima temporada",
+    "type": 1
+  },
+  {
+    "id": 1430,
+    "desc": "No en tiempo de batalla",
+    "type": 1
+  },
+  {
+    "id": 1431,
+    "desc": "No se ha registrado",
+    "type": 1
+  },
+  {
+    "id": 1432,
+    "desc": "No coincide con el oponente",
+    "type": 1
+  },
+  {
+    "id": 1433,
+    "desc": "No esta en tiempo de recoger las recompensas",
+    "type": 1
+  },
+  {
+    "id": 1434,
+    "desc": "Ya ha recibido la recompensa",
+    "type": 1
+  },
+  {
+    "id": 1435,
+    "desc": "La clasificación por puntos no está disponible actualmente",
+    "type": 1
+  },
+  {
+    "id": 1436,
+    "desc": "Por favor, retire los jades del rey del equipo",
+    "type": 1
+  },
+  {
+    "id": 1437,
+    "desc": "Núm. Un día insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1438,
+    "desc": "Núm. total insuficiente",
+    "type": 1
+  },
+  {
+    "id": 1439,
+    "desc": "No aplica",
+    "type": 1
+  },
+  {
+    "id": 1440,
+    "desc": "no se puede ocupar los recursos personales",
+    "type": 1
+  },
+  {
+    "id": 1441,
+    "desc": "No se puede encontrar la información del jugador",
+    "type": 1
+  },
+  {
+    "id": 1442,
+    "desc": "recursos ya ocupados",
+    "type": 1
+  },
+  {
+    "id": 1443,
+    "desc": "Escudo de protección activado para el jugador, incapaz de arrebatar",
+    "type": 1
+  },
+  {
+    "id": 1444,
+    "desc": "No se puede Saquear",
+    "type": 1
+  },
+  {
+    "id": 1445,
+    "desc": "Ya has alcanzado el máximo",
+    "type": 1
+  },
+  {
+    "id": 1446,
+    "desc": "Faltan cartas ninja",
+    "type": 1
+  },
+  {
+    "id": 1447,
+    "desc": "Reclutamiento por tiempo limitado cerrado",
+    "type": 1
+  },
+  {
+    "id": 1448,
+    "desc": "No hay puntos suficientes",
+    "type": 1
+  }
+]

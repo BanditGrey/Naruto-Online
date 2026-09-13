@@ -1,0 +1,16 @@
+{
+  "id": 22100005,
+  "animations": {
+    "idle": {
+      "frameCount": 6,
+      "frames": [
+        "/assets/animated/kakashi/idle_0.png",
+        "/assets/animated/kakashi/idle_1.png",
+        "/assets/animated/kakashi/idle_2.png",
+        "/assets/animated/kakashi/idle_3.png",
+        "/assets/animated/kakashi/idle_4.png",
+        "/assets/animated/kakashi/idle_5.png"
+      ]
+    }
+  }
+}

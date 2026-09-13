@@ -1,0 +1,96 @@
+!function (a) {
+    "use strict";
+    a.tools.tabs.addEffect("singleContainerLoad", function (a, b) {
+        var c = this.getTabs().eq(a), d = c.find(".info").html(),
+            e = c.find(".img").attr("src").replace("_thumbnail", ""), f = this.getPanes().eq(0).fadeTo("meduim", .9),
+            g = f.find(".info").addClass("animated");
+        g.addClass("fadeInRight").html(d), f.css({backgroundImage: "url(" + e + ")"}).fadeTo("fast", 1, function () {
+            g.removeClass("fadeInRight")
+        });
+        var h = scroll.getFillLength();
+        c.hasClass("outside") && a >= h ? scroll.next() : 0 === a && (scroll.getAttrs("scrollbarSelector").animate({left: 0}, 500), scroll.init()), b.call()
+    }), a(document).ready(function () {
+        a(".poster-home .info").html(a(".poster-nav .item").eq(0).find(".info").html()), a(".poster-nav .slide-content").tabs(".poster-home", {
+            current: "active",
+            effect: "singleContainerLoad",
+            tabs: ".items",
+            rotate: !0,
+            initialIndex: 0
+        }).slideshow({autoplay: !0, clickable: !1, interval: 5e3})
+    })
+}(window.jQuery), !function (a) {
+    "use strict";
+    a("#form-signin").validate({
+        rules: {email: {required: !0}, password: {required: !0}},
+        messages: {
+            email: "Username is empty!",
+            password: {required: "Password is empty!"}
+        }
+    }), a("#form-signup").validate({
+        rules: {
+            email: {required: !0, email: !0},
+            password: {required: !0, minlength: 6},
+            confirmPassword: {required: !0, minlength: 6, equalTo: '#form-signup input[name="password"]'}
+        },
+        messages: {
+            email: "Confirm Account must be an Email",
+            password: {
+                required: "Password is empty",
+                minlength: "Confirm Password must be 6-20 characters"
+            },
+            confirmPassword: {
+                required: "Secondary Password is empty",
+                minlength: "Confirm Password must be 6-20 characters",
+                equalTo: "Confirm Password doesn't match with the Secondary Password"
+            }
+        }
+    })
+}(window.jQuery), !function (a) {
+    "use strict";
+    a.tools.tabs.addEffect("imgAnimated", function (b, c) {
+        this.getPanes().hide().removeClass("active").eq(b).show(0, function () {
+            var b = a(this);
+            b.is(":hidden") || b.addClass("active")
+        }), c.call()
+    }), a(document).ready(function () {
+        a(".unit-ad .item").eq(0).addClass("active"), a(".slide .slide-nav").tabs("> .slide-content > .item", {
+            effect: "imgAnimated",
+            rotate: !0
+        }).slideshow({autoplay: !0, clickable: !1, interval: 3e3})
+    })
+}(window.jQuery), !function (a) {
+    "use strict";
+    a(document).ready(function () {
+        a(".slide-vertical").scrollable({
+            items: ".slide-content",
+            circular: !0,
+            vertical: !0
+        }).autoscroll(5e3), a("ul.tab-nav").tabs("> .tab-content > .item"), a("ul.nav-channel").tabs("> .module", {effect: "fade"}), a(".tab-nav-ajax").tabs("> .tab-content-ajax", {
+            effect: "ajax",
+            onBeforeClick: function (a, b) {
+                var c = this.getPanes().eq(b);
+                c.is(":empty") && c.load(this.getTabs().eq(b).attr("href"))
+            }
+        }), a(".panel-apps .slide-horizontal").each(function () {
+            a(this).find(".item").css({width: a(this).width()})
+        }), a(".panel-apps .slide-horizontal").scrollable({
+            items: ".slide-content",
+            circular: !1
+        }), a(".module-screenshot .gallery").magnificPopup({
+            delegate: "a",
+            gallery: {enabled: !0},
+            type: "image"
+        }), a(".module-video .gallery").magnificPopup({
+            delegate: "a",
+            gallery: {enabled: !0},
+            type: "iframe",
+            disableOn: 700,
+            mainClass: "mfp-fade",
+            removalDelay: 160,
+            preloader: !1,
+            fixedContentPos: !1
+        }), a(document).on("click", ".payment-method", function () {
+            a(this).addClass("active").siblings().removeClass("active")
+        })
+    })
+}(window.jQuery);

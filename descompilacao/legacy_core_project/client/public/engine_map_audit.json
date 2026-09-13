@@ -1,0 +1,249 @@
+{
+  "timestamp": "2026-09-11T18:43:28.830Z",
+  "sceneConfigs": [
+    {
+      "file": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\database\\extracted\\cities.json",
+      "size": 6193
+    },
+    {
+      "file": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\database\\extracted\\dialogues.json",
+      "size": 63719
+    },
+    {
+      "file": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\database\\extracted\\enemies.json",
+      "size": 13546812
+    },
+    {
+      "file": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\database\\extracted\\error_codes.json",
+      "size": 67715
+    },
+    {
+      "file": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\database\\extracted\\heroes.json",
+      "size": 2347844
+    },
+    {
+      "file": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\database\\extracted\\items.json",
+      "size": 2862884
+    },
+    {
+      "file": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\database\\extracted\\ninja_fetters.json",
+      "size": 2014629
+    },
+    {
+      "file": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\database\\extracted\\npcs.json",
+      "size": 7372
+    },
+    {
+      "file": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\database\\extracted\\system_language.json",
+      "size": 268603
+    },
+    {
+      "file": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\database\\extracted\\tables_index.json",
+      "size": 28245
+    },
+    {
+      "file": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\database\\extracted\\tables_index_latest.json",
+      "size": 28245
+    },
+    {
+      "file": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\database\\extracted\\talents.json",
+      "size": 487490
+    },
+    {
+      "file": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\database\\extracted\\tasks.json",
+      "size": 378610
+    },
+    {
+      "file": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\database\\extracted\\tavern_warriors.json",
+      "size": 22489
+    },
+    {
+      "file": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\docs\\ASSETS_CATALOG.json",
+      "size": 1350787
+    },
+    {
+      "file": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\official_client\\flashplayer\\manifest.json",
+      "size": 2271
+    }
+  ],
+  "textureRepositories": [
+    {
+      "file": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\decompiled\\scripts_as3_latest\\Processors\\Game\\Lobby\\MainScene\\TLayerBackGround.as",
+      "snippet": "package Processors.Game.Lobby.MainScene { import Foundation.Resources.*; import Foundation.Resources.Textures.*; import Foundation.UI.*; import Logics.*; import Processors.*; import Processors.Game.Lobby.MainScene.Role.*; import Resources.Constants.*; import flash.di"
+    },
+    {
+      "file": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\decompiled\\scripts_as3_legacy\\Processors\\Game\\Lobby\\MainScene\\TLayerBackGround.as",
+      "snippet": "package Processors.Game.Lobby.MainScene { import Foundation.Resources.*; import Foundation.Resources.Textures.*; import Foundation.UI.*; import Logics.*; import Processors.*; import Processors.Game.Lobby.MainScene.Role.*; import Resources.Constants.*; import flash.di"
+    }
+  ],
+  "discoveredBackgrounds": [
+    {
+      "path": "D:\\naruto Online\\01_VN_OFFICIAL_SOURCE\\vn extract\\f_000009.jpg",
+      "width": 1260,
+      "height": 660,
+      "sizeKB": "134.3"
+    },
+    {
+      "path": "D:\\naruto Online\\01_VN_OFFICIAL_SOURCE\\vn extract\\f_000030.jpg",
+      "width": 1260,
+      "height": 660,
+      "sizeKB": "109.8"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\decompiled\\extracted_swf_assets\\01000000\\images\\1.jpg",
+      "width": 1250,
+      "height": 650,
+      "sizeKB": "115.7"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\decompiled\\extracted_swf_assets\\01000000~1\\images\\1.jpg",
+      "width": 1250,
+      "height": 650,
+      "sizeKB": "115.7"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\decompiled\\extracted_swf_assets\\16000000\\images\\1.png",
+      "width": 1028,
+      "height": 632,
+      "sizeKB": "1020.5"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\decompiled\\extracted_swf_assets\\17000000\\images\\155.jpg",
+      "width": 1250,
+      "height": 650,
+      "sizeKB": "135.6"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\decompiled\\extracted_swf_assets\\17000003\\images\\1.jpg",
+      "width": 1250,
+      "height": 650,
+      "sizeKB": "85.8"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\decompiled\\extracted_swf_assets\\17000003\\images\\8.png",
+      "width": 1149,
+      "height": 601,
+      "sizeKB": "1218.9"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\decompiled\\extracted_swf_assets\\34000000\\images\\1.jpg",
+      "width": 1250,
+      "height": 650,
+      "sizeKB": "81.6"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\decompiled\\extracted_swf_assets\\3B000000\\images\\1.png",
+      "width": 1020,
+      "height": 619,
+      "sizeKB": "729.0"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\decompiled\\extracted_swf_assets\\3C000000\\images\\70.png",
+      "width": 1304,
+      "height": 650,
+      "sizeKB": "726.1"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\decompiled\\extracted_swf_assets\\98000003\\images\\2.png",
+      "width": 1081,
+      "height": 579,
+      "sizeKB": "856.2"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\decompiled\\extracted_swf_assets\\98000114\\images\\4.png",
+      "width": 1107,
+      "height": 578,
+      "sizeKB": "813.4"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\decompiled\\web_portal\\bg_header.jpg",
+      "width": 1920,
+      "height": 870,
+      "sizeKB": "142.5"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\decompiled\\web_portal\\flash_bg.jpg",
+      "width": 1500,
+      "height": 650,
+      "sizeKB": "161.1"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\decompiled\\web_portal\\login_bg.jpg",
+      "width": 1920,
+      "height": 1052,
+      "sizeKB": "94.6"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\decompiled\\web_portal\\object.jpg",
+      "width": 1920,
+      "height": 950,
+      "sizeKB": "57.7"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\legacy\\raw_assets\\Scripts_AS\\01000000\\images\\1.jpg",
+      "width": 1250,
+      "height": 650,
+      "sizeKB": "115.7"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\legacy\\raw_assets\\Scripts_AS\\01000000~1\\images\\1.jpg",
+      "width": 1250,
+      "height": 650,
+      "sizeKB": "115.7"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\legacy\\raw_assets\\Scripts_AS\\16000000\\images\\1.png",
+      "width": 1028,
+      "height": 632,
+      "sizeKB": "1020.5"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\legacy\\raw_assets\\Scripts_AS\\17000000\\images\\155.jpg",
+      "width": 1250,
+      "height": 650,
+      "sizeKB": "135.6"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\legacy\\raw_assets\\Scripts_AS\\17000003\\images\\1.jpg",
+      "width": 1250,
+      "height": 650,
+      "sizeKB": "85.8"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\legacy\\raw_assets\\Scripts_AS\\17000003\\images\\8.png",
+      "width": 1149,
+      "height": 601,
+      "sizeKB": "1218.9"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\legacy\\raw_assets\\Scripts_AS\\34000000\\images\\1.jpg",
+      "width": 1250,
+      "height": 650,
+      "sizeKB": "81.6"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\legacy\\raw_assets\\Scripts_AS\\3B000000\\images\\1.png",
+      "width": 1020,
+      "height": 619,
+      "sizeKB": "729.0"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\legacy\\raw_assets\\Scripts_AS\\3C000000\\images\\70.png",
+      "width": 1304,
+      "height": 650,
+      "sizeKB": "726.1"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\legacy\\raw_assets\\Scripts_AS\\98000003\\images\\2.png",
+      "width": 1081,
+      "height": 579,
+      "sizeKB": "856.2"
+    },
+    {
+      "path": "D:\\naruto Online\\02_LEGACY_ARCHIVE\\legacy\\raw_assets\\Scripts_AS\\98000114\\images\\4.png",
+      "width": 1107,
+      "height": 578,
+      "sizeKB": "813.4"
+    }
+  ]
+}

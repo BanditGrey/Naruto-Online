@@ -1,0 +1,30 @@
+{
+  "name": "naruto-online-mmo",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Monorepo para o emulador e cliente HTML5/PixiJS de Naruto Online",
+  "workspaces": [
+    "shared",
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "server:dev": "node --experimental-strip-types server/src/server.ts",
+    "test:multiplayer": "node --experimental-strip-types test_town_multiplayer.ts",
+    "test:battle": "node --experimental-strip-types test_battle_transition.ts"
+  },
+  "keywords": [
+    "naruto-online",
+    "mmo",
+    "emulator",
+    "pixijs",
+    "websocket",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sharp": "^0.35.4"
+  }
+}

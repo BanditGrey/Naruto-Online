@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Naruto Online - Classic Core</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+    body { background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; overflow: hidden; }
+    
+    header { width: 1000px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; background: rgba(20, 20, 20, 0.8); padding: 10px 20px; border-radius: 8px; border: 1px solid #333; z-index: 10; }
+    .status { font-size: 13px; color: #04d361; }
+    .currencies span { margin-left: 14px; font-size: 13px; font-weight: bold; color: #ffd700; }
+    .currencies span.silver { color: #c0c0c0; }
+
+    #game-canvas { width: 1000px; height: 580px; background: #111; border: 2px solid #333; border-radius: 8px; position: relative; overflow: hidden; }
+
+    /* Modal de Criação Autêntico */
+    #create-modal { position: absolute; inset: 0; background: url('/textures/f_000007.jpg') center/cover; display: none; align-items: center; justify-content: center; z-index: 100; }
+    .create-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
+    
+    .create-container { position: relative; display: flex; width: 850px; height: 500px; z-index: 2; background: rgba(20, 25, 30, 0.85); border: 1px solid #444; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); overflow: hidden; }
+    
+    .char-preview { width: 450px; position: relative; display: flex; justify-content: center; align-items: flex-end; background: radial-gradient(circle at center, #2a3143 0%, #111 80%); }
+    .char-preview img { height: 480px; filter: drop-shadow(0 0 15px rgba(0,0,0,0.8)); object-fit: contain; transition: opacity 0.3s; }
+    
+    .char-info { flex: 1; padding: 30px; display: flex; flex-direction: column; }
+    .char-info h2 { font-size: 26px; color: #ffd700; text-transform: uppercase; margin-bottom: 20px; border-bottom: 2px solid #555; padding-bottom: 10px; }
+    
+    .school-select { display: flex; gap: 10px; margin-bottom: 20px; }
+    .btn-school { flex: 1; background: #222; border: 1px solid #555; color: #aaa; padding: 12px; cursor: pointer; font-weight: bold; border-radius: 4px; transition: 0.2s; }
+    .btn-school:hover { background: #333; color: #fff; }
+    .btn-school.active { background: #1f6feb; border-color: #58a6ff; color: #fff; box-shadow: 0 0 10px rgba(88,166,255,0.4); }
+
+    .gender-select { display: flex; gap: 10px; margin-bottom: 30px; }
+    .btn-gender { flex: 1; background: #222; border: 1px solid #555; color: #aaa; padding: 10px; cursor: pointer; border-radius: 4px; transition: 0.2s; }
+    .btn-gender.active { background: #238636; border-color: #2ea043; color: #fff; }
+
+    .stats-box { background: rgba(0,0,0,0.5); padding: 15px; border-radius: 6px; margin-bottom: 30px; font-size: 13px; color: #ccc; line-height: 1.6; border: 1px solid #333; }
+    .stats-box b { color: #fff; }
+
+    .input-group { display: flex; gap: 10px; }
+    input#charName { flex: 1; background: #111; border: 1px solid #555; color: #fff; padding: 12px; border-radius: 4px; font-size: 15px; outline: none; }
+    input#charName:focus { border-color: #ffd700; }
+    .btn-enter { background: linear-gradient(180deg, #d4af37, #aa8222); border: none; color: #000; font-weight: bold; padding: 0 25px; border-radius: 4px; cursor: pointer; font-size: 14px; text-transform: uppercase; }
+    .btn-enter:hover { background: linear-gradient(180deg, #eadd66, #d4af37); }
+
+    #town-hud { position: absolute; bottom: 12px; left: 12px; background: rgba(0,0,0,0.8); padding: 10px 15px; border-radius: 6px; font-size: 12px; color: #ccc; pointer-events: none; border: 1px solid #444; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <b id="playerName">Vila da Folha</b>
+      <div id="netStatus" class="status">● Conectando ao servidor...</div>
+    </div>
+    <div class="currencies">
+      <span class="silver">Ryo: <b id="ryo">0</b></span>
+      <span>Ouro: <b id="gold">0</b></span>
+    </div>
+  </header>
+
+  <div id="game-canvas">
+    <div id="create-modal">
+      <div class="create-overlay"></div>
+      <div class="create-container">
+        <div class="char-preview">
+          <img id="previewArt" src="/textures/00A98683.png" alt="Classe Ninja">
+        </div>
+        <div class="char-info">
+          <h2 id="classNameTitle">Guerreiro Taijutsu</h2>
+          
+          <div class="school-select">
+            <button class="btn-school active" onclick="selectSchool('Taijutsu')">Taijutsu</button>
+            <button class="btn-school" onclick="selectSchool('Ninjutsu')">Ninjutsu</button>
+            <button class="btn-school" onclick="selectSchool('Genjutsu')">Genjutsu</button>
+          </div>
+
+          <div class="gender-select">
+            <button class="btn-gender active" id="btnMale" onclick="selectGender('Male')">Masculino</button>
+            <button class="btn-gender" id="btnFemale" onclick="selectGender('Female')">Feminino</button>
+          </div>
+
+          <div class="stats-box" id="statsBox">
+            Carregando atributos...
+          </div>
+
+          <div class="input-group">
+            <input type="text" id="charName" placeholder="Seu nome ninja..." maxlength="14" />
+            <button class="btn-enter" onclick="submitCharacter()">Entrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="town-hud">Clique no cenário para mover seu personagem</div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

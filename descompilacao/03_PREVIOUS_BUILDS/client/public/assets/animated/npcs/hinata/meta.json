@@ -1,0 +1,12 @@
+{
+  "id": 11210014,
+  "name": "hinata",
+  "animations": {
+    "idle": {
+      "frameCount": 1,
+      "frames": [
+        "/assets/animated/npcs/hinata/idle_0.png"
+      ]
+    }
+  }
+}

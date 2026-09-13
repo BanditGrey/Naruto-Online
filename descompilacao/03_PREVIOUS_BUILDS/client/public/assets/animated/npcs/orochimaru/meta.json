@@ -1,0 +1,17 @@
+{
+  "id": 11210006,
+  "name": "orochimaru",
+  "animations": {
+    "idle": {
+      "frameCount": 6,
+      "frames": [
+        "/assets/animated/npcs/orochimaru/idle_0.png",
+        "/assets/animated/npcs/orochimaru/idle_1.png",
+        "/assets/animated/npcs/orochimaru/idle_2.png",
+        "/assets/animated/npcs/orochimaru/idle_3.png",
+        "/assets/animated/npcs/orochimaru/idle_4.png",
+        "/assets/animated/npcs/orochimaru/idle_5.png"
+      ]
+    }
+  }
+}

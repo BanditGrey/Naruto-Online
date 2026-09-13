@@ -1,0 +1,250 @@
+[
+  {
+    "id": 18100000,
+    "name": "1-Tail Shukaku",
+    "desc": "Originally a civet cat that loves playing and burying everything in front of it with sand.\\nCharacter: Lively\\nHobby: Peeping other people's dreams",
+    "level": 0,
+    "lockDesc": "",
+    "headPic": 18100000
+  },
+  {
+    "id": 18100100,
+    "name": "2-Tails Matatabi",
+    "desc": "A hundred-year-old silly cat that loves acting cute.\\nCharacter: Headstrong\\nHobby: Enjoying foods",
+    "level": 20,
+    "lockDesc": "Unlock needs: 1 turn",
+    "headPic": 18100100
+  },
+  {
+    "id": 18100200,
+    "name": "3-Tails Isobu",
+    "desc": "Tyrant of summoned beasts, always chats up with its follower Samehada.\\nCharacter: Bossy\\nHobby: Chatting up",
+    "level": 30,
+    "lockDesc": "Unlock needs: 2 turns",
+    "headPic": 18100200
+  },
+  {
+    "id": 18100300,
+    "name": "4-Tails Son Gokuu",
+    "desc": "King Kong is my grandson! I like him!\\nCharacter: Arrogance\\nHobby: Loving beauty",
+    "level": 50,
+    "lockDesc": "Unlock needs: 3 turns",
+    "headPic": 18100300
+  },
+  {
+    "id": 18100400,
+    "name": "5-Tails Kokuou",
+    "desc": "I come from Pokemon! Do you have the pokeBall? I want to sleep.\\nCharacter: Prudence\\nHobby: Sauna",
+    "level": 70,
+    "lockDesc": "Unlock needs: 4 turns",
+    "headPic": 18100400
+  },
+  {
+    "id": 18100500,
+    "name": "6-Tails Saiken",
+    "desc": "Lover of Tsunade's summoned beast Katsuyu, is so bored after Katsuyu is taken away that it invents the ninjutsu of blowing bubbles!\\nCharacter: Inferiority\\nHobby: Blowing bubbles",
+    "level": 70,
+    "lockDesc": "Unlock needs: 5 turns",
+    "headPic": 18100500
+  },
+  {
+    "id": 18100600,
+    "name": "7-Tails Choumei",
+    "desc": "I'm gorgeous!\\nCharacter: Narcissism\\nHobby: Taking exercise",
+    "level": 70,
+    "lockDesc": "Unlock needs: 6 turns",
+    "headPic": 18100600
+  },
+  {
+    "id": 18100700,
+    "name": "8-Tails Gyuuki",
+    "desc": "Cursing expert.\\nCharacter: Silence\\nHobby: Drawing circles",
+    "level": 80,
+    "lockDesc": "Unlock needs: 7 turns",
+    "headPic": 18100700
+  },
+  {
+    "id": 18100800,
+    "name": "9-Tails Kurama",
+    "desc": "Fox that loves transforming into a human girl and is a good persistent fighter!\\nCharacter: Grumpy\\nHobby: Destruction",
+    "level": 90,
+    "lockDesc": "Unlock needs: 8 turns",
+    "headPic": 18100800
+  },
+  {
+    "id": 18100900,
+    "name": "10-Tails Shinju",
+    "desc": "The primordial entity and the original tailed beast that possesses the most powerful chakra!\\nPersonality:Narcissistic \\nInterest:Taking exercise",
+    "level": 100,
+    "lockDesc": "Requirement:Transform 9 times",
+    "headPic": 18100900
+  },
+  {
+    "id": 18101000,
+    "name": "Devil·1-Tailed Shukaku",
+    "desc": "The original body of it was a civet. It likes to bury anything in front it in the sand.\\nPersonality: Lively\\nInterest: Peeping others' dream.",
+    "level": 1001,
+    "lockDesc": "Unlocking requirement: 10-Tails",
+    "headPic": 18100000
+  },
+  {
+    "id": 18101100,
+    "name": "Devil·2-Tailed Matatabi",
+    "desc": "A cute cat who is much older than it looks. When someone calls it, it will pretend not to hear.\\nPersonality: Willful\\nInterest: Food",
+    "level": 1005,
+    "lockDesc": "Unlocking requirement: Devi·1-Tail",
+    "headPic": 18100100
+  },
+  {
+    "id": 18101200,
+    "name": "Devil·3-Tailed Isobu",
+    "desc": "A bully among the tailed beasts who often accosts people around with his follower Samehada.\\nPersonality: Overbearing \\nInterest: Accosting",
+    "level": 1010,
+    "lockDesc": "Unlocking requirement: Devil·2-Tails",
+    "headPic": 18100200
+  },
+  {
+    "id": 18101300,
+    "name": "Devil·4-Tailed Son Goku",
+    "desc": "Do you know King Kong? He is my grandson!\\nPersonality: Arrogant\\nInterest: Beautiful girl",
+    "level": 1010,
+    "lockDesc": "Unlocking requirement: Devil·3-Tails",
+    "headPic": 18100300
+  },
+  {
+    "id": 18101400,
+    "name": "Devil·5-Tailed Kokuo",
+    "desc": "I come from a magical world! Hey, do you happen to have a magic ball? I'm going to sleep. …\\nPersonality: Calm steady\\nInterest: Taking Sauna",
+    "level": 1010,
+    "lockDesc": "Unlocking requirement: Devil·4-Tails",
+    "headPic": 18100400
+  },
+  {
+    "id": 18101500,
+    "name": "Devil·6-Tailed Utakata",
+    "desc": "Katsuyu's lover. After Katsuyu was summoned by Tsunade, he felt so bored and invented a bubble technique. \\nPersonality: Self-abased\\nInterest: Blowing bubbles",
+    "level": 2001,
+    "lockDesc": "Unlocking requirement: Devil·5-Tails",
+    "headPic": 18100500
+  },
+  {
+    "id": 18101600,
+    "name": "Devil·7-Tailed Chomei",
+    "desc": "Look at my shape! Not everyone can have it! Are you jealous of me?\\nPersonality: Narcissistic\\nInterest: Taking exercise",
+    "level": 2005,
+    "lockDesc": "Unlocking requirement: Devil·6-Tails",
+    "headPic": 18100600
+  },
+  {
+    "id": 18101700,
+    "name": "Devil·8-Tailed Gyuki",
+    "desc": "Don't underestimate Gyuki's curse! Gyuki practices his curse every day.\\nPersonality: Quiet\\nInterest: Drawing circles",
+    "level": 2010,
+    "lockDesc": "Unlocking requirement: Devil·7-Tails",
+    "headPic": 18100700
+  },
+  {
+    "id": 18101800,
+    "name": "Devil·9-Tailed Kurama",
+    "desc": "A demon fox who likes to turn itself into a female human. It is suitable for protracted battles.\\nPersonality: Irritable\\nInterest: Creating damage",
+    "level": 2010,
+    "lockDesc": "Unlocking requirement: Devil·8-Tails",
+    "headPic": 18100800
+  },
+  {
+    "id": 18101900,
+    "name": "Devil·10-Tailed Juubi",
+    "desc": "The primordial entity and the original tailed beast that possesses the most powerful chakra!\\nPersonality: Narcissistic \\nInterest: Taking exercise",
+    "level": 2010,
+    "lockDesc": "Unlocking requirement: Devil·9-Tails",
+    "headPic": 18100900
+  },
+  {
+    "id": 18102000,
+    "name": "Sage·1-Tailed Shukaku",
+    "desc": "Originally a civet cat that loves playing and burying everything in front of it with sand.\\nCharacter: Lively\\nHobby: Peeping other people's dreams",
+    "level": 3001,
+    "lockDesc": "Unlocking requirement: Devil·10-Tailed Juubi",
+    "headPic": 18102000
+  },
+  {
+    "id": 18102100,
+    "name": "Sage·2-Tailed Matatabi",
+    "desc": "A hundred-year-old silly cat that loves acting cute.\\nCharacter: Headstrong\\nHobby: Enjoying foods",
+    "level": 3001,
+    "lockDesc": "Unlocking requirement: Sage·1-Tail",
+    "headPic": 18102100
+  },
+  {
+    "id": 18102200,
+    "name": "Sage·3-Tailed Isobu",
+    "desc": "Tyrant of summoned beasts, always chats up with its follower Samehada.\\nCharacter: Bossy\\nHobby: Chatting up",
+    "level": 3001,
+    "lockDesc": "Unlocking requirement: Sage·2-Tails",
+    "headPic": 18102200
+  },
+  {
+    "id": 18102300,
+    "name": "Sage·4-Tailed Son Goku",
+    "desc": "King Kong is my grandson! I like him!\\nCharacter: Arrogance\\nHobby: Loving beauty",
+    "level": 3001,
+    "lockDesc": "Unlocking requirement: Sage·3-Tails",
+    "headPic": 18102300
+  },
+  {
+    "id": 18102400,
+    "name": "Sage·5-Tailed Kokuo",
+    "desc": "I come from Pokemon! Do you have the pokeBall? I want to sleep.\\nCharacter: Prudence\\nHobby: Sauna",
+    "level": 3001,
+    "lockDesc": "Unlocking requirement: Sage·4-Tails",
+    "headPic": 18102400
+  },
+  {
+    "id": 18102500,
+    "name": "Sage·6-Tailed Utakata",
+    "desc": "Lover of Tsunade's summoned beast Katsuyu, is so bored after Katsuyu is taken away that it invents the ninjutsu of blowing bubbles!\\nCharacter: Inferiority\\nHobby: Blowing bubbles",
+    "level": 3020,
+    "lockDesc": "Unlocking requirement: Sage·5-Tails",
+    "headPic": 18102500
+  },
+  {
+    "id": 18102600,
+    "name": "Sage·7-Tailed Chomei",
+    "desc": "I'm gorgeous!\\nCharacter: Narcissism\\nHobby: Taking exercise",
+    "level": 3020,
+    "lockDesc": "Unlocking requirement: Sage·6-Tails",
+    "headPic": 18102600
+  },
+  {
+    "id": 18102700,
+    "name": "Sage·8-Tailed Gyuki",
+    "desc": "Cursing expert.\\nCharacter: Silence\\nHobby: Drawing circles",
+    "level": 3020,
+    "lockDesc": "Unlocking requirement: Sage·7-Tails",
+    "headPic": 18102700
+  },
+  {
+    "id": 18102800,
+    "name": "Sage·9-Tailed Kurama",
+    "desc": "Fox that loves transforming into a human girl and is a good persistent fighter!\\nCharacter: Grumpy\\nHobby: Destruction",
+    "level": 3020,
+    "lockDesc": "Unlocking requirement: Sage·8-Tails",
+    "headPic": 18102800
+  },
+  {
+    "id": 18102900,
+    "name": "Sage·10-Tailed Juubi",
+    "desc": "The primordial entity and the original tailed beast that possesses the most powerful chakra!\\nPersonality:Narcissistic \\nInterest:Taking exercise",
+    "level": 3020,
+    "lockDesc": "Unlocking requirement: Sage·9-Tails",
+    "headPic": 18102900
+  },
+  {
+    "id": 28100000,
+    "name": "Coming Soon",
+    "desc": "Coming Soon\\nComing Soon\\nComing Soon",
+    "level": 1050,
+    "lockDesc": "Coming Soon",
+    "headPic": 28100000
+  }
+]

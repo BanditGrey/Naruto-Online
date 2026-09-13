@@ -1,0 +1,2272 @@
+var display_name = '';
+var data_token = '';
+// var redirectAuthencationSubpage = $("input[name='isAuthencationSubpage'").val();
+var redirectAuthencationSubpage = document.querySelector("input[name='isAuthencationSubpage']")?.value;
+var redirectInFormRegisterFull = '/';
+var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || (typeof window.orientation !== "undefined");
+
+function getChromeVersion(userAgent) {
+  const match = userAgent.match(/Chrome\/([\d.]+)/);
+  return match ? match[1] : null;
+}
+
+function detectOldBrowser(userAgent) {
+    var oldBrowser = 'browserDefault';
+
+    if ((userAgent || '').indexOf('Puffin/') !== -1) {
+        oldBrowser = 'Puffin';
+    } else if ((userAgent || '').indexOf('UBrowser') !== -1) {
+        oldBrowser = 'UBrowser';
+    } else if ((userAgent || '').indexOf('37abc') !== -1) {
+        oldBrowser = '37abc';
+    } else if (getChromeVersion(userAgent) > 0 && getChromeVersion(userAgent) < 34) {
+        oldBrowser = 'Coowon';
+    }
+
+    return oldBrowser;
+}
+
+function isOldBrowser() {
+    return detectOldBrowser(navigator.userAgent) !== 'browserDefault';
+}
+
+var isBrowser = detectOldBrowser(navigator.userAgent);
+
+// Toast function
+function toast({ title = "", message = "", type = "info", duration = 3000 }) {
+    var main = document.getElementById("toast-div");
+    if (main) {
+        var toast = document.createElement("div");
+
+        // Auto remove toast
+        var autoRemoveId = setTimeout(function () {
+            main.removeChild(toast);
+        }, duration + 1000);
+
+        // Remove toast when clicked
+        toast.onclick = function (e) {
+            if (e.target.closest(".toast__close")) {
+                main.removeChild(toast);
+                clearTimeout(autoRemoveId);
+            }
+        };
+
+        var icons = {
+            success: "fa fa-check-circle",
+            info: "fa fa-info-circle",
+            warning: "fa fa-exclamation-circle",
+            error: "fa fa-exclamation-circle"
+        };
+        var icon = icons[type];
+        var delay = (duration / 1000).toFixed(2);
+
+        toast.className += " mine-toast toast--" + type;
+        toast.style.animation = "slideInLeft ease .3s, fadeOut linear 1s " + delay + "s forwards";
+
+        toast.innerHTML =
+            '<div class="toast__icon">' +
+            '<i class="' + icon + '"></i>' +
+            '</div>' +
+            '<div class="toast__body">' +
+            '<h3 class="toast__title">' + title + '</h3>' +
+            '<p class="toast__msg">' + message + '</p>' +
+            '</div>' +
+            '<div class="toast__close">' +
+            '<i class="fa fa-times"></i>' +
+            '</div>';
+        main.appendChild(toast);
+    }
+}
+
+function showAlertSuccess(message, title) {
+    showAlert('success', message, title);
+}
+
+function showAlertWarning(message, title) {
+    showAlert('warning', message, title);
+}
+
+function showAlertError(message) {
+    showAlert('error', message);
+}
+
+function showAlert(type, message, title) {
+    toast({
+        title: title,
+        message: message,
+        type: type,
+        duration: 1800
+    });
+}
+
+function format_date(date){
+    try {
+        return date.getFullYear()+'-'+(date.getMonth()+1)+'-'+(date.getDate().toString().padStart(2, '0'));
+    } catch (error) {
+        return null;
+    }
+}
+
+function parse_url(url){
+    var re = /(?:\?|&(?:amp;)?)([^=&#]+)(?:=?([^&#]*))/g,
+        match, params ={},
+        decode = function(s){
+            return decodeURIComponent(s.replace(/\+/g, " "));
+        };
+    if(typeof url == "undefined") url = document.location.href;
+    while (match = re.exec(url)){
+        params[decode(match[1])] = decode(match[2]);
+    }
+    return params;
+}
+
+function redirect(url) {
+    document.write("redirecting");
+    window.location.href = url;
+    // window.location.replace(url);
+}
+
+function redirect_top(url) {
+    window.parent.postMessage('{"message":"redirect", "url": "' + url + '"}', '*');
+    try {
+        if (typeof window.top.location == 'undefined' || typeof window.top.location.href == 'undefined') return;
+        if (window.top.location.href == url) {
+            window.top.location.reload();
+            return;
+        }
+        window.top.location.href = url;
+    } catch (error) {
+    }
+}
+
+function show_loading() {
+    $.LoadingOverlay('show', {
+        size: 40,
+        minSize: 40,
+        maxSize: 40,
+        imageColor: "#e2383b"
+    });
+}
+
+function hide_loading() {
+    $.LoadingOverlay('hide')
+}
+
+function success(mess, title) {
+    swal_fire('success', mess, title)
+}
+
+function warning(mess, title) {
+    if ($('.loginError').length) {
+        $('.loginError').text(mess).show();
+    }
+    swal_fire('warning', mess, title)
+}
+
+function error(mess) {
+    swal_fire('error', mess)
+}
+
+function swal_fire(type, mess, title) {
+    Swal.fire({
+        icon: type,
+        message: mess,
+        title: title
+    });
+}
+
+function swal_fire_confirm_goto(type, mess, title, url){
+    redirect_top(url);
+    // try {
+    //     Swal.fire({
+    //         icon: type,
+    //         text: mess,
+    //         title: title,
+    //         showCancelButton: true,
+    //         showConfirmButton: true,
+    //         confirmButtonText: "Ok",
+    //         cancelButtonText: "Cancel",
+    //     }).then((result) => {
+    //         redirect_top(url);
+    //     });
+    // } catch (error) {
+    //     // alert(mess)
+    // }
+}
+
+function check_user_state_newsite(){
+    var display_name = $.cookie('display_name');
+    if(display_name) {
+        $('.user-dropdown').text(display_name);
+    }
+
+    if(display_name){
+        $('.btn-login').addClass('d-none');
+        $('.box-userinfo').removeClass('d-none');
+    }else{
+        $('.btn-login').removeClass('d-none');
+        $('.box-userinfo').addClass('d-none');
+    }
+}
+
+function check_user_state(){
+    var display_name = $.cookie('display_name');
+    if(display_name) {
+        $('.display-username').text(display_name);
+        $('.user-dropdown').text(display_name);
+    }
+
+    if($('#show-detail-vip').length){
+        var vip_point = $.cookie('vip_point');
+        var current_vip = get_current_vip(vip_point);
+        $('#show-detail-vip .grade').addClass('grade'+current_vip);
+        $('#show-detail-vip .grade-point').text(vip_point + '/' + get_point_next_vip(current_vip));
+    }
+
+    if(display_name && $('.box-login').length){
+        $('.box-login').addClass('hide');
+        $('.box-user-info').removeClass('hide');
+        $('.box-user-menu').removeClass('hide');
+        $('.game-list').find('.login-required').removeClass('login-required');
+    }else{
+        $('.box-login').removeClass('hide');
+        $('.box-user-info').addClass('hide');
+        $('.box-user-menu').addClass('hide');
+    }
+}
+
+function check_user_state_not_exist() {
+    var display_name = $.cookie('display_name');
+    var vip_point = $.cookie('vip_point');
+
+    if(display_name && !vip_point) {
+        $.ajax({
+            type: "POST",
+            url: "/get-display-name",
+            success: function (response) {
+                check_user_state();
+            },
+            error: function (response) {
+                console.log('error');
+            }
+        });
+    }
+}
+
+function get_user_login(){
+    $.ajax({
+        method: "POST",
+        url: get_redirect_url() ? "/me-with-hash" : "/me",
+        async: false,
+        cache: false,
+        data: {  }
+    }).done(function( response ) {
+        if(response.status != 1){
+            return false;
+        }
+
+        display_name = response.data.display_name;
+        data_token = response.data.data;
+    });
+    return display_name;
+}
+
+function get_current_vip(vip_point){
+    var vip;
+    if(vip_point < 1000){
+        return 0;
+    }
+    for (var key in GRADE_VIP) {
+        if(vip_point < GRADE_VIP[key]) break;
+        vip = key;
+    }
+    return vip;
+}
+
+function get_point_next_vip(vip){
+    return typeof GRADE_VIP[vip+1] != 'undefined' ? GRADE_VIP[vip+1] : GRADE_VIP[vip];
+}
+
+function active_menu(){
+    var arr = location.pathname.split("/");
+    var href = '/';
+    if(typeof arr[1] != 'undefined'){
+        href += arr[1];
+    }
+    $('.main-nav .nav-item a[href="'+href+'"]').addClass('active');
+}
+
+function get_check_in(month){
+    var current_date = new Date();
+    var current_year = current_date.getFullYear();
+    var current_month = current_date.getMonth() + 1;
+    var current_day = current_date.getDay();
+    var check_in_current_month = '';
+    if( check_in_current_month = $.cookie('check_in_current_month') ){
+        check_in_current_month = JSON.parse(check_in_current_month);
+        if(check_in_current_month.indexOf(current_day+'') > -1){
+            $('.btn-checkin').hide();
+        }
+    }
+
+    $.ajax({
+        method: "POST",
+        url: "/diem-danh-trong-thang",
+        data: { "month": month }
+    }).done(function( response ) {
+        var checkin_days_array = [];
+        if(response.status == 1){
+            for (var day in response.data) {
+                checkin_days_array.push(day+'')
+            }
+            if(!month || month == current_year+'_'+current_month){
+                $.cookie('check_in_current_month', JSON.stringify(checkin_days_array));
+            }
+            show_table_check_in(response.data);
+        }
+        show_datepicker_check_in(checkin_days_array);
+    });
+
+}
+
+function show_datepicker_check_in(checkin_days_array){
+    $('.checkin-daily').each(function(){
+        var tthis = $(this);
+        var current_date = new Date();
+        var first_day = new Date(current_date.getFullYear(), current_date.getMonth(), 1);
+        var last_day = new Date(current_date.getFullYear(), current_date.getMonth()+1, 0);
+
+        tthis.datepicker('destroy');
+        tthis.datepicker({
+            format: "yyyy-mm-dd",
+            todayHighlight: true,
+            startDate: format_date(first_day),
+            endDate: format_date(last_day),
+            language: 'vi',
+            beforeShowDay: function(date){
+                if (date.getMonth() != (new Date()).getMonth()){
+                    return false;
+                }
+
+                if (checkin_days_array.indexOf(date.getDate()+'') > -1) {
+                    return {classes: 'highlight', tooltip: 'Title', 'content': '<i class="checked">&#10003;</i>'+date.getDate()};
+                }
+            }
+        });
+    });
+}
+
+function show_table_check_in(checkin_data){
+    var stt = 1;
+    var str = '';
+    for (var day in checkin_data) {
+        str += '<tr>'+
+                '<td>'+(stt++)+'</td>'+
+                '<td>Điểm danh hằng ngày</td>'+
+                '<td>'+checkin_data[day]+'</td>'+
+                '<td>'+CHECK_IN_POINT_ADD+'</td>'+
+                '<td>Thành công</td>'+
+            '</tr>';
+    }
+    $('#quest-list-tab-2-pane tbody').html(str);
+}
+
+
+function add_param_to_url(url, key, value) {
+    var newUrl = new URL(url);
+    newUrl.searchParams.set(key, value); // Thêm hoặc cập nhật param
+    return newUrl.toString();
+}
+
+function get_redirect_url(){
+    var params = parse_url(document.URL);
+
+    var url = typeof params['redirect'] != 'undefined' ? params['redirect'] : (typeof params['redirect_url'] != 'undefined' ? params['redirect_url'] : '');
+
+    if(url && data_token){
+        var url = new URL(decodeURIComponent(url));
+        url = add_param_to_url(url.href, 'data', data_token);
+    }
+    if (url == '') {
+        url = $(window).find('input[name="redirect_url"]').val()
+    }
+
+    return url;
+}
+
+function get_redirect_top(){
+    var params = parse_url(document.URL);
+
+    return typeof params['redirect_top'] != 'undefined' && params['redirect_top'] != 0 ? params['redirect_top'] : 0;
+}
+
+function process_login_facebook(){
+    FB.getLoginStatus(function(response) {
+        if (response.status !== 'connected') {
+            warning('Không kết nối được đến tài khoản Facebook', '');
+            hide_loading();
+            return;
+        }
+
+        var social_access_token = FB.getAuthResponse()['accessToken'];
+
+        if (typeof social_access_token == 'undefined' || !social_access_token) {
+            warning('Không kết nối được đến tài khoản Facebook', '');
+            hide_loading();
+            return;
+        }
+
+        var form = $(this).parents('form');
+        var token = form.find('input[name="g-recaptcha-response"]').val();
+
+        $.ajax({
+            method: "POST",
+            url: "/do-login-fb",
+            data: {social_access_token: social_access_token, "redirect_url": get_redirect_url(), "redirect_top": get_redirect_top(), "g-recaptcha-response": token }
+        }).done(function( response ) {
+            process_login_response(response);
+        });
+    });
+}
+
+function process_login_response(response) {
+    if (typeof hide_loading == 'function') {
+        hide_loading();
+    }
+    if (typeof check_user_state == 'function') {
+        check_user_state();
+    }
+    if (typeof regen_captcha == 'function') {
+        regen_captcha();
+    }
+
+    // Case response status -2: need update phone number
+    // if (response.status == -8) {
+    //     warning(response.mess, '');
+
+    //     $('.title-box').text('Cập nhật số điện thoại');
+    //     var formBox = $('.form-box');
+    //     formBox.find('.form-login, .form-register, .form-forgot-password').remove();
+    //     formBox.html(formInputAddMobile());
+    //     return;
+    // }
+    if (response.status != 1) {
+        if (typeof response.data.code != 'undefined') {
+            redirect_top(response.data.redirect_url);
+            return;
+        }
+        warning(response.mess, '');
+        return;
+    }
+
+    process_redirect_response(response.data)
+}
+
+function process_redirect_response(response_data){
+
+    if(typeof response_data != 'undefined' && typeof response_data.redirect_url != 'undefined' && response_data.redirect_url){
+        if(typeof response_data.redirect_top != 'undefined' && response_data.redirect_top){
+            redirect_top(response_data.redirect_url);
+            return;
+        }
+        console.log('response_data.redirect_url', response_data.redirect_url);
+        redirect(response_data.redirect_url);
+    }
+}
+
+function openTab(evt, tabName) {
+    if (tabName == 'tab-register') {
+        $('.tab-login').addClass('tab-register');
+    } else {
+        $('.tab-login').removeClass('tab-register');
+    }
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tab-pane");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "flex";
+    if(typeof evt.currentTarget != 'undefined'){
+        evt.currentTarget.className += " active";
+    }
+    evt.preventDefault();
+}
+
+function openTabWidgetFullSize(evt, tabName) {
+    // Set height for iframe when switching to register tab
+    if (tabName == 'tab-register') {
+        try {
+            if (window.frameElement) {
+                window.frameElement.style.height = '615px';
+            } else {
+                window.parent.postMessage({ type: 'RESIZE_IFRAME', height: '615px' }, typeof DOMAIN_PLAY_H5 != undefined ? 'https://'+DOMAIN_PLAY_H5 : 'https://phongthantdd.568play.vn');
+            }
+        } catch (error) {
+            console.log('Không thể thay đổi height của iframe');
+        }
+    } else {
+        try {
+            if (window.frameElement) {
+                window.frameElement.style.height = '385px';
+            } else {
+                window.parent.postMessage({ type: 'RESIZE_IFRAME', height: '385px' }, typeof DOMAIN_PLAY_H5 != undefined ? 'https://'+DOMAIN_PLAY_H5 : 'https://phongthantdd.568play.vn');
+            }
+        } catch (error) {
+        }
+    }
+
+    if (tabName == 'tab-register') {
+        $('.tab-login').addClass('tab-register');
+    } else {
+        $('.tab-login').removeClass('tab-register');
+    }
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tab-pane");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "flex";
+    if(typeof evt.currentTarget != 'undefined'){
+        evt.currentTarget.className += " active";
+    }
+    evt.preventDefault();
+}
+
+function handleGoogleLoginResponse(response){
+
+    var form = $('.form-login, .form-register, .form-register-full');
+
+    var redirect_url = get_redirect_url();
+    var redirect_url_auth_subpage = form.find('input[name="redirect_url"]').val();
+
+    // if (redirectAuthencationSubpage !== undefined) {
+    //     redirect_url = redirectAuthencationSubpage;
+    // }
+
+    if (redirect_url_auth_subpage !== undefined) {
+        redirect_url = redirect_url_auth_subpage;
+    }
+
+    var appId = '';
+    if (typeof(APP_ID_MOBILE) != 'undefined') {
+        appId = APP_ID_MOBILE;
+    }
+
+    social_access_token = response.credential;
+
+    if (typeof social_access_token == 'undefined' || !social_access_token) {
+        warning('Không kết nối được đến tài khoản Google', '');
+        hide_loading();
+        return;
+    }
+
+    // var token = form.find('input[name="g-recaptcha-response"]').val();
+    token = '';
+    $.ajax({
+        method: "POST",
+        url: "/do-login-gg",
+        data: {social_access_token: social_access_token, "redirect_url": redirect_url, "redirect_top": get_redirect_top(), "g-recaptcha-response": token, appId: appId }
+    }).done(function( response ) {
+        if (typeof(APP_ID_MOBILE) != 'undefined' && appId && appId == APP_ID_MOBILE && window.opener) {
+            var postMessageData = {
+                'action': 'login_success',
+                'redirect_url': response.data.redirect_url,
+                'redirect_top': response.data.redirect_top,
+            };
+            window.opener.postMessage(JSON.stringify(postMessageData), DOMAIN_POST_MESSAGE);
+            window.close();
+            return;
+        }
+        process_login_response(response);
+    });
+
+}
+
+function handleAppleLoginResponse(response){
+    var redirect_url = get_redirect_url();
+    if (redirectAuthencationSubpage !== undefined) {
+        redirect_url = redirectAuthencationSubpage;
+    }
+
+    // Apple trả về authorization object với id_token
+    var idToken = response.authorization.id_token;
+    var userData = response.user ? JSON.stringify(response.user) : null;
+
+    if (typeof idToken == 'undefined' || !idToken) {
+        warning('Không kết nối được đến tài khoản Apple', '');
+        hide_loading();
+        return;
+    }
+
+    token = '';
+    $.ajax({
+        method: "POST",
+        url: "/do-login-apple",
+        data: {
+            social_access_token: idToken,
+            user_data: userData,
+            "redirect_url": redirect_url,
+            "redirect_top": get_redirect_top(),
+            "g-recaptcha-response": token
+        }
+    }).done(function( response ) {
+        process_login_response(response);
+    });
+}
+
+function processResponseVerifySMS(form, response, callback_function_name){
+    if(typeof response.data.redirect != 'undefined'){
+        redirect(response.data.redirect);
+        return;
+    }
+    if(typeof response.status == 'undefined' || response.status != 1 || typeof response.data.code == 'undefined' || !response.data.code){
+        warning(typeof response.mess != 'undefined' && response.mess ? response.mess : 'Hệ thống bận. Vui lòng thử lại hoặc liên hệ admin để được hỗ trợ!');
+        return;
+    }
+
+    form.html(getContentVerifySMS(response.data.cmd, response.data.code));
+    redirectInFormRegisterFull = response.data.redirect_url;
+    runWebsocket(response.data.username, response.data.type, response.data.code, response.data.time, response.data.sign, response.data.phone, response.data.game, callback_function_name);
+}
+
+function browserVersion(){
+    var ua= navigator.userAgent;
+    var tem;
+    var M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+    if(/trident/i.test(M[1])){
+        tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+        return 'IE '+(tem[1] || '');
+    }
+    if(M[1]=== 'Chrome'){
+        tem= ua.match(/\b(OPR|Edge)\/(\d+)/);
+        if(tem!= null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+    }
+    M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+    if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
+    return M;
+};
+
+function callbackFunctionAddPhone(){
+    $.ajax({
+        type: "POST",
+        url: "/set-state-user",
+        success: function (response) {
+        }
+    });
+
+    var paramUrl = parse_url(document.URL);
+    var appId = '';
+    var redirectToCrossSite = '';
+    if (typeof paramUrl['app_id'] != 'undefined') {
+        appId = paramUrl['app_id'];
+        redirectToCrossSite = paramUrl['redirect'];
+    }
+
+    if (giftCode) {
+        var gameName = generateGameNameByGameId(gameId);
+        var msgInline = 'Yêu cầu '+(TITLE ? '"'+TITLE+'"' : '')+' của bạn đã được thực hiện. Cảm ơn bạn! <br> Tặng bạn giftcode '+gameName+': <br><b class="highlight">'+giftCode+'</b>';
+        confirmAndCopyCode(giftCode, msgInline, 'Thông báo');
+    } else {
+        if (typeof(APP_ID_MOBILE) != 'undefined' && appId && appId == APP_ID_MOBILE && window.opener) {
+            var postMessageData = {
+                'action': 'login_success',
+                'redirect_url': redirectToCrossSite,
+                'redirect_top': 1,
+            };
+            window.opener.postMessage(JSON.stringify(postMessageData), DOMAIN_POST_MESSAGE);
+            window.close();
+            return;
+        } else {
+            var msgInline = 'Yêu cầu '+(TITLE ? '"'+TITLE+'"' : '')+' của bạn đã được thực hiện. Cảm ơn bạn!';
+            confirmAndRedirect(redirectInFormRegisterFull, msgInline, 'Thông báo');
+        }
+    }
+}
+
+function callbackFunctionAddPhoneRedirectTop(){
+    $.ajax({
+        type: "POST",
+        url: "/set-state-user",
+        success: function (response) {
+        }
+    });
+
+    if (giftCode) {
+        var gameName = generateGameNameByGameId(gameId);
+        var msgInline = 'Yêu cầu '+(TITLE ? '"'+TITLE+'"' : '')+' của bạn đã được thực hiện. Cảm ơn bạn! <br> Tặng bạn giftcode '+gameName+': <br><b class="highlight">'+giftCode+'</b>';
+        confirmAndCopyCode(giftCode, msgInline, 'Thông báo');
+    } else {
+        var msgInline = 'Yêu cầu '+(TITLE ? '"'+TITLE+'"' : '')+' của bạn đã được thực hiện. Cảm ơn bạn!';
+        confirmAndRedirectTop(redirectInFormRegisterFull, msgInline, 'Thông báo');
+    }
+}
+
+function generateGameNameByGameId(gameId) {
+    var gameName = '';
+    switch (gameId) {
+        case 'onepiece':
+            gameName = 'Vua Hải Tặc';
+            break;
+        case 'naruto':
+            gameName = 'Naruto';
+            break;
+        case 'phongthan':
+            gameName = 'Phong Thần';
+            break;
+    }
+    return gameName;
+}
+
+function confirmAndRedirectTop(url, message, title){
+    Swal.fire({
+        title: title,
+        message: message,
+        icon: 'success',
+    }).then(function(result){
+        var urlRedirectAfterConfirm = (typeof url != 'undefined' && url) ? url : '/';
+        try { urlRedirectAfterConfirm = decodeURIComponent(urlRedirectAfterConfirm); } catch(e) {}
+        window.top.location.href = urlRedirectAfterConfirm;
+    });
+}
+
+function confirmAndCopyCode(giftCode, message, title){
+    Swal.fire({
+        title: title,
+        message: message,
+        icon: 'success',
+        confirmButtonText: 'Copy Giftcode'
+    }).then(function(result){
+        // Copy giftCode to clipboard
+        var tempInput = document.createElement('input');
+        tempInput.value = giftCode;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+
+        Swal.fire({
+            title: 'Thông báo',
+            message: 'Đã copy giftcode: <br><strong>' + giftCode + '</strong>',
+            confirmButtonText: 'Tải lại trang',
+        }).then((result) => {
+            redirect_top('/');
+        });
+    });
+}
+
+function confirmAndRedirect(url, message, title){
+    Swal.fire({
+        title: title,
+        message: message,
+        icon: 'success',
+        confirmButtonText: 'Đóng'
+    }).then(function(result){
+        redirect(url);
+    });
+}
+
+function formatDateTime(date) {
+    var year = date.getFullYear();
+    var month = ('0' + (date.getMonth() + 1)).slice(-2);
+    var day = ('0' + date.getDate()).slice(-2);
+    var hours = ('0' + date.getHours()).slice(-2);
+    var minutes = ('0' + date.getMinutes()).slice(-2);
+
+    return year + '/' + month + '/' + day + ' ' + hours + ':' + minutes;
+}
+
+function getContentVerifySMS(cmd, code){
+    $('.description-box').remove();
+    $('.social-box').remove();
+    var html = '<div class="verify-sms"><h3>Yêu cầu '+(TITLE ? '"'+TITLE+'"' : '')+' của bạn đang được xử lý</h3>';
+        html += '<p>Hãy xác nhận bằng cách dùng <b>số điện thoại đã đăng ký</b> gửi <strong>Mã xác thực</strong> đến số: <b class="highlight">'+SMS_NUMBER+'</b></p>';
+        html += '<p>Mã xác thực là: <b class="highlight">'+cmd+' '+code+'</b> (không dấu, không phân biệt hoa thường)</p>';
+
+        html += '<ol>';
+        html += '<li>Tuyệt đối <b class="highlight">KHÔNG</b> gửi mã này cho bất kỳ ai</li>';
+        html += '<li><strong>Mã xác thực</strong> có hiệu lực tới <b class="highlight">' + formatDateTime(new Date(Date.now() + maxTimeConnect * 60 * 1000)) + '</b></li>';
+        html += '</ol></div>';
+    return html;
+}
+
+function getContentVerifySMSForWidget(cmd, code){
+    $('.description-box').remove();
+    $('.social-box').remove();
+    var html = '<div class="verify-sms"><h3>Yêu cầu '+(TITLE ? '"'+TITLE+'"' : '')+' của bạn đang được xử lý</h3>';
+        html += '<p>Hãy xác nhận bằng cách dùng <b>số điện thoại đã đăng ký</b> gửi <strong>Mã xác thực</strong> đến số: </br><b class="highlight">'+SMS_NUMBER+'</b></p>';
+        html += '<p>Mã xác thực là: <b class="highlight">'+cmd+' '+code+'</b> (không dấu, không phân biệt hoa thường)</p>';
+
+        html += '<ol>';
+        html += '<li>Tuyệt đối <b class="highlight">KHÔNG</b> gửi mã này cho bất kỳ ai</li>';
+        html += '<li><strong>Mã xác thực</strong> có hiệu lực tới <b class="highlight">' + formatDateTime(new Date(Date.now() + maxTimeConnect * 60 * 1000)) + '</b></li>';
+        html += '</ol></div>';
+    return html;
+}
+
+/**
+ * form-verify-sms-widget
+ */
+function formInputAddMobile(){
+    $('.description-box').remove();
+    $('.social-box').remove();
+    var html = '<form class="form-add-mobile-social" method="post">'
+        + '<input type="hidden" name="isWidgetForm" value="1">'
+        + '<input type="hidden" name="csrf" value="' + getAjaxCsrfToken() + '">'
+        + '<div class="mb-2 input-with-icon">'
+        + '<input class="form-control email" placeholder="Số điện thoại" name="phone">'
+        + '<i class="fa fa-phone" aria-hidden="true"></i>'
+        + '</div>'
+        + '<div class="d-flex mt-2 mb-2 w-100">'
+        + '<button type="submit" class="btn btn-primary btn-submit-login w-100">Xác thực số điện thoại</button>'
+        + '</div>'
+    + '</form>';
+    return html;
+}
+
+function preventDuplicateSubmit(form, timeout = 2000) {
+    if (form.data('submitting')) {
+        return false;
+    }
+    form.data('submitting', true);
+    setTimeout(function() {
+        form.data('submitting', false);
+    }, timeout);
+    return true;
+}
+
+function getAjaxCsrfToken() {
+    return $('input[name="csrf"]').first().val() || '';
+}
+
+function updateAjaxCsrfToken(token) {
+    if (!token) {
+        return;
+    }
+    $('input[name="csrf"]').val(token);
+}
+
+function syncAjaxCsrf(response) {
+    if (response && response.data && response.data.csrf) {
+        updateAjaxCsrfToken(response.data.csrf);
+    }
+}
+
+
+// Thực hiện login, trả về promise với response
+function loginUser(username, password, redirect_url, token, task, confirmTerm, browser = 'chrome', appId = '', csrf = '', widgetId = '') {
+    return $.ajax({
+        method: "POST",
+        url: "/do-login",
+        data: {
+            "username": username,
+            "password": password,
+            "redirect": redirect_url,
+            "redirect_url": redirect_url,
+            "redirect_top": get_redirect_top(),
+            "g-recaptcha-response": token,
+            "task": task,
+            "confirmTerm": confirmTerm,
+            "browser": browser,
+            "appId": appId,
+            "csrf": csrf,
+            "widget_id": widgetId
+        },
+        beforeSend: function() {
+            show_loading();
+        },
+        error: function(xhr, status, error) {
+            hide_loading();
+            showAlertError('Có lỗi xảy ra khi đăng nhập, vui lòng thử lại sau!');
+        }
+    });
+}
+
+function registerUser(username, password1, password2, redirect_url, token, confirmTerm, browser = 'chrome', appId = '', csrf = '') {
+    return $.ajax({
+        method: "POST",
+        url: "/do-register",
+        data: {
+            "username": username,
+            "password1": password1,
+            "password2": password2,
+            "redirect": redirect_url,
+            "redirect_url": redirect_url,
+            "redirect_top": get_redirect_top(),
+            "g-recaptcha-response": token,
+            "confirmTerm": confirmTerm,
+            "browser": browser,
+            "appId": appId,
+            "csrf": csrf
+        },
+        beforeSend: function() {
+            show_loading();
+        },
+        error: function(xhr, status, error) {
+            hide_loading();
+            showAlertError('Có lỗi xảy ra khi đăng ký tài khoản, vui lòng tải lại trang đê thử lại!');
+        }
+    });
+}
+
+function registerUserFull(data){
+    return $.ajax({
+        method: "POST",
+        url: "/do-register",
+        data: data,
+        beforeSend: function() {
+            show_loading();
+        },
+        error: function(xhr, status, error) {
+            hide_loading();
+            showAlertError('Có lỗi xảy ra khi đăng ký tài khoản, vui lòng tải lại trang để thử lại!');
+        }
+    });
+}
+
+function addMobileSocial(data){
+    return $.ajax({
+        method: "POST",
+        url: "/do-add-mobile-social",
+        data: data,
+        beforeSend: function() {
+            show_loading();
+        },
+        error: function(xhr, status, error) {
+            hide_loading();
+            showAlertError('Có lỗi xảy ra khi đăng ký tài khoản, vui lòng tải lại trang đê thử lại!');
+        }
+    });
+}
+
+function isWidgetFormValid(form, thiss) {
+    var username = form.find('input[name="username"]').val();
+    var password = form.find('input[name="password"]').val();
+    var task = form.find('input[name="task"]').val();
+    var token = form.find('input[name="g-recaptcha-response"]').val();
+    var redirect_url = get_redirect_url();
+    var csrf = form.find('input[name="csrf"]').val();
+    var widgetId = form.find('input[name="widget_id"]').val();
+
+    var termServiceIsOn = form.find('input[name="termServiceIsOn"]').val();
+    var confirmTerm = false;
+    if (!isUndefined(termServiceIsOn) && termServiceIsOn) {
+        confirmTerm = form.find('input[name="confirmTerm"]').prop('checked');
+        if (confirmTerm === false) {
+            showAlertWarning('Vui lòng đồng ý với các điều khoản của chúng tôi!', 'Thông báo');
+            return false;
+        }
+    }
+
+    if (navigator.userAgent.indexOf("37abc") != -1) {
+        var username = thiss.querySelector('input[name="username"]').value;
+        var password = thiss.querySelector('input[name="password"]').value;
+        if (username == '' && password == '') {
+            showAlertWarning('Có lỗi xảy ra, vui lòng bấm F5 để tải lại trang!', 'Thông báo');
+            return false;
+        }
+    }
+
+    if(username == ''){
+        showAlertWarning('Vui lòng nhập username');return false;
+    }
+
+    if(password == ''){
+        showAlertWarning('Vui lòng nhập mật khẩu');return false;
+    }
+
+    if (!isOldBrowser()) {
+        try {
+            // console.log(password);
+            password = __doEncrypt2(password);
+            // console.log('password>>>>>', password);
+
+            form.find('input[name="password"]').val(password);
+        } catch (error) {
+            form.find('input[name="password"]').val('');
+            showAlertWarning('Mật khẩu không hợp lệ, vui lòng thử lại!', 'Thông báo');
+            return false;
+        }
+    }
+
+    var paramUrl = parse_url(document.URL);
+    var appId = '';
+    if (typeof paramUrl['app_id'] != 'undefined') {
+        appId = paramUrl['app_id'];
+    }
+
+    loginUser(username, password, redirect_url, token, task, confirmTerm, isBrowser, appId, csrf, widgetId)
+        .done(function(response) {
+            hide_loading();
+            syncAjaxCsrf(response);
+
+            if (response.status != 1) {
+                form.find('input[name="password"]').val('');
+                if (typeof regen_captcha == 'function') { regen_captcha(); }
+                showAlertWarning(response.mess, 'Thông báo');
+                return false;
+            }
+            showAlertSuccess(response.mess, 'Thông báo');
+            redirect_top(response.data.redirect_url);
+        });
+
+    return false;
+}
+
+function isSubpageFormValid(form, thiss) {
+    var username = form.find('input[name="username"]').val();
+    var password = form.find('input[name="password"]').val();
+    var task = form.find('input[name="task"]').val();
+    var token = form.find('input[name="g-recaptcha-response"]').val();
+    var csrf = form.find('input[name="csrf"]').val();
+    var widgetId = form.find('input[name="widget_id"]').val();
+    var redirect_url = get_redirect_url();
+    var redirect_url_auth_subpage = form.find('input[name="redirect_url"]').val();
+
+    if (redirect_url_auth_subpage !== undefined) {
+        redirect_url = redirect_url_auth_subpage;
+    }
+
+    var termServiceIsOn = form.find('input[name="termServiceIsOn"]').val();
+    var confirmTerm = false;
+    if (!isUndefined(termServiceIsOn) && termServiceIsOn) {
+        confirmTerm = form.find('input[name="confirmTerm"]').prop('checked');
+        if (confirmTerm === false) {
+            warning('Vui lòng đồng ý với các điều khoản của chúng tôi!', 'Thông báo');
+            return false;
+        }
+    }
+
+    // Detect trình duyệt 37abc
+    if (navigator.userAgent.indexOf("37abc") != -1) {
+        var username = thiss.querySelector('input[name="username"]').value;
+        var password = thiss.querySelector('input[name="password"]').value;
+        if (username == '' && password == '') {
+            warning('Có lỗi xảy ra, vui lòng bấm F5 để tải lại trang!', 'Thông báo');
+            return false;
+        }
+    }
+
+    if(username == ''){
+        warning('Vui lòng nhập username');return false;
+    }
+
+    if(password == ''){
+        warning('Vui lòng nhập mật khẩu');return false;
+    }
+
+    if (!isOldBrowser()) {
+        try {
+            password = __doEncrypt2(password);
+            form.find('input[name="password"]').val(password);
+        } catch (error) {
+            form.find('input[name="password"]').val('');
+            warning('Mật khẩu không hợp lệ, vui lòng thử lại!', 'Thông báo');
+            return false;
+        }
+    }
+
+    var paramUrl = parse_url(document.URL);
+    var appId = '';
+    if (typeof paramUrl['app_id'] != 'undefined') {
+        appId = paramUrl['app_id'];
+    }
+
+    loginUser(username, password, redirect_url, token, task, confirmTerm, isBrowser, appId, csrf, widgetId)
+        .done(function(response) {
+            hide_loading();
+            syncAjaxCsrf(response);
+
+            if (response.status != 1) {
+                form.find('input[name="password"]').val('');
+                if (typeof regen_captcha == 'function') { regen_captcha(); }
+                warning(response.mess, 'Thông báo');
+                return false;
+            }
+
+            if (typeof(APP_ID_MOBILE) != 'undefined' && appId && appId == APP_ID_MOBILE && window.opener) {
+                var postMessageData = {
+                    'action': 'login_success',
+                    'redirect_url': response.data.redirect_url,
+                    'redirect_top': response.data.redirect_top,
+                };
+                window.opener.postMessage(JSON.stringify(postMessageData), DOMAIN_POST_MESSAGE);
+                window.close();
+                return;
+            }
+            process_login_response(response);
+        });
+
+    return false;
+}
+
+function isWidgetFormValidRegister(form, thiss) {
+    var username = form.find('input[name="username"]').val();
+    var password1 = form.find('input[name="password1"]').val();
+    var password2 = form.find('input[name="password2"]').val();
+    var token = form.find('input[name="g-recaptcha-response"]').val();
+    var redirect_url = get_redirect_url();
+
+    var termServiceIsOn = form.find('input[name="termServiceIsOn"]').val();
+    var confirmTerm = false;
+    if (!isUndefined(termServiceIsOn) && termServiceIsOn) {
+        confirmTerm = form.find('input[name="confirmTerm"]').prop('checked');
+        if (confirmTerm === false) {
+            showAlertWarning('Vui lòng đồng ý với các điều khoản của chúng tôi!', 'Thông báo');
+            return false;
+        }
+    }
+
+    if(username == ''){
+        showAlertWarning('Vui lòng nhập username');return false;
+    }
+
+    if(password1 == ''){
+        showAlertWarning('Vui lòng nhập mật khẩu');return false;
+    }
+
+    if(password2 == ''){
+        showAlertWarning('Vui lòng nhập lại mật khẩu');return false;
+    }
+
+    if(password1 != password2){
+        showAlertWarning('Mật khẩu nhập lại không khớp');return false;
+    }
+
+    if (!isOldBrowser()) {
+        try {
+            password1 = __doEncrypt2(password1);
+            password2 = __doEncrypt2(password2);
+            form.find('input[name="password1"]').val(password1);
+            form.find('input[name="password2"]').val(password2);
+        } catch (error) {
+            form.find('input[name="password1"]').val('');
+            form.find('input[name="password2"]').val('');
+            showAlertWarning('Mật khẩu không hợp lệ, vui lòng thử lại!', 'Thông báo');
+            return false;
+        }
+    }
+
+    var paramUrl = parse_url(document.URL);
+    var appId = '';
+    if (typeof paramUrl['app_id'] != 'undefined') {
+        appId = paramUrl['app_id'];
+    }
+
+    var csrf = form.find('input[name="csrf"]').val();
+
+    registerUser(username, password1, password2, redirect_url, token, confirmTerm, isBrowser, appId, csrf)
+        .done(function(response) {
+            hide_loading();
+            syncAjaxCsrf(response);
+
+            if (response.status != 1) {
+                form.find('input[name="password1"]').val('');
+                form.find('input[name="password2"]').val('');
+                if (typeof regen_captcha == 'function') { regen_captcha(); }
+                showAlertWarning(response.mess, 'Thông báo');
+                return false;
+            }
+            showAlertSuccess(response.mess, 'Thông báo');
+            redirect_top(response.data.redirect_url);
+        });
+
+    return false;
+}
+
+function isSubpageFormValidRegister(form, thiss) {
+    var username = form.find('input[name="username"]').val();
+    var password1 = form.find('input[name="password1"]').val();
+    var password2 = form.find('input[name="password2"]').val();
+    var token = form.find('input[name="g-recaptcha-response"]').val();
+    var csrf = form.find('input[name="csrf"]').val();
+    var redirect_url = get_redirect_url();
+    var redirect_url_auth_subpage = form.find('input[name="redirect_url"]').val();
+
+    if (redirect_url_auth_subpage != undefined) {
+        redirect_url = redirect_url_auth_subpage;
+    }
+
+    var termServiceIsOn = form.find('input[name="termServiceIsOn"]').val();
+    var confirmTerm = false;
+    if (!isUndefined(termServiceIsOn) && termServiceIsOn) {
+        confirmTerm = form.find('input[name="confirmTerm"]').prop('checked');
+        if (confirmTerm === false) {
+            warning('Vui lòng đồng ý với các điều khoản của chúng tôi!', 'Thông báo');
+            return false;
+        }
+    }
+
+    if(username == ''){
+        warning('Vui lòng nhập username');return false;
+    }
+
+    if(password1 == ''){
+        warning('Vui lòng nhập mật khẩu');return false;
+    }
+
+    if(password2 == ''){
+        warning('Vui lòng nhập lại mật khẩu');return false;
+    }
+
+    if(password1 != password2){
+        warning('Mật khẩu nhập lại không khớp');return false;
+    }
+
+    if (!isOldBrowser()) {
+        try {
+            password1 = __doEncrypt2(password1);
+            password2 = __doEncrypt2(password2);
+            form.find('input[name="password1"]').val(password1);
+            form.find('input[name="password2"]').val(password2);
+        } catch (error) {
+            form.find('input[name="password1"]').val('');
+            form.find('input[name="password2"]').val('');
+            warning('Mật khẩu không hợp lệ, vui lòng thử lại!', 'Thông báo');
+            return false;
+        }
+    }
+
+    var paramUrl = parse_url(document.URL);
+    var appId = '';
+    if (typeof paramUrl['app_id'] != 'undefined') {
+        appId = paramUrl['app_id'];
+    }
+
+    registerUser(username, password1, password2, redirect_url, token, confirmTerm, isBrowser, appId, csrf)
+        .done(function(response) {
+            hide_loading();
+            syncAjaxCsrf(response);
+            if (response.status != 1) {
+                if (response.status == -3) {
+                    form.find('input[name="password1"]').val('');
+                    form.find('input[name="password2"]').val('');
+                }
+                if (typeof regen_captcha == 'function') { regen_captcha(); }
+                form.find('input[name="password1"]').val('');
+                form.find('input[name="password2"]').val('');
+                warning(response.mess, 'Thông báo');
+                return false;
+            }
+
+            if (typeof(APP_ID_MOBILE) != 'undefined' && appId && appId == APP_ID_MOBILE && window.opener) {
+                var postMessageData = {
+                    'action': 'login_success',
+                    'redirect_url': response.data.redirect_url,
+                    'redirect_top': response.data.redirect_top,
+                };
+                window.opener.postMessage(JSON.stringify(postMessageData), DOMAIN_POST_MESSAGE);
+                window.close();
+                return;
+            }
+
+            process_login_response(response);
+        });
+
+    return false;
+}
+
+function isSubpageFormValidRegisterFull(form, thiss) {
+    var username = form.find('input[name="username"]').val();
+    var password1 = form.find('input[name="password1"]').val();
+    var password2 = form.find('input[name="password2"]').val();
+    var email = form.find('input[name="email"]').val();
+    var fullname = form.find('input[name="fullname"]').val();
+    var sex = form.find('select[name="sex"]').val();
+    var birthday = form.find('input[name="birthday"]').val();
+    var phone = form.find('input[name="phone"]').val();
+    var token = form.find('input[name="g-recaptcha-response"]').val();
+    var csrf = form.find('input[name="csrf"]').val();
+    var redirect_url = get_redirect_url();
+    var redirect_url_auth_subpage = form.find('input[name="redirect_url"]').val();
+    var game = form.find('select[name="game"]').val();
+
+    if (redirect_url_auth_subpage != undefined) {
+        redirect_url = redirect_url_auth_subpage;
+    }
+
+    var termServiceIsOn = form.find('input[name="termServiceIsOn"]').val();
+    var confirmTerm = false;
+    if (!isUndefined(termServiceIsOn) && termServiceIsOn) {
+        confirmTerm = form.find('input[name="confirmTerm"]').prop('checked');
+        if (confirmTerm === false) {
+            warning('Vui lòng đồng ý với các điều khoản của chúng tôi!', 'Thông báo');
+            return false;
+        }
+    }
+
+    if(username == ''){
+        warning('Vui lòng nhập username');return false;
+    }
+
+    if(password1 == ''){
+        warning('Vui lòng nhập mật khẩu');return false;
+    }
+
+    if(password2 == ''){
+        warning('Vui lòng nhập lại mật khẩu');return false;
+    }
+
+    if(password1 != password2){
+        warning('Mật khẩu nhập lại không khớp');return false;
+    }
+
+    // if(email == ''){
+    //     warning('Vui lòng nhập email');return false;
+    // }
+
+    if(fullname == ''){
+        warning('Vui lòng nhập họ và tên');return false;
+    }
+
+    if(phone == ''){
+        warning('Vui lòng nhập số điện thoại');return false;
+    }
+
+    if (game == 0) {
+        warning('Vui lòng chọn game');return false;
+    }
+
+    if (!isOldBrowser()) {
+        try {
+            password1 = __doEncrypt2(password1);
+            password2 = __doEncrypt2(password2);
+            form.find('input[name="password1"]').val(password1);
+            form.find('input[name="password2"]').val(password2);
+        } catch (error) {
+            form.find('input[name="password1"]').val('');
+            form.find('input[name="password2"]').val('');
+            warning('Mật khẩu không hợp lệ, vui lòng thử lại!', 'Thông báo');
+            return false;
+        }
+    }
+
+    var registerData = {
+        "username": username,
+        "password1": password1,
+        "password2": password2,
+        "email": email,
+        "fullname": fullname,
+        "sex": sex,
+        "birthday": birthday,
+        "phone": phone,
+        "redirect_url": redirect_url,
+        "redirect_top": get_redirect_top(),
+        "g-recaptcha-response": token,
+        "csrf": csrf,
+        "confirmTerm": confirmTerm,
+        "browser": isBrowser,
+        "game": game
+    };
+
+    registerUserFull(registerData).done(function(response) {
+        hide_loading();
+        syncAjaxCsrf(response);
+        if (response.status != 1) {
+            form.find('input[name="password1"]').val('');
+            form.find('input[name="password2"]').val('');
+            if (typeof regen_captcha == 'function') { regen_captcha(); }
+        }
+
+        if (SMS_STATUS == "1") {
+            processResponseVerifySMS(form, response, 'callbackFunctionAddPhone');
+        } else {
+            if (EMAIL_STATUS == "1") {
+                if (typeof response.data.code != 'undefined') {
+                    redirect_top(response.data.redirect_url);
+                    return;
+                }
+
+                if (response.status == 1) {
+                    confirmAndRedirect('/auth/email-verify', response.mess, "Thông báo");
+                } else {
+                    error(response.mess);
+                    return false
+                }
+            } else {
+                process_login_response(response);
+            }
+        }
+
+        return false;
+    });
+    return false;
+}
+
+function isWidgetFormValidRegisterFull(form, thiss) {
+    var username = form.find('input[name="username"]').val();
+    var password1 = form.find('input[name="password1"]').val();
+    var password2 = form.find('input[name="password2"]').val();
+    var email = form.find('input[name="email"]').val();
+    var fullname = form.find('input[name="fullname"]').val();
+    var sex = form.find('select[name="sex"]').val();
+    var birthday = form.find('input[name="birthday"]').val();
+    var phone = form.find('input[name="phone"]').val();
+    var token = form.find('input[name="g-recaptcha-response"]').val();
+    var csrf = form.find('input[name="csrf"]').val();
+    var redirect_url = get_redirect_url();
+    var redirect_url_auth_subpage = form.find('input[name="redirect_url"]').val();
+    var game = form.find('select[name="game"]').val();
+
+    if (redirect_url_auth_subpage != undefined) {
+        redirect_url = redirect_url_auth_subpage;
+    }
+
+    var termServiceIsOn = form.find('input[name="termServiceIsOn"]').val();
+    var confirmTerm = false;
+    if (!isUndefined(termServiceIsOn) && termServiceIsOn) {
+        confirmTerm = form.find('input[name="confirmTerm"]').prop('checked');
+        if (confirmTerm === false) {
+            showAlertWarning('Vui lòng đồng ý với các điều khoản của chúng tôi!', 'Thông báo');
+            return false;
+        }
+    }
+
+    if(username == ''){
+        showAlertWarning('Vui lòng nhập username');return false;
+    }
+
+    if(password1 == ''){
+        showAlertWarning('Vui lòng nhập mật khẩu');return false;
+    }
+
+    if(password2 == ''){
+        showAlertWarning('Vui lòng nhập lại mật khẩu');return false;
+    }
+
+    if (birthday == '') {
+        showAlertWarning('Vui lòng nhập ngày sinh');return false;
+    }
+
+    if(password1 != password2){
+        showAlertWarning('Mật khẩu nhập lại không khớp');return false;
+    }
+
+    // if(email == ''){
+    //     showAlertWarning('Vui lòng nhập email');return false;
+    // }
+
+    if(fullname == ''){
+        showAlertWarning('Vui lòng nhập họ và tên');return false;
+    }
+
+    if(phone == ''){
+        showAlertWarning('Vui lòng nhập số điện thoại');return false;
+    }
+
+    if (!isOldBrowser()) {
+        try {
+            password1 = __doEncrypt2(password1);
+            password2 = __doEncrypt2(password2);
+            form.find('input[name="password1"]').val(password1);
+            form.find('input[name="password2"]').val(password2);
+        } catch (error) {
+            form.find('input[name="password1"]').val('');
+            form.find('input[name="password2"]').val('');
+            showAlertWarning('Mật khẩu không hợp lệ, vui lòng thử lại!', 'Thông báo');
+            return false;
+        }
+    }
+
+    var registerData = {
+        "username": username,
+        "password1": password1,
+        "password2": password2,
+        "email": email,
+        "fullname": fullname,
+        "sex": sex,
+        "birthday": birthday,
+        "phone": phone,
+        "redirect_url": redirect_url,
+        "redirect_top": get_redirect_top(),
+        "g-recaptcha-response": token,
+        "csrf": csrf,
+        "confirmTerm": confirmTerm,
+        "browser": isBrowser,
+        "game": game
+    };
+
+    registerUserFull(registerData).done(function(response) {
+        hide_loading();
+        syncAjaxCsrf(response);
+        if (response.status != 1) {
+            form.find('input[name="password1"]').val('');
+            form.find('input[name="password2"]').val('');
+            if (typeof regen_captcha == 'function') { regen_captcha(); }
+            showAlertWarning(response.mess, 'Thông báo');
+            return false;
+        }
+
+        if (SMS_STATUS == "1") {
+            if(typeof response.data.redirect != 'undefined'){
+                redirect(response.data.redirect);
+                return;
+            }
+            if(typeof response.status == 'undefined' || response.status != 1 || typeof response.data.code == 'undefined' || !response.data.code){
+                showAlertSuccess(typeof response.mess != 'undefined' && response.mess ? response.mess : 'Hệ thống bận. Vui lòng thử lại hoặc liên hệ admin để được hỗ trợ!');
+                return;
+            }
+
+            form.html(getContentVerifySMSForWidget(response.data.cmd, response.data.code));
+            redirectInFormRegisterFull = response.data.redirect_url;
+            runWebsocket(response.data.username, response.data.type, response.data.code, response.data.time, response.data.sign, response.data.phone, response.data.game, 'callbackFunctionAddPhoneRedirectTop');
+        } else {
+            showAlertSuccess(response.mess, 'Thông báo');
+            redirect_top(response.data.redirect_url);
+        }
+    });
+
+    return false;
+}
+
+function isSubpageFormAddMobileSocial(form, thiss) {
+    var phone = form.find('input[name="phone"]').val();
+    var token = form.find('input[name="g-recaptcha-response"]').val();
+    var csrf = form.find('input[name="csrf"]').val();
+    var redirect_url = get_redirect_url();
+
+    if(phone == ''){
+        warning('Vui lòng nhập số điện thoại');return false;
+    }
+
+    $.ajax({
+        method: "POST",
+        url: "/do-add-mobile-social",
+        data: {
+            "phone": phone,
+            "redirect_url": redirect_url,
+            "redirect_top": get_redirect_top(),
+            "g-recaptcha-response": token,
+            "csrf": csrf,
+            "browser": isBrowser,
+        },
+        beforeSend: function() {
+            show_loading();
+        }
+    })
+    .done(function(response) {
+        hide_loading();
+        syncAjaxCsrf(response);
+        if (response.status != 1) {
+            if (typeof regen_captcha == 'function') { regen_captcha(); }
+            warning(response.mess, 'Thông báo');
+            return false;
+        }
+        showAlertSuccess(response.mess, 'Thông báo');
+        redirect_top(response.data.redirect_url);
+    });
+
+    return false;
+}
+
+function isWidgetFormAddMobileSocial(form, thiss) {
+    var phone = form.find('input[name="phone"]').val();
+    var token = form.find('input[name="g-recaptcha-response"]').val();
+    var csrf = form.find('input[name="csrf"]').val();
+    var redirect_url = get_redirect_url();
+
+    if(phone == ''){
+        showAlertWarning('Vui lòng nhập số điện thoại');return false;
+    }
+
+    addMobileSocial({
+        "phone": phone,
+        "redirect_url": redirect_url,
+        "redirect_top": get_redirect_top(),
+        "g-recaptcha-response": token,
+        "csrf": csrf,
+        "browser": isBrowser,
+    })
+    .done(function(response) {
+        hide_loading();
+        syncAjaxCsrf(response);
+        if (response.status != 1) {
+            if (typeof regen_captcha == 'function') { regen_captcha(); }
+            showAlertWarning(response.mess, 'Thông báo');
+            return false;
+        }
+
+        if (SMS_STATUS == "1") {
+            if(typeof response.data.redirect != 'undefined'){
+                redirect(response.data.redirect);
+                return;
+            }
+            if(typeof response.status == 'undefined' || response.status != 1 || typeof response.data.code == 'undefined' || !response.data.code){
+                showAlertSuccess(typeof response.mess != 'undefined' && response.mess ? response.mess : 'Hệ thống bận. Vui lòng thử lại hoặc liên hệ admin để được hỗ trợ!');
+                return;
+            }
+
+            form.html(getContentVerifySMSForWidget(response.data.cmd, response.data.code));
+            redirectInFormRegisterFull = response.data.redirect_url;
+            runWebsocket(response.data.username, response.data.type, response.data.code, response.data.time, response.data.sign, response.data.phone, response.data.game, 'callbackFunctionAddPhoneRedirectTop');
+        } else {
+            showAlertSuccess(response.mess, 'Thông báo');
+            redirect_top(response.data.redirect_url);
+        }
+    });
+
+    return false;
+}
+
+function isUndefined(value) {
+    return value === undefined;
+}
+
+var checkUserAgentZalo = navigator.userAgent || navigator.vendor || window.opera;
+if (typeof $ !== 'undefined') {
+    if (checkUserAgentZalo.indexOf('Zalo') > -1 || isMobile) {
+        $('.btn-login-with-gg').removeClass('d-none');
+        $('.g_id_signin').parent().addClass('d-none');
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    // remember pwd client naruto
+    document.querySelectorAll('.text-remember').forEach(element => {
+        element.addEventListener('click', function(e) {
+            const input = this.parentElement.querySelector('input[name="remember"]');
+            console.log('input', input);
+            this.classList.toggle('active');
+
+            if (this.classList.contains('active')) {
+                if (input) input.value = 0;
+            } else {
+                if (input) input.value = 1;
+            }
+
+        });
+    });
+});
+
+$(document).ready(function(){
+    check_user_state_not_exist();
+    check_user_state();
+    check_user_state_newsite();
+
+    active_menu();
+
+    if (typeof $ !== 'undefined' && $.fn && $.fn.datepicker) {
+        $.fn.datepicker.dates['vi'] = {
+            days: ["CN", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7"],
+            daysShort: ["CN", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7"],
+            daysMin: ["CN", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7"],
+            months: ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"],
+            monthsShort: ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"],
+
+            today: "Today",
+            clear: "Clear",
+            format: "yyyy-mm-dd",
+            titleFormat: "MM yyyy", /* Leverages same syntax as 'format' */
+            weekStart: 0
+        };
+    }
+
+    $('.form-auth select').select2();
+
+    $('#play568_top_bar_small, #play568_top_bar_big')
+        .on('mouseenter', function() {
+            $('#play568_top_bar_big').show();
+        })
+        .on('mouseleave', function() {
+            $('#play568_top_bar_big').hide();
+        } );
+
+    $('.box-server select[name="server"]').on('change', function(){
+        var gameId = $(this).val();
+        var parents = $(this).parents('.box-server');
+        parents.find('.server-game').addClass('hide');
+        parents.find('.server-game-'+gameId).removeClass('hide');
+    })
+
+    if($('.slick-slider').length){
+        $('.slick-slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear'
+        });
+    }
+
+    if(typeof Fancybox == 'function'){
+        Fancybox.bind("[data-fancybox]", {
+            // Your custom options
+        });
+    }
+
+    $('.fillter-server-game').on('change', function(){
+        var slug = $(this).val();
+        var url = $(this).attr('data-url');
+        if(slug == 'all'){
+            redirect_top(url);
+            return;
+        }
+        redirect_top(url+slug);
+    });
+
+    $('.filter-game').on('change', 'input[type="checkbox"]', function(){
+        var filterGameSelector = $(this).parents('.filter-game');
+        var url = filterGameSelector.attr('data-url');
+        var urlfilter = filterGameSelector.attr('data-urlfilter');
+
+        if(!url || !urlfilter) return;
+        if($(this).prop('checked') == false || $(this).val() == 'all'){
+            redirect_top(url);
+            return;
+        }
+        redirect_top(urlfilter+$(this).val())
+
+    });
+
+    if($('.box-mini-game-detail').length){
+        var gameid = $('.box-mini-game-detail').data('data-gameid');
+        $.ajax({
+            method: "POST",
+            url: "/minigame/play/"+gameid,
+            data: { ac: "increaseView" }
+        })
+        .done(function( response ) {
+        });
+    }
+
+    $('.form-login').on('submit', function(e){
+        e.preventDefault();
+        var form = $(this);
+        if (!preventDuplicateSubmit(form)) {
+            return false;
+        }
+
+        var isWidgetForm = form.find('input[name=isWidgetForm]').val();
+
+        if (isUndefined(isWidgetForm)) {
+            isSubpageFormValid(form, this);
+        } else {
+            isWidgetFormValid(form, this);
+        }
+        return false;
+    });
+
+    $('.form-register').on('submit', function(e){
+        e.preventDefault();
+        var form = $(this);
+        if (!preventDuplicateSubmit(form)) {
+            return false;
+        }
+
+        var isWidgetForm = form.find('input[name=isWidgetForm]').val();
+
+        if (isUndefined(isWidgetForm)) {
+            isSubpageFormValidRegister(form, this);
+        } else {
+            isWidgetFormValidRegister(form, this);
+        }
+        return false;
+    });
+
+    $('.form-register-full').on('submit', function(e){
+        e.preventDefault();
+        var form = $(this);
+        if (!preventDuplicateSubmit(form)) {
+            return false;
+        }
+
+        var isWidgetForm = form.find('input[name=isWidgetForm]').val();
+
+        if (isUndefined(isWidgetForm)) {
+            isSubpageFormValidRegisterFull(form, this);
+        } else {
+            isWidgetFormValidRegisterFull(form, this);
+        }
+        return false;
+    });
+
+    $('.form-confirm-email').on('submit', function(){
+        var form = $(this);
+        var code = form.find('input[name="code"]').val();
+        var token = form.find('input[name="g-recaptcha-response"]').val();
+        var csrf = form.find('input[name="csrf"]').val();
+        show_loading();
+
+        $.ajax({
+            method: "POST",
+            url: "/auth/email-verify",
+            data: {
+                "code": code,
+                "g-recaptcha-response": token,
+                "csrf": csrf
+            },
+            success: function (response) {
+                hide_loading();
+                syncAjaxCsrf(response);
+                if (response.status != 1) {
+                    if (typeof regen_captcha == 'function') { regen_captcha(); }
+                    error(response.mess);
+                    return false;
+                }
+                confirmAndRedirect('/', response.mess, "Thông báo");
+                return false;
+            },
+            error: function (response) {
+                console.log('error-------');
+                console.log(response);
+            }
+        });
+        return false;
+    });
+
+    $('.form-forgot-password').on('submit', function(){
+        var form = $(this);
+        var username = form.find('input[name="username"]').val();
+        var email = form.find('input[name="email"]').val();
+        var token = form.find('input[name="g-recaptcha-response"]').val();
+        var csrf = form.find('input[name="csrf"]').val();
+        show_loading();
+
+        $.ajax({
+            method: "POST",
+            url: "/auth/quen-mat-khau",
+            data: {
+                "username": username,
+                email: email,
+                "g-recaptcha-response": token,
+                csrf: csrf
+            },
+            success: function (response) {
+                hide_loading();
+                syncAjaxCsrf(response);
+
+                if (response.status != 1) {
+                    if (typeof regen_captcha == 'function') { regen_captcha(); }
+                    error(response.mess);
+                    return false;
+                }
+                confirmAndRedirect('/auth/dat-lai-mat-khau', response.mess, "Thông báo");
+                return false;
+            },
+            error: function (response) {
+                console.log('error-------');
+                console.log(response);
+            }
+        });
+        return false;
+    });
+
+    $('.form-reset-password').on('submit', function(){
+        var form = $(this);
+        var code = form.find('input[name="code"]').val();
+        var password = form.find('input[name="password"]').val();
+        var password2 = form.find('input[name="password2"]').val();
+        var csrf = form.find('input[name="csrf"]').val();
+        show_loading();
+
+        $.ajax({
+            method: "POST",
+            url: "/auth/dat-lai-mat-khau",
+            data: {
+                "code": code,
+                password: password,
+                password2: password2,
+                csrf: csrf
+            },
+            success: function (response) {
+                hide_loading();
+                syncAjaxCsrf(response);
+                if (response.status != 1) {
+                    if (typeof regen_captcha == 'function') { regen_captcha(); }
+                    error(response.mess);
+                    return false;
+                }
+                confirmAndRedirect('/auth/dang-nhap', response.mess, "Thông báo");
+                return false;
+            },
+            error: function (response) {
+                console.log('error-------');
+                console.log(response);
+            }
+        });
+        return false;
+    });
+
+    $('.form-change-password').on('submit', function(){
+        var form = $(this);
+        var oldpassword = form.find('input[name="oldpassword"]').val();
+        var password = form.find('input[name="password"]').val();
+        var password2 = form.find('input[name="password2"]').val();
+        var csrf = form.find('input[name="csrf"]').val();
+        show_loading();
+
+        $.ajax({
+            method: "POST",
+            url: "/auth/thay-doi-mat-khau",
+            data: {
+                "oldpassword": oldpassword,
+                password: password,
+                password2: password2,
+                csrf: csrf
+            },
+            success: function (response) {
+                hide_loading();
+                syncAjaxCsrf(response);
+                if (response.status != 1) {
+                    if (typeof regen_captcha == 'function') { regen_captcha(); }
+                    error(response.mess);
+                    return false;
+                }
+                confirmAndRedirect('/auth/dang-nhap', response.mess, "Thông báo");
+                return false;
+            },
+            error: function (response) {
+                console.log('error-------');
+                console.log(response);
+            }
+        });
+        return false;
+    });
+
+    $(document).on('submit', '.form-add-mobile-social', function(e){
+        e.preventDefault();
+        var form = $(this);
+        var isWidgetForm = form.find('input[name=isWidgetForm]').val();
+
+        if (isUndefined(isWidgetForm)) {
+            isSubpageFormAddMobileSocial(form, this);
+        } else {
+            isWidgetFormAddMobileSocial(form, this);
+        }
+
+        return false;
+    });
+
+     $("#appleid-signin").click(function (e) {
+        e.preventDefault();
+
+        if (typeof AppleID === "undefined") {
+            console.log("Apple ID SDK not loaded");
+            warning("Không thể kết nối đến Apple", "");
+            hide_loading();
+            return false;
+        }
+
+        try {
+            show_loading();
+            // Trigger Apple Sign In
+            AppleID.auth.signIn();
+        } catch (error) {
+            console.error("Apple Sign In error:", error);
+            warning("Không thể đăng nhập bằng Apple", "");
+            hide_loading();
+        }
+    });
+
+    $(".btn-login-fb").click(function(e) {
+        if (typeof FB == "undefined") {
+            return false;
+        }
+
+        var $btn = $(this);
+        var form = $btn.parents('form');
+
+        var redirectUrl = $btn.data('redirect-url') || get_redirect_url();
+        var appId = $btn.data('appid') || '';
+
+        var data = {
+            redirect_url: redirectUrl,
+            redirect_top: get_redirect_top(),
+        };
+
+        if (appId) {
+            data.app_id = appId;
+            console.log('data.app_id--',data.app_id);
+        }
+
+        var fbAppId = $btn.data('fbappid');
+        var webapp = $btn.data('webapp');
+
+        if (isMobile && appId === '3qgoituongdi') {
+            e.preventDefault();
+
+            var urlFBCallback = 'https://568play.vn/auth/facebook-callback-3qgoituongdi';
+            if (webapp && webapp != '') {
+                urlFBCallback = 'https://568play.vn/auth/facebook-callback';
+            } else {
+                urlFBCallback = 'https://568play.vn/auth/facebook-callback-3qgoituongdi';
+            }
+
+            var fbDomain = "https://" + "m." + "facebook" + ".com";
+            var fbApiPath = "/v19.0/dialog/oauth?";
+
+            var fbLoginUrl = fbDomain + fbApiPath +
+                "client_id=" + BigInt(fbAppId) +
+                "&redirect_uri=" + encodeURIComponent(urlFBCallback) +
+                "&scope=email" +
+                "&response_type=code";
+
+            // Chuyển hướng toàn trang sang Facebook
+            if ($(window).width() <= 1400) {
+                window.top.location.href = fbLoginUrl;
+                return false;
+            }
+            window.location.href = fbLoginUrl;
+            return false;
+        }
+
+        FB.login( function(response) {
+            if (response.status != 'connected') {
+                warning('Không kết nối được đến tài khoản Facebook', '');
+                hide_loading();
+                return;
+            }
+
+            show_loading();
+            FB.api('/me', function(responses) {
+                var social_access_token = FB.getAuthResponse()['accessToken'];
+                // console.log('social_access_token---', social_access_token);
+                // return false;
+
+                if (typeof social_access_token == 'undefined' || !social_access_token) {
+                    console.log('Không kết nối được đến tài khoản Facebook---', social_access_token);
+                    warning('Không kết nối được đến tài khoản Facebook', '');
+                    hide_loading();
+                    return;
+                }
+                warning('Đang xác thực thông tin từ Facebook', '');
+
+                // var form = $(this).parents('form');
+                var token = form.find('input[name="g-recaptcha-response"]').val();
+
+                data.social_access_token = social_access_token;
+                data.token = token;
+
+                $.ajax({
+                    method: "POST",
+                    url: "/do-login-fb",
+                    data: data
+                }).done(function( response ) {
+                    // console.log('response---', response);
+                    // return false;
+                    if (typeof(APP_ID_MOBILE) != 'undefined' && appId && appId == APP_ID_MOBILE && window.opener) {
+                        var postMessageData = {
+                            'action': 'login_success',
+                            'redirect_url': response.data.redirect_url,
+                            'redirect_top': response.data.redirect_top,
+                        };
+                        window.opener.postMessage(JSON.stringify(postMessageData), DOMAIN_POST_MESSAGE);
+                        window.close();
+                        return;
+                    }
+                    process_login_response(response);
+                });
+
+            });
+
+        }, {scope: 'email'});
+    });
+
+    $('.btn-login-gg').click(function() {
+        var options = {
+            client_id: GOOGLE_CLIENT_ID,
+            scope: 'https://www.googleapis.com/auth/userinfo.email',
+            immediate: false
+        };
+
+        show_loading();
+        gapi.auth.authorize(options, function(authResult) {
+            var social_access_token = authResult.access_token;
+
+            if (typeof social_access_token == 'undefined' || !social_access_token) {
+                warning('Không kết nối được đến tài khoản Google', '');
+                hide_loading();
+                return;
+            }
+
+            var form = $(this).parents('form');
+            var token = form.find('input[name="g-recaptcha-response"]').val();
+
+            $.ajax({
+                method: "POST",
+                url: "/do-login-gg",
+                data: {social_access_token: social_access_token, "redirect_url": get_redirect_url(), "redirect_top": get_redirect_top(), "g-recaptcha-response": token }
+            }).done(function( response ) {
+                if (typeof(APP_ID_MOBILE) != 'undefined' && appId && appId == APP_ID_MOBILE && window.opener) {
+                    var postMessageData = {
+                        'action': 'login_success',
+                        'redirect_url': response.data.redirect_url,
+                        'redirect_top': response.data.redirect_top,
+                    };
+                    window.opener.postMessage(JSON.stringify(postMessageData), DOMAIN_POST_MESSAGE);
+                    window.close();
+                    return;
+                }
+                process_login_response(response);
+            });
+
+        });
+    });
+
+    if($('.main-game').length){
+        $('.header-2').hide();
+        var header_height = 10+ $('.header-1').height();
+        $('.main-game').css('height', 'calc(100% - '+header_height+'px');
+
+        if($('#game-iframe').length){
+            show_loading();
+            $.ajax({
+                method: "POST",
+                url: "/get-user-hash",
+                data: { "redirect_url": document.URL, "redirect_top": 1 }
+            }).done(function( response ) {
+                hide_loading();
+                if(response.status != 1){
+                    if(typeof response.data.redirect_url != 'undefined'){
+                        process_redirect_response(response.data);
+                        return;
+                    }
+                    warning('Hệ thống bận. Vui lòng liên hệ quản trị viên để được hỗ trợ!', '');
+                    return;
+                }
+
+                var url = url_server_list+'?';
+                if(server_id){
+                    url += 'server='+server_id+'&';
+                }
+                if(typeof response.data.user_hash_data != 'undefined' && response.data.user_hash_data){
+                    url += 'data='+response.data.user_hash_data+'&';
+                }
+
+                url += '#' + encodeURIComponent(document.location.href);
+
+                $('#game-iframe').attr('src', url);
+            });
+        }
+    }
+
+
+
+    var current_date = new Date();
+    var last_day = new Date(current_date.getFullYear()-18, current_date.getMonth()+1, current_date.getDate());
+
+    if (typeof $ !== 'undefined' && $.fn && $.fn.datepicker) {
+        $.fn.datepicker.dates['vi'] = {
+            days: ["Chủ nhật", "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy"],
+            daysShort: ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
+            daysMin: ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
+            months: ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"],
+            monthsShort: ["Th1", "Th2", "Th3", "Th4", "Th5", "Th6", "Th7", "Th8", "Th9", "Th10", "Th11", "Th12"],
+            today: "Hôm nay",
+            clear: "Xóa",
+            format: "dd-mm-yyyy",
+            titleFormat: "MM yyyy",
+            weekStart: 1
+        };
+    }
+
+    $('.datepicker-birthday').datepicker({
+        format: "yyyy-mm-dd",
+        endDate: format_date(new Date()),
+        autoclose: true,
+        language: 'vi'
+    });
+
+    $('.datepicker-birthday-en').datepicker({
+        format: "dd-mm-yyyy",
+        autoclose: true,
+        language: 'vi',
+        todayHighlight: true,
+        todayBtn: true,
+        clearBtn: true,
+    });
+
+    $('.datepicker-birthday-en').datepicker('setDate', '01-01-1995');
+
+    $('.datepicker-iddate').datepicker({
+        format: "yyyy-mm-dd",
+        autoclose: true
+    });
+
+    // page checkin
+    if($('.checkin-daily').length){
+        get_check_in('');
+
+        $('.get-history-checkin').change(function(){
+            var month = $(this).val();
+            get_check_in(month);
+        });
+
+        $('.btn-checkin').click(function(){
+            var form = $(this).parents('form');
+            var token = form.find('input[name="g-recaptcha-response"]').val();
+            show_loading();
+            $.ajax({
+                method: "POST",
+                url: "/diem-danh",
+                data: { "g-recaptcha-response": token }
+            }).done(function( response ) {
+                hide_loading();
+                regen_captcha();
+                if(response.status == 1){
+                    success(response.mess, '');
+                }else{
+                    warning(response.mess, '');
+                }
+            });
+            return false;
+        });
+    }
+
+    $('.form-register #rUsername').addClass('username');
+    $('.form-register #rPassword').addClass('password');
+    $('.form-register #rVerifyPassword').addClass('password');
+    $( "#submitFormRegister" ).before($( "#g-recaptcha" ));
+
+    $(function(){$('.displayNoneTemp').show();});
+
+    // $('.text-remember').click(function(e){
+    //     if($(this).hasClass('active')){
+    //         $(this).parent().find('input[name="remember"]').val(0);
+    //     }else{
+    //         $(this).parent().find('input[name="remember"]').val(1);
+    //     }
+    //     $(this).toggleClass('active');
+    // });
+
+    $('.btn-clear').click(function(e){
+        $(this).parents('.clear').find('input').val('');
+        $(this).parents('.clear').find('input').focus()
+        $(this).parents('.clear').find('input').trigger('click');
+    });
+
+    $('.btn-login-with-gg').click(function (e) {
+        e.preventDefault();
+        warning('Cần phiên bản trình duyệt mới nhất để đăng nhập bằng Google', '');
+    });
+
+    if (typeof AUTO_REDIRECT != 'undefined' && AUTO_REDIRECT && $.cookie('display_name') && get_user_login()) {
+        if (typeof(APP_ID_MOBILE) != 'undefined') {
+
+            var paramUrl = parse_url(document.URL);
+            var appId = '';
+            if (typeof paramUrl['app_id'] != 'undefined') {
+                appId = paramUrl['app_id'];
+            }
+
+            if (typeof appId != 'undefined' && ['phongthantdd', '3qgoituongdi'].includes(appId)) {
+                redirect('https://568play.vn/auth/redirecting?app_id=' + appId + '&redirect_url=' + get_redirect_url());
+                return;
+            }
+        }
+
+        if (get_redirect_top()) {
+            redirect_top(decodeURIComponent(get_redirect_url()));
+        } else if (get_redirect_url()) {
+            redirect(decodeURIComponent(get_redirect_url()));
+        }
+    }
+})
+
