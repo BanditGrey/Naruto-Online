@@ -4,6 +4,7 @@ import { PacketWriter } from '../network/PacketWriter.js';
 import { PacketReader } from '../network/PacketReader.js';
 import { Opcodes } from '../protocol/opcodes.js';
 import { NpcDialogModal } from './NpcDialogModal.js';
+import { TownHUD } from './TownHUD.js';
 
 export interface PlayerProfile {
   charId: number;
@@ -145,6 +146,7 @@ export class TownScene extends Container {
   private bgmIconTxt!: Text;
 
   // HUD Elements
+  private townHud!: TownHUD;
   private hpFill!: Graphics;
   private hpText!: Text;
   private silverText!: Text;
@@ -296,6 +298,7 @@ export class TownScene extends Container {
       this.bgmAudio.play().then(() => {
         this.isBgmPlaying = true;
         if (this.bgmIconTxt) this.bgmIconTxt.text = '🔊 BGM';
+        if (this.townHud) this.townHud.updateBgmState(true);
       }).catch(() => {
         // Bloqueio de autoplay do navegador até interação do usuário
       });
@@ -308,10 +311,12 @@ export class TownScene extends Container {
       this.bgmAudio.pause();
       this.isBgmPlaying = false;
       if (this.bgmIconTxt) this.bgmIconTxt.text = '🔇 MUDO';
+      if (this.townHud) this.townHud.updateBgmState(false);
     } else {
       this.bgmAudio.play().then(() => {
         this.isBgmPlaying = true;
         if (this.bgmIconTxt) this.bgmIconTxt.text = '🔊 BGM';
+        if (this.townHud) this.townHud.updateBgmState(true);
       }).catch(console.warn);
     }
   }
@@ -364,6 +369,7 @@ export class TownScene extends Container {
       this.roadMinY = 380; // Entrada de lojas / início da rua transitável
       this.roadMaxY = 635; // Extensão total até o limite inferior da tela
       if (this.mapTxt) this.mapTxt.text = '📍 Vila da Folha — Konoha (#23200001)';
+      if (this.townHud) this.townHud.updateCityName('Vila da Folha');
     } else {
       // Subúrbios Novatos: dimensões autênticas completas
       this.currentMapWidth = 2500;
@@ -371,6 +377,7 @@ export class TownScene extends Container {
       this.roadMinY = 375;
       this.roadMaxY = 620;
       if (this.mapTxt) this.mapTxt.text = '📍 Subúrbios de Konoha (#23100001)';
+      if (this.townHud) this.townHud.updateCityName('Subúrbios');
     }
 
     try {
@@ -954,6 +961,9 @@ export class TownScene extends Container {
     // 5. Câmera Parallax Autêntica de 3 Camadas
     let currentCamX = 0;
     if (this.localPlayer) {
+      if (this.townHud) {
+        this.townHud.updateCoordinates(this.localPlayer.container.x, this.localPlayer.container.y);
+      }
       const targetCamX = 625 - this.localPlayer.container.x;
       const clampedCamX = Math.max(-(this.currentMapWidth - 1250), Math.min(0, targetCamX));
       currentCamX = clampedCamX;
@@ -1321,134 +1331,43 @@ export class TownScene extends Container {
   }
 
   private createHUD(): void {
-    const topBar = new Graphics()
-      .roundRect(15, 12, 420, 75, 10)
-      .fill({ color: 0x0d1117, alpha: 0.88 })
-      .stroke({ color: 0x30363d, width: 2 });
-    this.hudContainer.addChild(topBar);
-
-    const profName = this.playerProfile.profession === 4 ? 'Taijutsu' : this.playerProfile.profession === 1 ? 'Ninjutsu' : 'Genjutsu';
-    const nameTxt = new Text({
-      text: `${this.playerProfile.name}  [${profName}]`,
-      style: new TextStyle({ fontSize: 15, fontWeight: 'bold', fill: '#f0f6fc' })
-    });
-    nameTxt.position.set(30, 20);
-    this.hudContainer.addChild(nameTxt);
-
-    const levelBadge = new Graphics()
-      .roundRect(30, 44, 45, 20, 4)
-      .fill(0xd29922);
-    this.hudContainer.addChild(levelBadge);
-
-    const levelTxt = new Text({
-      text: `Lv.${this.playerProfile.level}`,
-      style: new TextStyle({ fontSize: 11, fontWeight: 'bold', fill: '#000' })
-    });
-    levelTxt.position.set(37, 47);
-    this.hudContainer.addChild(levelTxt);
-
-    const hpBg = new Graphics()
-      .roundRect(85, 45, 150, 18, 4)
-      .fill(0x21262d);
-    this.hudContainer.addChild(hpBg);
-
-    this.hpFill = new Graphics()
-      .roundRect(85, 45, 150, 18, 4)
-      .fill(0x238636);
-    this.hudContainer.addChild(this.hpFill);
-
-    this.hpText = new Text({
-      text: `${this.playerProfile.curHp} / ${this.playerProfile.maxHp}`,
-      style: new TextStyle({ fontSize: 10, fill: '#ffffff', fontWeight: 'bold' })
-    });
-    this.hpText.position.set(125, 48);
-    this.hudContainer.addChild(this.hpText);
-
-    const curBg = new Graphics()
-      .roundRect(250, 43, 170, 22, 4)
-      .fill(0x161b22);
-    this.hudContainer.addChild(curBg);
-
-    this.silverText = new Text({
-      text: `🪙 ${this.playerProfile.silver.toLocaleString()}`,
-      style: new TextStyle({ fontSize: 11, fill: '#8b949e', fontWeight: 'bold' })
-    });
-    this.silverText.position.set(256, 47);
-    this.hudContainer.addChild(this.silverText);
-
-    this.goldText = new Text({
-      text: `💎 ${this.playerProfile.gold.toLocaleString()}`,
-      style: new TextStyle({ fontSize: 11, fill: '#e3b341', fontWeight: 'bold' })
-    });
-    this.goldText.position.set(350, 47);
-    this.hudContainer.addChild(this.goldText);
-
-    // Box com localização
-    const mapBox = new Graphics()
-      .roundRect(870, 12, 275, 40, 8)
-      .fill({ color: 0x0d1117, alpha: 0.88 })
-      .stroke({ color: 0x30363d, width: 2 });
-    this.hudContainer.addChild(mapBox);
-
-    this.mapTxt = new Text({
-      text: '📍 Subúrbios de Konoha (#23100001)',
-      style: new TextStyle({ fontSize: 13, fontWeight: 'bold', fill: '#ffd700' })
-    });
-    this.mapTxt.position.set(885, 22);
-    this.hudContainer.addChild(this.mapTxt);
-
-    // Botão de Áudio BGM (Oficial)
-    this.bgmToggleBtn = new Container();
-    this.bgmToggleBtn.position.set(1155, 12);
-    this.bgmToggleBtn.eventMode = 'static';
-    this.bgmToggleBtn.cursor = 'pointer';
-
-    const bgmBg = new Graphics()
-      .roundRect(0, 0, 80, 40, 8)
-      .fill({ color: 0x21262d, alpha: 0.9 })
-      .stroke({ color: 0x388bfd, width: 1.5 });
-    this.bgmToggleBtn.addChild(bgmBg);
-
-    this.bgmIconTxt = new Text({
-      text: '🔊 BGM',
-      style: new TextStyle({ fontSize: 12, fontWeight: 'bold', fill: '#58a6ff' })
-    });
-    this.bgmIconTxt.anchor.set(0.5, 0.5);
-    this.bgmIconTxt.position.set(40, 20);
-    this.bgmToggleBtn.addChild(this.bgmIconTxt);
-
-    this.bgmToggleBtn.on('pointertap', () => {
-      this.toggleBgm();
-    });
-    this.hudContainer.addChild(this.bgmToggleBtn);
-
-    // Botão de Batalha PvE
-    const battleBtn = new Container();
-    battleBtn.position.set(1060, 60);
-    battleBtn.eventMode = 'static';
-    battleBtn.cursor = 'pointer';
-
-    const bBg = new Graphics()
-      .roundRect(0, 0, 175, 34, 6)
-      .fill(0xda3633)
-      .stroke({ color: 0xf85149, width: 1.5 });
-    battleBtn.addChild(bBg);
-
-    const bTxt = new Text({
-      text: '⚔ TESTAR BATALHA',
-      style: new TextStyle({ fontSize: 12, fontWeight: 'bold', fill: '#ffffff' })
-    });
-    bTxt.anchor.set(0.5, 0.5);
-    bTxt.position.set(87, 17);
-    battleBtn.addChild(bTxt);
-
-    battleBtn.on('pointertap', () => {
-      console.log('[CLIENT] Solicitando Batalha PvE via CS_BattleStart...');
-      const battlePkt = new PacketWriter(Opcodes.CS_BattleStart)
-        .writeUInt32BE(1);
-      NetworkClient.getInstance().send(battlePkt);
+    this.townHud = new TownHUD(this.playerProfile, {
+      onQuestClick: (npcName: string) => {
+        console.log(`[CLIENT] Auto-caminho para missão: ${npcName}`);
+        for (const npc of this.npcs.values()) {
+          if (npc.entry.name.toLowerCase().includes(npcName.toLowerCase())) {
+            this.moveLocalPlayerTo(npc.container.x - 50, npc.container.y);
+            this.spawnClickMarker(npc.container.x - 50, npc.container.y);
+            break;
+          }
+        }
+      },
+      onBgmToggle: () => {
+        this.toggleBgm();
+      },
+      onBattleTest: () => {
+        console.log('[CLIENT] Solicitando Batalha PvE via CS_BattleStart...');
+        const battlePkt = new PacketWriter(Opcodes.CS_BattleStart)
+          .writeUInt32BE(1);
+        NetworkClient.getInstance().send(battlePkt);
+      },
+      onChatSend: (channel: string, message: string) => {
+        console.log(`[CLIENT] Mensagem no chat [${channel}]: ${message}`);
+      }
     });
 
-    this.hudContainer.addChild(battleBtn);
+    this.hudContainer.addChild(this.townHud);
+  }
+
+  public override destroy(options?: any): void {
+    if (this.townHud) {
+      this.townHud.destroy();
+    }
+    Ticker.shared.remove(this.update, this);
+    if (this.bgmAudio) {
+      this.bgmAudio.pause();
+      this.bgmAudio = null;
+    }
+    super.destroy(options);
   }
 }
